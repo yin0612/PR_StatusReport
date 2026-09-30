@@ -141,9 +141,12 @@
     .tag-row { display: flex; gap: 6px; flex-wrap: wrap; }
     .tag { border-radius: 5px; padding: 3px 6px; color: #64708a; background: #f0f2f7; font-size: .67rem; font-weight: 700; }
     .tag.topic { color: #6b4b91; background: var(--violet-soft); }
-    .news-edit { display: none; gap: 9px; margin-left: 32px; padding-top: 2px; }
+    .news-edit { display: none; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin-left: 32px; padding-top: 2px; }
     .news-card.is-picked .news-edit { display: grid; }
     .compact-textarea { min-height: 56px; padding: 8px 9px; font-size: .77rem; }
+    .report-placement { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(120px, .45fr) minmax(0, 1fr); gap: 10px; align-items: end; padding: 10px; border: 1px solid #e6e9f0; border-radius: 10px; background: #fafbfe; }
+    .report-placement .label { margin-bottom: 0; }
+    .report-placement-help { margin: 0; color: #778096; font-size: .7rem; line-height: 1.45; }
     .empty-state { padding: 46px 24px; color: #768096; text-align: center; }
     .empty-state strong { display: block; margin-bottom: 4px; color: #48536d; }
 
@@ -170,6 +173,7 @@
     .draft-form { display: grid; gap: 12px; padding: 16px 20px; }
     .draft-form-row { display: grid; grid-template-columns: 1fr; gap: 10px; }
     .small-textarea { min-height: 63px; font-size: .82rem; }
+    .report-template-note { margin: 0; padding: 10px 11px; border-radius: 9px; color: #566279; background: #f7f9fc; font-size: .75rem; line-height: 1.55; }
     .draft-actions { display: flex; gap: 8px; flex-wrap: wrap; padding: 0 20px 14px; }
     .button { min-height: 36px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid transparent; border-radius: 10px; padding: 8px 11px; font-size: .77rem; font-weight: 800; transition: .16s; }
     .button.primary { color: #fff; background: var(--blue); box-shadow: 0 6px 13px rgba(24,133,222,.18); }
@@ -179,7 +183,27 @@
     .button.ghost { color: #5b6780; border-color: #dfe4ee; background: #fff; }
     .button.ghost:hover { color: var(--blue-deep); border-color: #bcd8ed; background: #f6fbff; }
     .button.full { width: 100%; }
-    .draft-output { min-height: 337px; margin: 0 20px 18px; border: 1px solid #dde3ed; border-radius: 12px; padding: 13px; color: #354159; background: #fdfefe; font-family: "Noto Sans TC", "Microsoft JhengHei", ui-sans-serif, sans-serif; font-size: .78rem; line-height: 1.65; resize: vertical; outline: none; white-space: pre-wrap; }
+    .report-preview-wrap { margin: 0 20px 15px; }
+    .report-preview-label { display: block; margin: 0 0 7px; color: #596078; font-size: .73rem; font-weight: 800; }
+    .report-preview { overflow: auto; border: 1px solid #cdd2da; border-radius: 4px; padding: 18px; color: #111; background: #fff; font-family: Calibri, "Microsoft JhengHei", sans-serif; font-size: .82rem; line-height: 1.58; }
+    .report-preview-title { margin: 0 0 2px; font-size: 1.04rem; font-weight: 800; }
+    .report-preview-date { margin: 0 0 13px; font-size: .94rem; }
+    .report-preview-date strong { font-weight: 800; }
+    .report-table { width: 100%; min-width: 520px; border-collapse: collapse; table-layout: fixed; }
+    .report-table th, .report-table td { border: 1px solid #bcbcbc; }
+    .report-table thead th { padding: 7px 9px; background: #ccc; color: #111; text-align: center; font-weight: 700; }
+    .report-table thead th:first-child { width: 10%; }
+    .report-table tbody th { width: 10%; padding: 10px 7px; color: #111; background: #fff; text-align: center; vertical-align: middle; font-weight: 700; }
+    .report-table td { padding: 10px 13px; vertical-align: top; }
+    .report-category { margin: 0 0 4px; font-weight: 800; }
+    .report-category + .report-entry { margin-top: 0; }
+    .report-entry { margin: 0 0 10px; text-align: justify; }
+    .report-entry:last-child { margin-bottom: 14px; }
+    .report-entry p { margin: 0; }
+    .report-entry-date { font-variant-numeric: tabular-nums; }
+    .report-entry-note { margin-top: 3px !important; }
+    .report-empty-category { height: 7px; }
+    .draft-output { width: calc(100% - 40px); min-height: 337px; margin: 0 20px 18px; border: 1px solid #dde3ed; border-radius: 12px; padding: 13px; color: #354159; background: #fdfefe; font-family: "Noto Sans TC", "Microsoft JhengHei", ui-sans-serif, sans-serif; font-size: .78rem; line-height: 1.65; resize: vertical; outline: none; white-space: pre-wrap; }
     .draft-output:focus { border-color: #75b6e5; box-shadow: 0 0 0 3px rgba(77, 165, 229, .14); }
     .confirmation { padding: 16px 20px; border-top: 1px solid #eef0f5; background: #fcfdff; }
     .confirmation-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; }
@@ -234,9 +258,14 @@
       .news-excerpt, .news-bottom, .news-edit { margin-left: 0; }
       .news-card-top { gap: 8px; }
       .news-title { font-size: .91rem; }
+      .news-edit { grid-template-columns: 1fr; }
+      .report-placement { grid-template-columns: 1fr; }
+      .report-placement .label { margin-bottom: 2px; }
       .draft-form-row { grid-template-columns: 1fr; }
       .draft-actions, .draft-output, .confirmation { margin-left: 15px; margin-right: 15px; padding-left: 0; padding-right: 0; }
       .draft-actions { padding-top: 0; }
+      .report-preview-wrap { margin-left: 15px; margin-right: 15px; }
+      .report-preview { padding: 12px; }
       .draft-output { width: calc(100% - 30px); }
       .confirmation { margin: 0; padding: 15px; }
     }
@@ -251,7 +280,7 @@
         <nav class="flow-list" aria-label="工作步驟">
           <button class="flow-step is-active" type="button" data-scroll-to="inbox-panel"><span class="step-number">1</span><span class="flow-copy"><strong>監測收件匣</strong><small>新聞匯入與篩選</small></span></button>
           <button class="flow-step" type="button" data-scroll-to="selection-panel"><span class="step-number">2</span><span class="flow-copy"><strong>篩選選題</strong><small>排序與註記</small></span></button>
-          <button class="flow-step" type="button" data-scroll-to="draft-panel"><span class="step-number">3</span><span class="flow-copy"><strong>週報草稿</strong><small>摘要與組版</small></span></button>
+          <button class="flow-step" type="button" data-scroll-to="draft-panel"><span class="step-number">3</span><span class="flow-copy"><strong>週報草稿</strong><small>內文與組版</small></span></button>
           <button class="flow-step" type="button" data-scroll-to="confirmation"><span class="step-number">4</span><span class="flow-copy"><strong>人工確認</strong><small>確認後輸出</small></span></button>
         </nav>
       </div>
@@ -281,15 +310,15 @@
             <div class="panel-section"><label class="label" for="searchInput">關鍵字</label><div class="search-wrap"><input id="searchInput" class="text-input" type="search" placeholder="搜尋標題、媒體或標籤" autocomplete="off" /></div></div>
             <div class="panel-section"><span class="label">監測主題</span><div id="topicChips" class="chip-list" aria-label="監測主題"></div></div>
             <div class="panel-section"><span class="label">重要度</span><div id="priorityFilters" class="priority-filter" aria-label="重要度篩選"></div></div>
-            <div class="panel-section"><div class="mini-source-card"><strong>從媒體監測網帶入</strong><p>先在來源端找到新聞，再貼入這裡；每則原始連結與來源都會保留在週報中。</p><a class="link-button" href="https://yin0612.github.io/MediaMonitoring/#/" target="_blank" rel="noopener noreferrer">前往媒體監測網 ↗</a></div></div>
+            <div class="panel-section"><div class="mini-source-card"><strong>從媒體監測網帶入</strong><p>先在來源端找到新聞，再貼入這裡；每則原始連結與來源都會保留在收件匣，供週報核對。</p><a class="link-button" href="https://yin0612.github.io/MediaMonitoring/#/" target="_blank" rel="noopener noreferrer">前往媒體監測網 ↗</a></div></div>
           </section>
 
           <section id="inbox-panel" class="panel inbox-panel" aria-labelledby="inbox-title">
             <div class="panel-heading"><div class="heading-group"><span class="section-kicker">01 · INBOX</span><h2 id="inbox-title">新聞收件匣</h2><p>示範資料可直接操作；匯入後會取代每週的手動複製。</p></div><span id="inboxCount" class="count-badge">0</span></div>
             <div class="inbox-toolbar"><span id="resultNote" class="results-note">載入中</span><button id="toggleImport" class="button ghost" type="button">＋ 貼入新聞</button></div>
             <div id="importPanel" class="import-panel" aria-live="polite">
-              <p class="import-help">每行格式：<strong>標題 | 媒體 | 日期 | 原文連結 | 主題</strong>。也支援欄位相同的 CSV 與 JSON 陣列。</p>
-              <textarea id="pasteInput" class="textarea" placeholder="例：\n遊戲產業新作上市帶動討論 | 監測媒體 | 2026-09-29 | https://example.com/news | 遊戲產業"></textarea>
+              <p class="import-help">每行格式：<strong>標題 | 媒體 | 日期 | 原文連結 | 主題 | 週報內文</strong>。也支援欄位相同的 CSV 與 JSON 陣列。</p>
+              <textarea id="pasteInput" class="textarea" placeholder="例：\n遊戲產業新作上市帶動討論 | 監測媒體 | 2026-09-29 | https://example.com/news | 遊戲產業 | 公司宣布新作將於第四季上市，預計同步推出多平台版本。"></textarea>
               <div class="file-row"><button id="importPaste" type="button" class="button soft">匯入貼上內容</button><label class="button ghost" for="fileInput">選擇 JSON／CSV<input id="fileInput" class="file-input sr-only" type="file" accept=".json,.csv,.txt,application/json,text/csv,text/plain" /></label><span id="fileName" class="results-note">尚未選擇檔案</span></div>
             </div>
             <div id="newsList" class="result-list"></div>
@@ -303,13 +332,14 @@
           </section>
 
           <section id="draft-panel" class="panel draft-panel" aria-labelledby="draft-title">
-            <div class="panel-heading"><div class="heading-group"><span class="section-kicker">03 · DRAFT</span><h2 id="draft-title">週報草稿</h2><p>先由系統組版，再由人完成判斷。</p></div><span id="draftStatus" class="status-draft">自動組版</span></div>
+            <div class="panel-heading"><div class="heading-group"><span class="section-kicker">03 · DRAFT</span><h2 id="draft-title">週報草稿</h2><p>依既有 PR &amp; IR Status Report 版型組版。</p></div><span id="draftStatus" class="status-draft">自動組版</span></div>
             <div class="draft-form">
-              <div class="draft-form-row"><div><label class="label" for="reportTitle">週報標題</label><input id="reportTitle" class="text-input" type="text" maxlength="70" /></div><div><label class="label" for="reportDate">週次</label><input id="reportDate" class="text-input" type="text" readonly /></div></div>
-              <div><label class="label" for="reportIntro">前言與整體觀察</label><textarea id="reportIntro" class="textarea small-textarea" maxlength="300"></textarea></div>
+              <div class="draft-form-row"><div><label class="label" for="reportTitle">報告標題</label><input id="reportTitle" class="text-input" type="text" maxlength="90" /></div><div><label class="label" for="reportDate">Date</label><input id="reportDate" class="text-input" type="text" readonly /></div></div>
+              <p class="report-template-note">格式依範例採用「IR訊息／產業訊息」雙列與【類別】分段。每則內文請直接寫事實句；需要補充流程、限制或觀察時，再於下一段加入標籤。原始來源保留在收件匣，複製的週報文字不加入網址。</p>
             </div>
-            <div class="draft-actions"><button id="regenerateDraft" type="button" class="button soft">↻ 依選題重新產生</button><button id="copyDraft" type="button" class="button primary">複製完整週報</button></div>
-            <label class="sr-only" for="draftOutput">可編輯週報草稿</label><textarea id="draftOutput" class="draft-output" aria-label="可直接編輯的週報草稿"></textarea>
+            <div class="draft-actions"><button id="regenerateDraft" type="button" class="button soft">↻ 依選題重新產生</button><button id="copyDraft" type="button" class="button primary">複製週報文字</button></div>
+            <div class="report-preview-wrap"><span class="report-preview-label">週報版型預覽</span><div id="reportPreview" class="report-preview" aria-live="polite"></div></div>
+            <label class="sr-only" for="draftOutput">可直接編輯的週報文字</label><textarea id="draftOutput" class="draft-output" aria-label="可直接編輯的週報文字"></textarea>
             <div id="confirmation" class="confirmation"><div class="confirmation-heading"><strong>04 · 人工確認</strong><span id="confirmProgress">0 / 3 完成</span></div><div id="confirmationList" class="confirmation-list"></div><button id="markConfirmed" type="button" class="button primary full">標記本週已確認</button></div>
           </section>
         </div>
@@ -321,12 +351,26 @@
   <script>
     (() => {
       "use strict";
-      const STORAGE_KEY = "pr-weekly-workbench-v2";
-      const ARCHIVE_KEY = "pr-weekly-workbench-archives-v2";
+      const STORAGE_KEY = "pr-weekly-workbench-v3";
+      const ARCHIVE_KEY = "pr-weekly-workbench-archives-v3";
+      const LEGACY_STORAGE_KEY = "pr-weekly-workbench-v2";
+      const LEGACY_ARCHIVE_KEY = "pr-weekly-workbench-archives-v2";
       const exampleSource = "https://yin0612.github.io/MediaMonitoring/#/";
+      const REPORT_TITLE = "Soft-World PR & IR Department STATUS REPORT 工作進度報告";
       const topics = ["全部", "公司動態", "金融支付", "遊戲產業", "競品與產業", "風險與議題"];
       const priorities = ["全部", "高", "中", "低"];
-      const confirmationLabels = ["新聞摘要與編輯註記已檢查", "原始來源與連結已確認", "週報標題、前言與排序已確認"];
+      const reportGroups = [
+        { key: "ir-game", section: "IR訊息", category: "遊戲產業" },
+        { key: "ir-fintech", section: "IR訊息", category: "金融科技產業" },
+        { key: "ir-other", section: "IR訊息", category: "其他" },
+        { key: "industry-new-games", section: "產業訊息", category: "市場新遊動態" },
+        { key: "industry-games", section: "產業訊息", category: "遊戲產業動態" },
+        { key: "industry-fintech", section: "產業訊息", category: "金融科技產業動態" },
+        { key: "industry-stablecoin", section: "產業訊息", category: "穩定幣相關新聞" },
+        { key: "industry-other", section: "產業訊息", category: "其他" }
+      ];
+      const reportGroupByKey = Object.fromEntries(reportGroups.map(group => [group.key, group]));
+      const confirmationLabels = ["每則內文的事實、數字與文字已檢查", "原始來源與連結已確認", "報告日期、分類與排序已確認"];
 
       const startOfWeek = (date = new Date()) => {
         const value = new Date(date);
@@ -341,10 +385,32 @@
       const addDays = (date, amount) => { const copy = new Date(date); copy.setDate(copy.getDate() + amount); return copy; };
       const formatDate = (date) => new Intl.DateTimeFormat("zh-TW", { month: "long", day: "numeric" }).format(date);
       const formatDateShort = (value) => new Intl.DateTimeFormat("zh-TW", { month: "numeric", day: "numeric" }).format(parseLocalDate(value));
-      const weekLabel = (weekStart) => { const start = parseLocalDate(weekStart); const end = addDays(start, 6); return `${start.getFullYear()} / ${String(start.getMonth() + 1).padStart(2, "0")} / ${String(start.getDate()).padStart(2, "0")} — ${String(end.getMonth() + 1).padStart(2, "0")} / ${String(end.getDate()).padStart(2, "0")}`; };
+      const zeroPad = (value) => String(value).padStart(2, "0");
+      const dateStamp = (date) => `${date.getFullYear()}/${zeroPad(date.getMonth() + 1)}/${zeroPad(date.getDate())}`;
+      const reportDateLabel = (weekStart) => { const start = parseLocalDate(weekStart); return `${dateStamp(start)}~${dateStamp(addDays(start, 4))}`; };
+      const weekLabel = (weekStart) => { const start = parseLocalDate(weekStart); const end = addDays(start, 4); return `${start.getFullYear()} / ${zeroPad(start.getMonth() + 1)} / ${zeroPad(start.getDate())} — ${zeroPad(end.getMonth() + 1)} / ${zeroPad(end.getDate())}`; };
+      const reportItemDate = (value) => { const date = parseLocalDate(value); return `${zeroPad(date.getMonth() + 1)}/${zeroPad(date.getDate())}(${["日", "一", "二", "三", "四", "五", "六"][date.getDay()]})`; };
       const escapeHTML = (value = "") => String(value).replace(/[&<>'"]/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[char]));
       const safeUrl = (value) => { try { const url = new URL(value); return ["http:", "https:"].includes(url.protocol) ? url.href : exampleSource; } catch { return exampleSource; } };
-      const defaultNote = (item) => `建議持續觀察 ${item.topic} 後續討論與利害關係人回應。`;
+      const cleanTitle = (value = "") => String(value).replace(/^【範例】\s*/, "").trim();
+      const defaultReportGroupKey = (topic) => ({
+        "公司動態": "ir-game",
+        "金融支付": "industry-fintech",
+        "遊戲產業": "industry-new-games",
+        "競品與產業": "industry-games",
+        "風險與議題": "ir-other"
+      }[topic] || "industry-other");
+      const reportGroupFor = (item) => reportGroupByKey[item.reportGroup] || reportGroupByKey[defaultReportGroupKey(item.topic)];
+      const normalizeNews = (item) => ({ ...item, reportGroup: reportGroupByKey[item.reportGroup] ? item.reportGroup : defaultReportGroupKey(item.topic) });
+      const reportBody = (item) => String(item.summary || item.excerpt || cleanTitle(item.title) || "待補週報內文。").trim();
+      const reportEntryText = (item, includeSource = false) => {
+        const body = reportBody(item);
+        const text = /^\d{1,2}\/\d{1,2}\([日一二三四五六]\)/.test(body) ? body : `${reportItemDate(item.date)} ${body}`;
+        const parts = [text];
+        if (String(item.note || "").trim()) parts.push(String(item.note).trim());
+        if (includeSource) parts.push(`來源：${item.source}｜${item.url}`);
+        return parts.join("\n");
+      };
 
       const seedNews = [
         { id: "sample-1", title: "【範例】遊戲服務升級帶動會員經營討論", source: "監測示範", date: "2026-09-29", url: `${exampleSource}search?q=%E9%81%8A%E6%88%B2`, topic: "公司動態", priority: "高", tags: ["會員經營", "服務"], excerpt: "可作為本週品牌動態的示範選題；匯入真實監測新聞後，系統會保留原始來源。", summary: "遊戲服務與會員經營議題出現討論，建議關注使用者回饋與後續溝通節點。", note: "可搭配本週公司消息，確認是否需準備對外一致說法。", selected: true, order: 1 },
@@ -357,15 +423,14 @@
 
       const defaultState = () => ({
         weekStart: isoDate(startOfWeek()),
-        reportTitle: "產業與媒體觀測週報",
-        reportIntro: "本週持續關注遊戲、金融支付與產業動態；以下彙整具溝通價值的監測訊號，供後續判斷與行動安排。",
+        reportTitle: REPORT_TITLE,
         topic: "全部",
         priorityFilter: "全部",
         query: "",
         draft: "",
         draftEdited: false,
         confirmations: [false, false, false],
-        news: JSON.parse(JSON.stringify(seedNews))
+        news: JSON.parse(JSON.stringify(seedNews)).map(normalizeNews)
       });
 
       let state = defaultState();
@@ -382,18 +447,13 @@
         return matchesQuery && matchesTopic && matchesPriority;
       }).sort((a, b) => `${b.date}-${b.id}`.localeCompare(`${a.date}-${a.id}`));
 
+      const draftSection = (section) => reportGroups.filter(group => group.section === section).map(group => {
+        const entries = selectedNews().filter(item => reportGroupFor(item).key === group.key);
+        return [`【${group.category}】`, ...entries.map(item => reportEntryText(item))].join("\n");
+      }).join("\n\n");
       const generateDraft = () => {
-        const chosen = selectedNews();
-        const heading = state.reportTitle.trim() || "產業與媒體觀測週報";
-        const intro = state.reportIntro.trim() || "本週重點訊號如下，供後續公關與溝通安排參考。";
-        const issueBlock = chosen.length ? chosen.map((item, index) => [
-          `${index + 1}. 【${item.topic}】${item.title.replace(/^【範例】/, "")}`,
-          `摘要：${item.summary || item.excerpt || "待補摘要。"}`,
-          `公關觀察：${item.note || defaultNote(item)}`,
-          `來源：${item.source}｜${item.date}`,
-          `原文：${item.url}`
-        ].join("\n")).join("\n\n") : "尚未選擇新聞。請從收件匣勾選本週值得納入的選題。";
-        return `${heading}\n週次：${weekLabel(state.weekStart)}\n\n一、本週重點\n${intro}\n\n二、重點新聞與觀察\n${issueBlock}\n\n三、編輯提醒\n本週內容已保留原始來源與人工選題註記；送出前請確認摘要、排序及對外用語。`;
+        const heading = state.reportTitle.trim() || REPORT_TITLE;
+        return `${heading}\nDate: ${reportDateLabel(state.weekStart)}\n\n日期\t工作項目&討論事項\nIR訊息\t${draftSection("IR訊息")}\n\n產業訊息\t${draftSection("產業訊息")}`;
       };
 
       const persist = () => {
@@ -401,10 +461,12 @@
       };
       const hydrate = () => {
         try {
-          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-          const savedArchives = JSON.parse(localStorage.getItem(ARCHIVE_KEY));
+          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY));
+          const savedArchives = JSON.parse(localStorage.getItem(ARCHIVE_KEY) || localStorage.getItem(LEGACY_ARCHIVE_KEY));
           if (saved && Array.isArray(saved.news)) state = { ...defaultState(), ...saved, confirmations: Array.isArray(saved.confirmations) ? saved.confirmations : [false, false, false] };
           if (Array.isArray(savedArchives)) archives = savedArchives;
+          state.news = state.news.map(normalizeNews);
+          if (!state.reportTitle || state.reportTitle === "產業與媒體觀測週報") state.reportTitle = REPORT_TITLE;
         } catch (error) { console.warn("Unable to load saved workbench state", error); }
       };
       const toast = (message) => {
@@ -418,7 +480,7 @@
 
       const renderHeader = () => {
         get("weekPill").textContent = weekLabel(state.weekStart);
-        get("reportDate").value = weekLabel(state.weekStart);
+        get("reportDate").value = reportDateLabel(state.weekStart);
         get("decisionStatus").textContent = `${state.news.length} 則新聞 · ${selectedNews().length} 則已選題`;
       };
       const renderFilters = () => {
@@ -431,7 +493,9 @@
         const items = filteredNews();
         get("inboxCount").textContent = items.length;
         get("resultNote").textContent = state.query || state.topic !== "全部" || state.priorityFilter !== "全部" ? `符合篩選的新聞 ${items.length} 則` : `本週收件匣 ${state.news.length} 則 · 已選題 ${selectedNews().length} 則`;
-        get("newsList").innerHTML = items.length ? items.map(item => `
+        get("newsList").innerHTML = items.length ? items.map(item => {
+          const group = reportGroupFor(item);
+          return `
           <article class="news-card ${item.selected ? "is-picked" : ""}" data-id="${escapeHTML(item.id)}">
             <div class="news-card-top">
               <label class="check-wrap" aria-label="${item.selected ? "取消納入" : "納入"}週報：${escapeHTML(item.title)}"><input type="checkbox" data-select="${escapeHTML(item.id)}" ${item.selected ? "checked" : ""}><span class="check-visual" aria-hidden="true">✓</span></label>
@@ -440,8 +504,9 @@
             </div>
             <p class="news-excerpt">${escapeHTML(item.excerpt || "尚未提供新聞摘要。")}</p>
             <div class="news-bottom"><div class="tag-row"><span class="tag topic">${escapeHTML(item.topic)}</span>${(item.tags || []).slice(0, 3).map(tag => `<span class="tag">${escapeHTML(tag)}</span>`).join("")}</div><a class="link-button" href="${escapeHTML(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer">查看原文 ↗</a></div>
-            <div class="news-edit"><div><label class="label" for="summary-${escapeHTML(item.id)}">週報摘要</label><textarea id="summary-${escapeHTML(item.id)}" class="textarea compact-textarea" data-summary="${escapeHTML(item.id)}" maxlength="400">${escapeHTML(item.summary || "")}</textarea></div><div><label class="label" for="note-${escapeHTML(item.id)}">為何值得關注／編輯註記</label><textarea id="note-${escapeHTML(item.id)}" class="textarea compact-textarea" data-note="${escapeHTML(item.id)}" maxlength="400">${escapeHTML(item.note || "")}</textarea></div></div>
-          </article>`).join("") : `<div class="empty-state"><strong>沒有符合條件的新聞</strong>試著清除關鍵字或改選其他主題。</div>`;
+            <div class="news-edit"><div class="report-placement"><div><label class="label" for="report-group-${escapeHTML(item.id)}">週報分類</label><select id="report-group-${escapeHTML(item.id)}" class="select-input" data-report-group="${escapeHTML(item.id)}">${reportGroups.map(option => `<option value="${option.key}" ${option.key === group.key ? "selected" : ""}>${escapeHTML(option.section)}｜${escapeHTML(option.category)}</option>`).join("")}</select></div><p class="report-placement-help">決定此則新聞要寫入 IR訊息或產業訊息，以及對應的【類別】。</p></div><div><label class="label" for="summary-${escapeHTML(item.id)}">週報內文</label><textarea id="summary-${escapeHTML(item.id)}" class="textarea compact-textarea" data-summary="${escapeHTML(item.id)}" maxlength="400" placeholder="主體＋動作＋事實／數字＋必要背景">${escapeHTML(item.summary || "")}</textarea></div><div><label class="label" for="note-${escapeHTML(item.id)}">補充資訊／編輯註記</label><textarea id="note-${escapeHTML(item.id)}" class="textarea compact-textarea" data-note="${escapeHTML(item.id)}" maxlength="400" placeholder="例如：使用流程：…／限制：…／備註：…">${escapeHTML(item.note || "")}</textarea></div></div>
+          </article>`;
+        }).join("") : `<div class="empty-state"><strong>沒有符合條件的新聞</strong>試著清除關鍵字或改選其他主題。</div>`;
       };
       const renderSelection = () => {
         const chosen = selectedNews();
@@ -449,11 +514,24 @@
         get("selectionList").innerHTML = chosen.length ? chosen.map((item, index) => `
           <div class="selection-item"><span class="selection-index">${index + 1}</span><div class="selection-body"><span class="selection-title" title="${escapeHTML(item.title)}">${escapeHTML(item.title)}</span><span class="selection-meta">${escapeHTML(item.source)} · ${escapeHTML(item.topic)} · ${priorityLabel(item.priority)}</span></div><div class="order-actions"><button class="order-button" type="button" data-move="up" data-id="${escapeHTML(item.id)}" ${index === 0 ? "disabled" : ""} aria-label="上移">↑</button><button class="order-button" type="button" data-move="down" data-id="${escapeHTML(item.id)}" ${index === chosen.length - 1 ? "disabled" : ""} aria-label="下移">↓</button></div></div>`).join("") : `<div class="selection-empty">尚未選題。從收件匣勾選新聞後，會在這裡建立週報順序。</div>`;
       };
+      const lineBreaks = (value = "") => escapeHTML(value).replace(/\r?\n/g, "<br>");
+      const previewSection = (section) => reportGroups.filter(group => group.section === section).map(group => {
+        const entries = selectedNews().filter(item => reportGroupFor(item).key === group.key);
+        const entryMarkup = entries.length ? entries.map(item => {
+          const body = reportBody(item);
+          const dated = /^\d{1,2}\/\d{1,2}\([日一二三四五六]\)/.test(body);
+          return `<div class="report-entry"><p>${dated ? "" : `<span class="report-entry-date">${escapeHTML(reportItemDate(item.date))}</span> `}${lineBreaks(body)}</p>${String(item.note || "").trim() ? `<p class="report-entry-note">${lineBreaks(String(item.note).trim())}</p>` : ""}</div>`;
+        }).join("") : `<div class="report-empty-category" aria-hidden="true"></div>`;
+        return `<section><p class="report-category">【${escapeHTML(group.category)}】</p>${entryMarkup}</section>`;
+      }).join("");
+      const renderReportPreview = () => {
+        get("reportPreview").innerHTML = `<p class="report-preview-title">${escapeHTML(state.reportTitle.trim() || REPORT_TITLE)}</p><p class="report-preview-date"><strong>Date:</strong> ${escapeHTML(reportDateLabel(state.weekStart))}</p><table class="report-table"><thead><tr><th>日期</th><th>工作項目&amp;討論事項</th></tr></thead><tbody><tr><th scope="row">IR訊息</th><td>${previewSection("IR訊息")}</td></tr><tr><th scope="row">產業訊息</th><td>${previewSection("產業訊息")}</td></tr></tbody></table>`;
+      };
       const renderDraft = (force = false) => {
         get("reportTitle").value = state.reportTitle;
-        get("reportIntro").value = state.reportIntro;
         if (force || !state.draftEdited || !state.draft) { state.draft = generateDraft(); state.draftEdited = false; }
         get("draftOutput").value = state.draft;
+        renderReportPreview();
         get("draftStatus").textContent = state.draftEdited ? "已手動調整" : "自動組版";
         get("draftStatus").style.color = state.draftEdited ? "#865c9d" : "#158264";
         get("draftStatus").style.background = state.draftEdited ? "#f4edfb" : "#e9f7f2";
@@ -488,19 +566,23 @@
         state.draftEdited = false; commit(); renderAll(true);
       };
       const newId = () => `import-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
-      const asNews = (item, index) => ({
-        id: String(item.id || newId()),
-        title: String(item.title || item.headline || `未命名新聞 ${index + 1}`).trim(),
-        source: String(item.source || item.media || "未註明媒體").trim(),
-        date: /^\d{4}-\d{2}-\d{2}$/.test(String(item.date || "")) ? String(item.date) : isoDate(new Date()),
-        url: safeUrl(String(item.url || item.link || exampleSource)),
-        topic: topics.includes(item.topic) && item.topic !== "全部" ? item.topic : "競品與產業",
-        priority: ["高", "中", "低"].includes(item.priority) ? item.priority : "中",
-        tags: Array.isArray(item.tags) ? item.tags.slice(0, 5).map(String) : ["匯入新聞"],
-        excerpt: String(item.excerpt || item.description || "匯入後請補充摘要與編輯註記。"),
-        summary: String(item.summary || item.excerpt || item.description || ""),
-        note: String(item.note || ""), selected: Boolean(item.selected), order: 99
-      });
+      const asNews = (item, index) => {
+        const topic = topics.includes(item.topic) && item.topic !== "全部" ? item.topic : "競品與產業";
+        return {
+          id: String(item.id || newId()),
+          title: String(item.title || item.headline || `未命名新聞 ${index + 1}`).trim(),
+          source: String(item.source || item.media || "未註明媒體").trim(),
+          date: /^\d{4}-\d{2}-\d{2}$/.test(String(item.date || "")) ? String(item.date) : isoDate(new Date()),
+          url: safeUrl(String(item.url || item.link || exampleSource)),
+          topic,
+          reportGroup: reportGroupByKey[item.reportGroup] ? item.reportGroup : defaultReportGroupKey(topic),
+          priority: ["高", "中", "低"].includes(item.priority) ? item.priority : "中",
+          tags: Array.isArray(item.tags) ? item.tags.slice(0, 5).map(String) : ["匯入新聞"],
+          excerpt: String(item.excerpt || item.description || "匯入後請補充週報內文與補充資訊。"),
+          summary: String(item.summary || item.excerpt || item.description || ""),
+          note: String(item.note || ""), selected: Boolean(item.selected), order: 99
+        };
+      };
       const addImported = (records) => {
         const valid = records.map(asNews).filter(item => item.title);
         if (!valid.length) { toast("沒有讀到可匯入的新聞，請檢查欄位格式。"); return; }
@@ -508,13 +590,13 @@
       };
       const parsePasted = (text) => text.split(/\r?\n/).map(line => line.trim()).filter(Boolean).map(line => {
         const cells = line.split("|").map(value => value.trim());
-        return { title: cells[0], source: cells[1], date: cells[2], url: cells[3], topic: cells[4], excerpt: cells[5] };
+        return { title: cells[0], source: cells[1], date: cells[2], url: cells[3], topic: cells[4], excerpt: cells[5], reportGroup: cells[6] };
       });
       const parseCSV = (text) => {
         const rows = text.split(/\r?\n/).map(row => row.trim()).filter(Boolean).map(row => row.split(",").map(cell => cell.trim().replace(/^"|"$/g, "")));
         const header = rows[0] || []; const hasHeader = header.some(cell => /title|標題|source|媒體|date|日期/i.test(cell)); const records = hasHeader ? rows.slice(1) : rows;
         const columns = hasHeader ? header.map(cell => cell.toLowerCase()) : ["title", "source", "date", "url", "topic", "excerpt"];
-        return records.map(row => Object.fromEntries(row.map((value, index) => [columns[index] || `col${index}`, value]))).map(row => ({ title: row.title || row["標題"] || row.col0, source: row.source || row.media || row["媒體"] || row.col1, date: row.date || row["日期"] || row.col2, url: row.url || row.link || row["連結"] || row.col3, topic: row.topic || row["主題"] || row.col4, excerpt: row.excerpt || row.description || row["摘要"] || row.col5 }));
+        return records.map(row => Object.fromEntries(row.map((value, index) => [columns[index] || `col${index}`, value]))).map(row => ({ title: row.title || row["標題"] || row.col0, source: row.source || row.media || row["媒體"] || row.col1, date: row.date || row["日期"] || row.col2, url: row.url || row.link || row["連結"] || row.col3, topic: row.topic || row["主題"] || row.col4, excerpt: row.excerpt || row.description || row["摘要"] || row.col5, reportGroup: row.reportgroup || row["週報分類"] || row.col6 }));
       };
       const createArchive = () => ({ savedAt: new Date().toISOString(), weekLabel: weekLabel(state.weekStart), selectedCount: selectedNews().length, state: JSON.parse(JSON.stringify(state)) });
       const saveArchive = (message = "本週紀錄已儲存") => { archives.unshift(createArchive()); archives = archives.slice(0, 12); persist(); renderArchives(); toast(message); };
@@ -535,6 +617,7 @@
       document.addEventListener("change", event => {
         const input = event.target;
         if (input.dataset.select) setSelected(input.dataset.select, input.checked);
+        if (input.dataset.reportGroup) { const item = state.news.find(news => news.id === input.dataset.reportGroup); if (item && reportGroupByKey[input.value]) { item.reportGroup = input.value; state.draftEdited = false; commit(); renderAll(true); } return; }
         if (input.dataset.confirm !== undefined) { state.confirmations[Number(input.dataset.confirm)] = input.checked; commit(); renderConfirmation(); }
       });
       document.addEventListener("input", event => {
@@ -543,7 +626,6 @@
         if (input.dataset.summary) { const item = state.news.find(news => news.id === input.dataset.summary); if (item) { item.summary = input.value; state.draftEdited = false; commit(); renderDraft(true); } return; }
         if (input.dataset.note) { const item = state.news.find(news => news.id === input.dataset.note); if (item) { item.note = input.value; state.draftEdited = false; commit(); renderDraft(true); } return; }
         if (input.id === "reportTitle") { state.reportTitle = input.value; state.draftEdited = false; commit(); renderDraft(true); return; }
-        if (input.id === "reportIntro") { state.reportIntro = input.value; state.draftEdited = false; commit(); renderDraft(true); return; }
         if (input.id === "draftOutput") { state.draft = input.value; state.draftEdited = true; commit(); get("draftStatus").textContent = "已手動調整"; get("draftStatus").style.color = "#865c9d"; get("draftStatus").style.background = "#f4edfb"; }
       });
       get("toggleImport").addEventListener("click", () => { get("importPanel").classList.toggle("is-open"); if (get("importPanel").classList.contains("is-open")) get("pasteInput").focus(); });
@@ -552,7 +634,7 @@
       get("regenerateDraft").addEventListener("click", () => { state.draftEdited = false; state.draft = generateDraft(); commit("草稿已依目前選題重新產生"); renderDraft(true); });
       get("copyDraft").addEventListener("click", () => copyText(get("draftOutput").value));
       get("saveWeek").addEventListener("click", () => saveArchive());
-      get("newWeek").addEventListener("click", () => { saveArchive("已保存本週，並建立下一週工作區"); const nextWeek = addDays(parseLocalDate(state.weekStart), 7); state.weekStart = isoDate(nextWeek); state.news.forEach(item => { item.selected = false; item.order = 99; item.note = ""; }); state.reportTitle = "產業與媒體觀測週報"; state.reportIntro = "本週持續關注遊戲、金融支付與產業動態；以下彙整具溝通價值的監測訊號，供後續判斷與行動安排。"; state.confirmations = [false, false, false]; state.draftEdited = false; state.draft = ""; commit(); renderAll(true); });
+      get("newWeek").addEventListener("click", () => { saveArchive("已保存本週，並建立下一週工作區"); const nextWeek = addDays(parseLocalDate(state.weekStart), 7); state.weekStart = isoDate(nextWeek); state.news.forEach(item => { item.selected = false; item.order = 99; item.note = ""; }); state.reportTitle = REPORT_TITLE; state.confirmations = [false, false, false]; state.draftEdited = false; state.draft = ""; commit(); renderAll(true); });
       get("markConfirmed").addEventListener("click", () => { state.confirmations = confirmationLabels.map(() => true); commit("本週週報已標記為人工確認完成"); renderConfirmation(); });
 
       hydrate(); cleanOrder(); renderAll(true); persist();
