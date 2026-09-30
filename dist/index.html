@@ -79,7 +79,11 @@
     .decision-status { position: relative; z-index: 1; flex: 0 0 auto; display: flex; gap: 8px; align-items: center; border-radius: 12px; padding: 9px 11px; color: #6e4c88; background: rgba(255,255,255,.7); font-size: .8rem; font-weight: 700; }
     .decision-status span { color: var(--green); font-size: 1rem; }
 
-    .workspace-grid { display: grid; grid-template-columns: minmax(305px, .8fr) minmax(410px, 1.25fr) minmax(340px, .95fr); gap: 20px; align-items: start; }
+    .workflow-view { display: none; }
+    .workflow-view.is-active { display: block; animation: workspace-enter .18s ease both; }
+    .inbox-workspace { display: grid; grid-template-columns: minmax(290px, .42fr) minmax(0, 1.58fr); gap: 20px; align-items: start; }
+    .single-step-panel { max-width: 1080px; margin: 0 auto; }
+    @keyframes workspace-enter { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
     .panel { min-width: 0; background: var(--paper); border: 1px solid var(--line); border-radius: var(--round-xl); box-shadow: var(--shadow); }
     .panel-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 21px 20px 15px; border-bottom: 1px solid #eef0f5; }
     .heading-group { min-width: 0; }
@@ -168,7 +172,7 @@
     .selection-footer p { margin: 0 0 10px; color: #71798c; font-size: .75rem; }
     .selection-empty { padding: 29px 16px; color: #7a8296; font-size: .8rem; }
 
-    .draft-panel { position: sticky; top: 18px; overflow: hidden; }
+    .draft-panel { overflow: hidden; }
     .draft-panel .panel-heading { background: linear-gradient(112deg, #eaf6ff, #fbf8ff); }
     .status-draft { flex: 0 0 auto; border-radius: 99px; padding: 4px 7px; color: #158264; background: #e9f7f2; font-size: .68rem; font-weight: 800; }
     .draft-form { display: grid; gap: 12px; padding: 16px 20px; }
@@ -206,6 +210,8 @@
     .report-empty-category { height: 7px; }
     .draft-output { width: calc(100% - 40px); min-height: 337px; margin: 0 20px 18px; border: 1px solid #dde3ed; border-radius: 12px; padding: 13px; color: #354159; background: #fdfefe; font-family: "Noto Sans TC", "Microsoft JhengHei", ui-sans-serif, sans-serif; font-size: .78rem; line-height: 1.65; resize: vertical; outline: none; white-space: pre-wrap; }
     .draft-output:focus { border-color: #75b6e5; box-shadow: 0 0 0 3px rgba(77, 165, 229, .14); }
+    .confirmation-panel { overflow: hidden; }
+    .confirmation-panel .panel-heading { background: linear-gradient(112deg, #e9f7f2, #fbfcff); }
     .confirmation { padding: 16px 20px; border-top: 1px solid #eef0f5; background: #fcfdff; }
     .confirmation-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; }
     .confirmation-heading strong { font-size: .83rem; }
@@ -213,6 +219,7 @@
     .confirmation-list { display: grid; gap: 7px; margin-bottom: 12px; }
     .confirm-line { display: flex; align-items: center; gap: 8px; color: #667085; font-size: .75rem; }
     .confirm-line input { accent-color: var(--green); width: 15px; height: 15px; }
+    .confirmation-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .archive-summary { display: grid; gap: 7px; padding: 14px 16px 16px; border-top: 1px solid #eef0f5; background: #fbf9fe; }
     .archive-summary strong { color: #69527c; font-size: .78rem; }
     .archive-summary p { margin: 0; color: #747487; font-size: .72rem; }
@@ -226,8 +233,7 @@
     .toast .toast-dot { width: 8px; height: 8px; border-radius: 50%; background: #77d0b2; }
 
     @media (max-width: 1360px) {
-      .workspace-grid { grid-template-columns: minmax(285px, .8fr) minmax(410px, 1.2fr); }
-      .draft-panel { grid-column: 1 / -1; position: static; }
+      .inbox-workspace { grid-template-columns: minmax(265px, .42fr) minmax(0, 1.58fr); }
       .draft-form-row { grid-template-columns: 1.15fr .85fr; }
       .draft-output { min-height: 270px; }
     }
@@ -241,7 +247,7 @@
       .flow-copy small { display: none; }
       .topbar { padding: 14px 20px; }
       main { padding: 22px 20px 34px; }
-      .workspace-grid { grid-template-columns: minmax(290px, .78fr) minmax(420px, 1.22fr); }
+      .inbox-workspace { grid-template-columns: minmax(250px, .68fr) minmax(0, 1.32fr); }
     }
     @media (max-width: 720px) {
       .side-rail { grid-template-columns: 1fr; }
@@ -252,7 +258,7 @@
       main { padding: 16px 13px 28px; }
       .decision-strip { align-items: flex-start; padding: 16px; }
       .decision-status { display: none; }
-      .workspace-grid { grid-template-columns: 1fr; gap: 15px; }
+      .inbox-workspace { grid-template-columns: 1fr; gap: 15px; }
       .panel-heading, .panel-section, .draft-form { padding-left: 15px; padding-right: 15px; }
       .import-panel { margin-left: 15px; margin-right: 15px; }
       .inbox-toolbar, .news-card { padding-left: 15px; padding-right: 15px; }
@@ -263,12 +269,13 @@
       .report-placement { grid-template-columns: 1fr; }
       .report-placement .label { margin-bottom: 2px; }
       .draft-form-row { grid-template-columns: 1fr; }
-      .draft-actions, .draft-output, .confirmation { margin-left: 15px; margin-right: 15px; padding-left: 0; padding-right: 0; }
+      .draft-actions, .draft-output { margin-left: 15px; margin-right: 15px; padding-left: 0; padding-right: 0; }
       .draft-actions { padding-top: 0; }
       .report-preview-wrap { margin-left: 15px; margin-right: 15px; }
       .report-preview { padding: 12px; }
       .draft-output { width: calc(100% - 30px); }
       .confirmation { margin: 0; padding: 15px; }
+      .confirmation-actions { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -279,10 +286,10 @@
       <div>
         <p class="rail-section-label">本週流程</p>
         <nav class="flow-list" aria-label="工作步驟">
-          <button class="flow-step is-active" type="button" data-scroll-to="inbox-panel"><span class="step-number">1</span><span class="flow-copy"><strong>監測收件匣</strong><small>新聞匯入與篩選</small></span></button>
-          <button class="flow-step" type="button" data-scroll-to="selection-panel"><span class="step-number">2</span><span class="flow-copy"><strong>篩選選題</strong><small>排序與註記</small></span></button>
-          <button class="flow-step" type="button" data-scroll-to="draft-panel"><span class="step-number">3</span><span class="flow-copy"><strong>週報草稿</strong><small>內文與組版</small></span></button>
-          <button class="flow-step" type="button" data-scroll-to="confirmation"><span class="step-number">4</span><span class="flow-copy"><strong>人工確認</strong><small>確認後輸出</small></span></button>
+          <button class="flow-step is-active" type="button" data-view="inbox" aria-current="step"><span class="step-number">1</span><span class="flow-copy"><strong>監測收件匣</strong><small>新聞匯入與篩選</small></span></button>
+          <button class="flow-step" type="button" data-view="selection"><span class="step-number">2</span><span class="flow-copy"><strong>篩選選題</strong><small>排序與註記</small></span></button>
+          <button class="flow-step" type="button" data-view="draft"><span class="step-number">3</span><span class="flow-copy"><strong>週報草稿</strong><small>內文與組版</small></span></button>
+          <button class="flow-step" type="button" data-view="confirmation"><span class="step-number">4</span><span class="flow-copy"><strong>人工確認</strong><small>確認後輸出</small></span></button>
         </nav>
       </div>
       <div class="rail-spacer"></div>
@@ -301,49 +308,61 @@
 
       <main id="main-content">
         <section class="decision-strip" aria-labelledby="decision-title">
-          <div class="decision-copy"><span class="decision-kicker">本週編輯台</span><h2 id="decision-title">先挑出值得被管理層看見的訊號</h2><p>從監測結果匯入新聞，保留你的選題理由與原始來源，再把內容轉成可交付的週報草稿。</p></div>
+          <div class="decision-copy"><span id="decisionKicker" class="decision-kicker">本週編輯台</span><h2 id="decision-title">先挑出值得被管理層看見的訊號</h2><p id="decisionDescription">從監測結果匯入新聞，保留你的選題理由與原始來源，再把內容轉成可交付的週報草稿。</p></div>
           <div class="decision-status"><span>●</span><span id="decisionStatus">6 則示範新聞待檢視</span></div>
         </section>
 
-        <div class="workspace-grid">
-          <section class="panel filter-panel" aria-labelledby="filter-title">
-            <div class="panel-heading"><div class="heading-group"><span class="section-kicker">FILTER</span><h2 id="filter-title">監測篩選器</h2><p>先縮小範圍，再交給編輯判斷。</p></div></div>
-            <div class="panel-section"><label class="label" for="searchInput">關鍵字</label><div class="search-wrap"><input id="searchInput" class="text-input" type="search" placeholder="搜尋標題、媒體或標籤" autocomplete="off" /></div></div>
-            <div class="panel-section"><span class="label">監測主題</span><div id="topicChips" class="chip-list" aria-label="監測主題"></div></div>
-            <div class="panel-section"><span class="label">重要度</span><div id="priorityFilters" class="priority-filter" aria-label="重要度篩選"></div></div>
-            <div class="panel-section"><div class="mini-source-card"><strong>自動帶入智冠產業監測新聞</strong><p id="syncDescription">正在載入已部署的監測候選新聞。</p><button id="refreshMonitoring" class="button ghost" type="button">↻ 重新載入資料</button><a class="link-button" href="https://yin0612.github.io/for_SoftWorld/#/news" target="_blank" rel="noopener noreferrer">開啟智冠產業監測查核原文 ↗</a></div></div>
-          </section>
+        <section id="workflow-view-inbox" class="workflow-view is-active" data-workspace-view="inbox" aria-label="監測收件匣">
+          <div class="inbox-workspace">
+            <section class="panel filter-panel" aria-labelledby="filter-title">
+              <div class="panel-heading"><div class="heading-group"><span class="section-kicker">FILTER</span><h2 id="filter-title">監測篩選器</h2><p>先縮小範圍，再交給編輯判斷。</p></div></div>
+              <div class="panel-section"><label class="label" for="searchInput">關鍵字</label><div class="search-wrap"><input id="searchInput" class="text-input" type="search" placeholder="搜尋標題、媒體或標籤" autocomplete="off" /></div></div>
+              <div class="panel-section"><span class="label">監測主題</span><div id="topicChips" class="chip-list" aria-label="監測主題"></div></div>
+              <div class="panel-section"><span class="label">重要度</span><div id="priorityFilters" class="priority-filter" aria-label="重要度篩選"></div></div>
+              <div class="panel-section"><div class="mini-source-card"><strong>自動帶入智冠產業監測新聞</strong><p id="syncDescription">正在載入已部署的監測候選新聞。</p><button id="refreshMonitoring" class="button ghost" type="button">↻ 重新載入資料</button><a class="link-button" href="https://yin0612.github.io/for_SoftWorld/#/news" target="_blank" rel="noopener noreferrer">開啟智冠產業監測查核原文 ↗</a></div></div>
+            </section>
 
-          <section id="inbox-panel" class="panel inbox-panel" aria-labelledby="inbox-title">
-            <div class="panel-heading"><div class="heading-group"><span class="section-kicker">01 · INBOX</span><h2 id="inbox-title">新聞收件匣</h2><p>每小時自動同步候選新聞；仍可貼入臨時素材並保留人工選題。</p></div><span id="inboxCount" class="count-badge">0</span></div>
-            <div class="inbox-toolbar"><span id="resultNote" class="results-note">載入中</span><div class="inbox-toolbar-actions"><button id="toggleImport" class="button ghost" type="button">＋ 貼入新聞</button></div></div>
-            <div id="importPanel" class="import-panel" aria-live="polite">
-              <p class="import-help">每行格式：<strong>標題 | 媒體 | 日期 | 原文連結 | 主題 | 週報內文</strong>。也支援欄位相同的 CSV 與 JSON 陣列。</p>
-              <textarea id="pasteInput" class="textarea" placeholder="例：\n遊戲產業新作上市帶動討論 | 監測媒體 | 2026-09-29 | https://example.com/news | 遊戲產業 | 公司宣布新作將於第四季上市，預計同步推出多平台版本。"></textarea>
-              <div class="file-row"><button id="importPaste" type="button" class="button soft">匯入貼上內容</button><label class="button ghost" for="fileInput">選擇 JSON／CSV<input id="fileInput" class="file-input sr-only" type="file" accept=".json,.csv,.txt,application/json,text/csv,text/plain" /></label><span id="fileName" class="results-note">尚未選擇檔案</span></div>
-            </div>
-            <div id="newsList" class="result-list"></div>
-          </section>
+            <section id="inbox-panel" class="panel inbox-panel" aria-labelledby="inbox-title">
+              <div class="panel-heading"><div class="heading-group"><span class="section-kicker">01 · INBOX</span><h2 id="inbox-title">新聞收件匣</h2><p>每小時自動同步候選新聞；仍可貼入臨時素材並保留人工選題。</p></div><span id="inboxCount" class="count-badge">0</span></div>
+              <div class="inbox-toolbar"><span id="resultNote" class="results-note">載入中</span><div class="inbox-toolbar-actions"><button id="toggleImport" class="button ghost" type="button">＋ 貼入新聞</button></div></div>
+              <div id="importPanel" class="import-panel" aria-live="polite">
+                <p class="import-help">每行格式：<strong>標題 | 媒體 | 日期 | 原文連結 | 主題 | 週報內文</strong>。也支援欄位相同的 CSV 與 JSON 陣列。</p>
+                <textarea id="pasteInput" class="textarea" placeholder="例：\n遊戲產業新作上市帶動討論 | 監測媒體 | 2026-09-29 | https://example.com/news | 遊戲產業 | 公司宣布新作將於第四季上市，預計同步推出多平台版本。"></textarea>
+                <div class="file-row"><button id="importPaste" type="button" class="button soft">匯入貼上內容</button><label class="button ghost" for="fileInput">選擇 JSON／CSV<input id="fileInput" class="file-input sr-only" type="file" accept=".json,.csv,.txt,application/json,text/csv,text/plain" /></label><span id="fileName" class="results-note">尚未選擇檔案</span></div>
+              </div>
+              <div id="newsList" class="result-list"></div>
+            </section>
+          </div>
+        </section>
 
-          <section id="selection-panel" class="panel selection-panel" aria-labelledby="selection-title">
+        <section id="workflow-view-selection" class="workflow-view" data-workspace-view="selection" aria-label="篩選選題" hidden>
+          <section id="selection-panel" class="panel selection-panel single-step-panel" aria-labelledby="selection-title">
             <div class="panel-heading"><div class="heading-group"><span class="section-kicker">02 · CURATE</span><h2 id="selection-title">本週選題</h2><p>用順序呈現報告脈絡。</p></div><span id="selectionCount" class="count-badge">0</span></div>
             <div id="selectionList" class="selection-list"></div>
-            <div class="selection-footer"><p>已選新聞會依此順序寫入週報草稿。</p><button id="saveWeek" type="button" class="button soft full">儲存本週紀錄</button></div>
-            <div class="archive-summary"><strong>週報紀錄</strong><p id="archiveDescription">尚未建立本週快照</p><div id="archiveList" class="archive-list"></div><button id="newWeek" type="button" class="button ghost full">建立下一週工作區</button></div>
+            <div class="selection-footer"><p>已選新聞會依此順序寫入週報草稿。</p><button type="button" class="button soft full" data-view="draft">前往週報草稿</button></div>
           </section>
+        </section>
 
-          <section id="draft-panel" class="panel draft-panel" aria-labelledby="draft-title">
+        <section id="workflow-view-draft" class="workflow-view" data-workspace-view="draft" aria-label="週報草稿" hidden>
+          <section id="draft-panel" class="panel draft-panel single-step-panel" aria-labelledby="draft-title">
             <div class="panel-heading"><div class="heading-group"><span class="section-kicker">03 · DRAFT</span><h2 id="draft-title">週報草稿</h2><p>依既有 PR &amp; IR Status Report 版型組版。</p></div><span id="draftStatus" class="status-draft">自動組版</span></div>
             <div class="draft-form">
               <div class="draft-form-row"><div><label class="label" for="reportTitle">報告標題</label><input id="reportTitle" class="text-input" type="text" maxlength="90" /></div><div><label class="label" for="reportDate">Date</label><input id="reportDate" class="text-input" type="text" readonly /></div></div>
               <p class="report-template-note">格式依範例採用「產業訊息」與【類別】分段。每則內文請直接寫事實句；需要補充流程、限制或觀察時，再於下一段加入標籤。原始來源保留在收件匣，複製的週報文字不加入網址。</p>
             </div>
-            <div class="draft-actions"><button id="regenerateDraft" type="button" class="button soft">↻ 依選題重新產生</button><button id="copyDraft" type="button" class="button primary">複製週報文字</button></div>
+            <div class="draft-actions"><button id="regenerateDraft" type="button" class="button soft">↻ 依選題重新產生</button><button id="copyDraft" type="button" class="button primary">複製週報文字</button><button type="button" class="button ghost" data-view="confirmation">前往人工確認</button></div>
             <div class="report-preview-wrap"><span class="report-preview-label">週報版型預覽</span><div id="reportPreview" class="report-preview" aria-live="polite"></div></div>
             <label class="sr-only" for="draftOutput">可直接編輯的週報文字</label><textarea id="draftOutput" class="draft-output" aria-label="可直接編輯的週報文字"></textarea>
-            <div id="confirmation" class="confirmation"><div class="confirmation-heading"><strong>04 · 人工確認</strong><span id="confirmProgress">0 / 3 完成</span></div><div id="confirmationList" class="confirmation-list"></div><button id="markConfirmed" type="button" class="button primary full">標記本週已確認</button></div>
           </section>
-        </div>
+        </section>
+
+        <section id="workflow-view-confirmation" class="workflow-view" data-workspace-view="confirmation" aria-label="人工確認" hidden>
+          <section id="confirmation-panel" class="panel confirmation-panel single-step-panel" aria-labelledby="confirmation-title">
+            <div class="panel-heading"><div class="heading-group"><span class="section-kicker">04 · CONFIRM</span><h2 id="confirmation-title">人工確認</h2><p>送出前核對事實、來源、日期與排序。</p></div><span id="confirmProgress" class="status-draft">0 / 3 完成</span></div>
+            <div id="confirmation" class="confirmation"><div class="confirmation-heading"><strong>送出前檢查</strong><span>完成後即可儲存本週紀錄</span></div><div id="confirmationList" class="confirmation-list"></div><div class="confirmation-actions"><button id="markConfirmed" type="button" class="button primary">標記本週已確認</button><button id="saveWeek" type="button" class="button soft">儲存本週紀錄</button></div></div>
+            <div class="archive-summary"><strong>週報紀錄</strong><p id="archiveDescription">尚未建立本週快照</p><div id="archiveList" class="archive-list"></div><button id="newWeek" type="button" class="button ghost full">建立下一週工作區</button></div>
+          </section>
+        </section>
       </main>
     </div>
   </div>
@@ -370,6 +389,13 @@
       ];
       const reportGroupByKey = Object.fromEntries(reportGroups.map(group => [group.key, group]));
       const confirmationLabels = ["每則內文的事實、數字與文字已檢查", "原始來源與連結已確認", "報告日期、分類與排序已確認"];
+      const workflowViews = ["inbox", "selection", "draft", "confirmation"];
+      const workflowCopy = {
+        inbox: { kicker: "01 · 監測收件匣", title: "先挑出值得被管理層看見的訊號", description: "從智冠產業監測匯入新聞，先用關鍵字、主題與重要度縮小範圍。" },
+        selection: { kicker: "02 · 篩選選題", title: "把本週需要交代的新聞排成脈絡", description: "已選新聞會依這裡的順序寫進週報；可隨時調整優先順序。" },
+        draft: { kicker: "03 · 週報草稿", title: "把選題整理成可直接交付的週報", description: "在同一頁檢視版型、修改內文，確認後再複製文字。" },
+        confirmation: { kicker: "04 · 人工確認", title: "送出前完成最後核對", description: "確認事實、來源與排序，再儲存一份本週紀錄。" }
+      };
 
       const startOfWeek = (date = new Date()) => {
         const value = new Date(date);
@@ -442,6 +468,7 @@
       const defaultState = () => ({
         weekStart: isoDate(startOfWeek()),
         reportTitle: REPORT_TITLE,
+        activeView: "inbox",
         topic: "全部",
         priorityFilter: "全部",
         query: "",
@@ -487,6 +514,7 @@
           if (Array.isArray(savedArchives)) archives = savedArchives;
           state.news = state.news.map(normalizeNews);
           if (!state.reportTitle || state.reportTitle === "產業與媒體觀測週報") state.reportTitle = REPORT_TITLE;
+          if (!workflowViews.includes(state.activeView)) state.activeView = "inbox";
         } catch (error) { console.warn("Unable to load saved workbench state", error); }
         return restored;
       };
@@ -498,6 +526,33 @@
       };
       const cleanOrder = () => selectedNews().forEach((item, index) => { item.order = index + 1; });
       const commit = (message) => { cleanOrder(); persist(); if (message) toast(message); };
+
+      const activeWorkflowView = () => workflowViews.includes(state.activeView) ? state.activeView : "inbox";
+      const renderWorkflowView = () => {
+        const activeView = activeWorkflowView();
+        state.activeView = activeView;
+        document.querySelectorAll("[data-workspace-view]").forEach(view => {
+          const isActive = view.dataset.workspaceView === activeView;
+          view.hidden = !isActive;
+          view.classList.toggle("is-active", isActive);
+        });
+        document.querySelectorAll(".flow-step[data-view]").forEach(button => {
+          const isActive = button.dataset.view === activeView;
+          button.classList.toggle("is-active", isActive);
+          if (isActive) button.setAttribute("aria-current", "step"); else button.removeAttribute("aria-current");
+        });
+        const copy = workflowCopy[activeView];
+        get("decisionKicker").textContent = copy.kicker;
+        get("decision-title").textContent = copy.title;
+        get("decisionDescription").textContent = copy.description;
+      };
+      const showWorkflowView = (view) => {
+        if (!workflowViews.includes(view)) return;
+        state.activeView = view;
+        persist();
+        renderWorkflowView();
+        get(`workflow-view-${view}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
 
       const formatSyncTime = (value) => {
         const date = new Date(value);
@@ -584,7 +639,7 @@
         get("archiveDescription").textContent = archives.length ? `已儲存 ${archives.length} 份週報紀錄，點選可還原當時內容。` : "尚未建立本週快照";
         get("archiveList").innerHTML = archives.slice(0, 4).map((record, index) => `<button type="button" class="archive-record" data-load-archive="${index}"><span></span><span>${escapeHTML(record.weekLabel)} · ${record.selectedCount} 則選題</span></button>`).join("");
       };
-      const renderAll = (forceDraft = false) => { renderHeader(); renderFilters(); renderNews(); renderSelection(); renderDraft(forceDraft); renderConfirmation(); renderArchives(); };
+      const renderAll = (forceDraft = false) => { renderHeader(); renderFilters(); renderNews(); renderSelection(); renderDraft(forceDraft); renderConfirmation(); renderArchives(); renderWorkflowView(); };
 
       const setSelected = (id, selected) => {
         const item = state.news.find(news => news.id === id); if (!item) return;
@@ -719,12 +774,12 @@
 
       document.addEventListener("click", event => {
         const target = event.target.closest("button"); if (!target) return;
+        if (target.dataset.view) { showWorkflowView(target.dataset.view); return; }
         if (target.dataset.topic) { state.topic = target.dataset.topic; renderFilters(); renderNews(); return; }
         if (target.dataset.priorityFilter) { state.priorityFilter = target.dataset.priorityFilter; renderFilters(); renderNews(); return; }
         if (target.dataset.setPriority) { cyclePriority(target.dataset.setPriority); return; }
         if (target.dataset.move) { moveSelection(target.dataset.id, target.dataset.move); return; }
         if (target.dataset.loadArchive !== undefined) { const record = archives[Number(target.dataset.loadArchive)]; if (record?.state) { state = JSON.parse(JSON.stringify(record.state)); commit("已還原該週紀錄"); renderAll(true); } return; }
-        if (target.dataset.scrollTo) { get(target.dataset.scrollTo)?.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
       });
       document.addEventListener("change", event => {
         const input = event.target;
