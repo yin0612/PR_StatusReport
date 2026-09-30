@@ -446,7 +446,21 @@
           reportGroup: resolveReportGroupKey(item.reportGroup, topic)
         };
       };
-      const reportBody = (item) => String(item.summary || item.excerpt || cleanTitle(item.title) || "待補週報內文。").trim();
+      const isPlaceholderExcerpt = (value = "") => /^(google news rss 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。|由產業監測網篩選，請開啟原文後整理週報內文。|請開啟原文並撰寫週報內文。)$/i.test(String(value).trim());
+      const headlineFallback = (item) => {
+        const title = cleanTitle(item.title);
+        if (!title) return "待補週報內文。";
+        return item.source ? `【${String(item.source).trim()}】${title}` : title;
+      };
+      const reportBody = (item) => {
+        const summary = String(item.summary || "").trim();
+        if (summary) return summary;
+        const excerpt = String(item.excerpt || "").trim();
+        return excerpt && !isPlaceholderExcerpt(excerpt) ? excerpt : headlineFallback(item);
+      };
+      const inboxExcerpt = (item) => isPlaceholderExcerpt(item.excerpt)
+        ? "此來源僅提供標題；週報草稿會先帶入標題，必要時可再補寫摘要。"
+        : String(item.excerpt || "尚未提供新聞摘要。");
       const reportEntryText = (item, includeSource = false) => {
         const body = reportBody(item);
         const text = /^\d{1,2}\/\d{1,2}\([日一二三四五六]\)/.test(body) ? body : `${reportItemDate(item.date)} ${body}`;
@@ -596,9 +610,9 @@
               <div class="news-title-wrap"><div class="news-meta"><span class="source-name">${escapeHTML(item.source)}</span><span>·</span><time datetime="${escapeHTML(item.date)}">${formatDateShort(item.date)}</time><span>·</span><span>${escapeHTML(item.topic)}</span></div><h3 class="news-title"><a href="${escapeHTML(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.title)}</a></h3></div>
               <button type="button" class="priority-button" data-set-priority="${escapeHTML(item.id)}" data-priority="${escapeHTML(item.priority)}" title="切換重要度">${priorityLabel(item.priority)}</button>
             </div>
-            <p class="news-excerpt">${escapeHTML(item.excerpt || "尚未提供新聞摘要。")}</p>
+            <p class="news-excerpt">${escapeHTML(inboxExcerpt(item))}</p>
             <div class="news-bottom"><div class="tag-row"><span class="tag topic">${escapeHTML(item.topic)}</span>${(item.tags || []).slice(0, 3).map(tag => `<span class="tag">${escapeHTML(tag)}</span>`).join("")}</div><a class="link-button" href="${escapeHTML(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer">查看原文 ↗</a></div>
-            <div class="news-edit"><div class="report-placement"><div><label class="label" for="report-group-${escapeHTML(item.id)}">週報分類</label><select id="report-group-${escapeHTML(item.id)}" class="select-input" data-report-group="${escapeHTML(item.id)}">${reportGroups.map(option => `<option value="${option.key}" ${option.key === group.key ? "selected" : ""}>${escapeHTML(option.category)}</option>`).join("")}</select></div><p class="report-placement-help">決定此則新聞要寫入產業訊息的【類別】。</p></div><div><label class="label" for="summary-${escapeHTML(item.id)}">週報內文</label><textarea id="summary-${escapeHTML(item.id)}" class="textarea compact-textarea" data-summary="${escapeHTML(item.id)}" maxlength="400" placeholder="主體＋動作＋事實／數字＋必要背景">${escapeHTML(item.summary || "")}</textarea></div><div><label class="label" for="note-${escapeHTML(item.id)}">補充資訊／編輯註記</label><textarea id="note-${escapeHTML(item.id)}" class="textarea compact-textarea" data-note="${escapeHTML(item.id)}" maxlength="400" placeholder="例如：使用流程：…／限制：…／備註：…">${escapeHTML(item.note || "")}</textarea></div></div>
+            <div class="news-edit"><div class="report-placement"><div><label class="label" for="report-group-${escapeHTML(item.id)}">週報分類</label><select id="report-group-${escapeHTML(item.id)}" class="select-input" data-report-group="${escapeHTML(item.id)}">${reportGroups.map(option => `<option value="${option.key}" ${option.key === group.key ? "selected" : ""}>${escapeHTML(option.category)}</option>`).join("")}</select></div><p class="report-placement-help">決定此則新聞要寫入產業訊息的【類別】。</p></div><div><label class="label" for="summary-${escapeHTML(item.id)}">週報內文</label><textarea id="summary-${escapeHTML(item.id)}" class="textarea compact-textarea" data-summary="${escapeHTML(item.id)}" maxlength="400" placeholder="未填時會自動帶入新聞標題；也可補成主體＋動作＋事實／數字">${escapeHTML(item.summary || "")}</textarea></div><div><label class="label" for="note-${escapeHTML(item.id)}">補充資訊／編輯註記</label><textarea id="note-${escapeHTML(item.id)}" class="textarea compact-textarea" data-note="${escapeHTML(item.id)}" maxlength="400" placeholder="例如：使用流程：…／限制：…／備註：…">${escapeHTML(item.note || "")}</textarea></div></div>
           </article>`;
         }).join("") : `<div class="empty-state"><strong>沒有符合條件的新聞</strong>試著清除關鍵字或改選其他主題。</div>`;
       };
