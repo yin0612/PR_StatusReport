@@ -1,26 +1,18 @@
 {
   "schemaVersion": "1.1.0",
   "generatedAt": "2026-09-30T05:14:56.658948Z",
-  "watchlistVersion": "2026-09-30-pr-weekly-v1",
+  "watchlistVersion": "2026-09-30-industry-weekly-v2",
   "source": {
-    "label": "媒體監測網＋智冠產業監測",
-    "totalItems": 1607,
+    "label": "智冠產業監測",
+    "totalItems": 807,
     "matchedItems": 80,
     "sources": [
-      {
-        "id": "media-monitoring",
-        "label": "媒體監測網",
-        "url": "https://yin0612.github.io/MediaMonitoring/data/recent.json",
-        "totalItems": 800,
-        "matchedItems": 1,
-        "generatedAt": "2026-09-30T04:32:39.340200Z"
-      },
       {
         "id": "softworld-monitoring",
         "label": "智冠產業監測",
         "url": "https://raw.githubusercontent.com/yin0612/for_SoftWorld/main/data/fintech-aggregated.json",
         "totalItems": 807,
-        "matchedItems": 229,
+        "matchedItems": 218,
         "generatedAt": "2026-09-30T05:14:56.658948Z"
       }
     ]
@@ -240,27 +232,6 @@
       "matchedRule": "taiwan-payment-google-news"
     },
     {
-      "id": "softworld-monitoring-google-news-a8cf9dfd6a429d436d56",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-monitoring",
-      "title": "反英雄降臨！《暗黑破壞神® 永生不朽™》X《閃靈悍將》合作活動現已開跑踏上聖休亞瑞迎戰地獄魔王梅爾波吉亞解鎖《閃靈悍將》專屬造型與獎勵- MyCard娛樂中心",
-      "source": "MyCard 娛樂中心",
-      "date": "2026-09-30",
-      "publishedAt": "2026-09-30T02:40:04Z",
-      "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxPWFZlUDdlQmoxdlpDMkRHemZ2V0xEemhxVWxxcDZYUkZlU2lXQ0JYTFlSZHhCN1NPWUZ2d2VzS0dFa2FSa1c3c0d5WHUzcW5EY2ZaeFJlamlGaURRcjFJanlmUTE2bnRTbHNvQWdhU25GLXBoWEtoNFoyMS1wRkNrQkZHS1V5ZXpoSkVpWUdxbWNfTTE3U1JLem5paVF6U1pfUXRpQUpTZWlEMHRLTE9zRTNXd3ZWeDg2R01XVUVmMlpLc1NhT3JNeFBadmNwclF4QnMwS0l0d0VmTGFDQUw5NlR2R2o0NUVHUFB2Yk16ai1rNVZqRDdNakNUVXE3WmhfWHRjMG50Q2tLODRfNGVfVXp1VGE0VnBYeXhjVHJkV01hVGlWazVVcVpJNjBnWGRoMXc?oc=5",
-      "topic": "公司動態",
-      "reportGroup": "ir-game",
-      "priority": "高",
-      "tags": [
-        "智冠集團",
-        "IR",
-        "MyCard"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-a8cf9dfd6a429d436d56",
-      "matchedRule": "softworld-brand"
-    },
-    {
       "id": "softworld-monitoring-google-news-0abb499393e53cffec3f",
       "origin": "monitoring",
       "sourceOrigin": "softworld-monitoring",
@@ -301,50 +272,6 @@
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-8e7084ac45bb73310a52",
       "matchedRule": "taiwan-payment-google-news"
-    },
-    {
-      "id": "media-monitoring-a52881bd2f30f34957a4",
-      "origin": "monitoring",
-      "sourceOrigin": "media-monitoring",
-      "title": "鉅亨買幣速報 - USDC(USDC)24小時成交量超過29.47億美元，NFPrompt Token(NFP)24小時漲幅達65.8%",
-      "source": "anue",
-      "date": "2026-09-30",
-      "publishedAt": "2026-09-30T02:15:20Z",
-      "url": "https://news.cnyes.com/news/id/6618469",
-      "topic": "金融支付",
-      "reportGroup": "industry-stablecoin",
-      "priority": "高",
-      "tags": [
-        "穩定幣",
-        "鏈上結算",
-        "USDC"
-      ],
-      "excerpt": "指標幣種：比特幣(BTC)現報價格83,495.98美元，24小時漲跌幅+0.57%；以太幣(ETH)現報價格2,671.66美元，24小時漲跌幅+0.43%。亮點幣種：USDC(USDC)24小時成交量達29.47億美元；比特幣(BTC)24小時成交量達10.81億美元；以太幣",
-      "sourceId": "a52881bd2f30f34957a4",
-      "matchedRule": "stablecoin"
-    },
-    {
-      "id": "softworld-monitoring-google-news-87939e45672db6d3a10d",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-monitoring",
-      "title": "獲株式會社光榮特庫摩遊戲《信喵之野望》IP授權的新作手機遊戲《信喵之野望天下布喵》相關資訊現已公開與貓武將們一同展開，從島嶼開拓開始的全新戰國體驗- MyCard娛樂中心",
-      "source": "MyCard 娛樂中心",
-      "date": "2026-09-30",
-      "publishedAt": "2026-09-30T02:03:06Z",
-      "url": "https://news.google.com/rss/articles/CBMiygJBVV95cUxOUU9Ndlk3R1QzRUxhVktIdzdNRDZFQ1hEUTZTNU1wT3E2MEN3ZWNjVy12b1I4S0FISURoYTd0cVQ0VEotelRhZmtULVhvb2VheDI2TDVxQXh3NTk4M0pmRk5PeF9hTmprcWdsQXljdmlGcWlJMDd4OVhuR3I1Vm9oZVpoMUI1ZjhyRHdvOU0yMUh3UW9TbF93S1RSdm91cHA4Vnh5Z2wyYUlSN2pBWllMUHQ3cmJWdXAzaEcyQVpGLUlNTkpXc3lDYzdDWkFvekY4bVlGWGdFUFgzemY5T0hiZDhmRXNvM1pyQWtVbHpHVzFtR3p2UVN5VkdkTllLWVcwME1xNVNrSjFZZlRWQ3RaamxjNkpvelotRkR3aFBGTlkyWTJOeUFZWk1MRHZqWFRaSFRhVl80UFptOFdaenc2eU1XVDZSckZzUFE?oc=5",
-      "topic": "公司動態",
-      "reportGroup": "ir-game",
-      "priority": "高",
-      "tags": [
-        "智冠集團",
-        "IR",
-        "MyCard",
-        "遊戲",
-        "光榮"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-87939e45672db6d3a10d",
-      "matchedRule": "softworld-brand,competitor-global-game"
     },
     {
       "id": "softworld-monitoring-google-news-a5b4a50006aba935559e",
@@ -1749,6 +1676,70 @@
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-3c25132fc42efdce446b",
       "matchedRule": "taiwan-payment-google-news"
+    },
+    {
+      "id": "softworld-monitoring-google-news-b9276d2ec4ba09b7fb1e",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-monitoring",
+      "title": "全支付攜Trip.com訂行程最高折1300、悠遊付遊韓回饋",
+      "source": "TVBS新聞網",
+      "date": "2026-09-28",
+      "publishedAt": "2026-09-28T05:30:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1nYW5vcVYwdGpQVUpJRFI2aHdwUERxZEczaHktbGRWMmtPOHRieWNrczFodE1SYm5GekVfVDlOTGtlWDVrUU1KOHFFa3B4QQ?oc=5",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "高",
+      "tags": [
+        "金融支付",
+        "產業監測",
+        "全支付",
+        "悠遊付"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-b9276d2ec4ba09b7fb1e",
+      "matchedRule": "taiwan-payment-google-news"
+    },
+    {
+      "id": "softworld-monitoring-google-news-fa5b0162cb7a39e799e1",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-monitoring",
+      "title": "皮卡丘真的飛向宇宙了！攜手歐洲太空總署繞地球逾千圈，超萌「太空造型」登陸 Pokémon GO 快搶",
+      "source": "T客邦",
+      "date": "2026-09-28",
+      "publishedAt": "2026-09-28T04:30:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPRmhNM2c1ZnBJTzhTQjYwajBqZklnQU8zQlZNODMybFVnUndJcjRiaUpSa1drRXVXcExOdUtEaXlwSGZ6YXBYRTltWXBuSFlGcGJUWERVRHloQzRWSVNqRTI1NGJ1M0h6aEVWX0pFSnFJdWhYVlMycDFSLUdHUkRoR0dObjY1TGZO?oc=5",
+      "topic": "遊戲產業",
+      "reportGroup": "industry-new-games",
+      "priority": "中",
+      "tags": [
+        "市場新遊",
+        "重點遊戲",
+        "Pokémon GO"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-fa5b0162cb7a39e799e1",
+      "matchedRule": "mobile-top-grossing-games"
+    },
+    {
+      "id": "softworld-monitoring-google-news-b5b2bbf8dbd39e1cba6c",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-monitoring",
+      "title": "皮克敏10月「彩繪玻璃飾品」推出！萬聖節飾品再復刻 服裝共7款",
+      "source": "NOWnews今日新聞",
+      "date": "2026-09-28",
+      "publishedAt": "2026-09-28T03:39:21Z",
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9iUjZCa1R4aWtNTDhBWWI5dFJpYjdRSmRuSm94bzY1RDUyNVJ3UjU5LUFjR3BuYzF4NFktVWVZTVl1LTAyQVNyUW11NGLSAVJBVV95cUxOUzVsS0p0c09hazk5Z0NzZXdtUFp3SGc5UHJsandad3dLVkZPYjhlaUdZeTBOWVVfUmZramJrOXZ6MmJiYmFPMWU0VU5vbnd3UUNn?oc=5",
+      "topic": "遊戲產業",
+      "reportGroup": "industry-new-games",
+      "priority": "中",
+      "tags": [
+        "市場新遊",
+        "重點遊戲",
+        "皮克敏"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-b5b2bbf8dbd39e1cba6c",
+      "matchedRule": "mobile-top-grossing-games"
     }
   ]
 }

@@ -54,15 +54,10 @@ const reportPlacementForAggregated = (article) => {
   const rules = String(article.rule_ids ?? "").toLocaleLowerCase();
   const folders = String(article.folder_ids ?? "").toLocaleLowerCase();
   const terms = Array.isArray(article.matched_terms) ? article.matched_terms.map(toText) : [];
+  // 公司／IR 專用監測不列入此工作台，保留候選額度給產業新聞。
+  if (/softworld-/.test(rules) || folders.includes("folder_1")) return null;
   if (/stablecoin|vasp|chain/.test(rules) || folders.includes("folder_6")) {
     return { topic: "金融支付", reportGroup: "industry-stablecoin", priority: "高", tags: ["穩定幣", "鏈上結算"] };
-  }
-  if (/softworld-fintech-services/.test(rules)) {
-    return { topic: "公司動態", reportGroup: "ir-fintech", priority: "高", tags: ["智冠金融服務", "IR"] };
-  }
-  if (/softworld-/.test(rules) || folders.includes("folder_1")) {
-    if (rules === "softworld-brand" && terms.length === 1 && terms[0] === "台鋼") return null;
-    return { topic: "公司動態", reportGroup: "ir-game", priority: "高", tags: ["智冠集團", "IR"] };
   }
   if (/mobile-|top-grossing|game-watchlist/.test(rules)) {
     return { topic: "遊戲產業", reportGroup: "industry-new-games", priority: "中", tags: ["市場新遊", "重點遊戲"] };

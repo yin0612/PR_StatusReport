@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#252342" />
-  <meta name="description" content="將媒體監測新聞整理成可確認、可輸出的公關週報。" />
+  <meta name="description" content="將智冠產業監測新聞整理成可確認、可輸出的公關週報。" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23252342'/%3E%3Cpath d='M18 17h28v30H18z' fill='%23f9fbff'/%3E%3Cpath d='M24 25h16M24 32h16M24 39h10' stroke='%234a9ee9' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='45' cy='45' r='10' fill='%23a876c8'/%3E%3Cpath d='m40.5 45 3 3 6-7' fill='none' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
   <title>公關週報工作台</title>
   <style>
@@ -311,7 +311,7 @@
             <div class="panel-section"><label class="label" for="searchInput">關鍵字</label><div class="search-wrap"><input id="searchInput" class="text-input" type="search" placeholder="搜尋標題、媒體或標籤" autocomplete="off" /></div></div>
             <div class="panel-section"><span class="label">監測主題</span><div id="topicChips" class="chip-list" aria-label="監測主題"></div></div>
             <div class="panel-section"><span class="label">重要度</span><div id="priorityFilters" class="priority-filter" aria-label="重要度篩選"></div></div>
-            <div class="panel-section"><div class="mini-source-card"><strong>自動帶入監測資料</strong><p id="syncDescription">正在載入已部署的監測候選新聞。</p><button id="refreshMonitoring" class="button ghost" type="button">↻ 重新載入資料</button><a class="link-button" href="https://yin0612.github.io/MediaMonitoring/#/" target="_blank" rel="noopener noreferrer">開啟媒體監測網查核原文 ↗</a></div></div>
+            <div class="panel-section"><div class="mini-source-card"><strong>自動帶入智冠產業監測新聞</strong><p id="syncDescription">正在載入已部署的監測候選新聞。</p><button id="refreshMonitoring" class="button ghost" type="button">↻ 重新載入資料</button><a class="link-button" href="https://yin0612.github.io/for_SoftWorld/#/news" target="_blank" rel="noopener noreferrer">開啟智冠產業監測查核原文 ↗</a></div></div>
           </section>
 
           <section id="inbox-panel" class="panel inbox-panel" aria-labelledby="inbox-title">
@@ -336,7 +336,7 @@
             <div class="panel-heading"><div class="heading-group"><span class="section-kicker">03 · DRAFT</span><h2 id="draft-title">週報草稿</h2><p>依既有 PR &amp; IR Status Report 版型組版。</p></div><span id="draftStatus" class="status-draft">自動組版</span></div>
             <div class="draft-form">
               <div class="draft-form-row"><div><label class="label" for="reportTitle">報告標題</label><input id="reportTitle" class="text-input" type="text" maxlength="90" /></div><div><label class="label" for="reportDate">Date</label><input id="reportDate" class="text-input" type="text" readonly /></div></div>
-              <p class="report-template-note">格式依範例採用「IR訊息／產業訊息」雙列與【類別】分段。每則內文請直接寫事實句；需要補充流程、限制或觀察時，再於下一段加入標籤。原始來源保留在收件匣，複製的週報文字不加入網址。</p>
+              <p class="report-template-note">格式依範例採用「產業訊息」與【類別】分段。每則內文請直接寫事實句；需要補充流程、限制或觀察時，再於下一段加入標籤。原始來源保留在收件匣，複製的週報文字不加入網址。</p>
             </div>
             <div class="draft-actions"><button id="regenerateDraft" type="button" class="button soft">↻ 依選題重新產生</button><button id="copyDraft" type="button" class="button primary">複製週報文字</button></div>
             <div class="report-preview-wrap"><span class="report-preview-label">週報版型預覽</span><div id="reportPreview" class="report-preview" aria-live="polite"></div></div>
@@ -356,15 +356,12 @@
       const ARCHIVE_KEY = "pr-weekly-workbench-archives-v3";
       const LEGACY_STORAGE_KEY = "pr-weekly-workbench-v2";
       const LEGACY_ARCHIVE_KEY = "pr-weekly-workbench-archives-v2";
-      const exampleSource = "https://yin0612.github.io/MediaMonitoring/#/";
+      const exampleSource = "https://yin0612.github.io/for_SoftWorld/#/";
       const monitoringSnapshotUrl = "./data/monitoring-news.json";
       const REPORT_TITLE = "Soft-World PR & IR Department STATUS REPORT 工作進度報告";
-      const topics = ["全部", "公司動態", "金融支付", "遊戲產業", "競品與產業", "風險與議題"];
+      const topics = ["全部", "金融支付", "遊戲產業", "競品與產業"];
       const priorities = ["全部", "高", "中", "低"];
       const reportGroups = [
-        { key: "ir-game", section: "IR訊息", category: "遊戲產業" },
-        { key: "ir-fintech", section: "IR訊息", category: "金融科技產業" },
-        { key: "ir-other", section: "IR訊息", category: "其他" },
         { key: "industry-new-games", section: "產業訊息", category: "市場新遊動態" },
         { key: "industry-games", section: "產業訊息", category: "遊戲產業動態" },
         { key: "industry-fintech", section: "產業訊息", category: "金融科技產業動態" },
@@ -395,23 +392,34 @@
       const escapeHTML = (value = "") => String(value).replace(/[&<>'"]/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[char]));
       const safeUrl = (value) => { try { const url = new URL(value); return ["http:", "https:"].includes(url.protocol) ? url.href : exampleSource; } catch { return exampleSource; } };
       const cleanTitle = (value = "") => String(value).replace(/^【範例】\s*/, "").trim();
+      const normalizeTopic = (topic) => {
+        const mapped = ({ "公司動態": "競品與產業", "風險與議題": "競品與產業" })[topic] || topic;
+        return topics.includes(mapped) && mapped !== "全部" ? mapped : "競品與產業";
+      };
       const defaultReportGroupKey = (topic) => ({
-        "公司動態": "ir-game",
         "金融支付": "industry-fintech",
         "遊戲產業": "industry-new-games",
-        "競品與產業": "industry-games",
-        "風險與議題": "ir-other"
+        "競品與產業": "industry-games"
       }[topic] || "industry-other");
-      const reportGroupFor = (item) => reportGroupByKey[item.reportGroup] || reportGroupByKey[defaultReportGroupKey(item.topic)];
+      const legacyReportGroups = { "ir-game": "industry-games", "ir-fintech": "industry-fintech", "ir-other": "industry-other" };
+      const resolveReportGroupKey = (reportGroup, topic) => {
+        const key = legacyReportGroups[reportGroup] || reportGroup;
+        return reportGroupByKey[key] ? key : defaultReportGroupKey(normalizeTopic(topic));
+      };
+      const reportGroupFor = (item) => reportGroupByKey[resolveReportGroupKey(item.reportGroup, item.topic)];
       const itemOrigin = (item) => item.origin || (String(item.id || "").startsWith("monitoring-") ? "monitoring" : String(item.id || "").startsWith("sample-") ? "sample" : "manual");
-      const normalizeNews = (item) => ({
-        ...item,
-        origin: itemOrigin(item),
-        tags: Array.isArray(item.tags) ? item.tags.map(String).slice(0, 5) : [],
-        selected: Boolean(item.selected),
-        order: Number.isFinite(Number(item.order)) ? Number(item.order) : 99,
-        reportGroup: reportGroupByKey[item.reportGroup] ? item.reportGroup : defaultReportGroupKey(item.topic)
-      });
+      const normalizeNews = (item) => {
+        const topic = normalizeTopic(item.topic);
+        return {
+          ...item,
+          topic,
+          origin: itemOrigin(item),
+          tags: Array.isArray(item.tags) ? item.tags.map(String).slice(0, 5) : [],
+          selected: Boolean(item.selected),
+          order: Number.isFinite(Number(item.order)) ? Number(item.order) : 99,
+          reportGroup: resolveReportGroupKey(item.reportGroup, topic)
+        };
+      };
       const reportBody = (item) => String(item.summary || item.excerpt || cleanTitle(item.title) || "待補週報內文。").trim();
       const reportEntryText = (item, includeSource = false) => {
         const body = reportBody(item);
@@ -423,11 +431,11 @@
       };
 
       const seedNews = [
-        { id: "sample-1", title: "【範例】遊戲服務升級帶動會員經營討論", source: "監測示範", date: "2026-09-29", url: `${exampleSource}search?q=%E9%81%8A%E6%88%B2`, topic: "公司動態", priority: "高", tags: ["會員經營", "服務"], excerpt: "可作為本週品牌動態的示範選題；匯入真實監測新聞後，系統會保留原始來源。", summary: "遊戲服務與會員經營議題出現討論，建議關注使用者回饋與後續溝通節點。", note: "可搭配本週公司消息，確認是否需準備對外一致說法。", selected: true, order: 1 },
+        { id: "sample-1", title: "【範例】遊戲服務升級帶動會員經營討論", source: "監測示範", date: "2026-09-29", url: `${exampleSource}search?q=%E9%81%8A%E6%88%B2`, topic: "遊戲產業", priority: "高", tags: ["會員經營", "服務"], excerpt: "可作為本週產業動態的示範選題；匯入真實監測新聞後，系統會保留原始來源。", summary: "遊戲服務與會員經營議題出現討論，建議關注使用者回饋與後續溝通節點。", note: "可搭配本週市場動態，確認是否需補充溝通觀察。", selected: true, order: 1 },
         { id: "sample-2", title: "【範例】支付體驗與商家服務成為產業焦點", source: "監測示範", date: "2026-09-29", url: `${exampleSource}search?q=%E6%94%AF%E4%BB%98`, topic: "金融支付", priority: "高", tags: ["支付", "商家"], excerpt: "這是資料格式示範，不代表即時新聞。可從監測網將實際報導帶入此處。", summary: "支付服務與商家體驗為產業可觀察面向，建議整理競品動向及客戶影響。", note: "確認是否與既有產品訊息或合作夥伴溝通相關。", selected: true, order: 2 },
         { id: "sample-3", title: "【範例】新作上市檔期引發社群話題", source: "監測示範", date: "2026-09-28", url: `${exampleSource}search?q=%E6%96%B0%E4%BD%9C`, topic: "遊戲產業", priority: "中", tags: ["新作", "社群"], excerpt: "示範新聞可用來試跑選題、摘要與週報組版流程。", summary: "新作上市檔期可能帶動社群討論，後續應觀察討論量與市場反應。", note: "如與自有產品檔期接近，可補充差異化溝通觀察。", selected: true, order: 3 },
         { id: "sample-4", title: "【範例】同業整合服務的消息值得追蹤", source: "監測示範", date: "2026-09-27", url: `${exampleSource}search?q=%E7%AB%B6%E6%A5%AD`, topic: "競品與產業", priority: "中", tags: ["競品", "策略"], excerpt: "適合檢視是否需要在週報內補充市場脈絡或對照資料。", summary: "同業服務整合的動態，可作為產業策略與競品觀測參考。", note: "待確認是否影響既有合作、客群或市場定位。", selected: false, order: 99 },
-        { id: "sample-5", title: "【範例】用戶服務議題出現零星負面討論", source: "監測示範", date: "2026-09-27", url: `${exampleSource}search?q=%E7%94%A8%E6%88%B6`, topic: "風險與議題", priority: "高", tags: ["風險", "用戶服務"], excerpt: "適合作為風險訊號的記錄範例；週報可保留後續觀察與處理狀態。", summary: "偵測到與用戶服務相關的零星討論，建議確認內容真實性與客服端回饋。", note: "若話題持續累積，建議列入日常監測與回應準備。", selected: false, order: 99 },
+        { id: "sample-5", title: "【範例】用戶服務議題出現零星負面討論", source: "監測示範", date: "2026-09-27", url: `${exampleSource}search?q=%E7%94%A8%E6%88%B6`, topic: "競品與產業", priority: "高", tags: ["風險", "用戶服務"], excerpt: "適合作為產業風險訊號的記錄範例；週報可保留後續觀察與處理狀態。", summary: "偵測到與用戶服務相關的零星討論，建議確認內容真實性與客服端回饋。", note: "若話題持續累積，建議列入日常監測與回應準備。", selected: false, order: 99 },
         { id: "sample-6", title: "【範例】產業活動與人才議題帶來曝光機會", source: "監測示範", date: "2026-09-26", url: `${exampleSource}search?q=%E7%94%A2%E6%A5%AD`, topic: "競品與產業", priority: "低", tags: ["產業活動", "人才"], excerpt: "可作為低優先的背景材料，依本週溝通主軸決定是否納入。", summary: "產業活動與人才議題可延伸為品牌曝光與雇主溝通素材。", note: "視本週對外溝通安排決定是否保留。", selected: false, order: 99 }
       ];
 
@@ -458,13 +466,13 @@
         return matchesQuery && matchesTopic && matchesPriority;
       }).sort((a, b) => `${b.date}-${b.id}`.localeCompare(`${a.date}-${a.id}`));
 
-      const draftSection = (section) => reportGroups.filter(group => group.section === section).map(group => {
+      const draftSection = () => reportGroups.map(group => {
         const entries = selectedNews().filter(item => reportGroupFor(item).key === group.key);
         return [`【${group.category}】`, ...entries.map(item => reportEntryText(item))].join("\n");
       }).join("\n\n");
       const generateDraft = () => {
         const heading = state.reportTitle.trim() || REPORT_TITLE;
-        return `${heading}\nDate: ${reportDateLabel(state.weekStart)}\n\n日期\t工作項目&討論事項\nIR訊息\t${draftSection("IR訊息")}\n\n產業訊息\t${draftSection("產業訊息")}`;
+        return `${heading}\nDate: ${reportDateLabel(state.weekStart)}\n\n日期\t工作項目&討論事項\n產業訊息\t${draftSection()}`;
       };
 
       const persist = () => {
@@ -503,8 +511,8 @@
         get("syncDescription").textContent = isLoading
           ? "正在載入已部署的監測候選新聞。"
           : isReady
-            ? `來源資料更新於 ${formatSyncTime(monitoringState.generatedAt)}，由 GitHub 每小時同步並隨網站部署更新。`
-            : "目前保留既有收件匣資料；可稍後重新載入，或直接從監測網貼入新聞。";
+            ? `主要參考智冠產業監測；來源資料更新於 ${formatSyncTime(monitoringState.generatedAt)}，由 GitHub 每小時同步並隨網站部署更新。`
+            : "目前保留既有收件匣資料；可稍後重新載入，或直接從智冠產業監測貼入新聞。";
         get("refreshMonitoring").disabled = isLoading;
       };
 
@@ -535,7 +543,7 @@
             </div>
             <p class="news-excerpt">${escapeHTML(item.excerpt || "尚未提供新聞摘要。")}</p>
             <div class="news-bottom"><div class="tag-row"><span class="tag topic">${escapeHTML(item.topic)}</span>${(item.tags || []).slice(0, 3).map(tag => `<span class="tag">${escapeHTML(tag)}</span>`).join("")}</div><a class="link-button" href="${escapeHTML(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer">查看原文 ↗</a></div>
-            <div class="news-edit"><div class="report-placement"><div><label class="label" for="report-group-${escapeHTML(item.id)}">週報分類</label><select id="report-group-${escapeHTML(item.id)}" class="select-input" data-report-group="${escapeHTML(item.id)}">${reportGroups.map(option => `<option value="${option.key}" ${option.key === group.key ? "selected" : ""}>${escapeHTML(option.section)}｜${escapeHTML(option.category)}</option>`).join("")}</select></div><p class="report-placement-help">決定此則新聞要寫入 IR訊息或產業訊息，以及對應的【類別】。</p></div><div><label class="label" for="summary-${escapeHTML(item.id)}">週報內文</label><textarea id="summary-${escapeHTML(item.id)}" class="textarea compact-textarea" data-summary="${escapeHTML(item.id)}" maxlength="400" placeholder="主體＋動作＋事實／數字＋必要背景">${escapeHTML(item.summary || "")}</textarea></div><div><label class="label" for="note-${escapeHTML(item.id)}">補充資訊／編輯註記</label><textarea id="note-${escapeHTML(item.id)}" class="textarea compact-textarea" data-note="${escapeHTML(item.id)}" maxlength="400" placeholder="例如：使用流程：…／限制：…／備註：…">${escapeHTML(item.note || "")}</textarea></div></div>
+            <div class="news-edit"><div class="report-placement"><div><label class="label" for="report-group-${escapeHTML(item.id)}">週報分類</label><select id="report-group-${escapeHTML(item.id)}" class="select-input" data-report-group="${escapeHTML(item.id)}">${reportGroups.map(option => `<option value="${option.key}" ${option.key === group.key ? "selected" : ""}>${escapeHTML(option.category)}</option>`).join("")}</select></div><p class="report-placement-help">決定此則新聞要寫入產業訊息的【類別】。</p></div><div><label class="label" for="summary-${escapeHTML(item.id)}">週報內文</label><textarea id="summary-${escapeHTML(item.id)}" class="textarea compact-textarea" data-summary="${escapeHTML(item.id)}" maxlength="400" placeholder="主體＋動作＋事實／數字＋必要背景">${escapeHTML(item.summary || "")}</textarea></div><div><label class="label" for="note-${escapeHTML(item.id)}">補充資訊／編輯註記</label><textarea id="note-${escapeHTML(item.id)}" class="textarea compact-textarea" data-note="${escapeHTML(item.id)}" maxlength="400" placeholder="例如：使用流程：…／限制：…／備註：…">${escapeHTML(item.note || "")}</textarea></div></div>
           </article>`;
         }).join("") : `<div class="empty-state"><strong>沒有符合條件的新聞</strong>試著清除關鍵字或改選其他主題。</div>`;
       };
@@ -546,7 +554,7 @@
           <div class="selection-item"><span class="selection-index">${index + 1}</span><div class="selection-body"><span class="selection-title" title="${escapeHTML(item.title)}">${escapeHTML(item.title)}</span><span class="selection-meta">${escapeHTML(item.source)} · ${escapeHTML(item.topic)} · ${priorityLabel(item.priority)}</span></div><div class="order-actions"><button class="order-button" type="button" data-move="up" data-id="${escapeHTML(item.id)}" ${index === 0 ? "disabled" : ""} aria-label="上移">↑</button><button class="order-button" type="button" data-move="down" data-id="${escapeHTML(item.id)}" ${index === chosen.length - 1 ? "disabled" : ""} aria-label="下移">↓</button></div></div>`).join("") : `<div class="selection-empty">尚未選題。從收件匣勾選新聞後，會在這裡建立週報順序。</div>`;
       };
       const lineBreaks = (value = "") => escapeHTML(value).replace(/\r?\n/g, "<br>");
-      const previewSection = (section) => reportGroups.filter(group => group.section === section).map(group => {
+      const previewSection = () => reportGroups.map(group => {
         const entries = selectedNews().filter(item => reportGroupFor(item).key === group.key);
         const entryMarkup = entries.length ? entries.map(item => {
           const body = reportBody(item);
@@ -556,7 +564,7 @@
         return `<section><p class="report-category">【${escapeHTML(group.category)}】</p>${entryMarkup}</section>`;
       }).join("");
       const renderReportPreview = () => {
-        get("reportPreview").innerHTML = `<p class="report-preview-title">${escapeHTML(state.reportTitle.trim() || REPORT_TITLE)}</p><p class="report-preview-date"><strong>Date:</strong> ${escapeHTML(reportDateLabel(state.weekStart))}</p><table class="report-table"><thead><tr><th>日期</th><th>工作項目&amp;討論事項</th></tr></thead><tbody><tr><th scope="row">IR訊息</th><td>${previewSection("IR訊息")}</td></tr><tr><th scope="row">產業訊息</th><td>${previewSection("產業訊息")}</td></tr></tbody></table>`;
+        get("reportPreview").innerHTML = `<p class="report-preview-title">${escapeHTML(state.reportTitle.trim() || REPORT_TITLE)}</p><p class="report-preview-date"><strong>Date:</strong> ${escapeHTML(reportDateLabel(state.weekStart))}</p><table class="report-table"><thead><tr><th>日期</th><th>工作項目&amp;討論事項</th></tr></thead><tbody><tr><th scope="row">產業訊息</th><td>${previewSection()}</td></tr></tbody></table>`;
       };
       const renderDraft = (force = false) => {
         get("reportTitle").value = state.reportTitle;
@@ -598,7 +606,7 @@
       };
       const newId = () => `import-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
       const asNews = (item, index) => {
-        const topic = topics.includes(item.topic) && item.topic !== "全部" ? item.topic : "競品與產業";
+        const topic = normalizeTopic(item.topic);
         return {
           id: String(item.id || newId()),
           origin: "manual",
@@ -607,7 +615,7 @@
           date: /^\d{4}-\d{2}-\d{2}$/.test(String(item.date || "")) ? String(item.date) : isoDate(new Date()),
           url: safeUrl(String(item.url || item.link || exampleSource)),
           topic,
-          reportGroup: reportGroupByKey[item.reportGroup] ? item.reportGroup : defaultReportGroupKey(topic),
+          reportGroup: resolveReportGroupKey(item.reportGroup, topic),
           priority: ["高", "中", "低"].includes(item.priority) ? item.priority : "中",
           tags: Array.isArray(item.tags) ? item.tags.slice(0, 5).map(String) : ["匯入新聞"],
           excerpt: String(item.excerpt || item.description || "匯入後請補充週報內文與補充資訊。"),
@@ -621,16 +629,16 @@
         state.news = [...valid, ...state.news]; state.draftEdited = false; commit(`已匯入 ${valid.length} 則新聞`); renderAll(true);
       };
       const asMonitoringNews = (item, index) => {
-        const topic = topics.includes(item.topic) && item.topic !== "全部" ? item.topic : "競品與產業";
+        const topic = normalizeTopic(item.topic);
         return normalizeNews({
           id: String(item.id || `monitoring-${index}`),
           origin: "monitoring",
           title: String(item.title || `未命名監測新聞 ${index + 1}`).trim(),
-          source: String(item.source || "媒體監測網").trim(),
+          source: String(item.source || "智冠產業監測").trim(),
           date: /^\d{4}-\d{2}-\d{2}$/.test(String(item.date || "")) ? String(item.date) : isoDate(new Date()),
           url: safeUrl(String(item.url || exampleSource)),
           topic,
-          reportGroup: reportGroupByKey[item.reportGroup] ? item.reportGroup : defaultReportGroupKey(topic),
+          reportGroup: resolveReportGroupKey(item.reportGroup, topic),
           priority: ["高", "中", "低"].includes(item.priority) ? item.priority : "中",
           tags: Array.isArray(item.tags) ? item.tags : ["自動監測"],
           excerpt: String(item.excerpt || "請開啟原文並撰寫週報內文。"),
@@ -651,7 +659,7 @@
             selected: existing.selected,
             order: existing.order,
             priority: ["高", "中", "低"].includes(existing.priority) ? existing.priority : item.priority,
-            reportGroup: reportGroupByKey[existing.reportGroup] ? existing.reportGroup : item.reportGroup,
+            reportGroup: resolveReportGroupKey(existing.reportGroup, item.topic),
             summary: String(existing.summary || ""),
             note: String(existing.note || "")
           });
