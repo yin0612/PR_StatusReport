@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "sync:monitoring": "node scripts/sync-media-feed.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"

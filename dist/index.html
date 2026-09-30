@@ -114,6 +114,7 @@
 
     .inbox-panel { overflow: hidden; }
     .inbox-toolbar { display: flex; gap: 9px; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 12px 20px; background: #fbfcff; border-bottom: 1px solid #eef0f5; }
+    .inbox-toolbar-actions { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
     .results-note { color: #6d7388; font-size: .76rem; }
     .result-list { display: grid; }
     .news-card { position: relative; display: grid; gap: 11px; padding: 17px 20px; border-bottom: 1px solid #eef0f5; transition: background .18s; }
@@ -289,13 +290,13 @@
         <a class="rail-link" href="https://yin0612.github.io/MediaMonitoring/#/" target="_blank" rel="noopener noreferrer"><span>◌</span>開啟媒體監測網</a>
         <a class="rail-link" href="https://yin0612.github.io/for_SoftWorld/#hero" target="_blank" rel="noopener noreferrer"><span>◈</span>產業監測參考</a>
       </nav>
-      <div class="rail-foot">本機草稿 · 瀏覽器儲存</div>
+      <div class="rail-foot">自動監測資料 · 本機草稿</div>
     </aside>
 
     <div class="content">
       <header class="topbar">
         <div class="topbar-title"><span class="eyebrow">PUBLIC RELATIONS DESK</span><h1>本週產業與媒體觀測</h1></div>
-        <div class="topbar-actions"><span class="source-pill"><span class="source-dot"></span>監測來源就緒</span><span id="weekPill" class="week-pill">載入週次中</span></div>
+        <div class="topbar-actions"><span class="source-pill"><span class="source-dot"></span><span id="sourceStatusText">自動監測資料載入中</span></span><span id="weekPill" class="week-pill">載入週次中</span></div>
       </header>
 
       <main id="main-content">
@@ -310,12 +311,12 @@
             <div class="panel-section"><label class="label" for="searchInput">關鍵字</label><div class="search-wrap"><input id="searchInput" class="text-input" type="search" placeholder="搜尋標題、媒體或標籤" autocomplete="off" /></div></div>
             <div class="panel-section"><span class="label">監測主題</span><div id="topicChips" class="chip-list" aria-label="監測主題"></div></div>
             <div class="panel-section"><span class="label">重要度</span><div id="priorityFilters" class="priority-filter" aria-label="重要度篩選"></div></div>
-            <div class="panel-section"><div class="mini-source-card"><strong>從媒體監測網帶入</strong><p>先在來源端找到新聞，再貼入這裡；每則原始連結與來源都會保留在收件匣，供週報核對。</p><a class="link-button" href="https://yin0612.github.io/MediaMonitoring/#/" target="_blank" rel="noopener noreferrer">前往媒體監測網 ↗</a></div></div>
+            <div class="panel-section"><div class="mini-source-card"><strong>自動帶入監測資料</strong><p id="syncDescription">正在載入已部署的監測候選新聞。</p><button id="refreshMonitoring" class="button ghost" type="button">↻ 重新載入資料</button><a class="link-button" href="https://yin0612.github.io/MediaMonitoring/#/" target="_blank" rel="noopener noreferrer">開啟媒體監測網查核原文 ↗</a></div></div>
           </section>
 
           <section id="inbox-panel" class="panel inbox-panel" aria-labelledby="inbox-title">
-            <div class="panel-heading"><div class="heading-group"><span class="section-kicker">01 · INBOX</span><h2 id="inbox-title">新聞收件匣</h2><p>示範資料可直接操作；匯入後會取代每週的手動複製。</p></div><span id="inboxCount" class="count-badge">0</span></div>
-            <div class="inbox-toolbar"><span id="resultNote" class="results-note">載入中</span><button id="toggleImport" class="button ghost" type="button">＋ 貼入新聞</button></div>
+            <div class="panel-heading"><div class="heading-group"><span class="section-kicker">01 · INBOX</span><h2 id="inbox-title">新聞收件匣</h2><p>每小時自動同步候選新聞；仍可貼入臨時素材並保留人工選題。</p></div><span id="inboxCount" class="count-badge">0</span></div>
+            <div class="inbox-toolbar"><span id="resultNote" class="results-note">載入中</span><div class="inbox-toolbar-actions"><button id="toggleImport" class="button ghost" type="button">＋ 貼入新聞</button></div></div>
             <div id="importPanel" class="import-panel" aria-live="polite">
               <p class="import-help">每行格式：<strong>標題 | 媒體 | 日期 | 原文連結 | 主題 | 週報內文</strong>。也支援欄位相同的 CSV 與 JSON 陣列。</p>
               <textarea id="pasteInput" class="textarea" placeholder="例：\n遊戲產業新作上市帶動討論 | 監測媒體 | 2026-09-29 | https://example.com/news | 遊戲產業 | 公司宣布新作將於第四季上市，預計同步推出多平台版本。"></textarea>
@@ -356,6 +357,7 @@
       const LEGACY_STORAGE_KEY = "pr-weekly-workbench-v2";
       const LEGACY_ARCHIVE_KEY = "pr-weekly-workbench-archives-v2";
       const exampleSource = "https://yin0612.github.io/MediaMonitoring/#/";
+      const monitoringSnapshotUrl = "./data/monitoring-news.json";
       const REPORT_TITLE = "Soft-World PR & IR Department STATUS REPORT 工作進度報告";
       const topics = ["全部", "公司動態", "金融支付", "遊戲產業", "競品與產業", "風險與議題"];
       const priorities = ["全部", "高", "中", "低"];
@@ -401,7 +403,15 @@
         "風險與議題": "ir-other"
       }[topic] || "industry-other");
       const reportGroupFor = (item) => reportGroupByKey[item.reportGroup] || reportGroupByKey[defaultReportGroupKey(item.topic)];
-      const normalizeNews = (item) => ({ ...item, reportGroup: reportGroupByKey[item.reportGroup] ? item.reportGroup : defaultReportGroupKey(item.topic) });
+      const itemOrigin = (item) => item.origin || (String(item.id || "").startsWith("monitoring-") ? "monitoring" : String(item.id || "").startsWith("sample-") ? "sample" : "manual");
+      const normalizeNews = (item) => ({
+        ...item,
+        origin: itemOrigin(item),
+        tags: Array.isArray(item.tags) ? item.tags.map(String).slice(0, 5) : [],
+        selected: Boolean(item.selected),
+        order: Number.isFinite(Number(item.order)) ? Number(item.order) : 99,
+        reportGroup: reportGroupByKey[item.reportGroup] ? item.reportGroup : defaultReportGroupKey(item.topic)
+      });
       const reportBody = (item) => String(item.summary || item.excerpt || cleanTitle(item.title) || "待補週報內文。").trim();
       const reportEntryText = (item, includeSource = false) => {
         const body = reportBody(item);
@@ -435,6 +445,7 @@
 
       let state = defaultState();
       let archives = [];
+      let monitoringState = { phase: "loading", generatedAt: null, count: 0, sourceCount: 0 };
       const get = (id) => document.getElementById(id);
       let toastTimer;
 
@@ -460,14 +471,16 @@
         try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); localStorage.setItem(ARCHIVE_KEY, JSON.stringify(archives)); } catch (error) { console.warn("Unable to save workbench state", error); }
       };
       const hydrate = () => {
+        let restored = false;
         try {
           const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY));
           const savedArchives = JSON.parse(localStorage.getItem(ARCHIVE_KEY) || localStorage.getItem(LEGACY_ARCHIVE_KEY));
-          if (saved && Array.isArray(saved.news)) state = { ...defaultState(), ...saved, confirmations: Array.isArray(saved.confirmations) ? saved.confirmations : [false, false, false] };
+          if (saved && Array.isArray(saved.news)) { state = { ...defaultState(), ...saved, confirmations: Array.isArray(saved.confirmations) ? saved.confirmations : [false, false, false] }; restored = true; }
           if (Array.isArray(savedArchives)) archives = savedArchives;
           state.news = state.news.map(normalizeNews);
           if (!state.reportTitle || state.reportTitle === "產業與媒體觀測週報") state.reportTitle = REPORT_TITLE;
         } catch (error) { console.warn("Unable to load saved workbench state", error); }
+        return restored;
       };
       const toast = (message) => {
         get("toastText").textContent = message;
@@ -478,10 +491,28 @@
       const cleanOrder = () => selectedNews().forEach((item, index) => { item.order = index + 1; });
       const commit = (message) => { cleanOrder(); persist(); if (message) toast(message); };
 
+      const formatSyncTime = (value) => {
+        const date = new Date(value);
+        return Number.isNaN(date.getTime()) ? "來源時間未提供" : new Intl.DateTimeFormat("zh-TW", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false }).format(date);
+      };
+      const renderMonitoringState = () => {
+        const isLoading = monitoringState.phase === "loading";
+        const isReady = monitoringState.phase === "ready";
+        const status = isLoading ? "自動監測資料載入中" : isReady ? `已同步 ${monitoringState.count} 則候選新聞` : "監測資料暫時無法載入";
+        get("sourceStatusText").textContent = status;
+        get("syncDescription").textContent = isLoading
+          ? "正在載入已部署的監測候選新聞。"
+          : isReady
+            ? `來源資料更新於 ${formatSyncTime(monitoringState.generatedAt)}，由 GitHub 每小時同步並隨網站部署更新。`
+            : "目前保留既有收件匣資料；可稍後重新載入，或直接從監測網貼入新聞。";
+        get("refreshMonitoring").disabled = isLoading;
+      };
+
       const renderHeader = () => {
         get("weekPill").textContent = weekLabel(state.weekStart);
         get("reportDate").value = reportDateLabel(state.weekStart);
         get("decisionStatus").textContent = `${state.news.length} 則新聞 · ${selectedNews().length} 則已選題`;
+        renderMonitoringState();
       };
       const renderFilters = () => {
         get("searchInput").value = state.query;
@@ -570,6 +601,7 @@
         const topic = topics.includes(item.topic) && item.topic !== "全部" ? item.topic : "競品與產業";
         return {
           id: String(item.id || newId()),
+          origin: "manual",
           title: String(item.title || item.headline || `未命名新聞 ${index + 1}`).trim(),
           source: String(item.source || item.media || "未註明媒體").trim(),
           date: /^\d{4}-\d{2}-\d{2}$/.test(String(item.date || "")) ? String(item.date) : isoDate(new Date()),
@@ -587,6 +619,78 @@
         const valid = records.map(asNews).filter(item => item.title);
         if (!valid.length) { toast("沒有讀到可匯入的新聞，請檢查欄位格式。"); return; }
         state.news = [...valid, ...state.news]; state.draftEdited = false; commit(`已匯入 ${valid.length} 則新聞`); renderAll(true);
+      };
+      const asMonitoringNews = (item, index) => {
+        const topic = topics.includes(item.topic) && item.topic !== "全部" ? item.topic : "競品與產業";
+        return normalizeNews({
+          id: String(item.id || `monitoring-${index}`),
+          origin: "monitoring",
+          title: String(item.title || `未命名監測新聞 ${index + 1}`).trim(),
+          source: String(item.source || "媒體監測網").trim(),
+          date: /^\d{4}-\d{2}-\d{2}$/.test(String(item.date || "")) ? String(item.date) : isoDate(new Date()),
+          url: safeUrl(String(item.url || exampleSource)),
+          topic,
+          reportGroup: reportGroupByKey[item.reportGroup] ? item.reportGroup : defaultReportGroupKey(topic),
+          priority: ["高", "中", "低"].includes(item.priority) ? item.priority : "中",
+          tags: Array.isArray(item.tags) ? item.tags : ["自動監測"],
+          excerpt: String(item.excerpt || "請開啟原文並撰寫週報內文。"),
+          summary: "",
+          note: "",
+          selected: false,
+          order: 99
+        });
+      };
+      const mergeMonitoringNews = (records) => {
+        const incoming = records.map(asMonitoringNews).filter(item => item.title);
+        const existingById = new Map(state.news.map(item => [item.id, item]));
+        const mergedIncoming = incoming.map(item => {
+          const existing = existingById.get(item.id);
+          if (!existing) return item;
+          return normalizeNews({
+            ...item,
+            selected: existing.selected,
+            order: existing.order,
+            priority: ["高", "中", "低"].includes(existing.priority) ? existing.priority : item.priority,
+            reportGroup: reportGroupByKey[existing.reportGroup] ? existing.reportGroup : item.reportGroup,
+            summary: String(existing.summary || ""),
+            note: String(existing.note || "")
+          });
+        });
+        const incomingIds = new Set(mergedIncoming.map(item => item.id));
+        const retained = state.news.filter(item => {
+          if (incomingIds.has(item.id)) return false;
+          if (item.origin === "sample") return false;
+          if (item.origin !== "monitoring") return true;
+          return item.selected || Boolean(String(item.summary || "").trim()) || Boolean(String(item.note || "").trim());
+        });
+        state.news = [...mergedIncoming, ...retained];
+        return incoming.length;
+      };
+      const loadMonitoringSnapshot = async (announce = false) => {
+        monitoringState = { ...monitoringState, phase: "loading" };
+        renderMonitoringState();
+        try {
+          const response = await fetch(`${monitoringSnapshotUrl}?v=${Date.now()}`, { cache: "no-store" });
+          if (!response.ok) throw new Error(`snapshot ${response.status}`);
+          const snapshot = await response.json();
+          if (!Array.isArray(snapshot.items)) throw new Error("invalid snapshot");
+          const count = mergeMonitoringNews(snapshot.items);
+          monitoringState = {
+            phase: "ready",
+            generatedAt: snapshot.generatedAt,
+            count,
+            sourceCount: Number(snapshot?.source?.totalItems) || 0
+          };
+          const refreshDraft = !state.draftEdited;
+          commit();
+          renderAll(refreshDraft);
+          if (announce) toast(`已載入 ${count} 則最新監測候選新聞。`);
+        } catch (error) {
+          console.warn("Unable to load monitoring snapshot", error);
+          monitoringState = { ...monitoringState, phase: "error" };
+          renderMonitoringState();
+          if (announce) toast("暫時無法取得最新資料，已保留目前收件匣。 ");
+        }
       };
       const parsePasted = (text) => text.split(/\r?\n/).map(line => line.trim()).filter(Boolean).map(line => {
         const cells = line.split("|").map(value => value.trim());
@@ -629,6 +733,7 @@
         if (input.id === "draftOutput") { state.draft = input.value; state.draftEdited = true; commit(); get("draftStatus").textContent = "已手動調整"; get("draftStatus").style.color = "#865c9d"; get("draftStatus").style.background = "#f4edfb"; }
       });
       get("toggleImport").addEventListener("click", () => { get("importPanel").classList.toggle("is-open"); if (get("importPanel").classList.contains("is-open")) get("pasteInput").focus(); });
+      get("refreshMonitoring").addEventListener("click", () => loadMonitoringSnapshot(true));
       get("importPaste").addEventListener("click", () => { const value = get("pasteInput").value.trim(); if (!value) { toast("請先貼入新聞資料。"); return; } addImported(parsePasted(value)); get("pasteInput").value = ""; get("importPanel").classList.remove("is-open"); });
       get("fileInput").addEventListener("change", async event => { const file = event.target.files?.[0]; if (!file) return; get("fileName").textContent = file.name; try { const text = await file.text(); const rows = file.name.toLowerCase().endsWith(".json") ? (() => { const parsed = JSON.parse(text); return Array.isArray(parsed) ? parsed : Array.isArray(parsed.news) ? parsed.news : []; })() : parseCSV(text); addImported(rows); } catch (error) { console.error(error); toast("檔案無法讀取，請確認 JSON 或 CSV 格式。"); } event.target.value = ""; });
       get("regenerateDraft").addEventListener("click", () => { state.draftEdited = false; state.draft = generateDraft(); commit("草稿已依目前選題重新產生"); renderDraft(true); });
@@ -637,7 +742,7 @@
       get("newWeek").addEventListener("click", () => { saveArchive("已保存本週，並建立下一週工作區"); const nextWeek = addDays(parseLocalDate(state.weekStart), 7); state.weekStart = isoDate(nextWeek); state.news.forEach(item => { item.selected = false; item.order = 99; item.note = ""; }); state.reportTitle = REPORT_TITLE; state.confirmations = [false, false, false]; state.draftEdited = false; state.draft = ""; commit(); renderAll(true); });
       get("markConfirmed").addEventListener("click", () => { state.confirmations = confirmationLabels.map(() => true); commit("本週週報已標記為人工確認完成"); renderConfirmation(); });
 
-      hydrate(); cleanOrder(); renderAll(true); persist();
+      hydrate(); cleanOrder(); renderAll(true); persist(); loadMonitoringSnapshot();
     })();
   </script>
 </body>
