@@ -369,13 +369,51 @@ const openAiConfigurationMessage = (status, payload, model) => {
   if (status === 401 || type.includes("authentication") || code.includes("api_key")) {
     return "OpenAI API 金鑰無效、已撤銷，或不是 API 平台金鑰；請在 Cloudflare 更新 OPENAI_API_KEY。";
   }
-  if (status === 429 || type.includes("rate_limit") || code.includes("insufficient_quota")) {
-    return "OpenAI API 專案目前沒有可用額度，或暫時達到速率限制；請到 OpenAI API 平台確認 Billing 與 Usage limits。";
+  if (code === "credit_balance_exhausted") {
+    return "OpenAI API 預付額度已用完；請到 Billing 加入 API 額度。ChatGPT 訂閱不含 API 額度。";
+  }
+  if (["organization_spend_limit_exceeded", "project_spend_limit_exceeded"].includes(code)) {
+    return "OpenAI API 已達組織或專案支出上限；請到對應的 Limits 設定確認，不要重複按產生摘要。";
+  }
+  if (code === "organization_usage_limit_exceeded") {
+    return "OpenAI API 已達帳號核准的用量上限；請到 Usage limits 確認或申請提高額度。";
+  }
+  if (code === "insufficient_quota" || type === "insufficient_quota") {
+    return "OpenAI API 額度不足；請到 Billing 確認餘額及支出上限。重建金鑰或重複重試無法補充額度。";
+  }
+  if (type.includes("rate_limit") || ["rate_limit_exceeded", "slow_down"].includes(code)) {
+    return "OpenAI API 請求太頻繁，暫時達到速率限制；請稍後再試，先不要連續按產生摘要。";
+  }
+  if (status === 429) {
+    return "OpenAI API 回傳 429，但未提供可辨識的原因；請確認 Billing 和 Usage limits。";
   }
   if (status === 404 || code.includes("model")) {
     return `OpenAI API 無法使用模型 ${model}；請確認 OPENAI_MODEL 或帳號的模型存取權。`;
   }
-  return `OpenAI API 暫時拒絕摘要請求（HTTP ${status || "未知"}）；請先使用「檢查設定」確認金鑰與額度。`;
+  return `OpenAI API 暫時拒絕摘要請求（HTTP ${status || "未知"}）；請先使用「檢查設定」驗證金鑰與模型。`;
+};
+
+const safeProviderCode = (payload) => {
+  const code = String(payload?.error?.code || payload?.error?.type || "").toLowerCase();
+  return /^[a-z0-9_]{1,80}$/.test(code) ? code : "";
+};
+
+const responseOutputText = (payload) => {
+  if (payload?.status === "incomplete") {
+    throw new ApiError(502, "摘要回應未完成，尚未套用任何內容；請管理員檢查輸出長度或改用適合短摘要的模型。", { providerCode: "incomplete_response" });
+  }
+  if (payload?.status === "failed" || payload?.error) {
+    throw new ApiError(502, "摘要模型執行失敗，尚未套用任何內容；請稍後再試。", { providerCode: safeProviderCode(payload) });
+  }
+  // Raw REST responses use output[].content[]; output_text is an SDK helper.
+  const content = (Array.isArray(payload?.output) ? payload.output : [])
+    .filter((item) => item?.type === "message" && item?.role === "assistant")
+    .flatMap((item) => Array.isArray(item.content) ? item.content : []);
+  if (content.some((item) => item?.type === "refusal")) {
+    throw new ApiError(422, "模型未能為這則內容產生摘要；請改以人工整理。", { providerCode: "model_refusal" });
+  }
+  return content.filter((item) => item?.type === "output_text" && typeof item.text === "string")
+    .map((item) => item.text).join("");
 };
 
 const configuredSummaryService = (request, env) => {
@@ -408,6 +446,7 @@ const createSummaryDraft = async (env, metadata, article) => {
       model,
       store: false,
       max_output_tokens: 650,
+      ...(model === "gpt-6-astra" ? { reasoning: { effort: "low" } } : {}),
       instructions: `你是台灣企業公關週報編輯。只可依據提供的可用內容撰寫，不得猜測、補充外部知識或把標題視為已證實事實。以繁體中文輸出，語氣客觀、精簡，模仿企業週報：先寫主體、動作、關鍵事實或數字；若來源資訊不足，摘要要明確保留限制，並在 warnings 提醒人工核對。${headlineOnly ? "目前只有新聞標題：摘要必須明確寫成『標題顯示／報導標題提及』的保守說法，不得補出時程、原因、數字、合作細節或影響。" : ""}不要使用條列、網址、媒體名稱開頭、評價性語言或 Markdown。`,
       input: source,
       text: {
@@ -423,9 +462,9 @@ const createSummaryDraft = async (env, metadata, article) => {
   const payload = await response.json().catch(() => ({}));
   if (!response.ok) {
     console.error("OpenAI summary request failed", { status: response.status, type: payload?.error?.type });
-    throw new ApiError(502, openAiConfigurationMessage(response.status, payload, model));
+    throw new ApiError(502, openAiConfigurationMessage(response.status, payload, model), { providerCode: safeProviderCode(payload) });
   }
-  const output = typeof payload.output_text === "string" ? payload.output_text : "";
+  const output = responseOutputText(payload);
   let draft;
   try { draft = JSON.parse(output); } catch { throw new ApiError(502, "摘要模型回傳格式暫時無法讀取，請稍後再試。"); }
   const summary = plainDraftText(draft?.summary, 420);
@@ -480,7 +519,7 @@ const handleSummaryRequest = async (request, env) => {
   } catch (error) {
     const status = error instanceof ApiError ? error.status : 502;
     if (!(error instanceof ApiError)) console.error("Unexpected summary error", error);
-    return jsonResponse(request, status, { error: { message: error?.message || "摘要服務暫時無法使用。" } });
+    return jsonResponse(request, status, { error: { message: error?.message || "摘要服務暫時無法使用。", ...(error?.providerCode ? { code: error.providerCode } : {}) } });
   }
 };
 
@@ -500,12 +539,13 @@ const handleSummaryStatusRequest = async (request, env) => {
         status: "error",
         model: configured.model,
         message: openAiConfigurationMessage(response.status, payload, configured.model),
+        code: safeProviderCode(payload),
       });
     }
     return jsonResponse(request, 200, {
       status: "ready",
       model: configured.model,
-      message: `OpenAI API 金鑰與模型 ${configured.model} 可用；實際產生摘要才會使用 API 額度。`,
+      message: `金鑰驗證與模型 ${configured.model} 查詢通過；此檢查不驗證 API 餘額或摘要生成權限。`,
     });
   } catch (error) {
     const message = error instanceof ApiError

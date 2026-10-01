@@ -165,6 +165,8 @@
     .summary-draft { display: grid; gap: 8px; padding: 10px; border: 1px solid #cde3f5; border-radius: 9px; background: #fff; }
     .summary-draft-content { margin: 0; color: #35445b; font-size: .78rem; line-height: 1.65; white-space: normal; }
     .summary-meta { color: #7b8495; font-size: .69rem; }
+    .summary-error { padding: 10px; border: 1px solid #f0cbb6; border-radius: 9px; background: #fff6f0; }
+    .summary-tools .summary-error p { color: #8a462c; }
     .summary-source-details { border-top: 1px dashed #dbe4ef; padding-top: 8px; }
     .summary-source-details summary { color: #536b86; cursor: pointer; font-size: .72rem; font-weight: 800; }
     .summary-source-details-content { display: grid; gap: 7px; padding-top: 9px; }
@@ -653,8 +655,9 @@
         const content = draft ? [draft.summary, draft.note].filter(Boolean).join("\n\n") : "";
         const warnings = Array.isArray(draft?.warnings) ? draft.warnings.filter(Boolean).slice(0, 3) : [];
         const draftCard = draft && content ? `<div class="summary-draft"><div class="summary-meta">已產生摘要草稿 · ${summarySourceLabel(draft)}</div><p class="summary-draft-content">${lineBreaks(content)}</p>${warnings.length ? `<p class="summary-meta">需查核：${escapeHTML(warnings.join("；"))}</p>` : ""}<div><button type="button" class="button primary tiny" data-apply-ai-summary="${escapeHTML(item.id)}">套用摘要草稿</button></div></div>` : "";
+        const summaryError = item.summaryError ? `<div class="summary-error" role="alert"><p>${escapeHTML(item.summaryError)}</p>${item.summaryErrorCode ? `<p>錯誤代碼：${escapeHTML(item.summaryErrorCode)}</p>` : ""}</div>` : "";
         const sourceTextHelp = `<details class="summary-source-details"><summary>原文擷取受限時，貼上可讀內容後再產生（選填）</summary><div class="summary-source-details-content"><label class="label" for="ai-source-${escapeHTML(item.id)}">原文／節錄（不會自動寫入週報）</label><textarea id="ai-source-${escapeHTML(item.id)}" class="textarea" data-ai-source-text="${escapeHTML(item.id)}" maxlength="6000" placeholder="從已開啟的原文複製前幾段或全文後貼在此處；重新按摘要可得到較完整的草稿。">${escapeHTML(item.aiSourceText || "")}</textarea><p>貼入內容只會在此次摘要請求中使用，並儲存在這台裝置的工作紀錄，不會提交到 GitHub。</p></div></details>`;
-        return `<div class="summary-tools"><div class="summary-tools-header"><strong>AI 週報摘要草稿</strong><button type="button" class="button ghost tiny" data-generate-summary="${escapeHTML(item.id)}" ${loading ? "aria-busy=\"true\" disabled" : ""}>${actionLabel}</button></div><p>${statusText}</p>${draftCard}${sourceTextHelp}</div>`;
+        return `<div class="summary-tools"><div class="summary-tools-header"><strong>AI 週報摘要草稿</strong><button type="button" class="button ghost tiny" data-generate-summary="${escapeHTML(item.id)}" ${loading ? "aria-busy=\"true\" disabled" : ""}>${actionLabel}</button></div><p>${statusText}</p>${summaryError}${draftCard}${sourceTextHelp}</div>`;
       };
       const renderNews = () => {
         const items = filteredNews();
@@ -771,6 +774,8 @@
         const item = state.news.find(news => news.id === id);
         if (!item?.selected) return;
         item.summaryStatus = "loading";
+        item.summaryError = "";
+        item.summaryErrorCode = "";
         renderNews();
         try {
           const response = await fetch(summaryWorkerUrl, {
@@ -779,7 +784,11 @@
             body: JSON.stringify({ title: item.title, source: item.source, date: item.date, url: item.url, excerpt: item.excerpt, articleText: item.aiSourceText })
           });
           const payload = await response.json().catch(() => ({}));
-          if (!response.ok) throw new Error(payload?.error?.message || `摘要服務暫時無法使用（${response.status}）。`);
+          if (!response.ok) {
+            const error = new Error(payload?.error?.message || `摘要服務暫時無法使用（${response.status}）。`);
+            error.providerCode = String(payload?.error?.code || "");
+            throw error;
+          }
           const draft = payload?.draft;
           if (!draft || draft.status !== "ready" || !String(draft.summary || "").trim()) {
             throw new Error(Array.isArray(draft?.warnings) && draft.warnings.length ? draft.warnings.join("；") : "原文資訊不足，請改以人工整理。 ");
@@ -799,6 +808,8 @@
           renderAll(true);
         } catch (error) {
           item.summaryStatus = "";
+          item.summaryError = String(error?.message || "摘要服務暫時無法使用。 ");
+          item.summaryErrorCode = String(error?.providerCode || "");
           renderNews();
           const message = String(error?.message || "摘要服務暫時無法使用。 ");
           toast(message.length > 84 ? `${message.slice(0, 82)}…` : message);

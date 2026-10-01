@@ -27,7 +27,9 @@
 
 使用時，在左側「AI 週報摘要」輸入 `PR_SUMMARY_ACCESS_KEY` 並按「啟用摘要」，勾選一則新聞，再按該則新聞的「擷取並產生摘要」。存取碼只保留在目前瀏覽器工作階段；原文全文不會寫入瀏覽器、本機週報紀錄或 GitHub。
 
-若畫面顯示摘要模型無法使用，先按左側的「檢查設定」。此檢查只驗證 OpenAI API 金鑰與模型是否可存取，不會產生摘要或使用生成額度；它會明確指出是 API 金鑰、模型存取權，或 API 額度／速率限制需要處理。
+若畫面顯示摘要模型無法使用，先按左側的「檢查設定」。此檢查只驗證 OpenAI API 金鑰與模型查詢，不會產生摘要或使用生成額度，也不會驗證 API 餘額或摘要生成權限。查詢通過不代表帳號已有可用額度。
+
+摘要請求失敗時，新聞卡片會保留完整提示及 OpenAI 錯誤代碼：`credit_balance_exhausted`／`insufficient_quota` 要確認 Billing 餘額；`project_spend_limit_exceeded`／`organization_spend_limit_exceeded` 要確認支出上限；`rate_limit_exceeded`／`slow_down` 才是暫時請求過於頻繁。API 金鑰本身不含額度，ChatGPT 訂閱不抵扣 API 用量。額度和付款設定須由帳號擁有者手動處理，網站不會自動儲值或重試付費生成。
 
 ### 貼入格式
 
