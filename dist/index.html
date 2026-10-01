@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#252342" />
+  <meta name="theme-color" content="#eeedf7" />
   <meta name="description" content="將智冠產業監測新聞整理成可確認、可輸出的公關週報。" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23252342'/%3E%3Cpath d='M18 17h28v30H18z' fill='%23f9fbff'/%3E%3Cpath d='M24 25h16M24 32h16M24 39h10' stroke='%234a9ee9' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='45' cy='45' r='10' fill='%23a876c8'/%3E%3Cpath d='m40.5 45 3 3 6-7' fill='none' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
   <title>公關週報工作台</title>
@@ -14,8 +14,8 @@
       --line: #e5e8f0;
       --canvas: #f4f6fb;
       --paper: #ffffff;
-      --navy: #252342;
-      --navy-2: #343259;
+      --rail-bg: #eeedf7;
+      --rail-ink: #44445f;
       --blue: #1885de;
       --blue-soft: #e8f4ff;
       --blue-deep: #0872c7;
@@ -40,23 +40,24 @@
     .sr-only { position: absolute; overflow: hidden; width: 1px; height: 1px; padding: 0; margin: -1px; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
     .app-shell { min-height: 100vh; display: grid; grid-template-columns: 230px minmax(0, 1fr); }
-    .side-rail { position: sticky; top: 0; height: 100vh; overflow: auto; padding: 25px 17px; background: var(--navy); color: #eef0ff; display: flex; flex-direction: column; gap: 24px; }
+    .side-rail { position: sticky; top: 0; height: 100vh; overflow: auto; padding: 25px 17px; background: var(--rail-bg); color: var(--rail-ink); border-right: 1px solid #dedcec; display: flex; flex-direction: column; gap: 24px; }
     .brand { display: flex; align-items: center; gap: 10px; padding: 0 8px; font-weight: 800; letter-spacing: -.02em; font-size: 1.1rem; }
     .brand-mark { position: relative; width: 34px; height: 34px; border-radius: 11px; background: linear-gradient(145deg, #6ab9f4, #8067bf); display: grid; place-items: center; box-shadow: 0 7px 15px rgba(82, 159, 230, .25); }
     .brand-mark::before { content: ""; width: 14px; height: 17px; border: 2px solid #fff; border-radius: 3px; background: linear-gradient(#fff 0 0) 4px 4px / 6px 2px no-repeat, linear-gradient(#fff 0 0) 4px 9px / 6px 2px no-repeat; }
-    .rail-section-label { margin: 2px 8px 6px; color: #b7b8d3; font-size: .73rem; font-weight: 700; letter-spacing: .12em; }
+    .rail-section-label { margin: 2px 8px 6px; color: #616179; font-size: .73rem; font-weight: 700; letter-spacing: .12em; }
     .flow-list, .rail-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
-    .flow-step { width: 100%; display: flex; gap: 10px; align-items: center; text-align: left; border: 0; border-radius: 12px; padding: 11px 10px; color: #c8c9e0; background: transparent; transition: background .2s, color .2s; }
-    .flow-step:hover, .flow-step.is-active { color: #fff; background: rgba(255,255,255,.12); }
-    .step-number { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto; color: #dfeaff; background: rgba(255,255,255,.11); font-size: .75rem; font-weight: 800; }
+    .flow-step { width: 100%; display: flex; gap: 10px; align-items: center; text-align: left; border: 0; border-radius: 12px; padding: 11px 10px; color: #575772; background: transparent; transition: background .2s, color .2s; }
+    .flow-step:hover { color: var(--rail-ink); background: #e2e0f0; }
+    .flow-step.is-active { color: #2f4b70; background: #fff; box-shadow: inset 3px 0 0 #1885de, 0 3px 12px rgba(82, 79, 126, .06); }
+    .step-number { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto; color: #575772; background: #deddec; font-size: .75rem; font-weight: 800; }
     .flow-step.is-active .step-number { color: #0c5c9d; background: #b7e3ff; }
     .flow-copy { display: grid; gap: 1px; }
     .flow-copy strong { font-size: .9rem; }
-    .flow-copy small { color: inherit; opacity: .68; font-size: .72rem; }
+    .flow-copy small { color: #616179; font-size: .72rem; }
     .rail-spacer { flex: 1; }
-    .rail-link { display: flex; gap: 9px; align-items: center; border-radius: 10px; padding: 8px; color: #c4c6df; text-decoration: none; font-size: .82rem; }
-    .rail-link:hover { color: #fff; background: rgba(255,255,255,.08); }
-    .rail-foot { padding: 12px 9px 0; border-top: 1px solid rgba(255,255,255,.12); color: #aaaeca; font-size: .73rem; }
+    .rail-link { display: flex; gap: 9px; align-items: center; border-radius: 10px; padding: 8px; color: #575772; text-decoration: none; font-size: .82rem; }
+    .rail-link:hover { color: var(--rail-ink); background: #e2e0f0; }
+    .rail-foot { padding: 12px 9px 0; border-top: 1px solid #d8d6e8; color: #616179; font-size: .73rem; }
 
     .content { min-width: 0; }
     .topbar { min-height: 76px; padding: 13px clamp(20px, 3.6vw, 48px); display: flex; gap: 16px; justify-content: space-between; align-items: center; background: rgba(255,255,255,.92); border-bottom: 1px solid var(--line); }
