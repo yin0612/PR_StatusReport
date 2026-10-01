@@ -1,4 +1,4 @@
-export const SUMMARY_VERSION = "cloudflare-free-v1";
+export const SUMMARY_VERSION = "cloudflare-free-v2-body";
 
 export const summaryInputKey = async (item) => {
   const text = JSON.stringify([SUMMARY_VERSION, String(item.title || ""), String(item.source || ""),
@@ -8,5 +8,5 @@ export const summaryInputKey = async (item) => {
 };
 
 export const canReuseSummaryDraft = (draft, inputKey) => Boolean(draft?.summary
-  && ["cloudflare", "none"].includes(draft.provider)
+  && draft.provider === "cloudflare" && draft.sourceMode !== "headline"
   && draft.version === SUMMARY_VERSION && draft.inputKey === inputKey);

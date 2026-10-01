@@ -1,7 +1,11 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "pr-statusreport",
-  "main": "src/index.js",
+  "main": "src/worker.js",
+  "build": {
+    "command": "node scripts/build-article-cache.mjs",
+    "watch_dir": ["src", "dist/data", "scripts"]
+  },
   "compatibility_date": "2026-09-30",
   "vars": {
     "PR_SUMMARY_FREE_PLAN_CONFIRMED": "true"

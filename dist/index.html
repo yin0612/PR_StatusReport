@@ -348,7 +348,8 @@
 
             <section id="inbox-panel" class="panel inbox-panel" aria-labelledby="inbox-title">
               <div class="panel-heading"><div class="heading-group"><span class="section-kicker">01 · INBOX</span><h2 id="inbox-title">新聞收件匣</h2><p>每小時自動同步候選新聞；仍可貼入臨時素材並保留人工選題。</p></div><span id="inboxCount" class="count-badge">0</span></div>
-              <div class="inbox-toolbar"><span id="resultNote" class="results-note">載入中</span><div class="inbox-toolbar-actions"><button id="toggleImport" class="button ghost" type="button">＋ 貼入新聞</button></div></div>
+              <div class="inbox-toolbar"><span id="resultNote" class="results-note">載入中</span><div class="inbox-toolbar-actions"><button id="summarizeSelected" class="button primary" type="button">✦ 摘要已選新聞</button><button id="toggleImport" class="button ghost" type="button">＋ 貼入新聞</button></div></div>
+              <p id="summaryBatchStatus" class="import-help" role="status" hidden></p>
               <div id="importPanel" class="import-panel" aria-live="polite">
                 <p class="import-help">每行格式：<strong>標題 | 媒體 | 日期 | 原文連結 | 主題 | 週報內文</strong>。也支援欄位相同的 CSV 與 JSON 陣列。</p>
                 <textarea id="pasteInput" class="textarea" placeholder="例：\n遊戲產業新作上市帶動討論 | 監測媒體 | 2026-09-29 | https://example.com/news | 遊戲產業 | 公司宣布新作將於第四季上市，預計同步推出多平台版本。"></textarea>
@@ -472,7 +473,7 @@
           selected: Boolean(item.selected),
           order: Number.isFinite(Number(item.order)) ? Number(item.order) : 99,
           reportGroup: resolveReportGroupKey(item.reportGroup, topic),
-          aiSourceText: String(item.aiSourceText || "").slice(0, 6_000)
+          aiSourceText: String(item.aiSourceText || "").slice(0, 16_000)
         };
       };
       const isPlaceholderExcerpt = (value = "") => /^(google news rss 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。|由產業監測網篩選，請開啟原文後整理週報內文。|請開啟原文並撰寫週報內文。)$/i.test(String(value).trim());
@@ -488,7 +489,7 @@
         return excerpt && !isPlaceholderExcerpt(excerpt) ? excerpt : headlineFallback(item);
       };
       const inboxExcerpt = (item) => isPlaceholderExcerpt(item.excerpt)
-        ? "此來源僅提供標題；週報草稿會先帶入標題，必要時可再補寫摘要。"
+        ? "監測來源只有標題；勾選後按「摘要已選新聞」，系統會使用伺服器取得的文章內文整理重點。"
         : String(item.excerpt || "尚未提供新聞摘要。");
       const reportEntryText = (item, includeSource = false) => {
         const body = reportBody(item);
@@ -526,6 +527,7 @@
       let monitoringState = { phase: "loading", generatedAt: null, count: 0, sourceCount: 0 };
       let summaryAccessKey = "";
       let summaryRequestInFlight = false;
+      let summaryBatchInFlight = false;
       try { summaryAccessKey = sessionStorage.getItem(SUMMARY_ACCESS_KEY_STORAGE) || ""; } catch { /* Session storage can be unavailable in private browser modes. */ }
       const get = (id) => document.getElementById(id);
       let toastTimer;
@@ -645,6 +647,8 @@
         if (draft?.sourceMode === "headline") return "未取得原文，僅保留標題（未使用 AI 額度）";
         if (draft?.sourceMode === "pasted_text") return `依貼入內容 ${sourceCount.toLocaleString()} 字`;
         if (draft?.sourceMode === "monitoring_excerpt") return `依監測節錄 ${sourceCount.toLocaleString()} 字`;
+        if (draft?.sourceMode === "public_excerpt") return `僅取得媒體描述節錄 ${sourceCount.toLocaleString()} 字（非完整內文）`;
+        if (draft?.sourceMode === "cached_article") return `依伺服器擷取內文 ${sourceCount.toLocaleString()} 字`;
         return sourceCount ? `依公開原文 ${sourceCount.toLocaleString()} 字` : "已產生摘要草稿";
       };
       const summaryDraftMarkup = (item) => {
@@ -653,15 +657,17 @@
         const actionLabel = loading ? "正在擷取原文…" : "✦ 擷取並產生摘要";
         const statusText = loading
           ? "正在解析原始媒體頁並產生摘要草稿，請稍候。"
-          : "只使用 Cloudflare 免費摘要；相同內容不重複生成。原文讀不到時只保留標題，不消耗 AI 額度。";
+          : "先讀取文章主文，再由 Cloudflare 免費 AI 整理事實、數字與條件。沒有內文就不產生摘要。";
         const content = draft ? [draft.summary, draft.note].filter(Boolean).join("\n\n") : "";
         const warnings = Array.isArray(draft?.warnings) ? draft.warnings.filter(Boolean).slice(0, 3) : [];
-        const draftCard = draft && content ? `<div class="summary-draft"><div class="summary-meta">${draft.provider === "none" ? "未取得內文" : "摘要草稿"} · ${summarySourceLabel(draft)}${draft.cached ? " · 已重用結果" : ""}</div><p class="summary-draft-content">${lineBreaks(content)}</p>${warnings.length ? `<p class="summary-meta">需查核：${escapeHTML(warnings.join("；"))}</p>` : ""}<div><button type="button" class="button primary tiny" data-apply-ai-summary="${escapeHTML(item.id)}">套用摘要草稿</button></div></div>` : "";
+        const canApply = draft?.provider === "cloudflare" && draft?.sourceMode !== "headline";
+        const draftCard = draft && content ? `<div class="summary-draft"><div class="summary-meta">${canApply ? "摘要草稿" : "舊標題結果，請重新讀取內文"} · ${summarySourceLabel(draft)}${draft.cached ? " · 已重用結果" : ""}</div><p class="summary-draft-content">${lineBreaks(content)}</p>${warnings.length ? `<p class="summary-meta">需查核：${escapeHTML(warnings.join("；"))}</p>` : ""}${canApply ? `<div><button type="button" class="button primary tiny" data-apply-ai-summary="${escapeHTML(item.id)}">套用摘要草稿</button></div>` : ""}</div>` : "";
         const summaryError = item.summaryError ? `<div class="summary-error" role="alert"><p>${escapeHTML(item.summaryError)}</p>${item.summaryErrorCode ? `<p>錯誤代碼：${escapeHTML(item.summaryErrorCode)}</p>` : ""}</div>` : "";
-        const sourceTextHelp = `<details class="summary-source-details"><summary>原文擷取受限時，貼上可讀內容後再產生（選填）</summary><div class="summary-source-details-content"><label class="label" for="ai-source-${escapeHTML(item.id)}">原文／節錄（不會自動寫入週報）</label><textarea id="ai-source-${escapeHTML(item.id)}" class="textarea" data-ai-source-text="${escapeHTML(item.id)}" maxlength="6000" placeholder="從已開啟的原文複製前幾段或全文後貼在此處；重新按摘要可得到較完整的草稿。">${escapeHTML(item.aiSourceText || "")}</textarea><p>貼入內容只會在此次摘要請求中使用，並儲存在這台裝置的工作紀錄，不會提交到 GitHub。</p></div></details>`;
-        return `<div class="summary-tools"><div class="summary-tools-header"><strong>Cloudflare 免費摘要草稿</strong><button type="button" class="button ghost tiny" data-generate-summary="${escapeHTML(item.id)}" ${loading || summaryRequestInFlight ? "disabled" : ""} ${loading ? "aria-busy=\"true\"" : ""}>${actionLabel}</button></div><p>${statusText}</p>${summaryError}${draftCard}${sourceTextHelp}</div>`;
+        const sourceTextHelp = `<details class="summary-source-details"><summary>原文擷取受限時，貼上可讀內容後再產生（選填）</summary><div class="summary-source-details-content"><label class="label" for="ai-source-${escapeHTML(item.id)}">原文／節錄（不會自動寫入週報）</label><textarea id="ai-source-${escapeHTML(item.id)}" class="textarea" data-ai-source-text="${escapeHTML(item.id)}" maxlength="16000" placeholder="從已開啟的原文複製前幾段或全文後貼在此處；重新按摘要可得到較完整的草稿。">${escapeHTML(item.aiSourceText || "")}</textarea><p>貼入內容只會在此次摘要請求中使用，並儲存在這台裝置的工作紀錄，不會提交到 GitHub。</p></div></details>`;
+        return `<div class="summary-tools"><div class="summary-tools-header"><strong>Cloudflare 免費摘要草稿</strong><button type="button" class="button ghost tiny" data-generate-summary="${escapeHTML(item.id)}" ${loading || summaryRequestInFlight || summaryBatchInFlight ? "disabled" : ""} ${loading ? "aria-busy=\"true\"" : ""}>${actionLabel}</button></div><p>${statusText}</p>${summaryError}${draftCard}${sourceTextHelp}</div>`;
       };
       const renderNews = () => {
+        get("summarizeSelected").disabled = summaryRequestInFlight || summaryBatchInFlight || !selectedNews().length;
         const items = filteredNews();
         get("inboxCount").textContent = items.length;
         get("resultNote").textContent = state.query || state.topic !== "全部" || state.priorityFilter !== "全部" ? `符合篩選的新聞 ${items.length} 則` : `本週收件匣 ${state.news.length} 則 · 已選題 ${selectedNews().length} 則`;
@@ -763,7 +769,8 @@
           });
           const payload = await response.json().catch(() => ({}));
           if (!response.ok) throw new Error(payload?.error?.message || `設定檢查暫時無法使用（${response.status}）。`);
-          get("summarySetupStatus").textContent = String(payload?.message || "摘要設定已檢查。");
+          const cacheNote = payload?.articleCache ? ` 伺服器目前取得 ${payload.articleCache.available}/${payload.articleCache.total} 則可讀文章／節錄；未取得者會嘗試即時擷取。` : "";
+          get("summarySetupStatus").textContent = String(payload?.message || "摘要設定已檢查。") + cacheNote;
           toast(String(payload?.message || "摘要設定已檢查。"));
         } catch (error) {
           get("summarySetupStatus").textContent = String(error?.message || "設定檢查暫時無法使用。");
@@ -820,6 +827,7 @@
             canonicalUrl: safeUrl(draft.canonicalUrl || item.url),
             sourceCharacters: Number(draft.sourceCharacters) || 0,
             sourceMode: String(draft.sourceMode || "public_article"),
+            sourceFetchedAt: String(draft.sourceFetchedAt || ""),
             generatedAt: String(draft.generatedAt || new Date().toISOString()),
             warnings: Array.isArray(draft.warnings) ? draft.warnings.map(String).slice(0, 3) : [],
             inputKey,
@@ -846,10 +854,36 @@
           renderNews();
         }
       };
+      const generateSelectedSummaries = async () => {
+        if (summaryRequestInFlight || summaryBatchInFlight) return;
+        if (!summaryAccessKey) { toast("請先在左側啟用摘要。"); return; }
+        const ids = selectedNews().map(item => item.id);
+        if (!ids.length) { toast("請先勾選要整理的新聞。"); return; }
+        summaryBatchInFlight = true;
+        const status = get("summaryBatchStatus");
+        status.hidden = false;
+        let completed = 0;
+        let failed = 0;
+        let stopped = false;
+        try {
+          for (const id of ids) {
+            status.textContent = `正在讀取內文並整理 ${completed + failed + 1}/${ids.length} 則；不會自動套用至週報。`;
+            await generateAiSummary(id);
+            const item = state.news.find(news => news.id === id);
+            if (item?.summaryError) failed += 1;
+            else if (item?.aiDraft?.provider === "cloudflare") completed += 1;
+            if (item?.summaryErrorCode && item.summaryErrorCode !== "article_body_unavailable") { stopped = true; break; }
+          }
+        } finally {
+          summaryBatchInFlight = false;
+          status.textContent = `已整理 ${completed} 則，${failed} 則未完成${stopped ? "；AI 服務暫停，剩餘新聞未送出" : ""}。請逐則檢查並按「套用摘要草稿」。`;
+          renderNews();
+        }
+      };
       const applyAiSummary = (id) => {
         const item = state.news.find(news => news.id === id);
         const draft = item?.aiDraft;
-        if (!item || !draft?.summary) return;
+        if (!item || !draft?.summary || draft.provider !== "cloudflare" || draft.sourceMode === "headline") return;
         const currentContent = `${String(item.summary || "").trim()}${String(item.note || "").trim()}`;
         if (currentContent && !window.confirm("要以 AI 摘要草稿取代目前的週報內文與補充資訊嗎？")) return;
         item.summary = String(draft.summary).trim();
@@ -995,7 +1029,7 @@
         if (input.id === "searchInput") { state.query = input.value; renderNews(); return; }
         if (input.dataset.summary) { const item = state.news.find(news => news.id === input.dataset.summary); if (item) { item.summary = input.value; state.draftEdited = false; commit(); renderDraft(true); } return; }
         if (input.dataset.note) { const item = state.news.find(news => news.id === input.dataset.note); if (item) { item.note = input.value; state.draftEdited = false; commit(); renderDraft(true); } return; }
-        if (input.dataset.aiSourceText) { const item = state.news.find(news => news.id === input.dataset.aiSourceText); if (item) { item.aiSourceText = input.value.slice(0, 6000); commit(); } return; }
+        if (input.dataset.aiSourceText) { const item = state.news.find(news => news.id === input.dataset.aiSourceText); if (item) { item.aiSourceText = input.value.slice(0, 16000); commit(); } return; }
         if (input.id === "reportTitle") { state.reportTitle = input.value; state.draftEdited = false; commit(); renderDraft(true); return; }
         if (input.id === "draftOutput") { state.draft = input.value; state.draftEdited = true; commit(); get("draftStatus").textContent = "已手動調整"; get("draftStatus").style.color = "#865c9d"; get("draftStatus").style.background = "#f4edfb"; }
       });
@@ -1003,6 +1037,7 @@
       get("refreshMonitoring").addEventListener("click", () => loadMonitoringSnapshot(true));
       get("saveSummaryAccessKey").addEventListener("click", setSummaryAccessKey);
       get("checkSummarySetup").addEventListener("click", checkSummarySetup);
+      get("summarizeSelected").addEventListener("click", generateSelectedSummaries);
       get("importPaste").addEventListener("click", () => { const value = get("pasteInput").value.trim(); if (!value) { toast("請先貼入新聞資料。"); return; } addImported(parsePasted(value)); get("pasteInput").value = ""; get("importPanel").classList.remove("is-open"); });
       get("fileInput").addEventListener("change", async event => { const file = event.target.files?.[0]; if (!file) return; get("fileName").textContent = file.name; try { const text = await file.text(); const rows = file.name.toLowerCase().endsWith(".json") ? (() => { const parsed = JSON.parse(text); return Array.isArray(parsed) ? parsed : Array.isArray(parsed.news) ? parsed.news : []; })() : parseCSV(text); addImported(rows); } catch (error) { console.error(error); toast("檔案無法讀取，請確認 JSON 或 CSV 格式。"); } event.target.value = ""; });
       get("regenerateDraft").addEventListener("click", () => { state.draftEdited = false; state.draft = generateDraft(); commit("草稿已依目前選題重新產生"); renderDraft(true); });

@@ -9,9 +9,9 @@ const ALLOWED_ORIGINS = new Set([
   "http://127.0.0.1:8787",
 ]);
 
-const MAX_REQUEST_CHARS = 8_192;
+const MAX_REQUEST_CHARS = 24_000;
 const MAX_PAGE_CHARS = 1_200_000;
-const MAX_SOURCE_CHARS = 8_000;
+const MAX_SOURCE_CHARS = 16_000;
 const MAX_REDIRECTS = 5;
 
 const trimText = (value, limit = MAX_SOURCE_CHARS) => String(value || "")
@@ -114,7 +114,7 @@ const fetchWithTimeout = async (url, options = {}, timeoutMs = 15_000) => {
   }
 };
 
-const fetchPublicPage = async (rawUrl) => {
+const fetchPublicPage = async (rawUrl, options = {}) => {
   let current = assertPublicUrl(rawUrl).href;
   for (let redirectCount = 0; redirectCount <= MAX_REDIRECTS; redirectCount += 1) {
     const response = await fetchWithTimeout(current, {
@@ -123,7 +123,7 @@ const fetchPublicPage = async (rawUrl) => {
         accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.4",
         "accept-language": "zh-TW,zh;q=0.9,en;q=0.6",
       },
-    });
+    }, options.timeoutMs || 15_000);
     if ([301, 302, 303, 307, 308].includes(response.status)) {
       const location = response.headers.get("location");
       if (!location) throw new ApiError(502, "原文連結轉址失敗，請改從原媒體網址擷取。");
@@ -165,7 +165,7 @@ const htmlToText = (value) => trimText(htmlDecode(String(value || "")
   .replace(/<(script|style|noscript|svg|iframe)[^>]*>[\s\S]*?<\/\1>/gi, " ")
   .replace(/<br\s*\/?>/gi, "\n")
   .replace(/<\/(p|div|li|h[1-6]|section|article)>/gi, "\n")
-  .replace(/<[^>]+>/g, " ")));
+  .replace(/<[^>]+>/g, " ")), 120_000);
 
 const attributeValue = (tag, name) => {
   const quoted = new RegExp(`\\b${name}\\s*=\\s*(["'])([\\s\\S]*?)\\1`, "i").exec(tag);
@@ -202,7 +202,6 @@ const jsonLdValues = (html) => {
         if (Array.isArray(item)) { queue.push(...item); continue; }
         if (Array.isArray(item["@graph"])) queue.push(...item["@graph"]);
         if (typeof item.articleBody === "string") values.push(htmlToText(item.articleBody));
-        if (typeof item.description === "string") values.push(htmlToText(item.description));
       }
     } catch {
       // Invalid JSON-LD is common on publisher pages; other extractors still run.
@@ -212,9 +211,26 @@ const jsonLdValues = (html) => {
 };
 
 const articleMarkupText = (html) => {
+  // Prefer the actual body over <main>, which often contains unrelated news.
+  for (const opening of html.matchAll(/<(div|section|article)\b[^>]*>/gi)) {
+    const marker = `${attributeValue(opening[0], "id")} ${attributeValue(opening[0], "class")}`;
+    if (attributeValue(opening[0], "itemprop") !== "articleBody"
+      && !/(?:^|\s)(?:caas-body|article[-_]content|article[-_]body|article[-_]text|newsContent|story[-_]content)(?:\s|$)/i.test(marker)) continue;
+    const start = opening.index + opening[0].length;
+    const tags = new RegExp(`<\\/?${opening[1]}\\b[^>]*>`, "gi");
+    tags.lastIndex = start;
+    let depth = 1;
+    for (let next = tags.exec(html); next; next = tags.exec(html)) {
+      depth += /^<\//.test(next[0]) ? -1 : /\/>$/.test(next[0]) ? 0 : 1;
+      if (!depth) {
+        const text = htmlToText(html.slice(start, next.index));
+        if (text.length >= 90) return text;
+        break;
+      }
+    }
+  }
   const article = /<article\b[^>]*>([\s\S]{0,500000}?)<\/article>/i.exec(html)?.[1];
-  const main = /<main\b[^>]*>([\s\S]{0,500000}?)<\/main>/i.exec(html)?.[1];
-  return [article, main].map(htmlToText).sort((left, right) => right.length - left.length)[0] || "";
+  return htmlToText(article);
 };
 
 const googleNewsArticleId = (rawUrl) => {
@@ -225,10 +241,10 @@ const googleNewsArticleId = (rawUrl) => {
   return marker >= 0 ? parts[marker + 1] || "" : "";
 };
 
-const resolveGoogleNewsUrl = async (rawUrl) => {
+const resolveGoogleNewsUrl = async (rawUrl, options = {}) => {
   const articleId = googleNewsArticleId(rawUrl);
   if (!articleId) return rawUrl;
-  const articlePage = await fetchPublicPage(`https://news.google.com/articles/${encodeURIComponent(articleId)}?hl=zh-TW&gl=TW&ceid=TW:zh-Hant`);
+  const articlePage = await fetchPublicPage(`https://news.google.com/articles/${encodeURIComponent(articleId)}?hl=zh-TW&gl=TW&ceid=TW:zh-Hant`, options);
   const signature = /data-n-a-sg="([^"]+)"/i.exec(articlePage.html)?.[1];
   const timestamp = /data-n-a-ts="(\d+)"/i.exec(articlePage.html)?.[1];
   if (!signature || !timestamp) {
@@ -247,7 +263,7 @@ const resolveGoogleNewsUrl = async (rawUrl) => {
     method: "POST",
     headers: { "content-type": "application/x-www-form-urlencoded;charset=UTF-8" },
     body: `f.req=${encodeURIComponent(JSON.stringify(rpcPayload))}`,
-  });
+  }, options.timeoutMs || 15_000);
   if (!response.ok) {
     throw new ApiError(502, "Google News 原文跳轉服務暫時無法讀取。", { allowMetadataFallback: true });
   }
@@ -266,17 +282,15 @@ const resolveGoogleNewsUrl = async (rawUrl) => {
   throw new ApiError(422, "Google News 原文跳轉暫時無法解析，請改從媒體原始連結擷取。", { allowMetadataFallback: true });
 };
 
-const extractArticle = async (rawUrl) => {
-  const resolvedUrl = await resolveGoogleNewsUrl(rawUrl);
-  const page = await fetchPublicPage(resolvedUrl);
+const extractArticle = async (rawUrl, options = {}) => {
+  const resolvedUrl = await resolveGoogleNewsUrl(rawUrl, options);
+  const page = await fetchPublicPage(resolvedUrl, options);
   const description = trimText(metaValue(page.html, ["og:description", "twitter:description", "description"]), 1_500);
   const title = trimText(metaValue(page.html, ["og:title", "twitter:title"]), 500);
-  const candidates = [articleMarkupText(page.html), ...jsonLdValues(page.html), description]
-    .map((value) => trimText(value))
-    .filter((value) => value.length >= 50)
-    .sort((left, right) => right.length - left.length);
-  const primary = candidates[0] || "";
-  const sourceText = trimText([description, primary].filter(Boolean).join("\n"));
+  const body = articleMarkupText(page.html) || jsonLdValues(page.html).sort((a, b) => b.length - a.length)[0] || "";
+  const primary = (body || description).split(/(?:延伸閱讀|其他人也在看|檢視留言|新聞關鍵字[：:])/)[0].trim();
+  const truncated = primary.length > MAX_SOURCE_CHARS;
+  const sourceText = truncated ? `${primary.slice(0, 11_000)}\n（中段節略）\n${primary.slice(-4_950)}` : primary;
   if (sourceText.length < 90) {
     throw new ApiError(422, "原文可公開讀取的內容不足，可能受付費牆、登入或網站限制影響；請改以人工整理。", { allowMetadataFallback: true });
   }
@@ -285,16 +299,20 @@ const extractArticle = async (rawUrl) => {
     pageTitle: title,
     sourceText,
     sourceCharacters: sourceText.length,
-    sourceMode: "public_article",
-    sourceWarnings: [],
+    sourceMode: body ? "public_article" : "public_excerpt",
+    sourceWarnings: [
+      ...(!body ? ["僅取得媒體頁的描述節錄，未取得完整內文；請核對原文。"] : []),
+      ...(truncated ? ["文章超過16,000字，摘要依前後段節錄產生，並非完整內文。"] : []),
+    ],
+    truncated,
   };
 };
 
 const sourceAccessWarning = (error) => {
   const status = Number(error?.sourceStatus);
-  if (status === 429) return "原文網站暫時限制自動讀取（429）；此草稿僅依新聞標題產生，請開啟原文後人工核對。";
-  if (status) return `原文網站暫時無法讀取（${status}）；此草稿僅依新聞標題產生，請開啟原文後人工核對。`;
-  return "原文暫時無法讀取；此草稿僅依新聞標題產生，請開啟原文後人工核對。";
+  if (status === 429) return "原文網站暫時限制自動讀取（429）。";
+  if (status) return `原文網站暫時無法讀取（${status}）。`;
+  return "原文暫時無法讀取。";
 };
 
 const metadataArticle = (metadata, error) => {
@@ -335,9 +353,14 @@ const metadataArticle = (metadata, error) => {
   };
 };
 
-const extractSummarySource = async (metadata) => {
+const extractSummarySource = async (metadata, env) => {
   const pastedText = usefulSourceText(metadata.articleText, 60);
   if (pastedText) return metadataArticle(metadata);
+  const cached = env.ARTICLE_CACHE?.items?.[metadata.url];
+  if (cached && cached.title === metadata.title && usefulSourceText(cached.sourceText)
+    && Date.parse(cached.fetchedAt) > Date.now() - 48 * 60 * 60 * 1000) {
+    return { ...cached, sourceMode: cached.sourceMode === "public_article" ? "cached_article" : cached.sourceMode };
+  }
   try {
     return await extractArticle(metadata.url);
   } catch (error) {
@@ -388,7 +411,7 @@ const handleSummaryRequest = async (request, env) => {
   if (configured.error) return jsonResponse(request, configured.status, { error: { message: configured.error } });
   try {
     const metadata = await parseRequest(request);
-    const article = await extractSummarySource(metadata);
+    const article = await extractSummarySource(metadata, env);
     const draft = await createSummaryDraft(env, metadata, article);
     return jsonResponse(request, 200, {
       draft: {
@@ -397,6 +420,7 @@ const handleSummaryRequest = async (request, env) => {
         canonicalUrl: article.canonicalUrl,
         sourceCharacters: article.sourceCharacters,
         sourceMode: draft.sourceMode,
+        sourceFetchedAt: article.fetchedAt || null,
         generatedAt: new Date().toISOString(),
       },
     });
@@ -415,6 +439,11 @@ const handleSummaryStatusRequest = async (request, env) => {
   return jsonResponse(request, 200, {
     status: "ready", provider: "cloudflare", model: configured.model, freeOnly: true,
     message: "Cloudflare 免費摘要的存取碼、AI 綁定及 Free 方案確認設定已就緒；此檢查不執行模型，也不查詢今日剩餘額度。",
+    articleCache: {
+      generatedAt: env.ARTICLE_CACHE?.generatedAt || null,
+      available: Object.keys(env.ARTICLE_CACHE?.items || {}).length,
+      total: Number(env.ARTICLE_CACHE?.total) || 0,
+    },
   });
 };
 

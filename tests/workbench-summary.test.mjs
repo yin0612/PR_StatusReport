@@ -8,7 +8,7 @@ const html = await readFile(new URL("../dist/index.html", import.meta.url), "utf
 const script = /<script type="module">([\s\S]*?)<\/script>/.exec(html)[1]
   .replace(/^\s*import[^\n]+from "\.\/summary-cache\.js";\s*$/m, "")
   .replace("hydrate(); cleanOrder(); renderAll(true); persist(); loadMonitoringSnapshot();",
-    "hydrate(); cleanOrder(); renderAll(true); persist(); globalThis.workbenchTest = { generateAiSummary, checkSummarySetup, getState: () => state };");
+    "hydrate(); cleanOrder(); renderAll(true); persist(); globalThis.workbenchTest = { generateAiSummary, generateSelectedSummaries, checkSummarySetup, getState: () => state };");
 
 const setup = (api, savedState) => {
   const elements = new Map();
@@ -75,4 +75,34 @@ test("unselected articles cannot trigger AI and missing setup stays visible", as
   assert.equal(calls, 0);
   await page.harness.checkSummarySetup();
   assert.equal(page.elements.get("summarySetupStatus").textContent, "請先確認 Workers Free");
+});
+
+test("old headline-only cache is retried and never silently reused", async () => {
+  let calls = 0;
+  const page = setup(async () => { calls += 1; return Response.json({ draft }); });
+  const item = page.harness.getState().news[0];
+  item.aiDraft = { summary: item.title, provider: "none", sourceMode: "headline", version: SUMMARY_VERSION, inputKey: await summaryInputKey(item) };
+  await page.harness.generateAiSummary(item.id);
+  assert.equal(calls, 1);
+  assert.equal(item.aiDraft.provider, "cloudflare");
+});
+
+test("selected batch is sequential, continues past unreadable bodies and stops at quota", async () => {
+  const calls = [];
+  let active = 0;
+  const page = setup(async (_, input) => {
+    assert.equal(++active, 1);
+    calls.push(JSON.parse(input.body).title);
+    await Promise.resolve();
+    active -= 1;
+    if (calls.length === 1) return Response.json({ error: { code: "article_body_unavailable", message: "未取得內文" } }, { status: 422 });
+    if (calls.length === 3) return Response.json({ error: { code: "cloudflare_free_quota_exhausted", message: "額度用完", retryAt: new Date(Date.now() + 60000).toISOString() } }, { status: 429 });
+    return Response.json({ draft });
+  });
+  page.harness.getState().news.forEach(item => { item.selected = true; });
+  await page.harness.generateSelectedSummaries();
+  assert.equal(calls.length, 3);
+  assert.ok(page.elements.get("summaryBatchStatus").textContent.includes("已整理 1 則，2 則未完成"));
+  assert.ok(page.elements.get("summaryBatchStatus").textContent.includes("剩餘新聞未送出"));
+  assert.equal(page.elements.get("summarizeSelected").disabled, false);
 });

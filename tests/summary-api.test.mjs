@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { test } from "node:test";
-import { handleSummaryRequest, handleSummaryStatusRequest } from "../src/index.js";
+import worker, { extractArticle, handleSummaryRequest, handleSummaryStatusRequest } from "../src/index.js";
+import { buildArticleCache } from "../scripts/build-article-cache.mjs";
 import { SUMMARY_MODEL, SUMMARY_VERSION } from "../src/cloudflare-summary.js";
 import { summaryInputKey, canReuseSummaryDraft } from "../dist/summary-cache.js";
 
@@ -142,10 +143,11 @@ test("unreadable article with headline only does not spend any AI allocation", a
   t.mock.method(globalThis, "fetch", async () => new Response("limited", { status: 429 }));
   const env = envFor(() => { throw new Error("Do not rewrite headlines using AI"); });
   const response = await handleSummaryRequest(request({ articleText: "", excerpt: "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。" }), env);
-  const draft = (await response.json()).draft;
-  assert.equal(draft.provider, "none");
-  assert.equal(draft.sourceMode, "headline");
-  assert.ok(draft.note.includes("這不是內文摘要"));
+  const payload = await response.json();
+  assert.equal(response.status, 422);
+  assert.equal(payload.error.code, "article_body_unavailable");
+  assert.equal(payload.draft, undefined);
+  assert.ok(payload.error.message.includes("429"));
 });
 
 test("available monitoring excerpt is summarized when publisher blocks access", async (t) => {
@@ -192,4 +194,74 @@ test("production source contains no paid endpoint or API key dependency", async 
   const main = await readFile(new URL("../src/index.js", import.meta.url), "utf8");
   const ai = await readFile(new URL("../src/cloudflare-summary.js", import.meta.url), "utf8");
   assert.equal(/api\.openai\.com|OPENAI_API_KEY|OPENAI_MODEL/.test(main + ai), false);
+});
+
+test("publisher body excludes larger navigation and recommendations, including nested divs", async (t) => {
+  t.mock.method(globalThis, "fetch", async () => new Response(`<main><div class="news_content BL">${"側欄假新聞。".repeat(100)}</div><article><section class="article_body"><div><p>${articleText}</p></div><p>最後一段的重要條件：每月上限200點。</p></section><aside>${"相關新聞。".repeat(100)}</aside></article></main>`, { headers: { "content-type": "text/html" } }));
+  const article = await extractArticle("https://example.com/news");
+  assert.equal(article.sourceMode, "public_article");
+  assert.ok(article.sourceText.includes("最後一段的重要條件"));
+  assert.equal(article.sourceText.includes("側欄假新聞"), false);
+  assert.equal(article.sourceText.includes("相關新聞"), false);
+});
+
+test("JSON-LD body is read in full; metadata description is not labelled a full article", async (t) => {
+  t.mock.method(globalThis, "fetch", async () => new Response(`<script type="application/ld+json">${JSON.stringify({ "@type": "NewsArticle", articleBody: articleText, description: "短描述" })}</script>`, { headers: { "content-type": "text/html" } }));
+  assert.equal((await extractArticle("https://example.com/news")).sourceText, articleText);
+  t.mock.method(globalThis, "fetch", async () => new Response(`<meta name="description" content="${articleText}">`, { headers: { "content-type": "text/html" } }));
+  const excerpt = await extractArticle("https://example.com/news");
+  assert.equal(excerpt.sourceMode, "public_excerpt");
+  assert.ok(excerpt.sourceWarnings[0].includes("未取得完整內文"));
+});
+
+test("long bodies retain the ending and disclose that the middle was shortened", async (t) => {
+  t.mock.method(globalThis, "fetch", async () => new Response(`<article>${"正文。".repeat(6000)}最後關鍵數字123</article>`, { headers: { "content-type": "text/html" } }));
+  const article = await extractArticle("https://example.com/news");
+  assert.ok(article.sourceText.endsWith("最後關鍵數字123"));
+  assert.ok(article.sourceText.length <= 16000);
+  assert.equal(article.truncated, true);
+  assert.ok(article.sourceWarnings[0].includes("並非完整內文"));
+});
+
+test("private build cache supplies body to AI when live fetching is blocked and does not return it", async (t) => {
+  t.mock.method(globalThis, "fetch", () => { throw new Error("Cached source must avoid restricted live request"); });
+  let inputText;
+  const env = envFor(async (_, input) => { inputText = input.messages[1].content; return completion(); });
+  env.ARTICLE_CACHE = { items: { "https://example.com/news": { title: "測試新聞", canonicalUrl: "https://example.com/original", sourceText: articleText, sourceCharacters: articleText.length, sourceMode: "public_article", sourceWarnings: [], fetchedAt: new Date().toISOString() } } };
+  const response = await handleSummaryRequest(request({ articleText: "" }), env);
+  const payload = await response.json();
+  assert.equal(response.status, 200);
+  assert.equal(payload.draft.sourceMode, "cached_article");
+  assert.equal(payload.draft.sourceCharacters, articleText.length);
+  assert.ok(inputText.includes(articleText));
+  assert.equal(JSON.stringify(payload).includes(articleText), false);
+});
+
+test("stale or mismatched caches cannot be used for a different article", async (t) => {
+  t.mock.method(globalThis, "fetch", async () => new Response("blocked", { status: 403 }));
+  for (const entry of [{ title: "其他文章", fetchedAt: new Date().toISOString() }, { title: "測試新聞", fetchedAt: "2020-01-01" }]) {
+    const env = envFor(() => { throw new Error("No usable article, no AI"); });
+    env.ARTICLE_CACHE = { items: { "https://example.com/news": { ...entry, sourceText: articleText } } };
+    const response = await handleSummaryRequest(request({ articleText: "" }), env);
+    assert.equal(response.status, 422);
+  }
+});
+
+test("build collectors isolate source failures, preserve URLs, and never use AI", async () => {
+  const cache = await buildArticleCache([{ title: "可讀", url: "https://example.com/read" }, { title: "受限", url: "https://example.com/blocked" }], async (url) => {
+    if (url.endsWith("blocked")) throw { status: 403 };
+    return { sourceText: articleText, sourceMode: "public_article" };
+  });
+  assert.equal(cache.total, 2);
+  assert.equal(cache.items["https://example.com/read"].title, "可讀");
+  assert.equal(cache.failures["https://example.com/blocked"].status, 403);
+});
+
+test("article cache is never a static asset or publicly exposed API", async () => {
+  const config = JSON.parse(await readFile(new URL("../wrangler.json", import.meta.url), "utf8"));
+  assert.equal(config.assets.directory, "./dist");
+  const entry = await readFile(new URL("../src/worker.js", import.meta.url), "utf8");
+  assert.ok(entry.includes("../.generated/article-cache.json"));
+  const response = await worker.fetch(new Request("https://example.com/api/article-cache"), { ARTICLE_CACHE: { secret: articleText }, ASSETS: { fetch: () => new Response("public site") } });
+  assert.equal(await response.text(), "public site");
 });

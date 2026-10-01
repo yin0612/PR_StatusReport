@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { resolveGoogleNewsUrl } from "../src/index.js";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const configPath = resolve(projectRoot, "config/watchlist.json");
@@ -165,8 +166,25 @@ const items = allCandidates.filter((item) => {
 }).slice(0, Number(config.maxItems) || 120);
 const latestGeneratedAt = results.map((result) => result.generatedAt).sort((left, right) => timestamp(right) - timestamp(left))[0] || null;
 
+// Publisher URLs are public metadata, not article bodies. Preserve them across
+// hourly updates so neither the build nor the Worker repeatedly asks Google.
+let priorItems = [];
+try { priorItems = JSON.parse(await readFile(outputPath, "utf8")).items || []; } catch { /* First sync. */ }
+const priorByUrl = new Map(priorItems.filter(item => item.publisherUrl).map(item => [item.url, item.publisherUrl]));
+const knownLinks = JSON.parse(await readFile(resolve(projectRoot, "config/publisher-links.json"), "utf8"));
+let decodedCount = 0;
+let googleLimited = false;
+for (const item of items) {
+  const known = priorByUrl.get(item.url) || knownLinks[item.id];
+  if (known) { item.publisherUrl = known; continue; }
+  if (!/^https:\/\/news\.google\.com\//i.test(item.url) || decodedCount >= 12 || googleLimited) continue;
+  decodedCount += 1;
+  try { item.publisherUrl = await resolveGoogleNewsUrl(item.url, { timeoutMs: 5_000 }); }
+  catch (error) { if (error?.sourceStatus === 429) googleLimited = true; }
+}
+
 const snapshot = {
-  schemaVersion: "1.1.0",
+  schemaVersion: "1.2.0",
   generatedAt: latestGeneratedAt,
   watchlistVersion: config.version,
   source: {
