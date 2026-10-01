@@ -332,7 +332,7 @@
 
       <main id="main-content">
         <section class="decision-strip" aria-labelledby="decision-title">
-          <div class="decision-copy"><span id="decisionKicker" class="decision-kicker">本週編輯台</span><h2 id="decision-title">先挑出值得被管理層看見的訊號</h2><p id="decisionDescription">從監測結果匯入新聞，保留你的選題理由與原始來源，再把內容轉成可交付的週報草稿。</p></div>
+          <div class="decision-copy"><span id="decisionKicker" class="decision-kicker">本週編輯台</span><h2 id="decision-title">篩選訊號</h2><p id="decisionDescription">從監測結果匯入新聞，保留你的選題理由與原始來源，再把內容轉成可交付的週報草稿。</p></div>
           <div class="decision-status"><span>●</span><span id="decisionStatus">6 則示範新聞待檢視</span></div>
         </section>
 
@@ -421,10 +421,10 @@
       const confirmationLabels = ["每則內文的事實、數字與文字已檢查", "原始來源與連結已確認", "報告日期、分類與排序已確認"];
       const workflowViews = ["inbox", "selection", "draft", "confirmation"];
       const workflowCopy = {
-        inbox: { kicker: "01 · 監測收件匣", title: "先挑出值得被管理層看見的訊號", description: "從智冠產業監測匯入新聞，先用關鍵字、主題與重要度縮小範圍。" },
-        selection: { kicker: "02 · 篩選選題", title: "把本週需要交代的新聞排成脈絡", description: "已選新聞會依這裡的順序寫進週報；可隨時調整優先順序。" },
-        draft: { kicker: "03 · 週報草稿", title: "把選題整理成可直接交付的週報", description: "在同一頁檢視版型、修改內文，確認後再複製文字。" },
-        confirmation: { kicker: "04 · 人工確認", title: "送出前完成最後核對", description: "確認事實、來源與排序，再儲存一份本週紀錄。" }
+        inbox: { kicker: "01 · 監測收件匣", title: "篩選訊號", description: "從智冠產業監測匯入新聞，先用關鍵字、主題與重要度縮小範圍。" },
+        selection: { kicker: "02 · 篩選選題", title: "新聞排序", description: "已選新聞會依這裡的順序寫進週報；可隨時調整優先順序。" },
+        draft: { kicker: "03 · 週報草稿", title: "選題整理", description: "在同一頁檢視版型、修改內文，確認後再複製文字。" },
+        confirmation: { kicker: "04 · 人工確認", title: "最後核對", description: "確認事實、來源與排序，再儲存一份本週紀錄。" }
       };
 
       const startOfWeek = (date = new Date()) => {
