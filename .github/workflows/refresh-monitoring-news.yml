@@ -11,6 +11,8 @@ on:
       - "config/publisher-links.json"
       - "scripts/sync-media-feed.mjs"
       - "src/index.js"
+      - "src/monitoring-rules.js"
+      - "tests/**"
       - ".github/workflows/refresh-monitoring-news.yml"
 
 permissions:
@@ -34,6 +36,10 @@ jobs:
           node-version: 22
 
       - name: Fetch and filter monitoring news
+        # Reject regressions before publishing any new data.
+        run: node --test
+
+      - name: Fetch monitoring news
         run: node scripts/sync-media-feed.mjs
 
       - name: Commit a changed snapshot
@@ -46,4 +52,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add dist/data/monitoring-news.json
           git commit -m "chore: refresh monitored news"
+          git pull --rebase origin main
           git push

@@ -525,7 +525,9 @@
 
       let state = defaultState();
       let archives = [];
-      let monitoringState = { phase: "loading", generatedAt: null, count: 0, sourceCount: 0 };
+      let monitoringState = { phase: "loading", generatedAt: null, syncedAt: null, builtAt: null, checkedAt: null, count: 0, sourceCount: 0 };
+      let monitoringRequestInFlight = false;
+      let reviewFingerprint = "";
       let summaryAccessKey = "";
       let summaryRequestInFlight = false;
       let summaryBatchInFlight = false;
@@ -574,7 +576,17 @@
         toastTimer = setTimeout(() => get("toast").classList.remove("is-showing"), 3000);
       };
       const cleanOrder = () => selectedNews().forEach((item, index) => { item.order = index + 1; });
-      const commit = (message) => { cleanOrder(); persist(); if (message) toast(message); };
+      const reviewContentKey = () => JSON.stringify([state.weekStart, state.reportTitle, state.draftEdited ? state.draft : "", selectedNews().map(item => [item.id, item.title, item.date, item.url, item.source, item.reportGroup, item.summary, item.note, item.order])]);
+      const commit = (message) => {
+        cleanOrder();
+        const fingerprint = reviewContentKey();
+        if (reviewFingerprint && fingerprint !== reviewFingerprint) {
+          state.confirmations = confirmationLabels.map(() => false);
+          renderConfirmation();
+        }
+        reviewFingerprint = fingerprint;
+        persist(); if (message) toast(message);
+      };
 
       const activeWorkflowView = () => workflowViews.includes(state.activeView) ? state.activeView : "inbox";
       const renderWorkflowView = () => {
@@ -605,17 +617,21 @@
 
       const formatSyncTime = (value) => {
         const date = new Date(value);
-        return Number.isNaN(date.getTime()) ? "來源時間未提供" : new Intl.DateTimeFormat("zh-TW", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false }).format(date);
+        return !value || Number.isNaN(date.getTime()) ? "未提供" : new Intl.DateTimeFormat("zh-TW", { timeZone: "Asia/Taipei", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false }).format(date);
       };
       const renderMonitoringState = () => {
         const isLoading = monitoringState.phase === "loading";
         const isReady = monitoringState.phase === "ready";
-        const status = isLoading ? "自動監測資料載入中" : isReady ? `已同步 ${monitoringState.count} 則候選新聞` : "監測資料暫時無法載入";
+        const ageHours = (value) => value && Number.isFinite(Date.parse(value)) ? (Date.now() - Date.parse(value)) / 3600000 : Infinity;
+        const sourceOld = ageHours(monitoringState.generatedAt) > (monitoringState.freshness?.sourceWarningHours || 8);
+        const syncOld = ageHours(monitoringState.syncedAt) > (monitoringState.freshness?.syncWarningHours || 3);
+        const stale = isReady && (sourceOld || syncOld);
+        const status = isLoading ? "自動監測資料載入中" : isReady ? `${stale ? "更新延遲 · " : ""}已載入 ${monitoringState.count} 則候選新聞` : "監測資料暫時無法載入";
         get("sourceStatusText").textContent = status;
         get("syncDescription").textContent = isLoading
           ? "正在載入已部署的監測候選新聞。"
           : isReady
-            ? `主要參考智冠產業監測；來源資料更新於 ${formatSyncTime(monitoringState.generatedAt)}，由 GitHub 每小時同步並隨網站部署更新。`
+            ? `智冠來源：${formatSyncTime(monitoringState.generatedAt)}；同步成功：${formatSyncTime(monitoringState.syncedAt)}；網站建置：${formatSyncTime(monitoringState.builtAt)}；本機檢查：${formatSyncTime(monitoringState.checkedAt)}（台灣時間）。${stale ? " 更新已超過預期時間，請查核來源或 GitHub 排程；目前保留上一版資料。" : " 排程設定每小時同步，實際執行可能延遲；開啟頁面每 5 分鐘檢查，不執行 AI。"}`
             : "目前保留既有收件匣資料；可稍後重新載入，或直接從智冠產業監測貼入新聞。";
         get("refreshMonitoring").disabled = isLoading;
       };
@@ -682,6 +698,7 @@
               <button type="button" class="priority-button" data-set-priority="${escapeHTML(item.id)}" data-priority="${escapeHTML(item.priority)}" title="切換重要度">${priorityLabel(item.priority)}</button>
             </div>
             <p class="news-excerpt">${escapeHTML(inboxExcerpt(item))}</p>
+            ${item.relatedSources?.length ? `<details class="summary-source-details"><summary>另 ${item.relatedSources.length} 則同標題轉載（已合併）</summary>${item.relatedSources.map(source => `<p><a class="link-button" href="${escapeHTML(safeUrl(source.url))}" target="_blank" rel="noopener noreferrer">${escapeHTML(source.source)}：${escapeHTML(source.title)} ↗</a></p>`).join("")}</details>` : ""}
             <div class="news-bottom"><div class="tag-row"><span class="tag topic">${escapeHTML(item.topic)}</span>${(item.tags || []).slice(0, 3).map(tag => `<span class="tag">${escapeHTML(tag)}</span>`).join("")}</div><a class="link-button" href="${escapeHTML(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer">查看原文 ↗</a></div>
             <div class="news-edit">
               <div class="report-placement"><div><label class="label" for="report-group-${escapeHTML(item.id)}">週報分類</label><select id="report-group-${escapeHTML(item.id)}" class="select-input" data-report-group="${escapeHTML(item.id)}">${reportGroups.map(option => `<option value="${option.key}" ${option.key === group.key ? "selected" : ""}>${escapeHTML(option.category)}</option>`).join("")}</select></div><p class="report-placement-help">決定此則新聞要寫入產業訊息的【類別】。</p></div>
@@ -698,21 +715,21 @@
         get("selectionList").innerHTML = chosen.length ? chosen.map((item, index) => `
           <div class="selection-item"><span class="selection-index">${index + 1}</span><div class="selection-body"><span class="selection-title" title="${escapeHTML(item.title)}">${escapeHTML(item.title)}</span><span class="selection-meta">${escapeHTML(item.source)} · ${escapeHTML(item.topic)} · ${priorityLabel(item.priority)}</span></div><div class="order-actions"><button class="order-button" type="button" data-move="up" data-id="${escapeHTML(item.id)}" ${index === 0 ? "disabled" : ""} aria-label="上移">↑</button><button class="order-button" type="button" data-move="down" data-id="${escapeHTML(item.id)}" ${index === chosen.length - 1 ? "disabled" : ""} aria-label="下移">↓</button></div></div>`).join("") : `<div class="selection-empty">尚未選題。從收件匣勾選新聞後，會在這裡建立週報順序。</div>`;
       };
-      const previewSection = () => reportGroups.map(group => {
-        const entries = selectedNews().filter(item => reportGroupFor(item).key === group.key);
-        const entryMarkup = entries.length ? entries.map(item => {
-          const body = reportBody(item);
-          const dated = /^\d{1,2}\/\d{1,2}\([日一二三四五六]\)/.test(body);
-          return `<div class="report-entry"><p>${dated ? "" : `<span class="report-entry-date">${escapeHTML(reportItemDate(item.date))}</span> `}${lineBreaks(body)}</p>${String(item.note || "").trim() ? `<p class="report-entry-note">${lineBreaks(String(item.note).trim())}</p>` : ""}</div>`;
-        }).join("") : `<div class="report-empty-category" aria-hidden="true"></div>`;
-        return `<section><p class="report-category">【${escapeHTML(group.category)}】</p>${entryMarkup}</section>`;
-      }).join("");
       const renderReportPreview = () => {
-        get("reportPreview").innerHTML = `<p class="report-preview-title">${escapeHTML(state.reportTitle.trim() || REPORT_TITLE)}</p><p class="report-preview-date"><strong>Date:</strong> ${escapeHTML(reportDateLabel(state.weekStart))}</p><table class="report-table"><thead><tr><th>日期</th><th>工作項目&amp;討論事項</th></tr></thead><tbody><tr><th scope="row">產業訊息</th><td>${previewSection()}</td></tr></tbody></table>`;
+        // Preview and clipboard share exactly the same draft; never rebuild from news.
+        const match = /^([^\n]*)\nDate: ([^\n]*)\n\n日期\t工作項目&討論事項\n產業訊息\t([\s\S]*)$/.exec(state.draft);
+        if (!match) {
+          get("reportPreview").innerHTML = `<pre style="white-space:pre-wrap;overflow-wrap:anywhere;font:inherit">${escapeHTML(state.draft)}</pre>`;
+          return;
+        }
+        const body = match[3].split("\n").map(line => /^【[^\n]+】$/.test(line)
+          ? `<p class="report-category">${escapeHTML(line)}</p>`
+          : line ? `<p class="report-entry">${escapeHTML(line)}</p>` : `<div class="report-empty-category" aria-hidden="true"></div>`).join("");
+        get("reportPreview").innerHTML = `<p class="report-preview-title">${escapeHTML(match[1])}</p><p class="report-preview-date"><strong>Date:</strong> ${escapeHTML(match[2])}</p><table class="report-table"><thead><tr><th>日期</th><th>工作項目&amp;討論事項</th></tr></thead><tbody><tr><th scope="row">產業訊息</th><td>${body}</td></tr></tbody></table>`;
       };
       const renderDraft = (force = false) => {
         get("reportTitle").value = state.reportTitle;
-        if (force || !state.draftEdited || !state.draft) { state.draft = generateDraft(); state.draftEdited = false; }
+        if (!state.draftEdited) { state.draft = generateDraft(); }
         get("draftOutput").value = state.draft;
         renderReportPreview();
         get("draftStatus").textContent = state.draftEdited ? "已手動調整" : "自動組版";
@@ -924,6 +941,7 @@
           origin: "monitoring",
           title: String(item.title || `未命名監測新聞 ${index + 1}`).trim(),
           source: String(item.source || "智冠產業監測").trim(),
+          relatedSources: Array.isArray(item.relatedSources) ? item.relatedSources : [],
           date: /^\d{4}-\d{2}-\d{2}$/.test(String(item.date || "")) ? String(item.date) : isoDate(new Date()),
           url: safeUrl(String(item.url || exampleSource)),
           topic,
@@ -966,21 +984,40 @@
         return incoming.length;
       };
       const loadMonitoringSnapshot = async (announce = false) => {
-        monitoringState = { ...monitoringState, phase: "loading" };
-        renderMonitoringState();
+        if (monitoringRequestInFlight || summaryRequestInFlight || summaryBatchInFlight) return;
+        monitoringRequestInFlight = true;
+        if (announce || monitoringState.phase !== "ready") {
+          monitoringState = { ...monitoringState, phase: "loading" };
+          renderMonitoringState();
+        }
         try {
-          const response = await fetch(`${monitoringSnapshotUrl}?v=${Date.now()}`, { cache: "no-store" });
+          const response = await fetch(`${monitoringSnapshotUrl}?v=${Date.now()}`, { cache: "no-store", signal: AbortSignal.timeout(15000) });
           if (!response.ok) throw new Error(`snapshot ${response.status}`);
           const snapshot = await response.json();
-          if (!Array.isArray(snapshot.items)) throw new Error("invalid snapshot");
+          if (!Array.isArray(snapshot.items) || !snapshot.items.length || snapshot.items.some(item => !item.id || !item.title || !item.url || !/^\d{4}-\d{2}-\d{2}$/.test(item.date))) throw new Error("invalid snapshot");
+          const activeInput = document.activeElement;
+          // Do not replace a focused editor while a user is typing.
+          if (!announce && activeInput && /^(INPUT|TEXTAREA|SELECT)$/.test(activeInput.tagName)) return;
+          let buildMetadata = null;
+          try {
+            const buildResponse = await fetch(`./data/deployment-status.json?v=${Date.now()}`, { cache: "no-store", signal: AbortSignal.timeout(5000) });
+            if (buildResponse.ok) buildMetadata = await buildResponse.json();
+          } catch { /* Old GitHub Pages snapshots may not have build metadata. */ }
+          if (!announce && document.activeElement && /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) return;
+          if (summaryRequestInFlight || summaryBatchInFlight) return;
           const count = mergeMonitoringNews(snapshot.items);
           monitoringState = {
             phase: "ready",
             generatedAt: snapshot.generatedAt,
+            syncedAt: snapshot.syncedAt || null,
+            builtAt: buildMetadata?.builtAt || monitoringState.builtAt,
+            checkedAt: new Date().toISOString(),
+            freshness: snapshot.freshness || {},
             count,
             sourceCount: Number(snapshot?.source?.totalItems) || 0
           };
           const refreshDraft = !state.draftEdited;
+          // Preserve a manually edited report and reset review only if its inputs changed.
           commit();
           renderAll(refreshDraft);
           if (announce) toast(`已載入 ${count} 則最新監測候選新聞。`);
@@ -989,6 +1026,8 @@
           monitoringState = { ...monitoringState, phase: "error" };
           renderMonitoringState();
           if (announce) toast("暫時無法取得最新資料，已保留目前收件匣。 ");
+        } finally {
+          monitoringRequestInFlight = false;
         }
       };
       const parsePasted = (text) => text.split(/\r?\n/).map(line => line.trim()).filter(Boolean).map(line => {
@@ -1032,7 +1071,7 @@
         if (input.dataset.note) { const item = state.news.find(news => news.id === input.dataset.note); if (item) { item.note = input.value; state.draftEdited = false; commit(); renderDraft(true); } return; }
         if (input.dataset.aiSourceText) { const item = state.news.find(news => news.id === input.dataset.aiSourceText); if (item) { item.aiSourceText = input.value.slice(0, 16000); commit(); } return; }
         if (input.id === "reportTitle") { state.reportTitle = input.value; state.draftEdited = false; commit(); renderDraft(true); return; }
-        if (input.id === "draftOutput") { state.draft = input.value; state.draftEdited = true; commit(); get("draftStatus").textContent = "已手動調整"; get("draftStatus").style.color = "#865c9d"; get("draftStatus").style.background = "#f4edfb"; }
+        if (input.id === "draftOutput") { state.draft = input.value; state.draftEdited = true; commit(); renderReportPreview(); get("draftStatus").textContent = "已手動調整"; get("draftStatus").style.color = "#865c9d"; get("draftStatus").style.background = "#f4edfb"; }
       });
       get("toggleImport").addEventListener("click", () => { get("importPanel").classList.toggle("is-open"); if (get("importPanel").classList.contains("is-open")) get("pasteInput").focus(); });
       get("refreshMonitoring").addEventListener("click", () => loadMonitoringSnapshot(true));
@@ -1048,6 +1087,11 @@
       get("markConfirmed").addEventListener("click", () => { state.confirmations = confirmationLabels.map(() => true); commit("本週週報已標記為人工確認完成"); renderConfirmation(); });
 
       hydrate(); cleanOrder(); renderAll(true); persist(); loadMonitoringSnapshot();
+      reviewFingerprint = reviewContentKey();
+      setInterval(() => { if (document.visibilityState !== "hidden") loadMonitoringSnapshot(); }, 5 * 60 * 1000);
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible" && Date.now() - Date.parse(monitoringState.checkedAt || 0) > 60000) loadMonitoringSnapshot();
+      });
     })();
   </script>
 </body>

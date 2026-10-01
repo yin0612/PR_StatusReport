@@ -3,6 +3,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { resolveGoogleNewsUrl } from "../src/index.js";
+import { taipeiDate, isStockOnly, isPaymentMetaphor, deduplicateSyndication } from "../src/monitoring-rules.js";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const configPath = resolve(projectRoot, "config/watchlist.json");
@@ -14,14 +15,12 @@ const unique = (values) => [...new Set(values.filter(Boolean))];
 const toText = (value) => String(value ?? "").normalize("NFKC").toLocaleLowerCase();
 const cleanText = (value) => String(value ?? "").replace(/\s+/g, " ").trim();
 const dateOnly = (value) => {
-  const match = String(value ?? "").match(/^\d{4}-\d{2}-\d{2}/);
-  return match ? match[0] : null;
+  return taipeiDate(value);
 };
 const timestamp = (value) => {
   const date = new Date(value);
   return Number.isNaN(date.getTime()) ? 0 : date.getTime();
 };
-const titleKey = (value) => toText(value).replace(/[^\p{L}\p{N}]+/gu, "");
 
 const matchedTerms = (text, terms = []) => terms.filter((term) => text.includes(toText(term)));
 const ruleMatch = (text, rule) => {
@@ -57,6 +56,10 @@ const reportPlacementForAggregated = (article) => {
   const terms = Array.isArray(article.matched_terms) ? article.matched_terms.map(toText) : [];
   // 公司／IR 專用監測不列入此工作台，保留候選額度給產業新聞。
   if (/softworld-/.test(rules) || folders.includes("folder_1")) return null;
+  if (isStockOnly(String(article.title || ""))) return null;
+  if (isPaymentMetaphor(String(article.title || ""))) {
+    return { topic: "競品與產業", reportGroup: "industry-games", priority: "中", tags: ["遊戲產業", "周邊設備"] };
+  }
   if (/stablecoin|vasp|chain/.test(rules) || folders.includes("folder_6")) {
     return { topic: "金融支付", reportGroup: "industry-stablecoin", priority: "高", tags: ["穩定幣", "鏈上結算"] };
   }
@@ -114,8 +117,8 @@ const recentCandidates = (feed, source, config) => {
 const aggregatedCandidates = (feed, source) => {
   const sourceItems = Array.isArray(feed?.articles) ? feed.articles : [];
   const generatedAt = feed.generated_at || null;
-  const cutoff = source.maxAgeDays && timestamp(generatedAt)
-    ? timestamp(generatedAt) - Number(source.maxAgeDays) * 24 * 60 * 60 * 1000
+  const cutoff = source.maxAgeDays
+    ? Date.now() - Number(source.maxAgeDays) * 24 * 60 * 60 * 1000
     : 0;
   const items = sourceItems.map((article) => {
     const publishedAt = article.published_at || article.fetched_at || generatedAt;
@@ -157,13 +160,8 @@ for (const source of sources) {
 
 const allCandidates = results.flatMap((result) => result.items)
   .sort((left, right) => timestamp(right.publishedAt) - timestamp(left.publishedAt));
-const seenTitles = new Set();
-const items = allCandidates.filter((item) => {
-  const key = titleKey(item.title);
-  if (!key || seenTitles.has(key)) return false;
-  seenTitles.add(key);
-  return true;
-}).slice(0, Number(config.maxItems) || 120);
+const items = deduplicateSyndication(allCandidates).slice(0, Number(config.maxItems) || 120);
+if (!items.length) throw new Error("來源未提供有效候選新聞，保留上一版資料；請檢查來源更新與格式。");
 const latestGeneratedAt = results.map((result) => result.generatedAt).sort((left, right) => timestamp(right) - timestamp(left))[0] || null;
 
 // Publisher URLs are public metadata, not article bodies. Preserve them across
@@ -184,8 +182,10 @@ for (const item of items) {
 }
 
 const snapshot = {
-  schemaVersion: "1.2.0",
+  schemaVersion: "1.3.0",
   generatedAt: latestGeneratedAt,
+  syncedAt: new Date().toISOString(),
+  freshness: { expectedSyncHours: 1, syncWarningHours: 3, sourceWarningHours: 8 },
   watchlistVersion: config.version,
   source: {
     label: results.map((result) => result.source.label).join("＋"),

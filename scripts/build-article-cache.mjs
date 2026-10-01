@@ -44,5 +44,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   const outputDir = resolve(projectRoot, ".generated");
   await mkdir(outputDir, { recursive: true });
   await writeFile(resolve(outputDir, "article-cache.json"), JSON.stringify(cache), "utf8");
+  // Public build metadata only, never article bodies or secrets.
+  await writeFile(resolve(projectRoot, "dist/data/deployment-status.json"), JSON.stringify({ builtAt: new Date().toISOString() }), "utf8");
   console.log(`Private article cache: ${Object.keys(cache.items).length}/${cache.total} readable; ${Object.keys(cache.failures).length} restricted. No AI calls.`);
 }
