@@ -13,9 +13,10 @@ const MAX_SOURCE_CHARS = 8_000;
 const MAX_REDIRECTS = 5;
 
 class ApiError extends Error {
-  constructor(status, message) {
+  constructor(status, message, details = {}) {
     super(message);
     this.status = status;
+    Object.assign(this, details);
   }
 }
 
@@ -24,6 +25,13 @@ const trimText = (value, limit = MAX_SOURCE_CHARS) => String(value || "")
   .replace(/\s+/g, " ")
   .trim()
   .slice(0, limit);
+
+const isPlaceholderExcerpt = (value) => /google news rss 聚合僅提供標題與發布時間|由產業監測網篩選，請開啟原文後整理週報內文|請開啟原文並撰寫週報內文/i.test(String(value || ""));
+
+const usefulSourceText = (value, minimumLength = 90) => {
+  const text = trimText(value);
+  return text.length >= minimumLength && !isPlaceholderExcerpt(text) ? text : "";
+};
 
 const plainDraftText = (value, limit) => String(value || "")
   .replace(/\r\n?/g, "\n")
@@ -103,7 +111,9 @@ const fetchWithTimeout = async (url, options = {}, timeoutMs = 15_000) => {
   try {
     return await fetch(url, { ...options, signal: controller.signal });
   } catch (error) {
-    if (error?.name === "AbortError") throw new ApiError(504, "擷取原文逾時，請稍後再試或改以人工整理。");
+    if (error?.name === "AbortError") {
+      throw new ApiError(504, "擷取原文逾時，請稍後再試或改以人工整理。", { allowMetadataFallback: true });
+    }
     throw error;
   } finally {
     clearTimeout(timer);
@@ -126,18 +136,25 @@ const fetchPublicPage = async (rawUrl) => {
       current = assertPublicUrl(new URL(location, current).href).href;
       continue;
     }
-    if (!response.ok) throw new ApiError(502, `原文頁面暫時無法讀取（${response.status}）。`);
+    if (!response.ok) {
+      throw new ApiError(502, `原文頁面暫時無法讀取（${response.status}）。`, {
+        sourceStatus: response.status,
+        allowMetadataFallback: true,
+      });
+    }
     const contentType = response.headers.get("content-type") || "";
     if (!/text\/html|application\/xhtml\+xml/i.test(contentType)) {
-      throw new ApiError(422, "這個連結不是可讀取的新聞網頁。");
+      throw new ApiError(422, "這個連結不是可讀取的新聞網頁。", { allowMetadataFallback: true });
     }
     const declaredSize = Number(response.headers.get("content-length") || 0);
-    if (declaredSize > MAX_PAGE_CHARS * 2) throw new ApiError(422, "原文頁面過大，請改以人工整理。");
+    if (declaredSize > MAX_PAGE_CHARS * 2) {
+      throw new ApiError(422, "原文頁面過大，請改以人工整理。", { allowMetadataFallback: true });
+    }
     const html = await response.text();
-    if (!html.trim()) throw new ApiError(422, "原文頁面沒有可讀取內容。");
+    if (!html.trim()) throw new ApiError(422, "原文頁面沒有可讀取內容。", { allowMetadataFallback: true });
     return { html: html.slice(0, MAX_PAGE_CHARS), url: current };
   }
-  throw new ApiError(502, "原文連結轉址次數過多，請改從原媒體網址擷取。");
+  throw new ApiError(502, "原文連結轉址次數過多，請改從原媒體網址擷取。", { allowMetadataFallback: true });
 };
 
 const htmlDecode = (value) => String(value || "")
@@ -220,7 +237,9 @@ const resolveGoogleNewsUrl = async (rawUrl) => {
   const articlePage = await fetchPublicPage(`https://news.google.com/articles/${encodeURIComponent(articleId)}?hl=zh-TW&gl=TW&ceid=TW:zh-Hant`);
   const signature = /data-n-a-sg="([^"]+)"/i.exec(articlePage.html)?.[1];
   const timestamp = /data-n-a-ts="(\d+)"/i.exec(articlePage.html)?.[1];
-  if (!signature || !timestamp) throw new ApiError(422, "Google News 原文跳轉暫時無法解析，請改從媒體原始連結擷取。");
+  if (!signature || !timestamp) {
+    throw new ApiError(422, "Google News 原文跳轉暫時無法解析，請改從媒體原始連結擷取。", { allowMetadataFallback: true });
+  }
 
   const rpcArgs = [
     "garturlreq",
@@ -235,7 +254,9 @@ const resolveGoogleNewsUrl = async (rawUrl) => {
     headers: { "content-type": "application/x-www-form-urlencoded;charset=UTF-8" },
     body: `f.req=${encodeURIComponent(JSON.stringify(rpcPayload))}`,
   });
-  if (!response.ok) throw new ApiError(502, "Google News 原文跳轉服務暫時無法讀取。");
+  if (!response.ok) {
+    throw new ApiError(502, "Google News 原文跳轉服務暫時無法讀取。", { allowMetadataFallback: true });
+  }
   const responseText = await response.text();
   for (const block of responseText.split("\n\n")) {
     try {
@@ -248,7 +269,7 @@ const resolveGoogleNewsUrl = async (rawUrl) => {
       // The batchexecute response includes non-JSON framing blocks.
     }
   }
-  throw new ApiError(422, "Google News 原文跳轉暫時無法解析，請改從媒體原始連結擷取。");
+  throw new ApiError(422, "Google News 原文跳轉暫時無法解析，請改從媒體原始連結擷取。", { allowMetadataFallback: true });
 };
 
 const extractArticle = async (rawUrl) => {
@@ -263,14 +284,72 @@ const extractArticle = async (rawUrl) => {
   const primary = candidates[0] || "";
   const sourceText = trimText([description, primary].filter(Boolean).join("\n"));
   if (sourceText.length < 90) {
-    throw new ApiError(422, "原文可公開讀取的內容不足，可能受付費牆、登入或網站限制影響；請改以人工整理。");
+    throw new ApiError(422, "原文可公開讀取的內容不足，可能受付費牆、登入或網站限制影響；請改以人工整理。", { allowMetadataFallback: true });
   }
   return {
     canonicalUrl: canonicalFromHtml(page.html, page.url),
     pageTitle: title,
     sourceText,
     sourceCharacters: sourceText.length,
+    sourceMode: "public_article",
+    sourceWarnings: [],
   };
+};
+
+const sourceAccessWarning = (error) => {
+  const status = Number(error?.sourceStatus);
+  if (status === 429) return "原文網站暫時限制自動讀取（429）；此草稿僅依新聞標題產生，請開啟原文後人工核對。";
+  if (status) return `原文網站暫時無法讀取（${status}）；此草稿僅依新聞標題產生，請開啟原文後人工核對。`;
+  return "原文暫時無法讀取；此草稿僅依新聞標題產生，請開啟原文後人工核對。";
+};
+
+const metadataArticle = (metadata, error) => {
+  const pastedText = usefulSourceText(metadata.articleText, 60);
+  if (pastedText) {
+    return {
+      canonicalUrl: metadata.url,
+      pageTitle: metadata.title,
+      sourceText: pastedText,
+      sourceCharacters: pastedText.length,
+      sourceMode: "pasted_text",
+      sourceWarnings: ["此草稿依貼入的原文／節錄產生，請確認內容完整且與原文一致。"],
+    };
+  }
+  const monitoringExcerpt = usefulSourceText(metadata.excerpt);
+  if (monitoringExcerpt) {
+    return {
+      canonicalUrl: metadata.url,
+      pageTitle: metadata.title,
+      sourceText: monitoringExcerpt,
+      sourceCharacters: monitoringExcerpt.length,
+      sourceMode: "monitoring_excerpt",
+      sourceWarnings: ["此草稿依監測來源提供的摘要／節錄產生，請開啟原文後人工核對。"],
+    };
+  }
+  const headlineText = [
+    `新聞標題：${metadata.title}`,
+    metadata.source ? `媒體：${metadata.source}` : "",
+    metadata.date ? `日期：${metadata.date}` : "",
+  ].filter(Boolean).join("\n");
+  return {
+    canonicalUrl: metadata.url,
+    pageTitle: metadata.title,
+    sourceText: headlineText,
+    sourceCharacters: trimText(metadata.title, 500).length,
+    sourceMode: "headline",
+    sourceWarnings: [sourceAccessWarning(error)],
+  };
+};
+
+const extractSummarySource = async (metadata) => {
+  const pastedText = usefulSourceText(metadata.articleText, 60);
+  if (pastedText) return metadataArticle(metadata);
+  try {
+    return await extractArticle(metadata.url);
+  } catch (error) {
+    if (!(error instanceof ApiError) || !error.allowMetadataFallback) throw error;
+    return metadataArticle(metadata, error);
+  }
 };
 
 const draftSchema = {
@@ -286,11 +365,13 @@ const draftSchema = {
 
 const createSummaryDraft = async (env, metadata, article) => {
   const model = String(env.OPENAI_MODEL || "gpt-6-astra").trim();
+  const headlineOnly = article.sourceMode === "headline";
   const source = [
     `新聞標題：${metadata.title}`,
     `媒體：${metadata.source || "未註明"}`,
     `日期：${metadata.date || "未註明"}`,
-    `原文可讀內容：${article.sourceText}`,
+    `可用資料模式：${headlineOnly ? "僅新聞標題，非原文全文" : article.sourceMode === "pasted_text" ? "使用者貼入的原文／節錄" : article.sourceMode === "monitoring_excerpt" ? "監測來源提供的摘要／節錄" : "公開原文"}`,
+    `可用內容：${article.sourceText}`,
   ].join("\n\n");
   const response = await fetchWithTimeout("https://api.openai.com/v1/responses", {
     method: "POST",
@@ -302,7 +383,7 @@ const createSummaryDraft = async (env, metadata, article) => {
       model,
       store: false,
       max_output_tokens: 650,
-      instructions: "你是台灣企業公關週報編輯。只可依據提供的原文可讀內容撰寫，不得猜測、補充外部知識或把標題視為已證實事實。以繁體中文輸出，語氣客觀、精簡，模仿企業週報：先寫主體、動作、關鍵事實或數字；若來源資訊不足，摘要要明確保留限制，並在 warnings 提醒人工核對。不要使用條列、網址、媒體名稱開頭、評價性語言或 Markdown。",
+      instructions: `你是台灣企業公關週報編輯。只可依據提供的可用內容撰寫，不得猜測、補充外部知識或把標題視為已證實事實。以繁體中文輸出，語氣客觀、精簡，模仿企業週報：先寫主體、動作、關鍵事實或數字；若來源資訊不足，摘要要明確保留限制，並在 warnings 提醒人工核對。${headlineOnly ? "目前只有新聞標題：摘要必須明確寫成『標題顯示／報導標題提及』的保守說法，不得補出時程、原因、數字、合作細節或影響。" : ""}不要使用條列、網址、媒體名稱開頭、評價性語言或 Markdown。`,
       input: source,
       text: {
         format: {
@@ -325,10 +406,11 @@ const createSummaryDraft = async (env, metadata, article) => {
   const summary = plainDraftText(draft?.summary, 420);
   if (!summary) throw new ApiError(502, "摘要模型沒有產生可用草稿，請改以人工整理。");
   const note = plainDraftText(draft?.note, 300);
-  const warnings = Array.isArray(draft?.warnings)
+  const modelWarnings = Array.isArray(draft?.warnings)
     ? draft.warnings.map((warning) => plainDraftText(warning, 110)).filter(Boolean).slice(0, 3)
     : [];
-  return { summary, note, warnings };
+  const warnings = [...new Set([...(article.sourceWarnings || []), ...modelWarnings])].slice(0, 3);
+  return { summary, note, warnings, sourceMode: article.sourceMode || "public_article" };
 };
 
 const parseRequest = async (request) => {
@@ -346,6 +428,8 @@ const parseRequest = async (request) => {
     url,
     source: plainDraftText(body?.source, 120),
     date: plainDraftText(body?.date, 24),
+    excerpt: plainDraftText(body?.excerpt, 2_000),
+    articleText: plainDraftText(body?.articleText, MAX_SOURCE_CHARS),
   };
 };
 
@@ -362,7 +446,7 @@ const handleSummaryRequest = async (request, env) => {
   }
   try {
     const metadata = await parseRequest(request);
-    const article = await extractArticle(metadata.url);
+    const article = await extractSummarySource(metadata);
     const draft = await createSummaryDraft(env, metadata, article);
     return jsonResponse(request, 200, {
       draft: {
@@ -370,6 +454,7 @@ const handleSummaryRequest = async (request, env) => {
         ...draft,
         canonicalUrl: article.canonicalUrl,
         sourceCharacters: article.sourceCharacters,
+        sourceMode: draft.sourceMode,
         generatedAt: new Date().toISOString(),
       },
     });

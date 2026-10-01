@@ -165,6 +165,11 @@
     .summary-draft { display: grid; gap: 8px; padding: 10px; border: 1px solid #cde3f5; border-radius: 9px; background: #fff; }
     .summary-draft-content { margin: 0; color: #35445b; font-size: .78rem; line-height: 1.65; white-space: normal; }
     .summary-meta { color: #7b8495; font-size: .69rem; }
+    .summary-source-details { border-top: 1px dashed #dbe4ef; padding-top: 8px; }
+    .summary-source-details summary { color: #536b86; cursor: pointer; font-size: .72rem; font-weight: 800; }
+    .summary-source-details-content { display: grid; gap: 7px; padding-top: 9px; }
+    .summary-source-details .label { margin-bottom: 0; }
+    .summary-source-details .textarea { min-height: 108px; font-size: .74rem; }
     .empty-state { padding: 46px 24px; color: #768096; text-align: center; }
     .empty-state strong { display: block; margin-bottom: 4px; color: #48536d; }
 
@@ -462,7 +467,8 @@
           tags: Array.isArray(item.tags) ? item.tags.map(String).slice(0, 5) : [],
           selected: Boolean(item.selected),
           order: Number.isFinite(Number(item.order)) ? Number(item.order) : 99,
-          reportGroup: resolveReportGroupKey(item.reportGroup, topic)
+          reportGroup: resolveReportGroupKey(item.reportGroup, topic),
+          aiSourceText: String(item.aiSourceText || "").slice(0, 6_000)
         };
       };
       const isPlaceholderExcerpt = (value = "") => /^(google news rss 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。|由產業監測網篩選，請開啟原文後整理週報內文。|請開啟原文並撰寫週報內文。)$/i.test(String(value).trim());
@@ -628,18 +634,25 @@
       };
       const priorityLabel = (priority) => priority === "高" ? "高優先" : priority === "中" ? "中優先" : "低優先";
       const lineBreaks = (value = "") => escapeHTML(value).replace(/\r?\n/g, "<br>");
+      const summarySourceLabel = (draft) => {
+        const sourceCount = Number(draft?.sourceCharacters) || 0;
+        if (draft?.sourceMode === "headline") return "僅依新聞標題產生（原文尚未讀取）";
+        if (draft?.sourceMode === "pasted_text") return `依貼入內容 ${sourceCount.toLocaleString()} 字`;
+        if (draft?.sourceMode === "monitoring_excerpt") return `依監測節錄 ${sourceCount.toLocaleString()} 字`;
+        return sourceCount ? `依公開原文 ${sourceCount.toLocaleString()} 字` : "已產生摘要草稿";
+      };
       const summaryDraftMarkup = (item) => {
         const draft = item.aiDraft && typeof item.aiDraft === "object" ? item.aiDraft : null;
         const loading = item.summaryStatus === "loading";
         const actionLabel = loading ? "正在擷取原文…" : "✦ 擷取並產生摘要";
         const statusText = loading
           ? "正在解析原始媒體頁並產生摘要草稿，請稍候。"
-          : "只會處理這則已選新聞；結果先顯示為草稿，按套用後才會寫入週報。";
+          : "會先讀取公開原文；若原文網站限制讀取，會改產生標題版草稿並標示需人工核對。";
         const content = draft ? [draft.summary, draft.note].filter(Boolean).join("\n\n") : "";
-        const sourceCount = Number(draft?.sourceCharacters) || 0;
         const warnings = Array.isArray(draft?.warnings) ? draft.warnings.filter(Boolean).slice(0, 3) : [];
-        const draftCard = draft && content ? `<div class="summary-draft"><div class="summary-meta">已產生摘要草稿${sourceCount ? ` · 依公開原文 ${sourceCount.toLocaleString()} 字` : ""}</div><p class="summary-draft-content">${lineBreaks(content)}</p>${warnings.length ? `<p class="summary-meta">需查核：${escapeHTML(warnings.join("；"))}</p>` : ""}<div><button type="button" class="button primary tiny" data-apply-ai-summary="${escapeHTML(item.id)}">套用摘要草稿</button></div></div>` : "";
-        return `<div class="summary-tools"><div class="summary-tools-header"><strong>AI 週報摘要草稿</strong><button type="button" class="button ghost tiny" data-generate-summary="${escapeHTML(item.id)}" ${loading ? "aria-busy=\"true\" disabled" : ""}>${actionLabel}</button></div><p>${statusText}</p>${draftCard}</div>`;
+        const draftCard = draft && content ? `<div class="summary-draft"><div class="summary-meta">已產生摘要草稿 · ${summarySourceLabel(draft)}</div><p class="summary-draft-content">${lineBreaks(content)}</p>${warnings.length ? `<p class="summary-meta">需查核：${escapeHTML(warnings.join("；"))}</p>` : ""}<div><button type="button" class="button primary tiny" data-apply-ai-summary="${escapeHTML(item.id)}">套用摘要草稿</button></div></div>` : "";
+        const sourceTextHelp = `<details class="summary-source-details"><summary>原文擷取受限時，貼上可讀內容後再產生（選填）</summary><div class="summary-source-details-content"><label class="label" for="ai-source-${escapeHTML(item.id)}">原文／節錄（不會自動寫入週報）</label><textarea id="ai-source-${escapeHTML(item.id)}" class="textarea" data-ai-source-text="${escapeHTML(item.id)}" maxlength="6000" placeholder="從已開啟的原文複製前幾段或全文後貼在此處；重新按摘要可得到較完整的草稿。">${escapeHTML(item.aiSourceText || "")}</textarea><p>貼入內容只會在此次摘要請求中使用，並儲存在這台裝置的工作紀錄，不會提交到 GitHub。</p></div></details>`;
+        return `<div class="summary-tools"><div class="summary-tools-header"><strong>AI 週報摘要草稿</strong><button type="button" class="button ghost tiny" data-generate-summary="${escapeHTML(item.id)}" ${loading ? "aria-busy=\"true\" disabled" : ""}>${actionLabel}</button></div><p>${statusText}</p>${draftCard}${sourceTextHelp}</div>`;
       };
       const renderNews = () => {
         const items = filteredNews();
@@ -740,7 +753,7 @@
           const response = await fetch(summaryWorkerUrl, {
             method: "POST",
             headers: { "content-type": "application/json", "x-pr-summary-key": summaryAccessKey },
-            body: JSON.stringify({ title: item.title, source: item.source, date: item.date, url: item.url })
+            body: JSON.stringify({ title: item.title, source: item.source, date: item.date, url: item.url, excerpt: item.excerpt, articleText: item.aiSourceText })
           });
           const payload = await response.json().catch(() => ({}));
           if (!response.ok) throw new Error(payload?.error?.message || `摘要服務暫時無法使用（${response.status}）。`);
@@ -753,6 +766,7 @@
             note: String(draft.note || "").trim(),
             canonicalUrl: safeUrl(draft.canonicalUrl || item.url),
             sourceCharacters: Number(draft.sourceCharacters) || 0,
+            sourceMode: String(draft.sourceMode || "public_article"),
             generatedAt: String(draft.generatedAt || new Date().toISOString()),
             warnings: Array.isArray(draft.warnings) ? draft.warnings.map(String).slice(0, 3) : []
           };
@@ -837,7 +851,8 @@
              reportGroup: resolveReportGroupKey(existing.reportGroup, item.topic),
              summary: String(existing.summary || ""),
              note: String(existing.note || ""),
-             aiDraft: existing.aiDraft && typeof existing.aiDraft === "object" ? existing.aiDraft : undefined
+             aiDraft: existing.aiDraft && typeof existing.aiDraft === "object" ? existing.aiDraft : undefined,
+             aiSourceText: String(existing.aiSourceText || "")
           });
         });
         const incomingIds = new Set(mergedIncoming.map(item => item.id));
@@ -915,6 +930,7 @@
         if (input.id === "searchInput") { state.query = input.value; renderNews(); return; }
         if (input.dataset.summary) { const item = state.news.find(news => news.id === input.dataset.summary); if (item) { item.summary = input.value; state.draftEdited = false; commit(); renderDraft(true); } return; }
         if (input.dataset.note) { const item = state.news.find(news => news.id === input.dataset.note); if (item) { item.note = input.value; state.draftEdited = false; commit(); renderDraft(true); } return; }
+        if (input.dataset.aiSourceText) { const item = state.news.find(news => news.id === input.dataset.aiSourceText); if (item) { item.aiSourceText = input.value.slice(0, 6000); commit(); } return; }
         if (input.id === "reportTitle") { state.reportTitle = input.value; state.draftEdited = false; commit(); renderDraft(true); return; }
         if (input.id === "draftOutput") { state.draft = input.value; state.draftEdited = true; commit(); get("draftStatus").textContent = "已手動調整"; get("draftStatus").style.color = "#865c9d"; get("draftStatus").style.background = "#f4edfb"; }
       });
@@ -926,7 +942,7 @@
       get("regenerateDraft").addEventListener("click", () => { state.draftEdited = false; state.draft = generateDraft(); commit("草稿已依目前選題重新產生"); renderDraft(true); });
       get("copyDraft").addEventListener("click", () => copyText(get("draftOutput").value));
       get("saveWeek").addEventListener("click", () => saveArchive());
-      get("newWeek").addEventListener("click", () => { saveArchive("已保存本週，並建立下一週工作區"); const nextWeek = addDays(parseLocalDate(state.weekStart), 7); state.weekStart = isoDate(nextWeek); state.news.forEach(item => { item.selected = false; item.order = 99; item.note = ""; }); state.reportTitle = REPORT_TITLE; state.confirmations = [false, false, false]; state.draftEdited = false; state.draft = ""; commit(); renderAll(true); });
+      get("newWeek").addEventListener("click", () => { saveArchive("已保存本週，並建立下一週工作區"); const nextWeek = addDays(parseLocalDate(state.weekStart), 7); state.weekStart = isoDate(nextWeek); state.news.forEach(item => { item.selected = false; item.order = 99; item.note = ""; item.aiSourceText = ""; }); state.reportTitle = REPORT_TITLE; state.confirmations = [false, false, false]; state.draftEdited = false; state.draft = ""; commit(); renderAll(true); });
       get("markConfirmed").addEventListener("click", () => { state.confirmations = confirmationLabels.map(() => true); commit("本週週報已標記為人工確認完成"); renderConfirmation(); });
 
       hydrate(); cleanOrder(); renderAll(true); persist(); loadMonitoringSnapshot();
