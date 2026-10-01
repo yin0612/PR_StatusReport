@@ -108,6 +108,12 @@
     .mini-source-card { display: grid; gap: 10px; padding: 13px; border-radius: var(--round-md); background: #f8faff; border: 1px solid #e4eef7; }
     .mini-source-card p { margin: 0; color: #606b80; font-size: .78rem; }
     .mini-source-card strong { color: #215b84; font-size: .8rem; }
+    .summary-access-card { display: grid; gap: 9px; padding: 13px; border: 1px solid #e2d7ef; border-radius: var(--round-md); background: #f9f7ff; }
+    .summary-access-card p { margin: 0; color: #606b80; font-size: .75rem; line-height: 1.5; }
+    .summary-access-card strong { color: #654a83; font-size: .8rem; }
+    .summary-access-row { display: flex; gap: 7px; }
+    .summary-access-row .text-input { min-width: 0; }
+    .summary-access-row .button { flex: 0 0 auto; }
     .link-button { padding: 0; width: fit-content; border: 0; color: var(--blue-deep); background: transparent; font-size: .78rem; font-weight: 800; text-decoration: none; }
     .link-button:hover { text-decoration: underline; }
     .import-panel { display: none; gap: 11px; padding: 14px; margin: 0 20px 16px; border: 1px dashed #cfc8e4; border-radius: var(--round-md); background: #fbf9fe; }
@@ -152,6 +158,13 @@
     .report-placement { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(120px, .45fr) minmax(0, 1fr); gap: 10px; align-items: end; padding: 10px; border: 1px solid #e6e9f0; border-radius: 10px; background: #fafbfe; }
     .report-placement .label { margin-bottom: 0; }
     .report-placement-help { margin: 0; color: #778096; font-size: .7rem; line-height: 1.45; }
+    .summary-tools { grid-column: 1 / -1; display: grid; gap: 8px; padding: 10px; border: 1px solid #dbe7f3; border-radius: 10px; background: #f8fbff; }
+    .summary-tools-header { display: flex; align-items: center; justify-content: space-between; gap: 9px; flex-wrap: wrap; }
+    .summary-tools-header strong { color: #315d82; font-size: .77rem; }
+    .summary-tools p { margin: 0; color: #657087; font-size: .72rem; line-height: 1.5; }
+    .summary-draft { display: grid; gap: 8px; padding: 10px; border: 1px solid #cde3f5; border-radius: 9px; background: #fff; }
+    .summary-draft-content { margin: 0; color: #35445b; font-size: .78rem; line-height: 1.65; white-space: normal; }
+    .summary-meta { color: #7b8495; font-size: .69rem; }
     .empty-state { padding: 46px 24px; color: #768096; text-align: center; }
     .empty-state strong { display: block; margin-bottom: 4px; color: #48536d; }
 
@@ -188,6 +201,8 @@
     .button.ghost { color: #5b6780; border-color: #dfe4ee; background: #fff; }
     .button.ghost:hover { color: var(--blue-deep); border-color: #bcd8ed; background: #f6fbff; }
     .button.full { width: 100%; }
+    .button.tiny { min-height: 31px; padding: 6px 9px; font-size: .71rem; }
+    .button[aria-busy="true"] { cursor: wait; opacity: .65; }
     .report-preview-wrap { margin: 0 20px 15px; }
     .report-preview-label { display: block; margin: 0 0 7px; color: #596078; font-size: .73rem; font-weight: 800; }
     .report-preview { overflow: auto; border: 1px solid #cdd2da; border-radius: 4px; padding: 18px; color: #111; background: #fff; font-family: Calibri, "Microsoft JhengHei", sans-serif; font-size: .82rem; line-height: 1.58; }
@@ -266,8 +281,9 @@
       .news-card-top { gap: 8px; }
       .news-title { font-size: .91rem; }
       .news-edit { grid-template-columns: 1fr; }
-      .report-placement { grid-template-columns: 1fr; }
-      .report-placement .label { margin-bottom: 2px; }
+       .report-placement { grid-template-columns: 1fr; }
+       .report-placement .label { margin-bottom: 2px; }
+       .summary-access-row { flex-direction: column; }
       .draft-form-row { grid-template-columns: 1fr; }
       .draft-actions, .draft-output { margin-left: 15px; margin-right: 15px; padding-left: 0; padding-right: 0; }
       .draft-actions { padding-top: 0; }
@@ -320,6 +336,7 @@
               <div class="panel-section"><span class="label">監測主題</span><div id="topicChips" class="chip-list" aria-label="監測主題"></div></div>
               <div class="panel-section"><span class="label">重要度</span><div id="priorityFilters" class="priority-filter" aria-label="重要度篩選"></div></div>
               <div class="panel-section"><div class="mini-source-card"><strong>自動帶入智冠產業監測新聞</strong><p id="syncDescription">正在載入已部署的監測候選新聞。</p><button id="refreshMonitoring" class="button ghost" type="button">↻ 重新載入資料</button><a class="link-button" href="https://yin0612.github.io/for_SoftWorld/#/news" target="_blank" rel="noopener noreferrer">開啟智冠產業監測查核原文 ↗</a></div></div>
+              <div class="panel-section"><div class="summary-access-card"><strong>AI 週報摘要（已選題才執行）</strong><p id="summaryAccessDescription">擷取公開原文後產生範例格式草稿；結果不會自動寫入週報。</p><label class="label" for="summaryAccessKey">摘要存取碼</label><div class="summary-access-row"><input id="summaryAccessKey" class="text-input" type="password" autocomplete="off" placeholder="首次使用時輸入" /><button id="saveSummaryAccessKey" class="button soft" type="button">啟用摘要</button></div></div></div>
             </section>
 
             <section id="inbox-panel" class="panel inbox-panel" aria-labelledby="inbox-title">
@@ -377,6 +394,8 @@
       const LEGACY_ARCHIVE_KEY = "pr-weekly-workbench-archives-v2";
       const exampleSource = "https://yin0612.github.io/for_SoftWorld/#/";
       const monitoringSnapshotUrl = "./data/monitoring-news.json";
+      const summaryWorkerUrl = "https://pr-statusreport.media-monitoring-worker.workers.dev/api/summarize";
+      const SUMMARY_ACCESS_KEY_STORAGE = "pr-weekly-summary-access-key-v1";
       const REPORT_TITLE = "Soft-World PR & IR Department STATUS REPORT 工作進度報告";
       const topics = ["全部", "金融支付", "遊戲產業", "競品與產業"];
       const priorities = ["全部", "高", "中", "低"];
@@ -495,6 +514,8 @@
       let state = defaultState();
       let archives = [];
       let monitoringState = { phase: "loading", generatedAt: null, count: 0, sourceCount: 0 };
+      let summaryAccessKey = "";
+      try { summaryAccessKey = sessionStorage.getItem(SUMMARY_ACCESS_KEY_STORAGE) || ""; } catch { /* Session storage can be unavailable in private browser modes. */ }
       const get = (id) => document.getElementById(id);
       let toastTimer;
 
@@ -585,11 +606,20 @@
         get("refreshMonitoring").disabled = isLoading;
       };
 
+      const renderSummaryAccess = () => {
+        const enabled = Boolean(summaryAccessKey);
+        get("summaryAccessDescription").textContent = enabled
+          ? "此瀏覽器工作階段可產生摘要草稿；結果仍需你按「套用摘要草稿」。"
+          : "輸入你在 Cloudflare 設定的摘要存取碼後，才可使用。此碼不等於 OpenAI API 金鑰。";
+        get("saveSummaryAccessKey").textContent = enabled ? "更新存取碼" : "啟用摘要";
+      };
+
       const renderHeader = () => {
         get("weekPill").textContent = weekLabel(state.weekStart);
         get("reportDate").value = reportDateLabel(state.weekStart);
         get("decisionStatus").textContent = `${state.news.length} 則新聞 · ${selectedNews().length} 則已選題`;
         renderMonitoringState();
+        renderSummaryAccess();
       };
       const renderFilters = () => {
         get("searchInput").value = state.query;
@@ -597,6 +627,20 @@
         get("priorityFilters").innerHTML = priorities.map(priority => `<button type="button" class="chip ${state.priorityFilter === priority ? "is-selected" : ""}" data-priority-filter="${priority}">${priority === "全部" ? "全部重要度" : `${priority}重要度`}</button>`).join("");
       };
       const priorityLabel = (priority) => priority === "高" ? "高優先" : priority === "中" ? "中優先" : "低優先";
+      const lineBreaks = (value = "") => escapeHTML(value).replace(/\r?\n/g, "<br>");
+      const summaryDraftMarkup = (item) => {
+        const draft = item.aiDraft && typeof item.aiDraft === "object" ? item.aiDraft : null;
+        const loading = item.summaryStatus === "loading";
+        const actionLabel = loading ? "正在擷取原文…" : "✦ 擷取並產生摘要";
+        const statusText = loading
+          ? "正在解析原始媒體頁並產生摘要草稿，請稍候。"
+          : "只會處理這則已選新聞；結果先顯示為草稿，按套用後才會寫入週報。";
+        const content = draft ? [draft.summary, draft.note].filter(Boolean).join("\n\n") : "";
+        const sourceCount = Number(draft?.sourceCharacters) || 0;
+        const warnings = Array.isArray(draft?.warnings) ? draft.warnings.filter(Boolean).slice(0, 3) : [];
+        const draftCard = draft && content ? `<div class="summary-draft"><div class="summary-meta">已產生摘要草稿${sourceCount ? ` · 依公開原文 ${sourceCount.toLocaleString()} 字` : ""}</div><p class="summary-draft-content">${lineBreaks(content)}</p>${warnings.length ? `<p class="summary-meta">需查核：${escapeHTML(warnings.join("；"))}</p>` : ""}<div><button type="button" class="button primary tiny" data-apply-ai-summary="${escapeHTML(item.id)}">套用摘要草稿</button></div></div>` : "";
+        return `<div class="summary-tools"><div class="summary-tools-header"><strong>AI 週報摘要草稿</strong><button type="button" class="button ghost tiny" data-generate-summary="${escapeHTML(item.id)}" ${loading ? "aria-busy=\"true\" disabled" : ""}>${actionLabel}</button></div><p>${statusText}</p>${draftCard}</div>`;
+      };
       const renderNews = () => {
         const items = filteredNews();
         get("inboxCount").textContent = items.length;
@@ -612,7 +656,12 @@
             </div>
             <p class="news-excerpt">${escapeHTML(inboxExcerpt(item))}</p>
             <div class="news-bottom"><div class="tag-row"><span class="tag topic">${escapeHTML(item.topic)}</span>${(item.tags || []).slice(0, 3).map(tag => `<span class="tag">${escapeHTML(tag)}</span>`).join("")}</div><a class="link-button" href="${escapeHTML(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer">查看原文 ↗</a></div>
-            <div class="news-edit"><div class="report-placement"><div><label class="label" for="report-group-${escapeHTML(item.id)}">週報分類</label><select id="report-group-${escapeHTML(item.id)}" class="select-input" data-report-group="${escapeHTML(item.id)}">${reportGroups.map(option => `<option value="${option.key}" ${option.key === group.key ? "selected" : ""}>${escapeHTML(option.category)}</option>`).join("")}</select></div><p class="report-placement-help">決定此則新聞要寫入產業訊息的【類別】。</p></div><div><label class="label" for="summary-${escapeHTML(item.id)}">週報內文</label><textarea id="summary-${escapeHTML(item.id)}" class="textarea compact-textarea" data-summary="${escapeHTML(item.id)}" maxlength="400" placeholder="未填時會自動帶入新聞標題；也可補成主體＋動作＋事實／數字">${escapeHTML(item.summary || "")}</textarea></div><div><label class="label" for="note-${escapeHTML(item.id)}">補充資訊／編輯註記</label><textarea id="note-${escapeHTML(item.id)}" class="textarea compact-textarea" data-note="${escapeHTML(item.id)}" maxlength="400" placeholder="例如：使用流程：…／限制：…／備註：…">${escapeHTML(item.note || "")}</textarea></div></div>
+            <div class="news-edit">
+              <div class="report-placement"><div><label class="label" for="report-group-${escapeHTML(item.id)}">週報分類</label><select id="report-group-${escapeHTML(item.id)}" class="select-input" data-report-group="${escapeHTML(item.id)}">${reportGroups.map(option => `<option value="${option.key}" ${option.key === group.key ? "selected" : ""}>${escapeHTML(option.category)}</option>`).join("")}</select></div><p class="report-placement-help">決定此則新聞要寫入產業訊息的【類別】。</p></div>
+              ${summaryDraftMarkup(item)}
+              <div><label class="label" for="summary-${escapeHTML(item.id)}">週報內文</label><textarea id="summary-${escapeHTML(item.id)}" class="textarea compact-textarea" data-summary="${escapeHTML(item.id)}" maxlength="420" placeholder="未填時會自動帶入新聞標題；也可補成主體＋動作＋事實／數字">${escapeHTML(item.summary || "")}</textarea></div>
+              <div><label class="label" for="note-${escapeHTML(item.id)}">補充資訊／編輯註記</label><textarea id="note-${escapeHTML(item.id)}" class="textarea compact-textarea" data-note="${escapeHTML(item.id)}" maxlength="300" placeholder="例如：使用流程：…／限制：…／備註：…">${escapeHTML(item.note || "")}</textarea></div>
+            </div>
           </article>`;
         }).join("") : `<div class="empty-state"><strong>沒有符合條件的新聞</strong>試著清除關鍵字或改選其他主題。</div>`;
       };
@@ -622,7 +671,6 @@
         get("selectionList").innerHTML = chosen.length ? chosen.map((item, index) => `
           <div class="selection-item"><span class="selection-index">${index + 1}</span><div class="selection-body"><span class="selection-title" title="${escapeHTML(item.title)}">${escapeHTML(item.title)}</span><span class="selection-meta">${escapeHTML(item.source)} · ${escapeHTML(item.topic)} · ${priorityLabel(item.priority)}</span></div><div class="order-actions"><button class="order-button" type="button" data-move="up" data-id="${escapeHTML(item.id)}" ${index === 0 ? "disabled" : ""} aria-label="上移">↑</button><button class="order-button" type="button" data-move="down" data-id="${escapeHTML(item.id)}" ${index === chosen.length - 1 ? "disabled" : ""} aria-label="下移">↓</button></div></div>`).join("") : `<div class="selection-empty">尚未選題。從收件匣勾選新聞後，會在這裡建立週報順序。</div>`;
       };
-      const lineBreaks = (value = "") => escapeHTML(value).replace(/\r?\n/g, "<br>");
       const previewSection = () => reportGroups.map(group => {
         const entries = selectedNews().filter(item => reportGroupFor(item).key === group.key);
         const entryMarkup = entries.length ? entries.map(item => {
@@ -672,6 +720,64 @@
         if (currentIndex < 0 || nextIndex < 0 || nextIndex >= chosen.length) return;
         [chosen[currentIndex].order, chosen[nextIndex].order] = [chosen[nextIndex].order, chosen[currentIndex].order];
         state.draftEdited = false; commit(); renderAll(true);
+      };
+      const setSummaryAccessKey = () => {
+        const value = get("summaryAccessKey").value.trim();
+        if (!value) { toast("請先輸入摘要存取碼。 "); get("summaryAccessKey").focus(); return; }
+        summaryAccessKey = value;
+        try { sessionStorage.setItem(SUMMARY_ACCESS_KEY_STORAGE, value); } catch { /* It remains available until this page reloads. */ }
+        get("summaryAccessKey").value = "";
+        renderSummaryAccess();
+        toast("這個瀏覽器工作階段已啟用摘要功能。 ");
+      };
+      const generateAiSummary = async (id) => {
+        if (!summaryAccessKey) { toast("請先在左側輸入摘要存取碼。 "); get("summaryAccessKey").focus(); return; }
+        const item = state.news.find(news => news.id === id);
+        if (!item?.selected) return;
+        item.summaryStatus = "loading";
+        renderNews();
+        try {
+          const response = await fetch(summaryWorkerUrl, {
+            method: "POST",
+            headers: { "content-type": "application/json", "x-pr-summary-key": summaryAccessKey },
+            body: JSON.stringify({ title: item.title, source: item.source, date: item.date, url: item.url })
+          });
+          const payload = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(payload?.error?.message || `摘要服務暫時無法使用（${response.status}）。`);
+          const draft = payload?.draft;
+          if (!draft || draft.status !== "ready" || !String(draft.summary || "").trim()) {
+            throw new Error(Array.isArray(draft?.warnings) && draft.warnings.length ? draft.warnings.join("；") : "原文資訊不足，請改以人工整理。 ");
+          }
+          item.aiDraft = {
+            summary: String(draft.summary).trim(),
+            note: String(draft.note || "").trim(),
+            canonicalUrl: safeUrl(draft.canonicalUrl || item.url),
+            sourceCharacters: Number(draft.sourceCharacters) || 0,
+            generatedAt: String(draft.generatedAt || new Date().toISOString()),
+            warnings: Array.isArray(draft.warnings) ? draft.warnings.map(String).slice(0, 3) : []
+          };
+          item.summaryStatus = "";
+          state.draftEdited = false;
+          commit("已產生摘要草稿，請確認後再套用。 ");
+          renderAll(true);
+        } catch (error) {
+          item.summaryStatus = "";
+          renderNews();
+          const message = String(error?.message || "摘要服務暫時無法使用。 ");
+          toast(message.length > 84 ? `${message.slice(0, 82)}…` : message);
+        }
+      };
+      const applyAiSummary = (id) => {
+        const item = state.news.find(news => news.id === id);
+        const draft = item?.aiDraft;
+        if (!item || !draft?.summary) return;
+        const currentContent = `${String(item.summary || "").trim()}${String(item.note || "").trim()}`;
+        if (currentContent && !window.confirm("要以 AI 摘要草稿取代目前的週報內文與補充資訊嗎？")) return;
+        item.summary = String(draft.summary).trim();
+        item.note = String(draft.note || "").trim();
+        state.draftEdited = false;
+        commit("摘要草稿已套用至週報內文。 ");
+        renderAll(true);
       };
       const newId = () => `import-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
       const asNews = (item, index) => {
@@ -728,9 +834,10 @@
             selected: existing.selected,
             order: existing.order,
             priority: ["高", "中", "低"].includes(existing.priority) ? existing.priority : item.priority,
-            reportGroup: resolveReportGroupKey(existing.reportGroup, item.topic),
-            summary: String(existing.summary || ""),
-            note: String(existing.note || "")
+             reportGroup: resolveReportGroupKey(existing.reportGroup, item.topic),
+             summary: String(existing.summary || ""),
+             note: String(existing.note || ""),
+             aiDraft: existing.aiDraft && typeof existing.aiDraft === "object" ? existing.aiDraft : undefined
           });
         });
         const incomingIds = new Set(mergedIncoming.map(item => item.id));
@@ -738,7 +845,7 @@
           if (incomingIds.has(item.id)) return false;
           if (item.origin === "sample") return false;
           if (item.origin !== "monitoring") return true;
-          return item.selected || Boolean(String(item.summary || "").trim()) || Boolean(String(item.note || "").trim());
+           return item.selected || Boolean(String(item.summary || "").trim()) || Boolean(String(item.note || "").trim()) || Boolean(item.aiDraft?.summary);
         });
         state.news = [...mergedIncoming, ...retained];
         return incoming.length;
@@ -792,6 +899,8 @@
         if (target.dataset.topic) { state.topic = target.dataset.topic; renderFilters(); renderNews(); return; }
         if (target.dataset.priorityFilter) { state.priorityFilter = target.dataset.priorityFilter; renderFilters(); renderNews(); return; }
         if (target.dataset.setPriority) { cyclePriority(target.dataset.setPriority); return; }
+        if (target.dataset.generateSummary) { generateAiSummary(target.dataset.generateSummary); return; }
+        if (target.dataset.applyAiSummary) { applyAiSummary(target.dataset.applyAiSummary); return; }
         if (target.dataset.move) { moveSelection(target.dataset.id, target.dataset.move); return; }
         if (target.dataset.loadArchive !== undefined) { const record = archives[Number(target.dataset.loadArchive)]; if (record?.state) { state = JSON.parse(JSON.stringify(record.state)); commit("已還原該週紀錄"); renderAll(true); } return; }
       });
@@ -811,6 +920,7 @@
       });
       get("toggleImport").addEventListener("click", () => { get("importPanel").classList.toggle("is-open"); if (get("importPanel").classList.contains("is-open")) get("pasteInput").focus(); });
       get("refreshMonitoring").addEventListener("click", () => loadMonitoringSnapshot(true));
+      get("saveSummaryAccessKey").addEventListener("click", setSummaryAccessKey);
       get("importPaste").addEventListener("click", () => { const value = get("pasteInput").value.trim(); if (!value) { toast("請先貼入新聞資料。"); return; } addImported(parsePasted(value)); get("pasteInput").value = ""; get("importPanel").classList.remove("is-open"); });
       get("fileInput").addEventListener("change", async event => { const file = event.target.files?.[0]; if (!file) return; get("fileName").textContent = file.name; try { const text = await file.text(); const rows = file.name.toLowerCase().endsWith(".json") ? (() => { const parsed = JSON.parse(text); return Array.isArray(parsed) ? parsed : Array.isArray(parsed.news) ? parsed.news : []; })() : parseCSV(text); addImported(rows); } catch (error) { console.error(error); toast("檔案無法讀取，請確認 JSON 或 CSV 格式。"); } event.target.value = ""; });
       get("regenerateDraft").addEventListener("click", () => { state.draftEdited = false; state.draft = generateDraft(); commit("草稿已依目前選題重新產生"); renderDraft(true); });
