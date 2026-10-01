@@ -363,6 +363,31 @@ const draftSchema = {
   required: ["summary", "note", "warnings"],
 };
 
+const openAiConfigurationMessage = (status, payload, model) => {
+  const type = String(payload?.error?.type || "").toLowerCase();
+  const code = String(payload?.error?.code || "").toLowerCase();
+  if (status === 401 || type.includes("authentication") || code.includes("api_key")) {
+    return "OpenAI API 金鑰無效、已撤銷，或不是 API 平台金鑰；請在 Cloudflare 更新 OPENAI_API_KEY。";
+  }
+  if (status === 429 || type.includes("rate_limit") || code.includes("insufficient_quota")) {
+    return "OpenAI API 專案目前沒有可用額度，或暫時達到速率限制；請到 OpenAI API 平台確認 Billing 與 Usage limits。";
+  }
+  if (status === 404 || code.includes("model")) {
+    return `OpenAI API 無法使用模型 ${model}；請確認 OPENAI_MODEL 或帳號的模型存取權。`;
+  }
+  return `OpenAI API 暫時拒絕摘要請求（HTTP ${status || "未知"}）；請先使用「檢查設定」確認金鑰與額度。`;
+};
+
+const configuredSummaryService = (request, env) => {
+  const requiredAccessKey = String(env.PR_SUMMARY_ACCESS_KEY || "").trim();
+  const openaiKey = String(env.OPENAI_API_KEY || "").trim();
+  if (!requiredAccessKey || !openaiKey) return { error: "摘要功能尚未完成管理員設定。", status: 503 };
+  if (!constantTimeEqual(request.headers.get("x-pr-summary-key"), requiredAccessKey)) {
+    return { error: "摘要存取碼不正確或尚未啟用。", status: 401 };
+  }
+  return { requiredAccessKey, openaiKey, model: String(env.OPENAI_MODEL || "gpt-6-astra").trim() };
+};
+
 const createSummaryDraft = async (env, metadata, article) => {
   const model = String(env.OPENAI_MODEL || "gpt-6-astra").trim();
   const headlineOnly = article.sourceMode === "headline";
@@ -398,7 +423,7 @@ const createSummaryDraft = async (env, metadata, article) => {
   const payload = await response.json().catch(() => ({}));
   if (!response.ok) {
     console.error("OpenAI summary request failed", { status: response.status, type: payload?.error?.type });
-    throw new ApiError(502, "摘要模型暫時無法使用，請確認 Cloudflare 的 API 金鑰、模型名稱與 API 額度。");
+    throw new ApiError(502, openAiConfigurationMessage(response.status, payload, model));
   }
   const output = typeof payload.output_text === "string" ? payload.output_text : "";
   let draft;
@@ -436,14 +461,8 @@ const parseRequest = async (request) => {
 const handleSummaryRequest = async (request, env) => {
   if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders(request) });
   if (request.method !== "POST") return jsonResponse(request, 405, { error: { message: "只支援 POST 請求。" } });
-  const requiredAccessKey = String(env.PR_SUMMARY_ACCESS_KEY || "").trim();
-  const openaiKey = String(env.OPENAI_API_KEY || "").trim();
-  if (!requiredAccessKey || !openaiKey) {
-    return jsonResponse(request, 503, { error: { message: "摘要功能尚未完成管理員設定。" } });
-  }
-  if (!constantTimeEqual(request.headers.get("x-pr-summary-key"), requiredAccessKey)) {
-    return jsonResponse(request, 401, { error: { message: "摘要存取碼不正確或尚未啟用。" } });
-  }
+  const configured = configuredSummaryService(request, env);
+  if (configured.error) return jsonResponse(request, configured.status, { error: { message: configured.error } });
   try {
     const metadata = await parseRequest(request);
     const article = await extractSummarySource(metadata);
@@ -465,12 +484,44 @@ const handleSummaryRequest = async (request, env) => {
   }
 };
 
-export { extractArticle, handleSummaryRequest, resolveGoogleNewsUrl };
+const handleSummaryStatusRequest = async (request, env) => {
+  if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders(request) });
+  if (request.method !== "POST") return jsonResponse(request, 405, { error: { message: "只支援 POST 請求。" } });
+  const configured = configuredSummaryService(request, env);
+  if (configured.error) return jsonResponse(request, configured.status, { error: { message: configured.error } });
+  try {
+    const response = await fetchWithTimeout(`https://api.openai.com/v1/models/${encodeURIComponent(configured.model)}`, {
+      headers: { authorization: `Bearer ${configured.openaiKey}` },
+    }, 12_000);
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      console.error("OpenAI summary configuration check failed", { status: response.status, type: payload?.error?.type });
+      return jsonResponse(request, 200, {
+        status: "error",
+        model: configured.model,
+        message: openAiConfigurationMessage(response.status, payload, configured.model),
+      });
+    }
+    return jsonResponse(request, 200, {
+      status: "ready",
+      model: configured.model,
+      message: `OpenAI API 金鑰與模型 ${configured.model} 可用；實際產生摘要才會使用 API 額度。`,
+    });
+  } catch (error) {
+    const message = error instanceof ApiError
+      ? "OpenAI API 設定檢查逾時，請稍後重試。"
+      : "OpenAI API 設定暫時無法檢查，請稍後重試。";
+    return jsonResponse(request, 200, { status: "error", model: configured.model, message });
+  }
+};
+
+export { extractArticle, handleSummaryRequest, handleSummaryStatusRequest, resolveGoogleNewsUrl };
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/api/summarize") return handleSummaryRequest(request, env);
+    if (url.pathname === "/api/summary-status") return handleSummaryStatusRequest(request, env);
     return env.ASSETS.fetch(request);
   },
 };

@@ -341,7 +341,7 @@
               <div class="panel-section"><span class="label">監測主題</span><div id="topicChips" class="chip-list" aria-label="監測主題"></div></div>
               <div class="panel-section"><span class="label">重要度</span><div id="priorityFilters" class="priority-filter" aria-label="重要度篩選"></div></div>
               <div class="panel-section"><div class="mini-source-card"><strong>自動帶入智冠產業監測新聞</strong><p id="syncDescription">正在載入已部署的監測候選新聞。</p><button id="refreshMonitoring" class="button ghost" type="button">↻ 重新載入資料</button><a class="link-button" href="https://yin0612.github.io/for_SoftWorld/#/news" target="_blank" rel="noopener noreferrer">開啟智冠產業監測查核原文 ↗</a></div></div>
-              <div class="panel-section"><div class="summary-access-card"><strong>AI 週報摘要（已選題才執行）</strong><p id="summaryAccessDescription">擷取公開原文後產生範例格式草稿；結果不會自動寫入週報。</p><label class="label" for="summaryAccessKey">摘要存取碼</label><div class="summary-access-row"><input id="summaryAccessKey" class="text-input" type="password" autocomplete="off" placeholder="首次使用時輸入" /><button id="saveSummaryAccessKey" class="button soft" type="button">啟用摘要</button></div></div></div>
+              <div class="panel-section"><div class="summary-access-card"><strong>AI 週報摘要（已選題才執行）</strong><p id="summaryAccessDescription">擷取公開原文後產生範例格式草稿；結果不會自動寫入週報。</p><label class="label" for="summaryAccessKey">摘要存取碼</label><div class="summary-access-row"><input id="summaryAccessKey" class="text-input" type="password" autocomplete="off" placeholder="首次使用時輸入" /><button id="saveSummaryAccessKey" class="button soft" type="button">啟用摘要</button><button id="checkSummarySetup" class="button ghost" type="button">檢查設定</button></div></div></div>
             </section>
 
             <section id="inbox-panel" class="panel inbox-panel" aria-labelledby="inbox-title">
@@ -400,6 +400,7 @@
       const exampleSource = "https://yin0612.github.io/for_SoftWorld/#/";
       const monitoringSnapshotUrl = "./data/monitoring-news.json";
       const summaryWorkerUrl = "https://pr-statusreport.media-monitoring-worker.workers.dev/api/summarize";
+      const summaryStatusUrl = "https://pr-statusreport.media-monitoring-worker.workers.dev/api/summary-status";
       const SUMMARY_ACCESS_KEY_STORAGE = "pr-weekly-summary-access-key-v1";
       const REPORT_TITLE = "Soft-World PR & IR Department STATUS REPORT 工作進度報告";
       const topics = ["全部", "金融支付", "遊戲產業", "競品與產業"];
@@ -618,6 +619,7 @@
           ? "此瀏覽器工作階段可產生摘要草稿；結果仍需你按「套用摘要草稿」。"
           : "輸入你在 Cloudflare 設定的摘要存取碼後，才可使用。此碼不等於 OpenAI API 金鑰。";
         get("saveSummaryAccessKey").textContent = enabled ? "更新存取碼" : "啟用摘要";
+        get("checkSummarySetup").disabled = !enabled;
       };
 
       const renderHeader = () => {
@@ -742,6 +744,27 @@
         get("summaryAccessKey").value = "";
         renderSummaryAccess();
         toast("這個瀏覽器工作階段已啟用摘要功能。 ");
+      };
+      const checkSummarySetup = async () => {
+        if (!summaryAccessKey) { toast("請先在左側輸入摘要存取碼。 "); get("summaryAccessKey").focus(); return; }
+        const button = get("checkSummarySetup");
+        button.disabled = true;
+        const originalLabel = button.textContent;
+        button.textContent = "檢查中…";
+        try {
+          const response = await fetch(summaryStatusUrl, {
+            method: "POST",
+            headers: { "x-pr-summary-key": summaryAccessKey }
+          });
+          const payload = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(payload?.error?.message || `設定檢查暫時無法使用（${response.status}）。`);
+          toast(String(payload?.message || "摘要設定已檢查。"));
+        } catch (error) {
+          toast(String(error?.message || "設定檢查暫時無法使用。"));
+        } finally {
+          button.textContent = originalLabel;
+          button.disabled = !summaryAccessKey;
+        }
       };
       const generateAiSummary = async (id) => {
         if (!summaryAccessKey) { toast("請先在左側輸入摘要存取碼。 "); get("summaryAccessKey").focus(); return; }
@@ -937,6 +960,7 @@
       get("toggleImport").addEventListener("click", () => { get("importPanel").classList.toggle("is-open"); if (get("importPanel").classList.contains("is-open")) get("pasteInput").focus(); });
       get("refreshMonitoring").addEventListener("click", () => loadMonitoringSnapshot(true));
       get("saveSummaryAccessKey").addEventListener("click", setSummaryAccessKey);
+      get("checkSummarySetup").addEventListener("click", checkSummarySetup);
       get("importPaste").addEventListener("click", () => { const value = get("pasteInput").value.trim(); if (!value) { toast("請先貼入新聞資料。"); return; } addImported(parsePasted(value)); get("pasteInput").value = ""; get("importPanel").classList.remove("is-open"); });
       get("fileInput").addEventListener("change", async event => { const file = event.target.files?.[0]; if (!file) return; get("fileName").textContent = file.name; try { const text = await file.text(); const rows = file.name.toLowerCase().endsWith(".json") ? (() => { const parsed = JSON.parse(text); return Array.isArray(parsed) ? parsed : Array.isArray(parsed.news) ? parsed.news : []; })() : parseCSV(text); addImported(rows); } catch (error) { console.error(error); toast("檔案無法讀取，請確認 JSON 或 CSV 格式。"); } event.target.value = ""; });
       get("regenerateDraft").addEventListener("click", () => { state.draftEdited = false; state.draft = generateDraft(); commit("草稿已依目前選題重新產生"); renderDraft(true); });
