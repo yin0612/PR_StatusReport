@@ -22,7 +22,7 @@
 1. 先到 Cloudflare 的 Workers & Pages 方案頁確認此帳號是 **Workers Free**。這與網域的 Free 方案不同。Workers AI 每日免費 10,000 Neurons 為帳號共用額度，Free 方案超額即拒絕；**Workers Paid 超額會計費**，因此免費版必須保持 Workers Free，不使用 AI Gateway 預付額度或 Unified billing。
 2. `wrangler.json` 已宣告 `ai.binding = "AI"`；GitHub 自動部署會加入 AI 綁定。若 Dashboard 仍未顯示，請到 `pr-statusreport → Bindings` 新增 **Workers AI**，名稱填 `AI`。
 3. 沿用既有 Production secret `PR_SUMMARY_ACCESS_KEY`，它是工作台存取碼，不是第三方 API 金鑰。無須重設。
-4. 確認 Workers Free 後，到 `pr-statusreport → Settings → Variables and Secrets` 新增一般文字變數 `PR_SUMMARY_FREE_PLAN_CONFIRMED`，值為 `true`，儲存並部署。沒有此確認時程式拒絕生成，避免誤在 Paid 方案運行。**此變數是人工確認，不會自動查詢帳務；未來改為 Paid 時，須先移除此變數或設成 `false`。**
+4. 2026/10/01 已在帳號的 Workers plans 頁確認 **Free 為 Current plan**，因此 `wrangler.json` 已設定 `vars.PR_SUMMARY_FREE_PLAN_CONFIRMED = "true"`，隨 GitHub 部署啟用，不需重設存取碼。其他帳號部署前須重新確認方案；未確認時應設為 `false`。**此變數是人工確認，不會自動查詢帳務；未來改為 Paid 時，須先在 `wrangler.json` 把此值設為 `false` 並部署停用摘要，不能只改 Dashboard（下一次 Git 部署會覆蓋）。**
 5. 回工作台輸入原有存取碼、按「啟用摘要」，再按「檢查設定」。檢查不執行模型、不消耗 AI 額度，也不查詢帳號餘額；實際生成才驗證 AI 模型存取與當日額度。
 
 不需建立或儲值 OpenAI API。既有 `OPENAI_API_KEY`／`OPENAI_MODEL` 不再被程式讀取；不用刪除也不會因本網站消耗 OpenAI 額度。
