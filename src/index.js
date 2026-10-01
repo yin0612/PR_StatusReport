@@ -1,3 +1,5 @@
+import { SummaryError as ApiError, SUMMARY_MODEL, createSummaryDraft } from "./cloudflare-summary.js";
+
 const ALLOWED_ORIGINS = new Set([
   "https://pr-statusreport.media-monitoring-worker.workers.dev",
   "https://yin0612.github.io",
@@ -11,14 +13,6 @@ const MAX_REQUEST_CHARS = 8_192;
 const MAX_PAGE_CHARS = 1_200_000;
 const MAX_SOURCE_CHARS = 8_000;
 const MAX_REDIRECTS = 5;
-
-class ApiError extends Error {
-  constructor(status, message, details = {}) {
-    super(message);
-    this.status = status;
-    Object.assign(this, details);
-  }
-}
 
 const trimText = (value, limit = MAX_SOURCE_CHARS) => String(value || "")
   .replace(/\u00a0/g, " ")
@@ -352,134 +346,24 @@ const extractSummarySource = async (metadata) => {
   }
 };
 
-const draftSchema = {
-  type: "object",
-  additionalProperties: false,
-  properties: {
-    summary: { type: "string", description: "一到兩句的繁體中文事實摘要，不用 markdown。" },
-    note: { type: "string", description: "選填。需要時以『背景：』、『數據：』或『限制：』開頭的繁體中文補充；無則為空字串。" },
-    warnings: { type: "array", items: { type: "string" }, description: "需人工查核的事項，最多三項。" },
-  },
-  required: ["summary", "note", "warnings"],
-};
-
-const openAiConfigurationMessage = (status, payload, model) => {
-  const type = String(payload?.error?.type || "").toLowerCase();
-  const code = String(payload?.error?.code || "").toLowerCase();
-  if (status === 401 || type.includes("authentication") || code.includes("api_key")) {
-    return "OpenAI API 金鑰無效、已撤銷，或不是 API 平台金鑰；請在 Cloudflare 更新 OPENAI_API_KEY。";
-  }
-  if (code === "credit_balance_exhausted") {
-    return "OpenAI API 預付額度已用完；請到 Billing 加入 API 額度。ChatGPT 訂閱不含 API 額度。";
-  }
-  if (["organization_spend_limit_exceeded", "project_spend_limit_exceeded"].includes(code)) {
-    return "OpenAI API 已達組織或專案支出上限；請到對應的 Limits 設定確認，不要重複按產生摘要。";
-  }
-  if (code === "organization_usage_limit_exceeded") {
-    return "OpenAI API 已達帳號核准的用量上限；請到 Usage limits 確認或申請提高額度。";
-  }
-  if (code === "insufficient_quota" || type === "insufficient_quota") {
-    return "OpenAI API 額度不足；請到 Billing 確認餘額及支出上限。重建金鑰或重複重試無法補充額度。";
-  }
-  if (type.includes("rate_limit") || ["rate_limit_exceeded", "slow_down"].includes(code)) {
-    return "OpenAI API 請求太頻繁，暫時達到速率限制；請稍後再試，先不要連續按產生摘要。";
-  }
-  if (status === 429) {
-    return "OpenAI API 回傳 429，但未提供可辨識的原因；請確認 Billing 和 Usage limits。";
-  }
-  if (status === 404 || code.includes("model")) {
-    return `OpenAI API 無法使用模型 ${model}；請確認 OPENAI_MODEL 或帳號的模型存取權。`;
-  }
-  return `OpenAI API 暫時拒絕摘要請求（HTTP ${status || "未知"}）；請先使用「檢查設定」驗證金鑰與模型。`;
-};
-
-const safeProviderCode = (payload) => {
-  const code = String(payload?.error?.code || payload?.error?.type || "").toLowerCase();
-  return /^[a-z0-9_]{1,80}$/.test(code) ? code : "";
-};
-
-const responseOutputText = (payload) => {
-  if (payload?.status === "incomplete") {
-    throw new ApiError(502, "摘要回應未完成，尚未套用任何內容；請管理員檢查輸出長度或改用適合短摘要的模型。", { providerCode: "incomplete_response" });
-  }
-  if (payload?.status === "failed" || payload?.error) {
-    throw new ApiError(502, "摘要模型執行失敗，尚未套用任何內容；請稍後再試。", { providerCode: safeProviderCode(payload) });
-  }
-  // Raw REST responses use output[].content[]; output_text is an SDK helper.
-  const content = (Array.isArray(payload?.output) ? payload.output : [])
-    .filter((item) => item?.type === "message" && item?.role === "assistant")
-    .flatMap((item) => Array.isArray(item.content) ? item.content : []);
-  if (content.some((item) => item?.type === "refusal")) {
-    throw new ApiError(422, "模型未能為這則內容產生摘要；請改以人工整理。", { providerCode: "model_refusal" });
-  }
-  return content.filter((item) => item?.type === "output_text" && typeof item.text === "string")
-    .map((item) => item.text).join("");
-};
-
 const configuredSummaryService = (request, env) => {
   const requiredAccessKey = String(env.PR_SUMMARY_ACCESS_KEY || "").trim();
-  const openaiKey = String(env.OPENAI_API_KEY || "").trim();
-  if (!requiredAccessKey || !openaiKey) return { error: "摘要功能尚未完成管理員設定。", status: 503 };
+  if (!requiredAccessKey) return { error: "摘要功能尚未設定工作台存取碼。", status: 503 };
   if (!constantTimeEqual(request.headers.get("x-pr-summary-key"), requiredAccessKey)) {
     return { error: "摘要存取碼不正確或尚未啟用。", status: 401 };
   }
-  return { requiredAccessKey, openaiKey, model: String(env.OPENAI_MODEL || "gpt-6-astra").trim() };
-};
-
-const createSummaryDraft = async (env, metadata, article) => {
-  const model = String(env.OPENAI_MODEL || "gpt-6-astra").trim();
-  const headlineOnly = article.sourceMode === "headline";
-  const source = [
-    `新聞標題：${metadata.title}`,
-    `媒體：${metadata.source || "未註明"}`,
-    `日期：${metadata.date || "未註明"}`,
-    `可用資料模式：${headlineOnly ? "僅新聞標題，非原文全文" : article.sourceMode === "pasted_text" ? "使用者貼入的原文／節錄" : article.sourceMode === "monitoring_excerpt" ? "監測來源提供的摘要／節錄" : "公開原文"}`,
-    `可用內容：${article.sourceText}`,
-  ].join("\n\n");
-  const response = await fetchWithTimeout("https://api.openai.com/v1/responses", {
-    method: "POST",
-    headers: {
-      authorization: `Bearer ${env.OPENAI_API_KEY}`,
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      model,
-      store: false,
-      max_output_tokens: 650,
-      ...(model === "gpt-6-astra" ? { reasoning: { effort: "low" } } : {}),
-      instructions: `你是台灣企業公關週報編輯。只可依據提供的可用內容撰寫，不得猜測、補充外部知識或把標題視為已證實事實。以繁體中文輸出，語氣客觀、精簡，模仿企業週報：先寫主體、動作、關鍵事實或數字；若來源資訊不足，摘要要明確保留限制，並在 warnings 提醒人工核對。${headlineOnly ? "目前只有新聞標題：摘要必須明確寫成『標題顯示／報導標題提及』的保守說法，不得補出時程、原因、數字、合作細節或影響。" : ""}不要使用條列、網址、媒體名稱開頭、評價性語言或 Markdown。`,
-      input: source,
-      text: {
-        format: {
-          type: "json_schema",
-          name: "weekly_pr_summary",
-          strict: true,
-          schema: draftSchema,
-        },
-      },
-    }),
-  }, 30_000);
-  const payload = await response.json().catch(() => ({}));
-  if (!response.ok) {
-    console.error("OpenAI summary request failed", { status: response.status, type: payload?.error?.type });
-    throw new ApiError(502, openAiConfigurationMessage(response.status, payload, model), { providerCode: safeProviderCode(payload) });
+  // Fail closed until the owner has checked Workers Free in the account dashboard.
+  // This flag is an attestation, not a billing API query. Keep the account on Free.
+  if (String(env.PR_SUMMARY_FREE_PLAN_CONFIRMED) !== "true") {
+    return { error: "免費摘要尚未啟用：請先確認 Cloudflare Workers 為 Free 方案，再設定 PR_SUMMARY_FREE_PLAN_CONFIRMED=true。", status: 503 };
   }
-  const output = responseOutputText(payload);
-  let draft;
-  try { draft = JSON.parse(output); } catch { throw new ApiError(502, "摘要模型回傳格式暫時無法讀取，請稍後再試。"); }
-  const summary = plainDraftText(draft?.summary, 420);
-  if (!summary) throw new ApiError(502, "摘要模型沒有產生可用草稿，請改以人工整理。");
-  const note = plainDraftText(draft?.note, 300);
-  const modelWarnings = Array.isArray(draft?.warnings)
-    ? draft.warnings.map((warning) => plainDraftText(warning, 110)).filter(Boolean).slice(0, 3)
-    : [];
-  const warnings = [...new Set([...(article.sourceWarnings || []), ...modelWarnings])].slice(0, 3);
-  return { summary, note, warnings, sourceMode: article.sourceMode || "public_article" };
+  if (typeof env.AI?.run !== "function") return { error: "Cloudflare AI 綁定尚未啟用，請重新部署或新增名稱為 AI 的 Workers AI binding。", status: 503 };
+  return { model: SUMMARY_MODEL };
 };
 
 const parseRequest = async (request) => {
   const contentLength = Number(request.headers.get("content-length") || 0);
-  if (contentLength > MAX_REQUEST_CHARS) throw new ApiError(413, "摘要請求內容過大。");
+  if (contentLength > MAX_REQUEST_CHARS * 4) throw new ApiError(413, "摘要請求內容過大。");
   const raw = await request.text();
   if (raw.length > MAX_REQUEST_CHARS) throw new ApiError(413, "摘要請求內容過大。");
   let body;
@@ -519,7 +403,7 @@ const handleSummaryRequest = async (request, env) => {
   } catch (error) {
     const status = error instanceof ApiError ? error.status : 502;
     if (!(error instanceof ApiError)) console.error("Unexpected summary error", error);
-    return jsonResponse(request, status, { error: { message: error?.message || "摘要服務暫時無法使用。", ...(error?.providerCode ? { code: error.providerCode } : {}) } });
+    return jsonResponse(request, status, { error: { message: error?.message || "摘要服務暫時無法使用。", ...(error?.providerCode ? { code: error.providerCode } : {}), ...(error?.retryAt ? { retryAt: error.retryAt } : {}) } });
   }
 };
 
@@ -528,31 +412,10 @@ const handleSummaryStatusRequest = async (request, env) => {
   if (request.method !== "POST") return jsonResponse(request, 405, { error: { message: "只支援 POST 請求。" } });
   const configured = configuredSummaryService(request, env);
   if (configured.error) return jsonResponse(request, configured.status, { error: { message: configured.error } });
-  try {
-    const response = await fetchWithTimeout(`https://api.openai.com/v1/models/${encodeURIComponent(configured.model)}`, {
-      headers: { authorization: `Bearer ${configured.openaiKey}` },
-    }, 12_000);
-    const payload = await response.json().catch(() => ({}));
-    if (!response.ok) {
-      console.error("OpenAI summary configuration check failed", { status: response.status, type: payload?.error?.type });
-      return jsonResponse(request, 200, {
-        status: "error",
-        model: configured.model,
-        message: openAiConfigurationMessage(response.status, payload, configured.model),
-        code: safeProviderCode(payload),
-      });
-    }
-    return jsonResponse(request, 200, {
-      status: "ready",
-      model: configured.model,
-      message: `金鑰驗證與模型 ${configured.model} 查詢通過；此檢查不驗證 API 餘額或摘要生成權限。`,
-    });
-  } catch (error) {
-    const message = error instanceof ApiError
-      ? "OpenAI API 設定檢查逾時，請稍後重試。"
-      : "OpenAI API 設定暫時無法檢查，請稍後重試。";
-    return jsonResponse(request, 200, { status: "error", model: configured.model, message });
-  }
+  return jsonResponse(request, 200, {
+    status: "ready", provider: "cloudflare", model: configured.model, freeOnly: true,
+    message: "Cloudflare 免費摘要的存取碼、AI 綁定及 Free 方案確認設定已就緒；此檢查不執行模型，也不查詢今日剩餘額度。",
+  });
 };
 
 export { extractArticle, handleSummaryRequest, handleSummaryStatusRequest, resolveGoogleNewsUrl };

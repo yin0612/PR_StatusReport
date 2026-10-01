@@ -343,7 +343,7 @@
               <div class="panel-section"><span class="label">監測主題</span><div id="topicChips" class="chip-list" aria-label="監測主題"></div></div>
               <div class="panel-section"><span class="label">重要度</span><div id="priorityFilters" class="priority-filter" aria-label="重要度篩選"></div></div>
               <div class="panel-section"><div class="mini-source-card"><strong>自動帶入智冠產業監測新聞</strong><p id="syncDescription">正在載入已部署的監測候選新聞。</p><button id="refreshMonitoring" class="button ghost" type="button">↻ 重新載入資料</button><a class="link-button" href="https://yin0612.github.io/for_SoftWorld/#/news" target="_blank" rel="noopener noreferrer">開啟智冠產業監測查核原文 ↗</a></div></div>
-              <div class="panel-section"><div class="summary-access-card"><strong>AI 週報摘要（已選題才執行）</strong><p id="summaryAccessDescription">擷取公開原文後產生範例格式草稿；結果不會自動寫入週報。</p><label class="label" for="summaryAccessKey">摘要存取碼</label><div class="summary-access-row"><input id="summaryAccessKey" class="text-input" type="password" autocomplete="off" placeholder="首次使用時輸入" /><button id="saveSummaryAccessKey" class="button soft" type="button">啟用摘要</button><button id="checkSummarySetup" class="button ghost" type="button">檢查設定</button></div></div></div>
+              <div class="panel-section"><div class="summary-access-card"><strong>Cloudflare 免費摘要（只處理已選題）</strong><p id="summaryAccessDescription">相同內容重用摘要；免費額度用完即停止，不轉用付費服務。</p><label class="label" for="summaryAccessKey">摘要存取碼</label><div class="summary-access-row"><input id="summaryAccessKey" class="text-input" type="password" autocomplete="off" placeholder="沿用工作台存取碼" /><button id="saveSummaryAccessKey" class="button soft" type="button">啟用摘要</button><button id="checkSummarySetup" class="button ghost" type="button">檢查設定</button></div><p id="summarySetupStatus" role="status"></p></div></div>
             </section>
 
             <section id="inbox-panel" class="panel inbox-panel" aria-labelledby="inbox-title">
@@ -392,7 +392,8 @@
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite"><span class="toast-dot"></span><span id="toastText"></span></div>
 
-  <script>
+  <script type="module">
+    import { SUMMARY_VERSION, summaryInputKey, canReuseSummaryDraft } from "./summary-cache.js";
     (() => {
       "use strict";
       const STORAGE_KEY = "pr-weekly-workbench-v3";
@@ -524,6 +525,7 @@
       let archives = [];
       let monitoringState = { phase: "loading", generatedAt: null, count: 0, sourceCount: 0 };
       let summaryAccessKey = "";
+      let summaryRequestInFlight = false;
       try { summaryAccessKey = sessionStorage.getItem(SUMMARY_ACCESS_KEY_STORAGE) || ""; } catch { /* Session storage can be unavailable in private browser modes. */ }
       const get = (id) => document.getElementById(id);
       let toastTimer;
@@ -618,8 +620,8 @@
       const renderSummaryAccess = () => {
         const enabled = Boolean(summaryAccessKey);
         get("summaryAccessDescription").textContent = enabled
-          ? "此瀏覽器工作階段可產生摘要草稿；結果仍需你按「套用摘要草稿」。"
-          : "輸入你在 Cloudflare 設定的摘要存取碼後，才可使用。此碼不等於 OpenAI API 金鑰。";
+          ? "Cloudflare 免費版：相同內容重用摘要，額度不足就停止；草稿仍需人工套用。"
+          : "沿用工作台摘要存取碼，不需要 OpenAI 金鑰；管理員須先確認 Workers Free 方案。";
         get("saveSummaryAccessKey").textContent = enabled ? "更新存取碼" : "啟用摘要";
         get("checkSummarySetup").disabled = !enabled;
       };
@@ -640,7 +642,7 @@
       const lineBreaks = (value = "") => escapeHTML(value).replace(/\r?\n/g, "<br>");
       const summarySourceLabel = (draft) => {
         const sourceCount = Number(draft?.sourceCharacters) || 0;
-        if (draft?.sourceMode === "headline") return "僅依新聞標題產生（原文尚未讀取）";
+        if (draft?.sourceMode === "headline") return "未取得原文，僅保留標題（未使用 AI 額度）";
         if (draft?.sourceMode === "pasted_text") return `依貼入內容 ${sourceCount.toLocaleString()} 字`;
         if (draft?.sourceMode === "monitoring_excerpt") return `依監測節錄 ${sourceCount.toLocaleString()} 字`;
         return sourceCount ? `依公開原文 ${sourceCount.toLocaleString()} 字` : "已產生摘要草稿";
@@ -651,13 +653,13 @@
         const actionLabel = loading ? "正在擷取原文…" : "✦ 擷取並產生摘要";
         const statusText = loading
           ? "正在解析原始媒體頁並產生摘要草稿，請稍候。"
-          : "會先讀取公開原文；若原文網站限制讀取，會改產生標題版草稿並標示需人工核對。";
+          : "只使用 Cloudflare 免費摘要；相同內容不重複生成。原文讀不到時只保留標題，不消耗 AI 額度。";
         const content = draft ? [draft.summary, draft.note].filter(Boolean).join("\n\n") : "";
         const warnings = Array.isArray(draft?.warnings) ? draft.warnings.filter(Boolean).slice(0, 3) : [];
-        const draftCard = draft && content ? `<div class="summary-draft"><div class="summary-meta">已產生摘要草稿 · ${summarySourceLabel(draft)}</div><p class="summary-draft-content">${lineBreaks(content)}</p>${warnings.length ? `<p class="summary-meta">需查核：${escapeHTML(warnings.join("；"))}</p>` : ""}<div><button type="button" class="button primary tiny" data-apply-ai-summary="${escapeHTML(item.id)}">套用摘要草稿</button></div></div>` : "";
+        const draftCard = draft && content ? `<div class="summary-draft"><div class="summary-meta">${draft.provider === "none" ? "未取得內文" : "摘要草稿"} · ${summarySourceLabel(draft)}${draft.cached ? " · 已重用結果" : ""}</div><p class="summary-draft-content">${lineBreaks(content)}</p>${warnings.length ? `<p class="summary-meta">需查核：${escapeHTML(warnings.join("；"))}</p>` : ""}<div><button type="button" class="button primary tiny" data-apply-ai-summary="${escapeHTML(item.id)}">套用摘要草稿</button></div></div>` : "";
         const summaryError = item.summaryError ? `<div class="summary-error" role="alert"><p>${escapeHTML(item.summaryError)}</p>${item.summaryErrorCode ? `<p>錯誤代碼：${escapeHTML(item.summaryErrorCode)}</p>` : ""}</div>` : "";
         const sourceTextHelp = `<details class="summary-source-details"><summary>原文擷取受限時，貼上可讀內容後再產生（選填）</summary><div class="summary-source-details-content"><label class="label" for="ai-source-${escapeHTML(item.id)}">原文／節錄（不會自動寫入週報）</label><textarea id="ai-source-${escapeHTML(item.id)}" class="textarea" data-ai-source-text="${escapeHTML(item.id)}" maxlength="6000" placeholder="從已開啟的原文複製前幾段或全文後貼在此處；重新按摘要可得到較完整的草稿。">${escapeHTML(item.aiSourceText || "")}</textarea><p>貼入內容只會在此次摘要請求中使用，並儲存在這台裝置的工作紀錄，不會提交到 GitHub。</p></div></details>`;
-        return `<div class="summary-tools"><div class="summary-tools-header"><strong>AI 週報摘要草稿</strong><button type="button" class="button ghost tiny" data-generate-summary="${escapeHTML(item.id)}" ${loading ? "aria-busy=\"true\" disabled" : ""}>${actionLabel}</button></div><p>${statusText}</p>${summaryError}${draftCard}${sourceTextHelp}</div>`;
+        return `<div class="summary-tools"><div class="summary-tools-header"><strong>Cloudflare 免費摘要草稿</strong><button type="button" class="button ghost tiny" data-generate-summary="${escapeHTML(item.id)}" ${loading || summaryRequestInFlight ? "disabled" : ""} ${loading ? "aria-busy=\"true\"" : ""}>${actionLabel}</button></div><p>${statusText}</p>${summaryError}${draftCard}${sourceTextHelp}</div>`;
       };
       const renderNews = () => {
         const items = filteredNews();
@@ -761,8 +763,10 @@
           });
           const payload = await response.json().catch(() => ({}));
           if (!response.ok) throw new Error(payload?.error?.message || `設定檢查暫時無法使用（${response.status}）。`);
+          get("summarySetupStatus").textContent = String(payload?.message || "摘要設定已檢查。");
           toast(String(payload?.message || "摘要設定已檢查。"));
         } catch (error) {
+          get("summarySetupStatus").textContent = String(error?.message || "設定檢查暫時無法使用。");
           toast(String(error?.message || "設定檢查暫時無法使用。"));
         } finally {
           button.textContent = originalLabel;
@@ -773,11 +777,25 @@
         if (!summaryAccessKey) { toast("請先在左側輸入摘要存取碼。 "); get("summaryAccessKey").focus(); return; }
         const item = state.news.find(news => news.id === id);
         if (!item?.selected) return;
+        if (summaryRequestInFlight) { toast("請先等目前的摘要完成，避免重複消耗免費額度。"); return; }
+        summaryRequestInFlight = true;
         item.summaryStatus = "loading";
         item.summaryError = "";
         item.summaryErrorCode = "";
         renderNews();
         try {
+          const inputKey = await summaryInputKey(item);
+          if (canReuseSummaryDraft(item.aiDraft, inputKey)) {
+            item.aiDraft.cached = true;
+            item.summaryStatus = "";
+            commit("已重用這則新聞的摘要，未呼叫 AI。");
+            return;
+          }
+          if (Number(state.summaryQuotaResetAt) > Date.now()) {
+            const error = new Error("今日免費 AI 額度已用完，請等額度重置再試；不會轉用付費服務。");
+            error.providerCode = "cloudflare_free_quota_exhausted";
+            throw error;
+          }
           const response = await fetch(summaryWorkerUrl, {
             method: "POST",
             headers: { "content-type": "application/json", "x-pr-summary-key": summaryAccessKey },
@@ -787,6 +805,9 @@
           if (!response.ok) {
             const error = new Error(payload?.error?.message || `摘要服務暫時無法使用（${response.status}）。`);
             error.providerCode = String(payload?.error?.code || "");
+            if (error.providerCode === "cloudflare_free_quota_exhausted") {
+              state.summaryQuotaResetAt = Date.parse(payload?.error?.retryAt) || 0;
+            }
             throw error;
           }
           const draft = payload?.draft;
@@ -800,11 +821,16 @@
             sourceCharacters: Number(draft.sourceCharacters) || 0,
             sourceMode: String(draft.sourceMode || "public_article"),
             generatedAt: String(draft.generatedAt || new Date().toISOString()),
-            warnings: Array.isArray(draft.warnings) ? draft.warnings.map(String).slice(0, 3) : []
+            warnings: Array.isArray(draft.warnings) ? draft.warnings.map(String).slice(0, 3) : [],
+            inputKey,
+            version: String(draft.version || SUMMARY_VERSION),
+            provider: String(draft.provider || "cloudflare"),
+            model: String(draft.model || ""),
+            cached: Boolean(draft.cached)
           };
           item.summaryStatus = "";
           state.draftEdited = false;
-          commit("已產生摘要草稿，請確認後再套用。 ");
+          commit(draft.provider === "none" ? "未取得新聞內文，請貼入可讀內容後再產生；未使用 AI 額度。" : "已產生 Cloudflare 摘要草稿，請確認後再套用。");
           renderAll(true);
         } catch (error) {
           item.summaryStatus = "";
@@ -812,7 +838,12 @@
           item.summaryErrorCode = String(error?.providerCode || "");
           renderNews();
           const message = String(error?.message || "摘要服務暫時無法使用。 ");
+          persist();
           toast(message.length > 84 ? `${message.slice(0, 82)}…` : message);
+        } finally {
+          summaryRequestInFlight = false;
+          item.summaryStatus = "";
+          renderNews();
         }
       };
       const applyAiSummary = (id) => {

@@ -11,25 +11,31 @@
 5. 在草稿頁檢查週報版型預覽與可編輯文字，再複製文字輸出；不會產生 Word 檔。
 6. 在「人工確認」核對內容並儲存本週紀錄；選題、摘要、註記與週報紀錄保存在這台裝置的瀏覽器中。同步新資料不會覆蓋已選題或已編輯的新聞。
 
-## AI 摘要草稿（選題後才執行）
+## Cloudflare 免費摘要（選題後才執行）
 
-網站會先把 Google News 跳轉連結還原為原媒體網址，讀取可公開取得的內容，再由 OpenAI 產生繁體中文的週報摘要草稿。草稿不會直接寫入週報，必須由編輯按下「套用摘要草稿」。
+網站先還原 Google News 原媒體連結，讀取公開內容，再由 Cloudflare Workers AI 的 `@cf/qwen/qwen3-30b-a3b-fp8` 產生繁體中文事實摘要。模型固定在程式中，不接受環境變數切換成付費模型。草稿不直接寫入週報，必須人工按「套用摘要草稿」。不再呼叫 OpenAI，也沒有付費服務 fallback、自動重試或自動儲值。
 
-部分新聞網站會限制 Cloudflare 伺服器讀取（例如回傳 `429`），這不是存取碼或 OpenAI 金鑰的問題。遇到此情況，工作台會改產生明確標示「僅依新聞標題」的保守草稿，並提示人工核對；若要取得接近原文的品質，可在該則新聞的「原文擷取受限時，貼上可讀內容後再產生」展開區塊貼入原文前幾段或全文，再按一次產生摘要。貼入內容只用於該次摘要和本機工作紀錄，不會提交至 GitHub 或自動寫進週報。
+若原文受限（例如媒體回傳 `429`），優先使用有內容的監測節錄；若只剩標題，明確標示「未取得原文」，不消耗 AI 額度改寫標題。可展開「原文擷取受限時，貼上可讀內容後再產生」，貼入至少 60 字的原文或節錄再摘要。貼入內容與摘要會保存在此裝置工作紀錄；產生時會傳到 Cloudflare AI，但不提交到 GitHub 或自動寫入週報。伺服器自動擷取的原文全文不回傳至瀏覽器。
 
-為了讓公開網站不會被陌生人用來消耗 API 額度，第一次啟用時需要由管理員在 Cloudflare 設定兩個 **Production secret**：
+### 免費版啟用設定
 
-1. 進入 **Cloudflare Dashboard → Workers & Pages → pr-statusreport → Settings → Variables and Secrets**。
-2. 新增加密 secret `OPENAI_API_KEY`：貼入在 OpenAI API 平台建立的金鑰。ChatGPT 訂閱與 API 用量是分開的；不要把金鑰貼進 GitHub、網站程式碼或聊天訊息。
-3. 新增加密 secret `PR_SUMMARY_ACCESS_KEY`：自訂一組至少 24 個字元的隨機存取碼。這不是 OpenAI 金鑰；它是讓網站使用者啟用摘要按鈕的工作台密碼。
-4. （選填）新增一般文字變數 `OPENAI_MODEL`，例如 `gpt-6-astra`。若未設定，Worker 預設使用 `gpt-6-astra`。
-5. 儲存後重新部署 Production，或等待 Cloudflare 自動重建完成。
+1. 先到 Cloudflare 的 Workers & Pages 方案頁確認此帳號是 **Workers Free**。這與網域的 Free 方案不同。Workers AI 每日免費 10,000 Neurons 為帳號共用額度，Free 方案超額即拒絕；**Workers Paid 超額會計費**，因此免費版必須保持 Workers Free，不使用 AI Gateway 預付額度或 Unified billing。
+2. `wrangler.json` 已宣告 `ai.binding = "AI"`；GitHub 自動部署會加入 AI 綁定。若 Dashboard 仍未顯示，請到 `pr-statusreport → Bindings` 新增 **Workers AI**，名稱填 `AI`。
+3. 沿用既有 Production secret `PR_SUMMARY_ACCESS_KEY`，它是工作台存取碼，不是第三方 API 金鑰。無須重設。
+4. 確認 Workers Free 後，到 `pr-statusreport → Settings → Variables and Secrets` 新增一般文字變數 `PR_SUMMARY_FREE_PLAN_CONFIRMED`，值為 `true`，儲存並部署。沒有此確認時程式拒絕生成，避免誤在 Paid 方案運行。**此變數是人工確認，不會自動查詢帳務；未來改為 Paid 時，須先移除此變數或設成 `false`。**
+5. 回工作台輸入原有存取碼、按「啟用摘要」，再按「檢查設定」。檢查不執行模型、不消耗 AI 額度，也不查詢帳號餘額；實際生成才驗證 AI 模型存取與當日額度。
 
-使用時，在左側「AI 週報摘要」輸入 `PR_SUMMARY_ACCESS_KEY` 並按「啟用摘要」，勾選一則新聞，再按該則新聞的「擷取並產生摘要」。存取碼只保留在目前瀏覽器工作階段；原文全文不會寫入瀏覽器、本機週報紀錄或 GitHub。
+不需建立或儲值 OpenAI API。既有 `OPENAI_API_KEY`／`OPENAI_MODEL` 不再被程式讀取；不用刪除也不會因本網站消耗 OpenAI 額度。
 
-若畫面顯示摘要模型無法使用，先按左側的「檢查設定」。此檢查只驗證 OpenAI API 金鑰與模型查詢，不會產生摘要或使用生成額度，也不會驗證 API 餘額或摘要生成權限。查詢通過不代表帳號已有可用額度。
+### 節省額度與超額行為
 
-摘要請求失敗時，新聞卡片會保留完整提示及 OpenAI 錯誤代碼：`credit_balance_exhausted`／`insufficient_quota` 要確認 Billing 餘額；`project_spend_limit_exceeded`／`organization_spend_limit_exceeded` 要確認支出上限；`rate_limit_exceeded`／`slow_down` 才是暫時請求過於頻繁。API 金鑰本身不含額度，ChatGPT 訂閱不抵扣 API 用量。額度和付款設定須由帳號擁有者手動處理，網站不會自動儲值或重試付費生成。
+- 只處理手動點擊的已選新聞，一次一則；同步候選新聞與週報組版不會執行 AI。
+- 此裝置保留來源指紋和草稿，相同內容再次點擊直接重用；修改標題、日期、原文或節錄後才需重新生成。要重新擷取已變動的媒體頁，請貼入新原文再產生。
+- Worker 同一執行個體額外保留最多 128 則、24 小時的摘要快取，合併同時發生的相同請求。這不是跨裝置永久資料庫，執行個體回收會失效；硬性免費上限仍由 Workers Free 平台保障。
+- Cloudflare 錯誤 `3036` 代表今日免費額度用完，工作台停止新摘要至每日 UTC 00:00（台灣時間 08:00）重置。既有本機摘要、人工編輯與週報輸出仍可使用。
+- `3040` 或其他速率限制表示暫時忙碌，不假稱額度用完；`5035` 表示模型需付費，直接停止，絕不自動升級或更換付費模型。
+
+官方說明：[Workers AI 定價](https://developers.cloudflare.com/workers-ai/platform/pricing/)、[錯誤碼](https://developers.cloudflare.com/workers-ai/platform/errors/)、[AI binding](https://developers.cloudflare.com/workers-ai/configuration/bindings/)。
 
 ### 貼入格式
 
