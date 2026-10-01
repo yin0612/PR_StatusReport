@@ -1,4 +1,4 @@
-export const SUMMARY_VERSION = "cloudflare-free-v2-body";
+export const SUMMARY_VERSION = "cloudflare-free-v2-body-r1";
 
 export const summaryInputKey = async (item) => {
   const text = JSON.stringify([SUMMARY_VERSION, String(item.title || ""), String(item.source || ""),

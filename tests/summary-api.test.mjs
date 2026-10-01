@@ -265,3 +265,11 @@ test("article cache is never a static asset or publicly exposed API", async () =
   const response = await worker.fetch(new Request("https://example.com/api/article-cache"), { ARTICLE_CACHE: { secret: articleText }, ASSETS: { fetch: () => new Response("public site") } });
   assert.equal(await response.text(), "public site");
 });
+
+test("unsupported per-transaction limits are removed and flagged for human review", async () => {
+  const env = envFor(async () => completion({ summary: "銀行提供定存優惠，單筆最高6,000萬元。", note: "", warnings: [] }));
+  const response = await handleSummaryRequest(request({ articleText: `${articleText} 每位客戶最高存款金額6,000萬元。` }), env);
+  const draft = (await response.json()).draft;
+  assert.equal(draft.summary.includes("單筆"), false);
+  assert.ok(draft.warnings.some(warning => warning.includes("適用條件")));
+});
