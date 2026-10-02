@@ -186,3 +186,23 @@ test("five-minute polling defers editor replacement and never triggers AI", asyn
   assert.equal(JSON.stringify(page.harness.getState().news), before);
   assert.equal(calls, 1);
 });
+
+
+test("monitoring publisher links reach summary requests and body errors open recovery", async () => {
+  let sent;
+  const page = setup(async (url, input) => {
+    if (input?.method === "POST") {
+      sent = JSON.parse(input.body);
+      return Response.json({ error: { code: "article_body_unavailable", message: "原文讀取受限" } }, { status: 422 });
+    }
+    if (String(url).includes("deployment-status")) return Response.json({ builtAt: new Date().toISOString() });
+    return Response.json({ items: [{ id: "publisher-test", title: "測試新聞", source: "太報", date: "2026-08-13", url: "https://news.google.com/rss/articles/example", publisherUrl: "https://www.taisounds.com/news/content/76/283040" }] });
+  });
+  await page.harness.loadMonitoringSnapshot();
+  const item = page.harness.getState().news.find(item => item.id === "publisher-test");
+  page.harness.setSelected(item.id, true);
+  await page.harness.generateAiSummary(item.id);
+  assert.equal(sent.publisherUrl, item.publisherUrl);
+  assert.ok(page.elements.get("newsList").innerHTML.includes('summary-source-details" open'));
+  assert.ok(page.elements.get("newsList").innerHTML.includes('href="https://www.taisounds.com/news/content/76/283040"'));
+});

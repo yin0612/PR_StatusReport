@@ -9,7 +9,12 @@ export const buildArticleCache = async (records, extract = extractArticle, budge
   const startedAt = Date.now();
   const items = Object.create(null);
   const failures = Object.create(null);
-  const candidates = records.filter((item) => item.title && item.url).slice(0, 80);
+  const validRecords = records.filter((item) => item.title && item.url);
+  // Keep verified links usable even when their articles are outside the latest 80.
+  const publisherUrls = Object.fromEntries(validRecords.filter(item => item.publisherUrl || knownLinks[item.id])
+    .map(item => [item.url, { title: item.title, url: item.publisherUrl || knownLinks[item.id] }]));
+  const candidates = [...validRecords.filter(item => knownLinks[item.id]),
+    ...validRecords.filter(item => !knownLinks[item.id])].slice(0, 80);
   let index = 0;
   let googleAttempts = 0;
   let googleLimited = false;
@@ -33,7 +38,7 @@ export const buildArticleCache = async (records, extract = extractArticle, budge
     }
   };
   await Promise.all([collect(), collect()]);
-  return { generatedAt: new Date().toISOString(), total: candidates.length, items, failures };
+  return { generatedAt: new Date().toISOString(), total: candidates.length, items, failures, publisherUrls };
 };
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");

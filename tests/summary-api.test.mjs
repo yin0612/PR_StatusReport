@@ -273,3 +273,40 @@ test("unsupported per-transaction limits are removed and flagged for human revie
   assert.equal(draft.summary.includes("單筆"), false);
   assert.ok(draft.warnings.some(warning => warning.includes("適用條件")));
 });
+
+
+test("publisher URL skips Google and is validated as a public URL", async (t) => {
+  const urls = [];
+  t.mock.method(globalThis, "fetch", async url => {
+    urls.push(String(url));
+    return new Response('<div class="news-box-text border"><div>圖片說明</div>' + articleText + '<p>最後條件：最高出標金額加2000萬元。</p></div><aside>其他新聞</aside>', { headers: { "content-type": "text/html" } });
+  });
+  const env = envFor(async () => completion());
+  const response = await handleSummaryRequest(request({ articleText: "", url: "https://news.google.com/rss/articles/example", publisherUrl: "https://www.taisounds.com/news/content/76/283040" }), env);
+  assert.equal(response.status, 200);
+  assert.deepEqual(urls, ["https://www.taisounds.com/news/content/76/283040"]);
+  const extracted = await extractArticle(urls[0]);
+  assert.equal(extracted.sourceMode, "public_article");
+  assert.ok(extracted.sourceText.includes("最後條件"));
+  assert.equal(extracted.sourceText.includes("其他新聞"), false);
+  const rejected = await handleSummaryRequest(request({ publisherUrl: "http://127.0.0.1/private" }), env);
+  assert.equal(rejected.status, 400);
+});
+
+test("verified older articles are cached and publisher links survive the body cap", async () => {
+  const records = Array.from({ length: 100 }, (_, i) => ({ id: String(i), title: "新聞" + i, url: "https://example.com/" + i, publisherUrl: "https://publisher.example/" + i }));
+  const cache = await buildArticleCache(records, async url => ({ sourceText: articleText, sourceMode: "public_article", canonicalUrl: url }), 90000, { "99": "https://publisher.example/99" });
+  assert.equal(cache.total, 80);
+  assert.ok(cache.items[records[99].url]);
+  assert.equal(cache.publisherUrls[records[98].url].url, records[98].publisherUrl);
+});
+
+test("server publisher metadata supports clients without the new URL field", async (t) => {
+  t.mock.method(globalThis, "fetch", async url => {
+    assert.equal(String(url), "https://publisher.example/news");
+    return new Response('<article>' + articleText + '</article>', { headers: { "content-type": "text/html" } });
+  });
+  const env = envFor(async () => completion());
+  env.ARTICLE_CACHE = { publisherUrls: { "https://example.com/news": { title: "測試新聞", url: "https://publisher.example/news" } } };
+  assert.equal((await handleSummaryRequest(request({ articleText: "" }), env)).status, 200);
+});

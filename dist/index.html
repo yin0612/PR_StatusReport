@@ -680,7 +680,7 @@
         const canApply = draft?.provider === "cloudflare" && draft?.sourceMode !== "headline";
         const draftCard = draft && content ? `<div class="summary-draft"><div class="summary-meta">${canApply ? "摘要草稿" : "舊標題結果，請重新讀取內文"} · ${summarySourceLabel(draft)}${draft.cached ? " · 已重用結果" : ""}</div><p class="summary-draft-content">${lineBreaks(content)}</p>${warnings.length ? `<p class="summary-meta">需查核：${escapeHTML(warnings.join("；"))}</p>` : ""}${canApply ? `<div><button type="button" class="button primary tiny" data-apply-ai-summary="${escapeHTML(item.id)}">套用摘要草稿</button></div>` : ""}</div>` : "";
         const summaryError = item.summaryError ? `<div class="summary-error" role="alert"><p>${escapeHTML(item.summaryError)}</p>${item.summaryErrorCode ? `<p>錯誤代碼：${escapeHTML(item.summaryErrorCode)}</p>` : ""}</div>` : "";
-        const sourceTextHelp = `<details class="summary-source-details"><summary>原文擷取受限時，貼上可讀內容後再產生（選填）</summary><div class="summary-source-details-content"><label class="label" for="ai-source-${escapeHTML(item.id)}">原文／節錄（不會自動寫入週報）</label><textarea id="ai-source-${escapeHTML(item.id)}" class="textarea" data-ai-source-text="${escapeHTML(item.id)}" maxlength="16000" placeholder="從已開啟的原文複製前幾段或全文後貼在此處；重新按摘要可得到較完整的草稿。">${escapeHTML(item.aiSourceText || "")}</textarea><p>貼入內容只會在此次摘要請求中使用，並儲存在這台裝置的工作紀錄，不會提交到 GitHub。</p></div></details>`;
+        const sourceTextHelp = `<details class="summary-source-details" ${item.summaryErrorCode === "article_body_unavailable" ? "open" : ""}><summary>原文擷取受限時，貼上可讀內容後再產生（選填）</summary><p><a href="${escapeHTML(safeUrl(item.publisherUrl || item.url))}" target="_blank" rel="noopener noreferrer">開啟新聞原文</a>，複製至少 60 字後貼入下方欄位。</p><div class="summary-source-details-content"><label class="label" for="ai-source-${escapeHTML(item.id)}">原文／節錄（不會自動寫入週報）</label><textarea id="ai-source-${escapeHTML(item.id)}" class="textarea" data-ai-source-text="${escapeHTML(item.id)}" maxlength="16000" placeholder="從已開啟的原文複製前幾段或全文後貼在此處；重新按摘要可得到較完整的草稿。">${escapeHTML(item.aiSourceText || "")}</textarea><p>貼入內容只會在此次摘要請求中使用，並儲存在這台裝置的工作紀錄，不會提交到 GitHub。</p></div></details>`;
         return `<div class="summary-tools"><div class="summary-tools-header"><strong>Cloudflare 免費摘要草稿</strong><button type="button" class="button ghost tiny" data-generate-summary="${escapeHTML(item.id)}" ${loading || summaryRequestInFlight || summaryBatchInFlight ? "disabled" : ""} ${loading ? "aria-busy=\"true\"" : ""}>${actionLabel}</button></div><p>${statusText}</p>${summaryError}${draftCard}${sourceTextHelp}</div>`;
       };
       const renderNews = () => {
@@ -824,7 +824,7 @@
           const response = await fetch(summaryWorkerUrl, {
             method: "POST",
             headers: { "content-type": "application/json", "x-pr-summary-key": summaryAccessKey },
-            body: JSON.stringify({ title: item.title, source: item.source, date: item.date, url: item.url, excerpt: item.excerpt, articleText: item.aiSourceText })
+            body: JSON.stringify({ title: item.title, source: item.source, date: item.date, url: item.url, publisherUrl: item.publisherUrl, excerpt: item.excerpt, articleText: item.aiSourceText })
           });
           const payload = await response.json().catch(() => ({}));
           if (!response.ok) {
@@ -944,6 +944,7 @@
           relatedSources: Array.isArray(item.relatedSources) ? item.relatedSources : [],
           date: /^\d{4}-\d{2}-\d{2}$/.test(String(item.date || "")) ? String(item.date) : isoDate(new Date()),
           url: safeUrl(String(item.url || exampleSource)),
+          publisherUrl: item.publisherUrl ? safeUrl(String(item.publisherUrl)) : "",
           topic,
           reportGroup: resolveReportGroupKey(item.reportGroup, topic),
           priority: ["高", "中", "低"].includes(item.priority) ? item.priority : "中",

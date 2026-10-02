@@ -215,7 +215,7 @@ const articleMarkupText = (html) => {
   for (const opening of html.matchAll(/<(div|section|article)\b[^>]*>/gi)) {
     const marker = `${attributeValue(opening[0], "id")} ${attributeValue(opening[0], "class")}`;
     if (attributeValue(opening[0], "itemprop") !== "articleBody"
-      && !/(?:^|\s)(?:caas-body|article[-_]content|article[-_]body|article[-_]text|newsContent|story[-_]content)(?:\s|$)/i.test(marker)) continue;
+      && !/(?:^|\s)(?:caas-body|article[-_]content|article[-_]body|article[-_]text|newsContent|news-box-text|story[-_]content)(?:\s|$)/i.test(marker)) continue;
     const start = opening.index + opening[0].length;
     const tags = new RegExp(`<\\/?${opening[1]}\\b[^>]*>`, "gi");
     tags.lastIndex = start;
@@ -362,7 +362,9 @@ const extractSummarySource = async (metadata, env) => {
     return { ...cached, sourceMode: cached.sourceMode === "public_article" ? "cached_article" : cached.sourceMode };
   }
   try {
-    return await extractArticle(metadata.url);
+    const knownPublisher = env.ARTICLE_CACHE?.publisherUrls?.[metadata.url];
+    const sourceUrl = metadata.publisherUrl || (knownPublisher?.title === metadata.title ? knownPublisher.url : "") || metadata.url;
+    return await extractArticle(sourceUrl);
   } catch (error) {
     if (!(error instanceof ApiError) || !error.allowMetadataFallback) throw error;
     return metadataArticle(metadata, error);
@@ -397,6 +399,7 @@ const parseRequest = async (request) => {
   return {
     title,
     url,
+    publisherUrl: body?.publisherUrl ? assertPublicUrl(body.publisherUrl).href : "",
     source: plainDraftText(body?.source, 120),
     date: plainDraftText(body?.date, 24),
     excerpt: plainDraftText(body?.excerpt, 2_000),
