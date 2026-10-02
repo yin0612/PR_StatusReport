@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-30-industry-weekly-v2",
+  "version": "2026-10-02-official-rss-v3",
   "sources": [
     {
       "id": "softworld-monitoring",
@@ -7,7 +7,15 @@
       "format": "aggregated",
       "url": "https://raw.githubusercontent.com/yin0612/for_SoftWorld/main/data/fintech-aggregated.json",
       "maxAgeDays": 10
+    },
+    {
+      "id": "softworld-official-rss",
+      "label": "智冠產業監測（官方 RSS）",
+      "format": "aggregated",
+      "url": "https://raw.githubusercontent.com/yin0612/for_SoftWorld/main/data/rss-snapshot.json",
+      "excerptMaxLength": 600,
+      "maxAgeDays": 10
     }
   ],
-  "maxItems": 80
+  "maxItems": 400
 }

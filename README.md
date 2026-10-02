@@ -86,7 +86,7 @@ Cloudflare Workers Builds 發布公開網站
 
 - 同步工作流程位於 `.github/workflows/refresh-monitoring-news.yml`，每小時第 17 分執行，也可在 GitHub 的 **Actions → Refresh monitored news → Run workflow** 手動立即更新。
 - 同步程式位於 `scripts/sync-media-feed.mjs`；來源、保留天數與候選上限可在 `config/watchlist.json` 調整。
-- 目前取用智冠產業監測的已分類彙整資料；公司／IR 專用新聞會在同步時排除。只保留近 10 天、去除相同標題，最多 80 則產業候選新聞；這些是待人工確認的選題，不會自動進入週報。
+- 同時取用智冠產業監測的 Google News 聚合資料（`fintech-aggregated.json`）與官方 RSS 快照（`rss-snapshot.json`），避免漏掉只在媒體官方 RSS 出現的新聞。公司／IR 專用新聞會在同步時排除。只保留近 10 天、去除相同標題，最多 400 則產業候選新聞；這些是待人工確認的選題，不會自動進入週報。官方 RSS 只匯入最多 600 字的監測節錄，不將 RSS 中可能附帶的完整主文提交至 GitHub；部署時文章主文快取仍最多處理 80 則。
 - Cloudflare Workers 已追蹤 `main` 並發布 `dist/`，所以資料檔被 Actions 推回 GitHub 後，Cloudflare 會自行重建；新聞同步本身不需要 API Token 或額外秘密金鑰。只有上述按需 AI 摘要功能需要 Cloudflare secret。
 
 ### 第一次需要手動開啟的設定

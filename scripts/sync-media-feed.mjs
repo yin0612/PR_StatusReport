@@ -114,7 +114,7 @@ const recentCandidates = (feed, source, config) => {
   return { sourceItems, items, generatedAt: feed.generatedAt || null };
 };
 
-const aggregatedCandidates = (feed, source) => {
+export const aggregatedCandidates = (feed, source) => {
   const sourceItems = Array.isArray(feed?.articles) ? feed.articles : [];
   const generatedAt = feed.generated_at || null;
   const cutoff = source.maxAgeDays
@@ -138,7 +138,7 @@ const aggregatedCandidates = (feed, source) => {
       reportGroup: placement.reportGroup,
       priority: placement.priority,
       tags: unique([...placement.tags, ...(Array.isArray(article.matched_terms) ? article.matched_terms.map(cleanText) : [])]).slice(0, 5),
-      excerpt: cleanText(article.excerpt) || "由產業監測網篩選，請開啟原文後整理週報內文。",
+      excerpt: cleanText(article.excerpt).slice(0, source.excerptMaxLength || Infinity) || "由產業監測網篩選，請開啟原文後整理週報內文。",
       sourceId: article.id ? String(article.id) : null,
       matchedRule: String(article.rule_ids || "")
     };
@@ -146,63 +146,69 @@ const aggregatedCandidates = (feed, source) => {
   return { sourceItems, items, generatedAt };
 };
 
-const config = JSON.parse(await readFile(configPath, "utf8"));
-const sources = Array.isArray(config.sources) ? config.sources : [];
-if (!sources.length) throw new Error("watchlist.json 尚未設定監測來源。");
+const syncMonitoring = async () => {
+  const config = JSON.parse(await readFile(configPath, "utf8"));
+  const sources = Array.isArray(config.sources) ? config.sources : [];
+  if (!sources.length) throw new Error("watchlist.json 尚未設定監測來源。");
 
-const results = [];
-for (const source of sources) {
-  const feed = await fetchJson(source.url);
-  if (source.format === "recent") results.push({ source, ...recentCandidates(feed, source, config) });
-  else if (source.format === "aggregated") results.push({ source, ...aggregatedCandidates(feed, source) });
-  else throw new Error(`不支援的來源格式：${source.format}`);
-}
+  const results = [];
+  for (const source of sources) {
+    const feed = await fetchJson(source.url);
+    if (source.format === "recent") results.push({ source, ...recentCandidates(feed, source, config) });
+    else if (source.format === "aggregated") results.push({ source, ...aggregatedCandidates(feed, source) });
+    else throw new Error(`不支援的來源格式：${source.format}`);
+  }
 
-const allCandidates = results.flatMap((result) => result.items)
-  .sort((left, right) => timestamp(right.publishedAt) - timestamp(left.publishedAt));
-const items = deduplicateSyndication(allCandidates).slice(0, Number(config.maxItems) || 120);
-if (!items.length) throw new Error("來源未提供有效候選新聞，保留上一版資料；請檢查來源更新與格式。");
-const latestGeneratedAt = results.map((result) => result.generatedAt).sort((left, right) => timestamp(right) - timestamp(left))[0] || null;
+  const allCandidates = results.flatMap((result) => result.items)
+    .sort((left, right) => timestamp(right.publishedAt) - timestamp(left.publishedAt));
+  const items = deduplicateSyndication(allCandidates).slice(0, Number(config.maxItems) || 120);
+  if (!items.length) throw new Error("來源未提供有效候選新聞，保留上一版資料；請檢查來源更新與格式。");
+  const latestGeneratedAt = results.map((result) => result.generatedAt).sort((left, right) => timestamp(right) - timestamp(left))[0] || null;
 
-// Publisher URLs are public metadata, not article bodies. Preserve them across
-// hourly updates so neither the build nor the Worker repeatedly asks Google.
-let priorItems = [];
-try { priorItems = JSON.parse(await readFile(outputPath, "utf8")).items || []; } catch { /* First sync. */ }
-const priorByUrl = new Map(priorItems.filter(item => item.publisherUrl).map(item => [item.url, item.publisherUrl]));
-const knownLinks = JSON.parse(await readFile(resolve(projectRoot, "config/publisher-links.json"), "utf8"));
-let decodedCount = 0;
-let googleLimited = false;
-for (const item of items) {
-  const known = priorByUrl.get(item.url) || knownLinks[item.id];
-  if (known) { item.publisherUrl = known; continue; }
-  if (!/^https:\/\/news\.google\.com\//i.test(item.url) || decodedCount >= 12 || googleLimited) continue;
-  decodedCount += 1;
-  try { item.publisherUrl = await resolveGoogleNewsUrl(item.url, { timeoutMs: 5_000 }); }
-  catch (error) { if (error?.sourceStatus === 429) googleLimited = true; }
-}
+  // Publisher URLs are public metadata, not article bodies. Preserve them across
+  // hourly updates so neither the build nor the Worker repeatedly asks Google.
+  let priorItems = [];
+  try { priorItems = JSON.parse(await readFile(outputPath, "utf8")).items || []; } catch { /* First sync. */ }
+  const priorByUrl = new Map(priorItems.filter(item => item.publisherUrl).map(item => [item.url, item.publisherUrl]));
+  const knownLinks = JSON.parse(await readFile(resolve(projectRoot, "config/publisher-links.json"), "utf8"));
+  let decodedCount = 0;
+  let googleLimited = false;
+  for (const item of items) {
+    const known = priorByUrl.get(item.url) || knownLinks[item.id];
+    if (known) { item.publisherUrl = known; continue; }
+    if (!/^https:\/\/news\.google\.com\//i.test(item.url) || decodedCount >= 12 || googleLimited) continue;
+    decodedCount += 1;
+    try { item.publisherUrl = await resolveGoogleNewsUrl(item.url, { timeoutMs: 5_000 }); }
+    catch (error) { if (error?.sourceStatus === 429) googleLimited = true; }
+  }
 
-const snapshot = {
-  schemaVersion: "1.3.0",
-  generatedAt: latestGeneratedAt,
-  syncedAt: new Date().toISOString(),
-  freshness: { expectedSyncHours: 1, syncWarningHours: 3, sourceWarningHours: 8 },
-  watchlistVersion: config.version,
-  source: {
-    label: results.map((result) => result.source.label).join("＋"),
-    totalItems: results.reduce((total, result) => total + result.sourceItems.length, 0),
-    matchedItems: items.length,
-    sources: results.map((result) => ({
-      id: result.source.id,
-      label: result.source.label,
-      url: result.source.url,
-      totalItems: result.sourceItems.length,
-      matchedItems: result.items.length,
-      generatedAt: result.generatedAt
-    }))
-  },
-  items
+  const snapshot = {
+    schemaVersion: "1.3.0",
+    generatedAt: latestGeneratedAt,
+    syncedAt: new Date().toISOString(),
+    freshness: { expectedSyncHours: 1, syncWarningHours: 3, sourceWarningHours: 8 },
+    watchlistVersion: config.version,
+    source: {
+      label: results.map((result) => result.source.label).join("＋"),
+      totalItems: results.reduce((total, result) => total + result.sourceItems.length, 0),
+      matchedItems: items.length,
+      sources: results.map((result) => ({
+        id: result.source.id,
+        label: result.source.label,
+        url: result.source.url,
+        totalItems: result.sourceItems.length,
+        matchedItems: result.items.length,
+        generatedAt: result.generatedAt
+      }))
+    },
+    items
 };
 
 await mkdir(dirname(outputPath), { recursive: true });
 await writeFile(outputPath, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
 console.log(`已同步 ${items.length} 則週報候選新聞（${results.map((result) => `${result.source.label} ${result.items.length}/${result.sourceItems.length}`).join("；")}）。`);
+};
+
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  await syncMonitoring();
+}
