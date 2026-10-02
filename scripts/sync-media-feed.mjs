@@ -3,7 +3,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { resolveGoogleNewsUrl } from "../src/index.js";
-import { taipeiDate, isStockOnly, isPaymentMetaphor, deduplicateSyndication } from "../src/monitoring-rules.js";
+import { taipeiDate, isStockOnly, isPaymentMetaphor, deduplicateSyndication, syndicationKey } from "../src/monitoring-rules.js";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const configPath = resolve(projectRoot, "config/watchlist.json");
@@ -54,8 +54,11 @@ const reportPlacementForAggregated = (article) => {
   const rules = String(article.rule_ids ?? "").toLocaleLowerCase();
   const folders = String(article.folder_ids ?? "").toLocaleLowerCase();
   const terms = Array.isArray(article.matched_terms) ? article.matched_terms.map(toText) : [];
-  // 公司／IR 專用監測不列入此工作台，保留候選額度給產業新聞。
-  if (/softworld-/.test(rules) || folders.includes("folder_1")) return null;
+  // Only company/IR-only articles are excluded. Mixed industry matches remain.
+  const folderIds = folders.split(",").filter(Boolean);
+  const ruleIds = rules.split(",").filter(Boolean);
+  if (folderIds.includes("folder_1") && !folderIds.some(id => id !== "folder_1") &&
+      !ruleIds.some(id => !["softworld-brand", "softworld-games", "softworld-ip"].includes(id))) return null;
   if (isStockOnly(String(article.title || ""))) return null;
   if (isPaymentMetaphor(String(article.title || ""))) {
     return { topic: "競品與產業", reportGroup: "industry-games", priority: "中", tags: ["遊戲產業", "周邊設備"] };
@@ -72,6 +75,9 @@ const reportPlacementForAggregated = (article) => {
   }
   if (/competitor|industry-game/.test(rules) || folders.includes("folder_3")) {
     return { topic: "競品與產業", reportGroup: "industry-games", priority: "中", tags: ["遊戲產業", "競品觀測"] };
+  }
+  if (/industry-platform-business|industry-new-business|industry-martech/.test(rules) || folders.includes("folder_4")) {
+    return { topic: "競品與產業", reportGroup: "industry-other", priority: "中", tags: ["平台商業", "新商機", "行銷科技"] };
   }
   return null;
 };
@@ -122,7 +128,7 @@ export const aggregatedCandidates = (feed, source) => {
     : 0;
   const items = sourceItems.map((article) => {
     const publishedAt = article.published_at || article.fetched_at || generatedAt;
-    if (!article.title || !article.url || (cutoff && timestamp(publishedAt) < cutoff)) return null;
+    if (!article.title || !article.url || (article.review_status && article.review_status !== "approved") || (cutoff && timestamp(publishedAt) < cutoff)) return null;
     const placement = reportPlacementForAggregated(article);
     if (!placement) return null;
     return {
@@ -146,6 +152,41 @@ export const aggregatedCandidates = (feed, source) => {
   return { sourceItems, items, generatedAt };
 };
 
+export const fetchMonitoringApi = async (source, fetchPage = fetchJson, now = new Date()) => {
+  const to = taipeiDate(now);
+  const fromDate = new Date(`${to}T00:00:00Z`);
+  const originalDay = fromDate.getUTCDate();
+  fromDate.setUTCDate(1);
+  fromDate.setUTCMonth(fromDate.getUTCMonth() - (source.rangeMonths || 2));
+  const lastDay = new Date(Date.UTC(fromDate.getUTCFullYear(), fromDate.getUTCMonth() + 1, 0)).getUTCDate();
+  fromDate.setUTCDate(Math.min(originalDay, lastDay));
+  const from = fromDate.toISOString().slice(0, 10);
+  const articles = [];
+  let offset = 0;
+  let generatedAt = null;
+  for (let page = 0; page < 1000; page++) {
+    const url = new URL(source.url);
+    url.search = new URLSearchParams({ from, to, limit: "2000", offset: String(offset) }).toString();
+    const payload = await fetchPage(url.toString());
+    if (!Array.isArray(payload.articles) || payload.partial === true) throw new Error("監測 API 資料不完整，保留上一版。");
+    articles.push(...payload.articles);
+    // API response time is not an RSS update time. Prefer underlying collection time.
+    generatedAt = [generatedAt, ...payload.articles.map(item => item.fetched_at)].filter(Boolean)
+      .sort((a, b) => timestamp(b) - timestamp(a))[0] || null;
+    const hasMore = payload.has_more === true || (Number.isFinite(payload.total) && offset + payload.articles.length < payload.total);
+    if (!hasMore) return { articles, generated_at: generatedAt, range: { from, to }, degraded: payload.degraded === true };
+    const next = Number(payload.next_offset ?? offset + payload.articles.length);
+    if (!payload.articles.length || !Number.isInteger(next) || next <= offset) throw new Error("監測 API 分頁沒有前進，保留上一版。");
+    offset = next;
+  }
+  throw new Error("監測 API 分頁未完成，保留上一版。");
+};
+
+export const selectCandidates = (records, maxItems) => {
+  const items = deduplicateSyndication(records);
+  return Number(maxItems) > 0 ? items.slice(0, Number(maxItems)) : items;
+};
+
 const syncMonitoring = async () => {
   const config = JSON.parse(await readFile(configPath, "utf8"));
   const sources = Array.isArray(config.sources) ? config.sources : [];
@@ -153,15 +194,15 @@ const syncMonitoring = async () => {
 
   const results = [];
   for (const source of sources) {
-    const feed = await fetchJson(source.url);
+    const feed = source.format === "monitoring-api" ? await fetchMonitoringApi(source) : await fetchJson(source.url);
     if (source.format === "recent") results.push({ source, ...recentCandidates(feed, source, config) });
-    else if (source.format === "aggregated") results.push({ source, ...aggregatedCandidates(feed, source) });
+    else if (["aggregated", "monitoring-api"].includes(source.format)) results.push({ source, ...aggregatedCandidates(feed, source), range: feed.range });
     else throw new Error(`不支援的來源格式：${source.format}`);
   }
 
   const allCandidates = results.flatMap((result) => result.items)
     .sort((left, right) => timestamp(right.publishedAt) - timestamp(left.publishedAt));
-  const items = deduplicateSyndication(allCandidates).slice(0, Number(config.maxItems) || 120);
+  const items = selectCandidates(allCandidates, config.maxItems);
   if (!items.length) throw new Error("來源未提供有效候選新聞，保留上一版資料；請檢查來源更新與格式。");
   const latestGeneratedAt = results.map((result) => result.generatedAt).sort((left, right) => timestamp(right) - timestamp(left))[0] || null;
 
@@ -169,11 +210,14 @@ const syncMonitoring = async () => {
   // hourly updates so neither the build nor the Worker repeatedly asks Google.
   let priorItems = [];
   try { priorItems = JSON.parse(await readFile(outputPath, "utf8")).items || []; } catch { /* First sync. */ }
+  const priorByIdentity = new Map(priorItems.flatMap(item => [[item.url, item], [syndicationKey(item.title), item]]));
   const priorByUrl = new Map(priorItems.filter(item => item.publisherUrl).map(item => [item.url, item.publisherUrl]));
   const knownLinks = JSON.parse(await readFile(resolve(projectRoot, "config/publisher-links.json"), "utf8"));
   let decodedCount = 0;
   let googleLimited = false;
   for (const item of items) {
+    const prior = priorByIdentity.get(item.url) || priorByIdentity.get(syndicationKey(item.title));
+    if (prior) item.id = prior.id;
     const known = priorByUrl.get(item.url) || knownLinks[item.id];
     if (known) { item.publisherUrl = known; continue; }
     if (!/^https:\/\/news\.google\.com\//i.test(item.url) || decodedCount >= 12 || googleLimited) continue;
@@ -198,15 +242,16 @@ const syncMonitoring = async () => {
         url: result.source.url,
         totalItems: result.sourceItems.length,
         matchedItems: result.items.length,
-        generatedAt: result.generatedAt
+        generatedAt: result.generatedAt,
+        range: result.range
       }))
     },
     items
-};
+  };
 
-await mkdir(dirname(outputPath), { recursive: true });
-await writeFile(outputPath, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
-console.log(`已同步 ${items.length} 則週報候選新聞（${results.map((result) => `${result.source.label} ${result.items.length}/${result.sourceItems.length}`).join("；")}）。`);
+  await mkdir(dirname(outputPath), { recursive: true });
+  await writeFile(outputPath, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
+  console.log(`已同步 ${items.length} 則週報候選新聞（${results.map((result) => `${result.source.label} ${result.items.length}/${result.sourceItems.length}`).join("；")}）。`);
 };
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

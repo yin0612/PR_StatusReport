@@ -1,21 +1,14 @@
 {
-  "version": "2026-10-02-official-rss-v3",
+  "version": "2026-10-02-complete-api-v4",
   "sources": [
     {
-      "id": "softworld-monitoring",
-      "label": "智冠產業監測",
-      "format": "aggregated",
-      "url": "https://raw.githubusercontent.com/yin0612/for_SoftWorld/main/data/fintech-aggregated.json",
-      "maxAgeDays": 10
-    },
-    {
-      "id": "softworld-official-rss",
-      "label": "智冠產業監測（官方 RSS）",
-      "format": "aggregated",
-      "url": "https://raw.githubusercontent.com/yin0612/for_SoftWorld/main/data/rss-snapshot.json",
+      "id": "softworld-api",
+      "label": "智冠產業監測（完整 API）",
+      "format": "monitoring-api",
+      "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
       "excerptMaxLength": 600,
-      "maxAgeDays": 10
+      "rangeMonths": 2
     }
   ],
-  "maxItems": 400
+  "maxItems": null
 }
