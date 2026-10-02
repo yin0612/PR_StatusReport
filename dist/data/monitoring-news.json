@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-10-02T12:01:04.173469Z",
-  "syncedAt": "2026-10-02T15:46:30.116Z",
+  "generatedAt": "2026-10-02T15:53:32.204Z",
+  "syncedAt": "2026-10-02T20:42:23.248Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,24 +10,407 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 1894,
-    "matchedItems": 1726,
+    "totalItems": 1933,
+    "matchedItems": 1765,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 1894,
-        "matchedItems": 1798,
-        "generatedAt": "2026-10-02T12:01:04.173469Z",
+        "totalItems": 1933,
+        "matchedItems": 1837,
+        "generatedAt": "2026-10-02T15:53:32.204Z",
         "range": {
-          "from": "2026-08-02",
-          "to": "2026-10-02"
+          "from": "2026-08-03",
+          "to": "2026-10-03"
         }
       }
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-rss-snapshot-0b76ee7b23de91707db1",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "SEGA「Steam Autumn Sale」舉辦中 《人中之龍 極 3》《人中之龍０ 導演剪輯版》半價促銷",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T15:49:59.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=312844",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "世雅股份有限公司現正舉辦「Steam Autumn Sale」，於 Steam 販售中的 SEGA・ATLUS 部份 PC 遊戲作品將限期特價。 本次特賣中，SEGA 推出的《人中之龍 極 3 / 人中之龍 3 外傳 Dark Ties》一般版和豪華版皆以 50....",
+      "sourceId": "rss-snapshot-0b76ee7b23de91707db1",
+      "matchedRule": "competitor-global-game"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-27196dc8587da5a150dd",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "營運入不敷出！以太坊 L2 明星 Blast 宣布「永久關閉」，籲用戶 10/26 前急撤資產",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T15:41:01.000Z",
+      "url": "https://www.blocktempo.com/blast-l2-network-shutdown-withdraw-before-october/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "曾風光一時的以太坊 Layer 2 網路 Blast 於今（2）日震撼宣布將「永久關閉」！官方坦言，由於維持網 [&#8230;] 〈 營運入不敷出！以太坊 L2 明星 Blast 宣布「永久關閉」，籲用戶 10/26 前急撤資產 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 曾風光一時的以太坊 Layer 2 網路 Blast 於今（2）日震撼宣布將「永久關閉」！官方坦言，由於維持網路的成本已超過其產生的收入，在經濟上無法自我維持，因此做出此艱難決定。官方呼籲所有用戶盡速在 10 月 26 日前，將資產提取回以太坊主網。 （前情提要：有人記得Blast嗎？Fantasy.top宣告出走，剩下Pacman吃錢笑臉） （背景補充：麻吉大哥下周發新迷因幣「MACHI」稱永不Rug：持Bobaoppa、Blast、BAYC..可獲空投） 加密貨幣市場再度迎來震撼彈。由知名 NFT 交易平台 Blur 創辦人 Pacman 於 2023 年底一手打造的以太坊 Layer 2 網路 Blast，於台北時間 10 月 2 日透過官方 X 帳號（@blast）無預警宣布，將正式關閉並停止運作整條區塊鏈。 Blast will be shutting down. We launched Blast with the goal of building a",
+      "sourceId": "rss-snapshot-27196dc8587da5a150dd",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-d48851627db01ec5d1f3",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "EGS限免：科幻恐怖《網路奇兵2：25週年重製版》+懸疑冒險《深埋之星》限時免費",
+      "source": "4Gamers",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T15:10:36.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82400/epic-games-store-system-shock-2-25th-anniversary-remaster-buried-stars-free-until-october-8",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "Epic Games Store 本週限時免費遊戲送出經典第一人稱射擊 RPG《網路奇兵 2：25 週年重製版》（System Shock 2: 25th Anniversary Remaster）以及懸疑冒險遊戲《深埋之星》（BURIED STARS）兩款作品，領取截至 2026 年 10 月 8 日 23:00 為止。 <p style=\"text-align:center\"><picture><source srcset=\"https://img.4gamers.com.tw/puku-clone-version/db576d21a8a1d34a4b90b356c831e2b11136c8c0.jpg\" media=\"(min-width: 992px)\"><img alt=\"fhgokpimn\" height=\"450\" src=\"https://thumbor.4gamers.com.tw/_oB3j_VglbVvsOiNaKumaWuQ3xo=/800x0/filters:extract_cover():no_upscale():quality(80)/https%3A%2F%2Fimg.4gamers.com.tw%2Fpuku-clone-version%2Fdb576d21a8a1d34a4b90b356c831e2b11136c8c0.jpg\" width=\"8",
+      "sourceId": "rss-snapshot-d48851627db01ec5d1f3",
+      "matchedRule": "competitor-global-game,industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-000a393d6c390133c40f",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "台積電鮮為人知往事大曝光！0營收也敢押 美晶片大咖親揭「一直贏」2關鍵",
+      "source": "自由電子報 財經",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T15:02:00.000Z",
+      "url": "https://ec.ltn.com.tw/article/breakingnews/5593722",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "〔財經頻道／綜合報導〕台積電竟曾押注一家「0產品、0營收」的新創公司！美國AI晶片公司Cerebras共同創辦人暨執行長費德曼（Andrew Feldman）親自在社群平台X揭露一段9年前的合作...…",
+      "sourceId": "rss-snapshot-000a393d6c390133c40f",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-e0137e0adcbd23d7e767",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Ethereum Price Analysis: ETH Bulls Eye $3K Again &#8211; Can They Finally Break Through?",
+      "source": "CryptoPotato",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T14:50:53.000Z",
+      "url": "https://cryptopotato.com/ethereum-price-analysis-eth-bulls-eye-3k-again-can-they-finally-break-through/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "Ethereum is trading around $2.75K after holding a multi-week consolidation above $2.4K. The broader structure remains constructive, but ETH is now pressing into an important resistance area where the reaction could determine whether the current advance extends toward the next major supply zone. Ethereum Price Analysis: The Daily Chart The daily chart shows a clear [&#8230;] Ethereum is trading around $2.75K after holding a multi-week consolidation above $2.4K. The broader structure remains constructive, but ETH is now pressing into an important resistance area where the reaction could determin",
+      "sourceId": "rss-snapshot-e0137e0adcbd23d7e767",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-58e15a08fd0b7ba7d531",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "I Asked My AI Agent To Find Caitlin Clark’s New Shoe",
+      "source": "Forbes Innovation",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T14:45:17.000Z",
+      "url": "https://www.forbes.com/sites/ariredbord/2026/10/02/i-sent-my-ai-agent-to-find-caitlin-clarks-new-shoe/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "AI agents are beginning to shop and pay for consumers. Here is how agentic commerce works, where stablecoins fit, and who is liable when machines make mistakes.",
+      "sourceId": "rss-snapshot-58e15a08fd0b7ba7d531",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-29ba3e6307818fb50e04",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "BMO taps Mastercard for embedded commercial virtual card payments",
+      "source": "Finextra",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T14:26:00.000Z",
+      "url": "https://www.finextra.com/pressarticle/111115/bmo-taps-mastercard-for-embedded-commercial-virtual-card-payments?utm_medium=rssfinextra&utm_source=finextrafeed",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "中",
+      "tags": [
+        "金融支付",
+        "產業監測"
+      ],
+      "excerpt": "BMO and Mastercard today announced the availability of a new embedded Commercial payments capability that enables eligible Corporate Card clients to initiate and manage BMO Commercial virtual card payments directly within the software platforms they use to run their operations.",
+      "sourceId": "rss-snapshot-29ba3e6307818fb50e04",
+      "matchedRule": "international-fintech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-6261bf597763701e374b",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "How stablecoins speed int’l payments",
+      "source": "Payments Dive",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T14:21:56.000Z",
+      "url": "https://www.paymentsdive.com/news/how-stablecoins-speed-intl-payments-crypto-cross-border-emerging-markets/831935/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "<figure><div><img src=\"https://imgproxy.divecdn.com/rCPC3q7gHr8J2hkifm-D2b5kP68dfMgCrqQYo6j6ya0/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9HZXR0eUltYWdlcy0yMjc2NDYxMjU0LmpwZw==.webp\"/></div></figure><p>Startup Latitude Global pitches faster, cheaper cross-border payments by sending them on modern stablecoin rails.</p>",
+      "sourceId": "rss-snapshot-6261bf597763701e374b",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-089c0acfb29651018259",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "PayPal hints at BNPL holiday use",
+      "source": "Payments Dive",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T14:19:00.000Z",
+      "url": "https://www.paymentsdive.com/news/paypal-hints-at-bnpl-holiday-use/832010/",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "中",
+      "tags": [
+        "金融支付",
+        "產業監測"
+      ],
+      "excerpt": "<figure><div><img src=\"https://imgproxy.divecdn.com/adRiiAcL1IdpApwLU5ysC4AA2F21ak9l-fFoEyK_agU/g:nowe:0:142/c:2121:1198/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9HZXR0eUltYWdlcy0yMjIzNTM3MDg5LmpwZw==.webp\"/></div></figure><p>Some consumers will turn to buy now, pay later options for holiday shopping to spread costs over time, according to a survey by the digital processor.</p>",
+      "sourceId": "rss-snapshot-089c0acfb29651018259",
+      "matchedRule": "international-fintech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-d366ed6d6d279053c344",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Finery Markets Adds AI Onboarding, Analytics and OTC Guide",
+      "source": "The Fintech Times",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T14:00:09.000Z",
+      "url": "https://thefintechtimes.com/finery-markets-adds-ai-onboarding-analytics-and-otc-guide/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "The institutional OTC platform has launched a single-prompt AI integration tool, a new analytics dashboard, and a stablecoin report citing 81% OTC share in The post Finery Markets Adds AI Onboarding, Analytics and OTC Guide appeared first on The Fintech Times . Finery Markets has released a cluster of product updates and research outputs in its August 2026 digest, covering a faster developer onboarding pathway, a new trading analytics module, and a guide aimed at firms considering launching crypto OTC desks. The company also reported an all-time high in trading volume for the first half of 202",
+      "sourceId": "rss-snapshot-d366ed6d6d279053c344",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-6879103b780c52116df3",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Settle secures $240m credit facility to scale lending",
+      "source": "Fintech Global",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T13:54:54.000Z",
+      "url": "https://fintech.global/2026/10/02/settle-secures-240m-credit-facility-to-scale-lending/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=settle-secures-240m-credit-facility-to-scale-lending",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "中",
+      "tags": [
+        "金融支付",
+        "產業監測"
+      ],
+      "excerpt": "Settle, a platform that helps product businesses manage cash flow and working capital, has obtained a $240m credit facility to expand the financing it can offer and to reach larger customers. The funding comes from an unnamed major international financial institution and an asset manager based in New York. Settle says the facility substantially increases [&#8230;] The post Settle secures $240m credit facility to scale lending appeared first on FinTech Global . Settle , a platform that helps product businesses manage cash flow and working capital, has obtained a $240m credit facility to expand ",
+      "sourceId": "rss-snapshot-6879103b780c52116df3",
+      "matchedRule": "international-fintech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-1753556166f6342aec30",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "VIX 恐慌指數也要加密化了！Cboe 推永續期貨，免到期免換月",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T13:47:16.000Z",
+      "url": "https://www.blocktempo.com/cboe-vix-perpetual-futures-no-expiry-crypto-market-structure-convergence/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "華爾街 VIX 恐慌指數即將迎來加密風格改造，Cboe 準備推出 VIX 永續期貨，合約永不到期，免除換月成本 [&#8230;] 〈 VIX 恐慌指數也要加密化了！Cboe 推永續期貨，免到期免換月 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 華爾街 VIX 恐慌指數即將迎來加密風格改造，Cboe 準備推出 VIX 永續期貨，合約永不到期，免除換月成本，向加密永續合約靠攏。 （前情提要：美債恐慌指數狂飆 33%！比特幣波動率卻跌向全年最低點？） （背景補充：科技股「史上波動最大」：VXN／VIX 比值創 23 年新高） 華爾街的 VIX 恐慌指數也要走加密路線了。芝加哥期貨交易所 Cboe 正準備為 VIX 推出永續期貨合約，向加密市場借鑑永不到期、免除換月的交易模式。根據彭博 10 月 1 日的報導，Cboe 仍在早期規劃階段，尚未提交合約規格。 VIX 指數測量的是標普 500 的 30 日預期波動率，基於選擇權定價計算。當投資人在市場下跌時大量購入保護性選擇權，需求暴增會推高指數，因此 VIX 被稱為「恐懼指標」。 VIX 期貨的換月痛點 VIX 早已擁有完善的衍生商品生態，包括期貨、選擇權和追蹤指數的交易所交易產品。但期貨合約有到期日，到期限後合約就消失，交易者必須「換月」，把手上位置平掉、轉移到下個月的合約上。這個過程有成",
+      "sourceId": "rss-snapshot-1753556166f6342aec30",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-b6c84ed5f2452cb6d546",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "川普下令 AI 改名「超級智慧」，.si 網域註冊狂飆近百倍！品牌遭惡意搶註喊價 2 萬鎂",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T13:45:34.000Z",
+      "url": "https://www.blocktempo.com/trump-super-intelligence-si-domain-registration-surge/",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "美國總統川普將「人工智慧（AI）」改稱為「超級智慧（SI）」的政策舉動，意外在網域市場掀起一場瘋狂的淘金熱！據 [&#8230;] 〈 川普下令 AI 改名「超級智慧」，.si 網域註冊狂飆近百倍！品牌遭惡意搶註喊價 2 萬鎂 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 美國總統川普將「人工智慧（AI）」改稱為「超級智慧（SI）」的政策舉動，意外在網域市場掀起一場瘋狂的淘金熱！據資安機構 Netcraft 最新報告指出，在相關行政命令簽署後，斯洛維尼亞的國家頂級網域 .si 註冊量在短短八天內飆升近百倍。這波熱潮不僅吸引新註冊商進駐，更引發投機客惡意搶註迪士尼等知名品牌的組合網域，單個最高喊價達 2 萬美元。 （前情提要：假冒和資策會簽約！AI 搬磚套利「櫻特森」涉吸金詐騙逾 6 億元） （背景補充：以太坊基金會推出 zkAPI！付 AI 費用不需暴露身份，Vitalik 二月提案終於上線） 美國總統川普（Donald Trump）近期針對人工智慧領域的「正名」行動，正意外為網域市場帶來驚人的連鎖效應。根據知名網路安全公司 Netcraft 於 2026 年 10 月 1 日發布的部落格文章指出，自川普推動將「人工智慧」（AI）改稱為「超級智慧」（Super intelligence，簡稱 SI）以來，斯洛維尼亞的國家代碼頂級網域（c",
+      "sourceId": "rss-snapshot-b6c84ed5f2452cb6d546",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-7aab91aed60f71dfce59",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "傑仕登VTuber潔絲可Jusko迎出道1周年 化身《龍族教義 2：黑暗再臨》官方隨從登場",
+      "source": "4Gamers",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T13:17:40.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82397/justdan-jusko-vtuber-1st-anniversary-dragons-dogma-2-dark-arisen-official-pawn",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "發行、代理商傑仕登宣布，旗下官方VTuber「潔絲可 Jusko」將於 10 月 4 日出道滿一周年，除了進行多項慶祝活動以外，還將化身為《Dragon's Dogma 2: Dark Arisen》的官方隨從，與玩家在遊戲中一同冒險！ <p style=\"text-align:center\"><picture><source srcset=\"https://img.4gamers.com.tw/puku-clone-version/17f5de77bdd52481f7af45cda2467c314e86b333.jpg\" media=\"(min-width: 992px)\"><img alt=\"一周年KV\" height=\"450\" src=\"https://thumbor.4gamers.com.tw/K1w2UUIG6wXMLov5aJ82JXpNeMY=/800x0/filters:extract_cover():no_upscale():quality(80)/https%3A%2F%2Fimg.4gamers.com.tw%2Fpuku-clone-version%2F17f5de77bdd52481f7af45cda2467c314e86b333.jpg\" width=\"800\" data-puku-raw-src=\"https://img.4gamers.com.t",
+      "sourceId": "rss-snapshot-7aab91aed60f71dfce59",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-c5e523e2cac7c725c1ce",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "【電玩瘋】825 集《真‧三國無雙 2 with 猛將傳 Remastered》、《聖獸之王》總監新作《黎明凝視者》等遊戲介紹",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T13:00:00.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=312843",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "本週巴哈姆特電玩瘋將帶來遊戲資訊，包含揭開《戰爭機器》系列的起源故事《戰爭機器：事變日》、經典割草遊戲回歸《真‧三國無雙 2 with 猛將傳 Remastered》、《聖獸之王》總監野間崇史全新 IP 品牌「IGNISPHERE」頭號作品《黎明凝視者》、免費大翻新《巫師 3：狂獵 重製版》、在霓虹閃爍的賽博城市....",
+      "sourceId": "rss-snapshot-c5e523e2cac7c725c1ce",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-b27098434128f94146c4",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Arthur Hayes：全球央行遲早印錢，加密資產是稀缺避風港",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T12:58:30.000Z",
+      "url": "https://www.blocktempo.com/connect-seoul-arthur-hayes-money-printing-wall-street-onchain-stablecoins-crypto-treasury/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "Hayes 在 CONNECT 首爾峰會提出，AI 資金缺口與政府債務迫使央行印錢，加密資產將成為稀缺避風港。 [&#8230;] 〈 Arthur Hayes：全球央行遲早印錢，加密資產是稀缺避風港 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 Hayes 在 CONNECT 首爾峰會提出，AI 資金缺口與政府債務迫使央行印錢，加密資產將成為稀缺避風港。峰會同時聚焦 Wall Street 上鏈、穩定幣跨境支付與 Crypto Treasury 策略。 （前情提要：Arthur Hayes：AI 信貸泡沫將推升比特幣突破 100 萬美元） （背景補充：該禁 Arthur Hayes 交易 HYPE！社群提案：不能看他買下臺法拉利） Arthur Hayes 在 Cointelegraph 的 CONNECT 首爾峰會上提出一個簡單但沉重的論點：全球央行遲早會印錢，而加密資產可能是這場慢動作災難中少數能保值的標的。Hayes 指出，AI 產業需要數兆美元的資料中心投資，但 AI 服務的價格卻持續下探；政府同時面臨龐大債務壓力。他形容這個局面只有一條路：「印錢，然後盡量讓它看起來沒那麼糟。」 全球三大經濟體的貨幣印表機 Hayes 把分析拉大到三大經濟體。美國方面，AI 資金缺口與政府債務形成雙重壓力，他認為政策制定者「沒有太多選擇」只能",
+      "sourceId": "rss-snapshot-b27098434128f94146c4",
+      "matchedRule": "taiwan-payment-core,taiwan-payment-authority,stablecoin-core,stablecoin-settlement"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-457c0a1206f1a0f2019f",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "比特幣突破 8.7 萬鎂、以太坊站上 $2750！全網爆倉逾 3.6 億美元",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T12:43:16.000Z",
+      "url": "https://www.blocktempo.com/bitcoin-breaks-87k-eth-2750-liquidations-363m/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "加密貨幣市場迎來強勁買盤！台北時間 10 月 2 日晚間，比特幣（BTC）短線強勢突破 8.7 萬美元大關，以 [&#8230;] 〈 比特幣突破 8.7 萬鎂、以太坊站上 $2750！全網爆倉逾 3.6 億美元 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 加密貨幣市場迎來強勁買盤！台北時間 10 月 2 日晚間，比特幣（BTC）短線強勢突破 8.7 萬美元大關，以太坊（ETH）也站上 2,750 美元。突如其來的暴漲讓空頭慘遭血洗，根據 CoinGlass 數據，過去 24 小時全網爆倉金額高達 3.63 億美元，最大單筆損失甚至超過 1,100 萬美元。 （前情提要：交易員 Killa 稱比特幣已確立低點 8.25 萬，預期跌破幅度小） （背景補充：比特幣可做財力證明向銀行信貸！遠銀推「幣須貸」最高 150 萬元，規則、門檻一次看） 加密貨幣市場在台北時間 10 月 2 日晚間再度展現驚人爆發力，強勁的買盤推動整體市場快速上攻。市值最大的加密貨幣比特幣（BTC）短線狂飆，一舉突破 87,000 美元大關；而以太坊（ETH）也同樣強勢，順利站上 2,750 美元重要關口。 近 8 萬人爆倉，單筆最慘損失逾 1172 萬美元 這波急漲行情讓合約市場的空頭投資者付出慘痛代價。根據區塊鏈數據平台 CoinGlass 的最新統計，截至發稿時",
+      "sourceId": "rss-snapshot-457c0a1206f1a0f2019f",
+      "matchedRule": "industry-game-market,stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-1f3e98b39c9bb8209809",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Cboe 評估推出 VIX 永續合約，把加密主流商品帶進華爾街",
+      "source": "ABMedia 區塊鏈媒體",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T12:34:59.000Z",
+      "url": "https://abmedia.io/cboe-vix-perpetual-futures",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "彭博報導 Cboe 評估以 VIX 恐慌指數推出永續合約，透過資金費率貼近指數現值、沒有到期日；目前尚未公布規格或提交監管申請，Cboe 將等美國永續合約監管更明確。 這篇文章 Cboe 評估推出 VIX 永續合約，把加密主流商品帶進華爾街 最早出現於 鏈新聞 ABMedia 。 根據 彭博報導 ，Cboe 全球市場正評估以 Cboe 波動率指數（VIX）推出永續合約。彭博指出，美國交易所正競相把主導加密市場的高槓桿商品，帶到其他資產類別。 VIX 目前無法直接交易，永續合約靠資金費率貼近現貨 VIX 衡量標普 500 選擇權交易人預期未來 30 天的波動程度，常被稱為「恐慌指數」。彭博指出，這麼常被引用的指標，目前卻沒有辦法直接交易指數本身的水準。 現有的 VIX 期貨都有到期日。 CoinDesk 說明 ，永續合約沒有到期日，而是透過資金費率機制讓合約價格貼近指數現值，理論上是投資人最接近直接交易 VIX 現貨的方式。 這項計畫仍在初期。彭博報導，Cboe 表示等美國對永續合約的監管更明確後，才會進一步評估上架 VIX 永續合約；目前還沒有公布合約規格、上線日期，也沒有提交監管申請。 業界看法：不必再煩惱到期與價值耗損 CoinDesk 引述 DWF Labs 市場洞察負責人 Martin Lee 的說法，交易人「不必擔心到期日和價值耗損」，只要專注在方向上。 不過 CoinD",
+      "sourceId": "rss-snapshot-1f3e98b39c9bb8209809",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-f2fafc18c3558fa22eb2",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《温宏駿穩定幣新金融-24》美元穩定幣成為銀行 API 的時代來臨",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T12:14:52.000Z",
+      "url": "https://www.blocktempo.com/dollar-stablecoins-become-bank-api-fiserv-roughrider-ousd-citi-coinbase/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "美國 10 年期公債殖利率衝上 5.3%、創近 20 年新高，聯準會啟動升息循環。同一週 OUSD 正式發行， [&#8230;] 〈 《温宏駿穩定幣新金融-24》美元穩定幣成為銀行 API 的時代來臨 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 美國 10 年期公債殖利率衝上 5.3%、創近 20 年新高，聯準會啟動升息循環。同一週 OUSD 正式發行，花旗與 Coinbase 合作讓加密業務退到銀行後台，北達科他州社區銀行則透過 Roughrider 把穩定幣嵌入 Fiserv 網銀介面。金融派大星温宏駿認為，美元穩定幣正從加密貨幣產品變成銀行系統裡的 API，在高利率下，誰掌握分銷比誰發行更重要。 （前情提要：《温宏駿穩定幣新金融-23》CLARITY 法案不清晰，華爾街上鏈反而加速 ） （背景補充：Stripe 發行新穩定幣 OUSD：準備金收益回饋夥伴，會威脅 Circle / Tether 獲利模式？ ） 銀行不需要「成為加密公司」， 只需要「呼叫穩定幣 API」 這一週，穩定幣市場同時發生了三件事，單看每一件都像是一則普通新聞，但把它們放在一起，我看到的是一個清楚的結構轉折：美元穩定幣正在從「加密貨幣產品」，變成「銀行系統裡的一個 API」。 第一件事，美國十年期公債殖利率衝上 5.3%、創下近 20 年新高，而聯準會不",
+      "sourceId": "rss-snapshot-f2fafc18c3558fa22eb2",
+      "matchedRule": "stablecoin-core,stablecoin-circle"
+    },
     {
       "id": "softworld-api-google-news-261fd736c33acea4d074",
       "origin": "monitoring",
@@ -52,6 +435,128 @@
       "publisherUrl": "https://tw.news.yahoo.com/%E6%96%B0%E5%85%89%E4%B8%89%E8%B6%8A-%E6%98%AF%E8%AA%B0%E7%9A%84%E9%81%8A%E6%88%B2%E9%96%93-%E5%B7%A1%E8%BF%B4%E5%B1%95-%E9%AB%98%E9%9B%84%E5%B7%A6%E7%87%9F%E5%BA%9710-2-115008876.html"
     },
     {
+      "id": "softworld-api-rss-snapshot-9a6a02539bf3639555f6",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《魔法奇遇 ～有苦衷的少女為贏取未來前往異國魔法學校留學～》12 月發售",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T11:39:34.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=312841",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "發行、代理商傑仕登今日宣布，由 IDEA FACTORY 開發的女性向戀愛冒險遊戲《魔法奇遇 ～有苦衷的少女為贏取未來前往異國魔法學校留學～》確定將於 2026 年 12 月 24 日發售，並同步公開多位角色情報。 【以下內容為廠商提供資料....",
+      "sourceId": "rss-snapshot-9a6a02539bf3639555f6",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-3e778a6ed989e0da396d",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "VTuber「潔絲可」出道周年活動開跑 將化身隨從在《龍族教義 2：黑暗再臨》登場",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T11:25:04.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=312839",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "發行、代理商傑仕登宣布，旗下官方 VTuber「潔絲可 Jusko」將於 10 月 4 日出道滿一周年，除了進行多項慶祝活動以外，還將化身為《龍族教義 2：黑暗再臨（Dragon's Dogma 2: Dark Arisen）》的官方隨從，與玩家在遊戲中一同冒險。 &nbs....",
+      "sourceId": "rss-snapshot-3e778a6ed989e0da396d",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-b8238915-c5f6-45b6-96ea-49f6b4b596b6",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "川習會看「川普式無敵語法」？繞過理性辯論：用「這3個字」放大可信度",
+      "source": "遠見雜誌",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T11:25:00.000Z",
+      "url": "https://www.gvm.com.tw/article/132909",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "川習會剛結束，川普每次的發言都是一場精采表演。本書作者是犯罪學名譽教授，曾長期擔任紐約市與洛杉磯縣警局的特聘顧問，並長期研究川普的發言與用字，發現這位最愛在社群媒體上發言的美國總統，從不在事實與真相問題上「與人辯論」，而是透過訊息的密集投放、重複與威嚇，占領整個話語空間。使得川普每一次公開發言，都像是一場強大的武力威脅。（本文節錄自《川普式無敵語法》一書，作者：包包（Alain Bauer）／大是文化出版，以下為摘文。）在川普的用語中，「實際上」（Actually）一詞將原本可能對自己不利的認罪，轉化來宣稱自身經驗卓越，這使得川普能將自己的觀點與反向敘事，表述得像是客觀且基於事實的單純指正。他",
+      "sourceId": "rss-snapshot-acfacfbf1b3531da4331",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-a5fe4b3094ed832fd256",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《足球經理 27》11 月 11 日發售 功能詳解第 3 彈「全面升級的比賽日氛圍」公開",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T11:16:32.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=312838",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "世雅股份有限公司宣布，知名足球經營模擬遊戲《Football Manager》系列最新作品《足球經理 27》（以下簡稱《FM27》）將於 2026 年 11 月 11 日（三）在 PlayStation 5、Xbox Series X|S、PC（Steam／Epic／Windows）、Mac、Netflix ....",
+      "sourceId": "rss-snapshot-a5fe4b3094ed832fd256",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-b9dfe5003c909c623f5e",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "假冒和資策會簽約！AI 搬磚套利「櫻特森」涉吸金詐騙逾 6 億元",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T11:14:39.000Z",
+      "url": "https://www.blocktempo.com/taiwan-ai-crypto-arbitrage-fake-iii-contracts-illegal-fundraising-detention/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "台北地檢署 10 月 1 日指揮調查局搜索櫻特森系統整合公司。檢調查出，櫻特森 2019 年起透過說明會，宣稱 [&#8230;] 〈 假冒和資策會簽約！AI 搬磚套利「櫻特森」涉吸金詐騙逾 6 億元 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 台北地檢署 10 月 1 日指揮調查局搜索櫻特森系統整合公司。檢調查出，櫻特森 2019 年起透過說明會，宣稱研發出「虛擬貨幣搬磚套利系統」，能讓 AI 學習基金經理人交易，又以假冒與資策會簽了契約來招攬投資。檢調估計吸金與詐騙合計 6 億餘元，檢方已向法院聲請羈押禁見簡姓實際負責人。 （前情提要：台中火鍋店「丹水滾」夫妻傳吸金超 50 億元，全家疑逃亡海外） （背景補充：新北三警涉88會館洗錢案》再爆超10名警大生參與搬磚套利，檢方不排除第二波搜索約談） 重點摘要 櫻特森涉以 AI 搬磚套利說明會吸金約 5 億餘元 櫻特森涉偽造資策會、政大、台科大合約，詐騙數千萬元 櫻特森案簡姓負責人遭聲押，2 名被告以 30 萬、20 萬元交保 據聯合報報導，台北地檢署 10 月 1 日指揮調查局高雄市調查處展開搜索。搜索範圍包括櫻特森系統整合公司等 6 處地點。檢調當天約談 3 名被告，另以證人身分約談 1 名游姓系統工程師。 檢察官漏夜偵訊後，認為簡姓實際負責人涉犯銀行法重罪，且有串證、滅證之虞。檢方",
+      "sourceId": "rss-snapshot-b9dfe5003c909c623f5e",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-ea704c254e0777895ed7",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "以 Vtuber 周防帕特拉為主角戀愛遊戲《你喜歡的帕特拉 if》發售日延期",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T11:03:24.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=312835",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "日本遊戲廠商 ENTERGRAM 宣布，以虛擬 Youtuber 周防帕特拉（周防パトラ）為主角的戀愛冒險遊戲《你喜歡的帕特拉 if（暫譯，原名：君色パトラIF）》延期至 2027 年 1 月 28 日發售。 《你喜歡的帕特拉 if》是一款以 Vtuber 周防....",
+      "sourceId": "rss-snapshot-ea704c254e0777895ed7",
+      "matchedRule": "industry-platform-business"
+    },
+    {
       "id": "softworld-api-google-news-f7ee6ba598395191cd3c",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -72,6 +577,86 @@
       "sourceId": "google-news-f7ee6ba598395191cd3c",
       "matchedRule": "taiwan-payment-google-news",
       "publisherUrl": "https://tw.news.yahoo.com/%E5%B0%8F%E9%A1%8D%E6%AC%A0%E8%B2%BB%E8%A9%90%E9%A8%99%E9%A0%BB%E5%82%B3-%E5%88%91%E4%BA%8B%E5%B1%80%E7%B1%B2%E9%98%B2%E4%BF%A1%E7%94%A8%E5%8D%A1%E7%9B%9C%E5%88%B7-110225553.html"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-058d60c0e1f6e25e7e65",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《Rust》「Livestock」更新開放養牛牧羊，擠奶剪毛還能牽去賣錢",
+      "source": "4Gamers",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T11:02:24.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82396/rust-livestock-update",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "Facepunch Studio 開發的多人開放世界生存遊戲《Rust》推出「Livestock」（畜牧）更新，追加可飼養的牛與羊，玩家除了採集資源、建造基地，也能圈養牲畜，靠牛奶、羊毛與動物交易取得資源。 <p><picture><source srcset=\"https://img.4gamers.com.tw/puku-clone-version/b5b8e31510e6a8ecaf7a521e34d4e2c218345c50.jpg\" media=\"(min-width: 992px)\"><img alt=\"261002_rust_1\" height=\"450\" src=\"https://thumbor.4gamers.com.tw/otNuRl8xCwOvwLd1f5eKrOvjuMs=/800x0/filters:extract_cover():no_upscale():quality(80)/https%3A%2F%2Fimg.4gamers.com.tw%2Fpuku-clone-version%2Fb5b8e31510e6a8ecaf7a521e34d4e2c218345c50.jpg\" width=\"800\" data-puku-raw-src=\"https://img.4gamers.com.tw/puku-clone-version/b5b8e31510e6",
+      "sourceId": "rss-snapshot-058d60c0e1f6e25e7e65",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-bffe0dc6841b9dbf98cb",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《病房軼事》《拔作島》《流星世界演繹者》等美少女遊戲參加 Steam 秋季特賣 多款作品最低 2 折",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T10:54:59.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=312833",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "日本發行商 Shiravune（白舟）宣布，旗下多款美少女遊戲於 10 月 2 日（五）至 10 月 9 日（五）參加 Steam 秋季特賣。其中，《病房軼事》、《築巢華琳醬》、《Liminal Border Part I》及《Liminal Border Part II》期間內推出歷史新低折扣；《拔作島》、《....",
+      "sourceId": "rss-snapshot-bffe0dc6841b9dbf98cb",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-3d26ca5601b61990da15",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Bushiroad 旗下 Switch / PC 數位版遊戲祭出期間限定優惠",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T10:41:20.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=312831",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "Bushiroad Inc.（總公司：東京都中野區，代表取締役社長：根本雄貴）宣布自 2026 年 10 月 2 日（星期五）起舉辦「Bushiroad Autumn Sale 2026」，旗下 Nintendo Switch 下載版及 Steam 版遊戲將於活動期間以限定優惠價格販售。 【....",
+      "sourceId": "rss-snapshot-3d26ca5601b61990da15",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-056c4473bc76212b9bfe",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "韓國交易網紅首爾直播賽做多 NEAR，鎖定約 4 萬美元獲利",
+      "source": "ABMedia 區塊鏈媒體",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T10:41:03.000Z",
+      "url": "https://abmedia.io/frontier-traders-seoul-showdown-jadoodoo",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "Solana 交易平台 Frontier Traders 在首爾舉辦現場交易賽，韓國交易創作者 Jadoodoo 半決賽做多 NEAR 鎖定約 4 萬美元獲利後台上慶祝；首爾站冠軍晉級 11 月倫敦總決賽，總冠軍可選保時捷或 25 萬美元。 這篇文章 韓國交易網紅首爾直播賽做多 NEAR，鎖定約 4 萬美元獲利 最早出現於 鏈新聞 ABMedia 。 Solana 交易平台 Frontier Traders 9 月 30 日在韓國區塊鏈週期間，於首爾舉辦現場交易賽「Seoul Showdown」。根據 DEGEN NEWS 發布的現場影片 ，韓國交易創作者 Jadoodoo 在半決賽做多 NEAR，鎖定約 4 萬美元獲利後在台上振臂慶祝。 NEW: TRADER JADOODOO CELEBRATES AFTER LOCKING IN ~$40K P&L LONGING $NEAR DURING @joinfrontier PERPS TRADING COMPETITION SEMIFINAL IN SOUTH KOREA pic.twitter.com/fF1t5LaRjT &mdash; DEGEN NEWS (@DegenerateNews) September 30, 2026 8 名交易員直播對戰，冠軍晉級倫敦總決賽 依 活動頁面 ，首爾站由 8 名交易員在台上即時交易，",
+      "sourceId": "rss-snapshot-056c4473bc76212b9bfe",
+      "matchedRule": "stablecoin-core,stablecoin-settlement"
     },
     {
       "id": "softworld-api-google-news-6b5fa5be9ba847aa7d60",
@@ -96,6 +681,86 @@
       "publisherUrl": "https://www.mirrormedia.mg/story/20261002-167inv-182506"
     },
     {
+      "id": "softworld-api-rss-snapshot-ca36df26066d3b67697f",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "4 人合作黑色幽默遊戲《地獄老屍機》11 月問世 身處葬儀社在台前莊嚴告別、幕後手忙腳亂",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T10:31:36.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=312829",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "遊戲研發團隊 Happy Volcano 與發行商 Oro Interactive 發表經營葬儀社的黑色幽默恐怖遊戲《地獄老屍機（Grave Mistakes）》，預定今年 11 月在 PC Steam 平台推出，目前已在 Steam 平台開放玩家申請參加測試資格。 ....",
+      "sourceId": "rss-snapshot-ca36df26066d3b67697f",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-0e8c1cf13b08b7c4979f",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《CROSS † CHANNEL 交錯頻道 ～For all people～》中文版 11/19 發售",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T10:29:26.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=312828",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "JOYOLAND 宣布，由 G-MODE Corporation 移植發行，以廣播社為舞台展開的校園青春文字冒險遊戲《CROSS &dagger; CHANNEL 交錯頻道 ～For all people～》Nintendo Switch 繁體中文版預定於 2026 年 11 月 19 日發售，同時公....",
+      "sourceId": "rss-snapshot-0e8c1cf13b08b7c4979f",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-bc9257b5fcf2dd001e0e",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "放置刷寶新作《心靈之門 角落征途》開放免費試玩 讓 Q 版角色不斷征戰",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T10:29:05.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=312827",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "日本獨立遊戲開發者 Inkmoon 已於 Steam 平台推出 Windows 放置新作《心靈之門 角落征途（暫譯，原名：MindGate CornerGet）》免費試玩版。正式版為基本免費，預定 2027 年第一季推出。此外，本作也將參加台灣時間 10 月 20 日（二）凌晨 1 時起舉辦的 Steam 新品....",
+      "sourceId": "rss-snapshot-bc9257b5fcf2dd001e0e",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-12d7a31fcbb2a108c52b",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "邊種田、邊調查謀殺案！農場模擬遊戲《死亡季節》延至 2027 年 3 月初上市",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T10:20:19.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=312824",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "遊戲開發團隊 Perfect Garbage 今日宣布，《死亡季節（暫譯，原名：Grave Seasons）》發售日將延期到 2027 年 3 月 9 日（台灣時間 2027 年 3 月 10 日），將專注於版本移植工作，而遊戲內容方面目前正進行最終琢磨與錯誤修正。 《死亡季節》是一款劇情....",
+      "sourceId": "rss-snapshot-12d7a31fcbb2a108c52b",
+      "matchedRule": "industry-game-platform"
+    },
+    {
       "id": "softworld-api-google-news-10c484d4488892225ad6",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -118,6 +783,66 @@
       "sourceId": "google-news-10c484d4488892225ad6",
       "matchedRule": "industry-martech",
       "publisherUrl": "https://www.ctee.com.tw/news/20261002701692-430601"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-c64eb86ae86dd42e4a57",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "2026高雄動漫節木棉花熱鬧登場，七大超值福袋、六重滿額贈，國慶連假獻給南台灣粉絲",
+      "source": "遊戲基地",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T10:18:24.000Z",
+      "url": "https://news.gamebase.com.tw/news/detail/99441618",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "高",
+      "tags": [
+        "金融支付",
+        "產業監測"
+      ],
+      "excerpt": "2026 高雄國際動漫節即將於 10 月 9 日至 10 月 12 日在高雄巨蛋體育館盛大登場！動畫代理商木棉花今年集結新番話題作與超人氣作品，帶來展場限定回饋、超值七大福袋、六重滿額好禮、首賣新品與精選商品。更是準備了滿滿的誠意與強檔熱門周邊，讓大家在這場動漫盛會中一次滿載而歸，現在就跟著我們一起出發高雄巨蛋吧！ 《黃泉使者》巨型入口拱門 超高人氣打卡點震撼降臨高雄！ 曾在台北漫博大受粉絲好評的《黃泉使者》主題入口，這次將移至南台灣，讓高雄的動漫迷能親臨感受現世與黃泉交界的震撼！《黃泉使者》以其引人入勝的雙子命運羈絆、神祕的「使者」設定與精彩絕倫的戰鬥場面，在動漫圈掀起極高討論度。木棉花特別打造高達四米的巨型迎賓拱門，邀請大家一起感受《黃泉使者》這部充滿張力的作品。 質感香氛打造動漫居家美學，金屬海報限量發售！ 木棉花今年在精選區推出多款質感現貨商品，搶攻粉絲的居家生活美學！主推《進擊的巨人》水晶擴香組（售價 999 元），以天然水晶礦石搭配專屬造型玻璃杯與 LED 木底座，在香氛環繞中營造獨特光影氛圍；《鬼滅之刃》則推出極具角色代表性的「煉獄家」與「蝶屋敷」兩款室內擴香（售價 2,090 元），讓粉絲透過嗅覺將動漫氛圍完美融入日常生活。 《進擊的巨人》水晶擴香組 《鬼滅之刃》室內擴香(煉獄家) 《鬼滅之刃》室內擴香(蝶屋敷) 金屬海報《加速世界》A款 金屬海報《加速世界》B款 ",
+      "sourceId": "rss-snapshot-c64eb86ae86dd42e4a57",
+      "matchedRule": "newebpay-brand,taiwan-payment-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-dbc737fb21c75fe62407",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "傑仕登旗下VTuber「潔絲可」出道一周年活動開跑，化身隨從與玩家在《Dragon's Dogma 2: Dark Arisen》中一同冒險!",
+      "source": "遊戲基地",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T10:15:38.000Z",
+      "url": "https://news.gamebase.com.tw/news/detail/99441617",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "發行、代理商傑仕登宣布，旗下官方VTuber「潔絲可 Jusko」將於 10 月 4 日出道滿一周年，除了進行多項慶祝活動以外，還將化身為《Dragon's Dogma 2: Dark Arisen》的官方隨從，與玩家在遊戲中一同冒險！ 《Dragon's Dogma 2: Dark Arisen》官方隨從「潔絲可 Jusko」＆限定特典 即將於 2026 年 10 月 9 日發售的《Dragon's Dogma 2》大型擴充內容《Dragon's Dogma 2: Dark Arisen》中，將能雇用潔絲作為官方隨從，與玩家們勇闖全新的冒險舞台！ Dragon_s Dogma 2 Dark Arise 官方隨從 此外，若預購實體版《Dragon's Dogma 2: Dark Arisen》還可獲得潔絲可專屬貼紙組，數量有限，送完為止！ 實體版預購特典 實體版預購特典 一周年紀念活動開跑，邀玩家同樂抽好禮！ 為慶祝潔絲可出道滿一周年，特別舉辦一系列歡慶活動，並準備了多款精選好禮。歡迎各位觀眾與玩家報名參加，共襄盛舉！ ★活動 1： 協力宣傳活動 追蹤傑仕登FB及潔絲可相關頻道，於指定貼文Tag 朋友並留言，即可參加抽獎！得獎名單公開日期：2026年10月7日(三)。 活動獎品： &bull; Nintendo Switch 2 主機 &times; 1名 &bull; Ninte",
+      "sourceId": "rss-snapshot-dbc737fb21c75fe62407",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-3cef946e68a8c3b52b0b",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《DYNAMIC CHORD 動態和弦 feat.Liar-S》Switch 中文版 12 月推出",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T10:02:14.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=312821",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "JOYOLAND 宣布，HUNEX CO.,LTD. 旗下遊戲品牌「dramatic create」出品的《DYNAMIC CHORD 動態和弦》系列第二作《DYNAMIC CHORD 動態和弦 feat.Liar-S Remaster edition》Nintendo Switch 繁體中文版將於 2026 ....",
+      "sourceId": "rss-snapshot-3cef946e68a8c3b52b0b",
+      "matchedRule": "industry-game-platform"
     },
     {
       "id": "softworld-api-google-news-7fa8ef52bb2ed9873655",
@@ -167,6 +892,47 @@
       "publisherUrl": "https://www.bnext.com.tw/article/92462/mcdonalds-ai-pricing-big-mac-brand-trust"
     },
     {
+      "id": "softworld-api-rss-snapshot-6704869a3a1463c56b3f",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "BMO and Mastercard enable corporate card clients to manage virtual card payments",
+      "source": "Finextra",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T10:00:00.000Z",
+      "url": "https://www.finextra.com/pressarticle/111110/bmo-and-mastercard-enable-corporate-card-clients-to-manage-virtual-card-payments?utm_medium=rssfinextra&utm_source=finextrafeed",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "中",
+      "tags": [
+        "金融支付",
+        "產業監測"
+      ],
+      "excerpt": "BMO and Mastercard today announced the availability of a new embedded Commercial payments capability that enables eligible Corporate Card clients to initiate and manage BMO Commercial virtual card payments directly within the software platforms they use to run their operations. Through this expansion, BMO becomes the first Mastercard issuer in Canada to offer an integrated embedded finance and payment experience by virtual card within participating platform integrations.",
+      "sourceId": "rss-snapshot-6704869a3a1463c56b3f",
+      "matchedRule": "international-fintech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-4b366ded5f23eb9f9971",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "烏克蘭前防長要打造「機器人軍團」，Shield AI 創辦人：十年內應該很難實現",
+      "source": "TechNews 科技新報",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T09:41:47.000Z",
+      "url": "https://technews.tw/2026/10/02/brandon-tseng-thinks-fedorovs-army-of-robots-cant-be-done-within-10-years/",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "Shield AI 今日於台北 101 分公司總部，由創辦人曾國光（Brandon Tseng）出面舉行媒體簡 [&#8230;]",
+      "sourceId": "rss-snapshot-4b366ded5f23eb9f9971",
+      "matchedRule": "industry-martech"
+    },
+    {
       "id": "softworld-api-google-news-94041d058e33828f1554",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -211,6 +977,48 @@
       "sourceId": "google-news-591b3f92df27bb018177",
       "matchedRule": "stablecoin-core",
       "publisherUrl": "https://news.cnyes.com/news/id/6620515"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-ea3ffdda6683aa2b3079",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Jev 爆紅後 Strands Decider、Clef 接連登場，決策模型正走出哪些不同路線？",
+      "source": "科技報橘 TechOrange",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T09:13:19.000Z",
+      "url": "https://techorange.com/2026/10/02/ai-jev-decisions-api-strands-decider-clef/?utm_source=rss&utm_medium=feed&utm_campaign=techorange_rss",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "TypeSafe 9 月中推出 Jev 後，「決策模型（Decision Model）」快速成為 AI 領域的新熱點。不到三週，OpenAI 推出 Decisions API，AWS、Cloudflare 接連發布 Strands Decider 2B 與 Clef，開發者社群與研究團隊也快速跟進。這波熱潮背後，是 AI 代理內部不同工作的分工開始被重新檢視。 《VentureBeat》指出，如果系統只需要回答「這個工具該不該執行？」或「這筆請求該走哪一條路徑？」這類答案範圍明確的問題，讓大型語言模型先生成一段解釋，反而會增加時間與成本。決策模型則直接替預先允許的答案評分，因此更適合放在 AI 代理周邊，頻繁處理工具選擇、路由或操作檢查等窄範圍判斷；寫作、程式設計與複雜推理，仍交給能力更完整的生成式模型。 而隨著更多業者加入，決策模型也不再只有一種做法，AWS、Cloudflare 與其他開發者團隊，開始從模型大小、部署方式、多模態能力與架構設計上做出不同取捨。 延伸閱讀：Jev 為何爆紅？AI Agent 正重新分配「誰來做決策」 Jev 帶起熱潮，OpenAI 也把決策能力獨立做成 API TypeSafe 9/15 推出 Jev，讓模型讀取目前狀態與預先定義的問題後，直接回傳選項、分數或是非判斷，以及各答案的機率，不需要像一般大型語言模型逐字產生回答。 OpenAI 9/29",
+      "sourceId": "rss-snapshot-ea3ffdda6683aa2b3079",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-4ca7e0066646350b301d",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《鋼之鍊金術師》雙電影連映場「開賣即秒殺」！第二週特典、主題套餐、快閃店接力來襲",
+      "source": "遊戲基地",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T09:05:50.000Z",
+      "url": "https://news.gamebase.com.tw/news/detail/99441615",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "銜接2003年動畫版劇情的《劇場版 鋼之鍊金術師 香巴拉的征服者》自重映以來口碑持續發酵，不少影迷在社群分享「隔了十幾年重看《香巴拉的征服者》還是覺得劇情十分精彩與感傷，現在難以看到這類型題材與作畫精緻的作品了」的感想，更有網友翻出珍藏多年的初代特典，掀起一波懷舊熱潮。 這股氣勢也延燒到10月3日限定影城舉辦的《鋼鍊》雙電影「Don't forget 3,Oct.10連映場」，開賣瞬間便在官網秒殺完售，粉絲們紛紛在社群哀號「完全搶不到特別場的電影票」，足見粉絲對作品的死忠程度。而這股熱度顯然還沒有要退燒的跡象，威秀影城獨家主題套餐、《鋼之鍊金術師 BROTHERHOOD》期間限定商售區即將接力登場，持續點燃粉絲們的收藏魂。 呼應這波《鋼鍊》劇場版重映熱潮，威秀影城自9月24日起同步推出售價459元的《鋼之鍊金術師：香巴拉的征服者》電影套餐，凡購買即可獲得影城販售餐點組合與電影主題「壓克力公仔杯」乙杯（共2款，隨機贈一款），喜歡鋼鍊電影主題周邊的粉絲千萬別錯過這次收藏機會！ 除了電影套餐之外，以2009年動畫《鋼之鍊金術師 BROTHERHOOD》為主題的期間限定商售區，也將自10月2日起於台北京站、台中 iFG 遠雄廣場及高雄大遠百威秀影城同步亮相，一路展開至11月22日。商售區內規劃了三處拍照打卡亮點，讓粉絲走到哪拍到哪；商品陣容同樣誠意十足，近50款全新品項涵蓋動畫周邊、服飾配",
+      "sourceId": "rss-snapshot-4ca7e0066646350b301d",
+      "matchedRule": "industry-martech"
     },
     {
       "id": "softworld-api-google-news-8d52eba59c1ba9d88880",
@@ -348,6 +1156,27 @@
       "sourceId": "google-news-f6bd849e453567c42668",
       "matchedRule": "softworld-games,competitor-global-game,mobile-game-watchlist",
       "publisherUrl": "https://app.mycard520.com.tw/news-neowiz-%E9%81%8A%E6%88%B2%E3%80%8A%E6%A3%95%E8%89%B2%E5%A1%B5%E5%9F%832%E3%80%8B%E9%80%B2%E8%BB%8D-2026-%E9%AB%98%E9%9B%84%E5%9C%8B%E9%9A%9B%E5%8B%95%E6%BC%AB%E7%AF%80%EF%BC%81-%E5%8F%B0%E9%9F%93/"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-3e021791ba97afa9b77f",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Walmart、TikTok Shop 訂單也能在 Amazon 後台管理：零售巨頭搶當商家的作業系統",
+      "source": "科技報橘 TechOrange",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-02T08:17:08.000Z",
+      "url": "https://techorange.com/2026/10/02/amazon-walmart-race-merchants-operating-system/?utm_source=rss&utm_medium=feed&utm_campaign=techorange_rss",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "AI 正逐步改變零售商與商家之間的關係。《PYMNTS》報導，過去零售市場主要圍繞 4 項競爭槓桿，包括消費者占有率、賣家占有率、廣告支出占有率與錢包占有率；如今，AI 進一步帶來第 5、6 項槓桿，也就是決策權占有率，以及意圖基礎設施占有率。 賣家端的系統整合戰：Amazon 與 Walmart 搶占商家的「決策權占有率」 近期亞馬遜（Amazon）與沃爾瑪（Walmart）的產品更新，正反映出這項變化。Amazon 升級 Seller Assistant，讓 AI 能持續監控商家的業務狀況，並在商家設定的限制範圍內提出建議或執行相關行動。Amazon 也推出 Multichannel Selling，將 Walmart、eBay、TikTok Shop 與 Shopify 的訂單、庫存及商品目錄，整合至 Amazon 賣家用來管理業務的平台 Seller Central；另外，Amazon Ads Agent 現在可以透過自然語言指令規劃、管理與最佳化廣告。 Walmart 則持續發展 Scintilla 平台，從零售分析進一步朝 Walmart 所稱的「商務智慧」（commerce intelligence）發展，利用第一方資料與 AI 辨識業務表現變化與潛在機會，並將分析結果連結至實際行動。 Walmart 也在近日宣布「Shop to Light」功能。消費者可以透過 W",
+      "sourceId": "rss-snapshot-3e021791ba97afa9b77f",
+      "matchedRule": "industry-platform-business,industry-martech"
     },
     {
       "id": "softworld-api-rss-snapshot-c9a686d1debd61c05690",
@@ -493,7 +1322,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-a97d0d4e2bd75c128482",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://news.tvbs.com.tw/entertainment/music/4030714"
     },
     {
       "id": "softworld-api-rss-snapshot-170e60c298cbe75a285d",
@@ -556,7 +1386,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-3b5503b259d7b0175938",
-      "matchedRule": "softworld-games,competitor-global-game,mobile-game-watchlist"
+      "matchedRule": "softworld-games,competitor-global-game,mobile-game-watchlist",
+      "publisherUrl": "https://news.pchome.com.tw/game/ldplayer/20261002/index-79092674554057345104.html"
     },
     {
       "id": "softworld-api-rss-snapshot-3824d4d02277309aa6f9",
@@ -677,7 +1508,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-fb37683ee99b3b720ca1",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://tw.news.yahoo.com/%E5%8F%AA%E6%AC%A0120%E5%85%83%E5%8D%BB%E5%8F%AF%E8%83%BD%E8%B3%A0%E4%B8%8A%E6%95%B4%E5%BC%B5%E4%BF%A1%E7%94%A8%E5%8D%A1-%E5%88%91%E4%BA%8B%E5%B1%80%E7%A4%BA%E8%AD%A6-%E8%A9%90%E9%A8%99%E9%83%B5%E4%BB%B6%E9%A1%AF%E7%A4%BA%E5%AE%A2%E6%9C%8D%E9%9B%BB%E8%A9%B1%E6%98%AF%E7%9C%9F%E7%9A%84-%E6%AC%A0%E8%B2%BB%E9%80%A3%E7%B5%90%E6%98%AF%E5%81%87%E7%9A%84-063230961.html"
     },
     {
       "id": "softworld-api-rss-snapshot-3cbb606a07a248e2b576",
@@ -718,7 +1550,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-155e5a447ba5c3710786",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.storm.mg/lifestyle/11168480"
     },
     {
       "id": "softworld-api-rss-snapshot-01fd742bac4921cf8c64",
@@ -860,7 +1693,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-8d0e22729d76261f92a4",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.mirrormedia.mg/external/setn_1916214"
     },
     {
       "id": "softworld-api-rss-snapshot-9cccd98a64fd65b2937d",
@@ -942,7 +1776,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-2b555b4c928c2ea48127",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://www.setn.com/news/1916167"
     },
     {
       "id": "softworld-api-rss-snapshot-fb47a7feef3e7f800a3e",
@@ -1071,7 +1906,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-107604b53f4542cce8a8",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://www.setn.com/news/1916140"
     },
     {
       "id": "softworld-monitoring-google-news-3082ff11d7a81184419f",
@@ -1330,7 +2166,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-833f1e0a7a5f00380d23",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://www.chinatimes.com/realtimenews/20261002001647-260405"
     },
     {
       "id": "softworld-api-a70a49e5-dc6f-4d50-a986-b718af946a92",
@@ -1670,6 +2507,26 @@
       "matchedRule": "industry-platform-business"
     },
     {
+      "id": "softworld-api-rss-snapshot-6ad60e96a0d6707ea9af",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "【資安週報】0929~1002，臺灣8月勒索軟體事件20起居亞太第三，全球聚焦AI代理安全風險與防護布局",
+      "source": "iThome",
+      "date": "2026-10-02",
+      "publishedAt": "2026-10-01T21:10:00.000Z",
+      "url": "https://www.ithome.com.tw/news/179381",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "本週資安威脅焦點集中於勒索軟體與企業資安事件，近期統計顯示，臺灣8月至少發生20起勒索軟體事件，也有多家上市櫃公司發布資安重訊，包括柏文、神腦與鈊象等，華碩也傳出通知部分線上商店客戶資料可能遭未授權存取的情形，顯示企業遭受攻擊與資料外洩風險仍持續升高。此外，針對網路、端點與應用程式漏洞的攻擊接連曝光，成為另一項值得關注的威脅動向。",
+      "sourceId": "rss-snapshot-6ad60e96a0d6707ea9af",
+      "matchedRule": "competitor-brand"
+    },
+    {
       "id": "softworld-official-rss-rss-snapshot-2fe965d306e397a3b264",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -1771,7 +2628,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-4431b26060fdd3abddda",
-      "matchedRule": "industry-game-platform"
+      "matchedRule": "industry-game-platform",
+      "publisherUrl": "https://uu.163.com/cht/blog/xbox-unable-launch-the-game-net.html"
     },
     {
       "id": "softworld-api-google-news-de40cf2f816f485c1157",
@@ -1793,7 +2651,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-de40cf2f816f485c1157",
-      "matchedRule": "industry-game-platform"
+      "matchedRule": "industry-game-platform",
+      "publisherUrl": "https://uu.163.com/cht/blog/xbox-game-gamebooster-recommendations.html"
     },
     {
       "id": "softworld-official-rss-rss-snapshot-63b051200000e7bbfef0",
@@ -1855,7 +2714,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-e6a45ecf21496e71ff00",
-      "matchedRule": "industry-game-platform"
+      "matchedRule": "industry-game-platform",
+      "publisherUrl": "https://uu.163.com/cht/blog/wow-forever-network-acceleration-net.html"
     },
     {
       "id": "softworld-monitoring-google-news-11228c63b7511f1dc99b",
@@ -1970,7 +2830,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-5dbe729cad9e9cb62e63",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://news.pchome.com.tw/expense/leho/20261002/index-79087299667066356013.html"
     },
     {
       "id": "softworld-official-rss-rss-snapshot-ac7d193aa3dfff5aab38",
@@ -28030,27 +28891,6 @@
       "matchedRule": "international-fintech"
     },
     {
-      "id": "softworld-api-b8238915-c5f6-45b6-96ea-49f6b4b596b6",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "什麼是「川普式無敵語法」？繞過理性辯論：用「這3個字」放大可信度",
-      "source": "遠見雜誌",
-      "date": "2026-09-16",
-      "publishedAt": "2026-09-15T17:49:00.000Z",
-      "url": "https://www.gvm.com.tw/article/132909",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技"
-      ],
-      "excerpt": "本書作者是犯罪學名譽教授，曾長期擔任紐約市與洛杉磯縣警局的特聘顧問，並長期研究川普的發言與用字，發現這位最愛在社群媒體上發言的美國總統，從不在事實與真相問題上「與人辯論」，而是透過訊息的密集投放、重複與威嚇，占領整個話語空間。使得川普每一次公開發言，都像是一場強大的武力威脅。（本文節錄自《川普式無敵語法》一書，作者：包包（Alain Bauer）／大是文化出版，以下為摘文。）在川普的用語中，「實際上」（Actually）一詞將原本可能對自己不利的認罪，轉化來宣稱自身經驗卓越，這使得川普能將自己的觀點與反向敘事，表述得像是客觀且基於事實的單純指正。他並非否認，而是將其視為自身政治重要性的證明，並",
-      "sourceId": "b8238915-c5f6-45b6-96ea-49f6b4b596b6",
-      "matchedRule": "industry-martech"
-    },
-    {
       "id": "softworld-api-e942b1b5-d4fd-4c54-aa1f-c87a74275776",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -36144,50 +36984,6 @@
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-263ed4ca8aa8aa569799",
       "matchedRule": "taiwan-payment-google-news"
-    },
-    {
-      "id": "softworld-api-google-news-1d1072b2bee1c6280e53",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "SHOPLINE 推出「全域零售廣告媒體」服務，可整合發票數據透過 AI 自動投廣",
-      "source": "T客邦",
-      "date": "2026-08-02",
-      "publishedAt": "2026-08-02T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPY2NrazEzMDhMbFZtQjJHeWx0UmxMaEdSQmo3eDRiZERwM3J5THhuN2ItTnpIUUN4dTJoN3V1SmQ1aWd3WFJxekhKYVoxdGtTLXNnbndZd0FDODZxTXJMRXdMbTdULVVYN2paWUZGSGgwc0N6azluMC1xTExJVVVaU1B0RFhNUQ?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技",
-        "廣告",
-        "媒體"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-1d1072b2bee1c6280e53",
-      "matchedRule": "industry-martech"
-    },
-    {
-      "id": "softworld-api-google-news-4efad6efd00431c73d5f",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "《勝利女神：妮姬》聯動《女神異聞錄》！P3、P4、P5三作8/13登場",
-      "source": "NOWnews今日新聞",
-      "date": "2026-08-02",
-      "publishedAt": "2026-08-02T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFA4X21iVDhNbmdKTEJ5Yy1jQjlob0hncnRnbUt1a0hubkNJTzVfMloydXd0N0dNZC1KWkJhOV80Z192VGY3Y3RVWjl6TGLSAVJBVV95cUxQa1duRmNrem5FOFZPdHRna1hIRm1nY19Hb1NfVlFtNER6R3BDcGVGN0Y1bTk0bjBiUGd5OUMzVFIzUTY1eFhidjJIUEIwaGxYbWN3?oc=5",
-      "topic": "遊戲產業",
-      "reportGroup": "industry-new-games",
-      "priority": "中",
-      "tags": [
-        "市場新遊",
-        "重點遊戲",
-        "勝利女神：妮姬"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-4efad6efd00431c73d5f",
-      "matchedRule": "mobile-top-grossing-games"
     }
   ]
 }
