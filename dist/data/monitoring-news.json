@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-10-03T15:51:02.416305Z",
-  "syncedAt": "2026-10-03T17:15:27.169Z",
+  "generatedAt": "2026-10-03T17:26:34.518Z",
+  "syncedAt": "2026-10-03T19:50:48.286Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,16 +10,16 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 1957,
-    "matchedItems": 1792,
+    "totalItems": 1959,
+    "matchedItems": 1794,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 1957,
-        "matchedItems": 1862,
-        "generatedAt": "2026-10-03T15:51:02.416305Z",
+        "totalItems": 1959,
+        "matchedItems": 1864,
+        "generatedAt": "2026-10-03T17:26:34.518Z",
         "range": {
           "from": "2026-08-04",
           "to": "2026-10-04"
@@ -28,6 +28,26 @@
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-rss-snapshot-355605638d4d95b2e19b",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "BTC Price Analysis: Is Bitcoin Gearing Up for $96K or a Retest of $82K?",
+      "source": "CryptoPotato",
+      "date": "2026-10-04",
+      "publishedAt": "2026-10-03T16:23:00.000Z",
+      "url": "https://cryptopotato.com/btc-price-analysis-is-bitcoin-gearing-up-for-96k-or-a-retest-of-82k/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "Bitcoin is trading around $84.7K after a strong recovery from the $60K area over the past couple of months. The charts show improving market structure, but BTC is now approaching a significant resistance cluster at $88K. Meanwhile, futures taker flow has turned predominantly buyer-driven again, providing a constructive momentum signal, although the price still needs [&#8230;] Bitcoin is trading around $84.7K after a strong recovery from the $60K area over the past couple of months. The charts show improving market structure, but BTC is now approaching a significant resistance cluster at $88K. ",
+      "sourceId": "rss-snapshot-355605638d4d95b2e19b",
+      "matchedRule": "stablecoin-core"
+    },
     {
       "id": "softworld-api-google-news-b0b5e49b3bbf5f5c54f7",
       "origin": "monitoring",
@@ -73,6 +93,26 @@
       "sourceId": "google-news-ecd9519d7740edbb8340",
       "matchedRule": "mobile-game-watchlist",
       "publisherUrl": "https://www.upmedia.mg/tw/game/community/270457"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-6bce12a14867db290d7a",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "TOKEN2049 新加坡 10 月 7 日開幕，預計 2.5 萬人與會",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-03",
+      "publishedAt": "2026-10-03T12:57:14.000Z",
+      "url": "https://www.blocktempo.com/token2049-singapore-returns-largest-industry-gathering-year-marina-bay-sands/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "根據 TOKEN2049 主辦方 8 月 6 日發布的新聞稿，新加坡場將於 10 月 7 日至 8 日在濱海灣 [&#8230;] 〈 TOKEN2049 新加坡 10 月 7 日開幕，預計 2.5 萬人與會 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 根據 TOKEN2049 主辦方 8 月 6 日發布的新聞稿，新加坡場將於 10 月 7 日至 8 日在濱海灣金沙舉行，預計匯聚來自 160 個國家的 25,000 名與會者。主辦方當時已公布首批 100 位講者，包括 Polymarket 與納斯達克的執行長，也表示超過 70% 的展區已被訂下。 （前情提要：BiFu 將亮相 Token2049 新加坡，舉辦「超越熱度：RWA 真正落地，還缺什麼？」主題晚宴與行業酒會） （背景補充：TOKEN2049杜拜峰會宣布延期1年！伊朗無人機攻擊疑慮，有錢人逃成空城） （本文為新聞稿，由 TOKEN2049 撰文、提供，不代表動區立場。） 今年 10 月，25,000 名與會者、500 家參展商、300 位講者與 1,000 場周邊活動，將讓全球加密產業齊聚新加坡 2026 年 8 月 6 日，新加坡，全球最大的加密貨幣活動 TOKEN2049 將於 10 月 7 日至 8 日重返新加坡濱海灣金沙（Marina Bay Sands），匯聚來自 ",
+      "sourceId": "rss-snapshot-6bce12a14867db290d7a",
+      "matchedRule": "stablecoin-core"
     },
     {
       "id": "softworld-api-rss-snapshot-0e140c102b42ed21447c",
@@ -4465,7 +4505,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-b10d58e29789f15c6ca9",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://news.ebc.net.tw/news/living/573792"
     },
     {
       "id": "softworld-official-rss-rss-snapshot-045b6b86e67e66f1f53b",
@@ -5084,7 +5125,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-4917977de4bab809d512",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://today.line.me/tw/v3/article/pepO3pe"
     },
     {
       "id": "softworld-official-rss-rss-snapshot-cc4e74666b9d0112ecb6",
@@ -5359,7 +5401,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-5c84438ec775102f11df",
-      "matchedRule": "competitor-brand"
+      "matchedRule": "competitor-brand",
+      "publisherUrl": "https://news.pchome.com.tw/game/ldplayer/20261001/index-79084544396863345104.html"
     },
     {
       "id": "softworld-official-rss-rss-snapshot-a6742491c4ef88eaa0ea",
@@ -5681,7 +5724,8 @@
           "source": "巴哈姆特 GNN",
           "url": "https://gnn.gamer.com.tw/detail.php?sn=312653"
         }
-      ]
+      ],
+      "publisherUrl": "https://news.pchome.com.tw/game/gamer/20261001/index-79084091879687203104.html"
     },
     {
       "id": "softworld-official-rss-rss-snapshot-75419094a988731f1a32",
@@ -6612,7 +6656,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-4252de40df7e848e9d9f",
-      "matchedRule": "stablecoin-core"
+      "matchedRule": "stablecoin-core",
+      "publisherUrl": "https://news.cnyes.com/news/id/6619379"
     },
     {
       "id": "softworld-api-google-news-43585b95e5591daabbdb",
@@ -6633,7 +6678,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-43585b95e5591daabbdb",
-      "matchedRule": "competitor-brand"
+      "matchedRule": "competitor-brand",
+      "publisherUrl": "https://m.moneydj.com/f1a.aspx?a=834cc654-f737-4982-9b0d-9fa7b4578a38&c=MB06"
     },
     {
       "id": "softworld-api-rss-snapshot-3295e75a0c8c4d632590",
@@ -6828,7 +6874,8 @@
           "source": "PChome新聞",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOMFNlX0NfQy05NXBBSnpSWnhqci1QbjdBYi00QzM4MEQ5VUJLN0YxbHBPWEpLM0JWeGlfZkpfRGxJal9jVG5KMkVkNmNMeFR4M3YtcVJsYmVSeVMxUDFka1JrRmZwX1J5X215Zmd0RzM2SlZVMEdMVXhkQ045RkpNQU9GOUxvZjd3NndZag?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://today.line.me/tw/v3/article/RBKN3Re"
     },
     {
       "id": "softworld-api-google-news-efa55d8c9ef043237acf",
@@ -7205,7 +7252,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-a704bfc8a1a09cd43776",
-      "matchedRule": "stablecoin-core"
+      "matchedRule": "stablecoin-core",
+      "publisherUrl": "https://today.line.me/tw/v3/article/aGpZXMp"
     },
     {
       "id": "softworld-official-rss-rss-snapshot-cc754f6ee173a38dd12d",
@@ -7428,7 +7476,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-e1cc38335cd12bdb4eca",
-      "matchedRule": "competitor-global-game"
+      "matchedRule": "competitor-global-game",
+      "publisherUrl": "https://news.pchome.com.tw/game/gamer/20260930/index-79077698999774203104.html"
     },
     {
       "id": "softworld-monitoring-google-news-e1cc38335cd12bdb4eca",
@@ -7540,7 +7589,8 @@
           "source": "中央社 產經證券",
           "url": "https://www.cna.com.tw/news/aopl/202609300353.aspx"
         }
-      ]
+      ],
+      "publisherUrl": "https://tw.news.yahoo.com/%E5%8D%B0%E5%B0%BC%E6%93%B4%E5%A4%A7qris%E8%B7%A8%E5%A2%83%E6%94%AF%E4%BB%98-%E6%8B%93%E5%B1%95%E9%A6%99%E6%B8%AF-%E6%9D%B1%E5%B8%9D%E6%B1%B6%E9%80%A3%E7%B5%90-133103993.html"
     },
     {
       "id": "softworld-api-07713b5b-8a17-49b5-ab5b-43fcab19d04b",
@@ -7641,7 +7691,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-116d723ec74a0e44818f",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.cmoney.tw/forum/article/185029797"
     },
     {
       "id": "softworld-official-rss-rss-snapshot-bc99e7c4df1f0872d398",
@@ -7709,7 +7760,8 @@
           "source": "自由電子報 財經",
           "url": "https://ec.ltn.com.tw/article/breakingnews/5591266"
         }
-      ]
+      ],
+      "publisherUrl": "https://tw.news.yahoo.com/%E6%89%8B%E6%A9%9F%E7%B6%81%E8%A1%8C%E5%8B%95%E6%94%AF%E4%BB%98-%E9%80%99%E5%AE%B6%E9%8A%80%E8%A1%8C%E6%9C%80%E9%AB%9810-%E7%8F%BE%E9%87%91%E5%9B%9E%E9%A5%8B-124132919.html"
     },
     {
       "id": "softworld-api-6bffda4d-28ca-49a7-adfe-8bd2655baeba",
