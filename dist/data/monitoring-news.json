@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-10-03T21:29:02.898Z",
-  "syncedAt": "2026-10-03T23:01:16.593Z",
+  "generatedAt": "2026-10-04T02:17:59.180Z",
+  "syncedAt": "2026-10-04T02:35:52.560Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,16 +10,16 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 1961,
-    "matchedItems": 1797,
+    "totalItems": 1964,
+    "matchedItems": 1800,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 1961,
-        "matchedItems": 1865,
-        "generatedAt": "2026-10-03T21:29:02.898Z",
+        "totalItems": 1964,
+        "matchedItems": 1868,
+        "generatedAt": "2026-10-04T02:17:59.180Z",
         "range": {
           "from": "2026-08-04",
           "to": "2026-10-04"
@@ -28,6 +28,66 @@
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-8d081057-8c24-4a87-809b-eae7e6d4dfd2",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "OBOOK Holdings Flags OwlPay Harbor Hit $130m Annualised volume",
+      "source": "The Fintech Times",
+      "date": "2026-10-04",
+      "publishedAt": "2026-10-04T02:00:04.000Z",
+      "url": "https://thefintechtimes.com/obook-holdings-flags-owlpay-harbor-hit-130m-annualised-volume/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "OBOOK says its digital currency cross-border payments platform reached $130m in annualised run-rate volume, though H1 2026 revenue came in at under $4m. The post OBOOK Holdings Flags OwlPay Harbor Hit $130m Annualised volume appeared first on The Fintech Times . OBOOK Holdings (NASDAQ: OWLS), the Taiwan-headquartered fintech operating globally under the OwlTing brand, has released preliminary unaudited revenue for the first half of 2026 and an operating update for OwlPay Harbor, its digital currency-based cross-border enterprise payments platform. The results land ahead of a full unaudited ear",
+      "sourceId": "8d081057-8c24-4a87-809b-eae7e6d4dfd2",
+      "matchedRule": "stablecoin-brand,stablecoin-core"
+    },
+    {
+      "id": "softworld-api-59630c82-568c-40ab-a140-8f24e668d25c",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Zano 駭客印出 1,800 兆枚假穩定幣！鏈上無法辨別，團隊回滾一個月",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-04",
+      "publishedAt": "2026-10-04T01:58:52.000Z",
+      "url": "https://www.blocktempo.com/zano-fake-coins-blockchain-rollback-gateway-address-exploit/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "Zano 駭客利用 Gateway Address 漏洞無限量印幣，3,690 萬枚假 ZANO 與 1,80 [&#8230;] 〈 Zano 駭客印出 1,800 兆枚假穩定幣！鏈上無法辨別，團隊回滾一個月 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 Zano 駭客利用 Gateway Address 漏洞無限量印幣，3,690 萬枚假 ZANO 與 1,800 兆枚穩定幣湧入鏈上。因為假幣與真錢無法區分，團隊決定回滾約一個月區塊鏈，用資金補償受影響使用者。 （前情提要：Zano鏈回滾一個月！Gateway Address漏洞印出假幣，團隊斷尾求生） （背景補充：9 月加密駭案狂飆 7.66 億鎂！Bitget、Liquid Network 雙案佔九成） Zano 官方在 10 月 2 日發布事後報告，揭露一名攻擊者在過去一個月內，透過 Gateway Address 漏洞共鑄造了約 3,690 萬枚 ZANO 代幣，以及高達 1.8 兆枚 Freedom Dollar（fUSD）穩定幣。 這些假幣在鏈上表現與正常代幣完全相同，可以正常轉帳、交易，內部團隊直到第二波鑄造出現才察覺異常。因為假幣與真錢無法區分，團隊決定回滾約一個月區塊鏈，用資金補償受影響使用者。 https://t.co/DMZqzcTyL1 &mdash; Zan",
+      "sourceId": "59630c82-568c-40ab-a140-8f24e668d25c",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-2991e5b463f11ebb7e0c",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "加密業支付商 OpenPayd 拚年底那斯達克掛牌，明年 4 月進軍美國",
+      "source": "ABMedia 區塊鏈媒體",
+      "date": "2026-10-04",
+      "publishedAt": "2026-10-04T01:38:58.000Z",
+      "url": "https://abmedia.io/openpayd-nasdaq-listing-us-launch",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "Kraken、OKX 的出入金服務商 OpenPayd 執行長表示，與 SPAC Titan 的合併案已進入 SEC 審查最後階段，預計年底前在那斯達克掛牌，2027 年 4 月前推出美國服務，並計畫以上市股票進行併購。 這篇文章 加密業支付商 OpenPayd 拚年底那斯達克掛牌，明年 4 月進軍美國 最早出現於 鏈新聞 ABMedia 。 為 Kraken、OKX 等加密業者提供法幣出入金服務的支付基礎設施商 OpenPayd，預計今年底前完成在那斯達克（Nasdaq）掛牌。執行長 Iana Dimitrova 接受 CoinDesk 專訪 時表示，上市資金將用於進軍美國與後續併購，目標在 2027 年 4 月前向美國客戶推出服務。 與 SPAC Titan 合併，SEC 審查進入最後階段 OpenPayd 總部位於倫敦，今年 6 月 宣布 與特殊目的收購公司（SPAC）Titan Acquisition Corp. 簽署合併協議，完成後將以代號「OP」在那斯達克交易。依公司公告，交易以預估合併後基礎計算，給予 OpenPayd 11.45 億美元的股權價值；若 Titan 公眾股東未贖回，OpenPayd 最多可從 Titan 信託帳戶取得 2.76 億美元。 Dimitrova 表示，合併案目前處於美國證券交易委員會（SEC）審查的最後階段，除非出現重大外部變數，預計今年內",
+      "sourceId": "rss-snapshot-2991e5b463f11ebb7e0c",
+      "matchedRule": "taiwan-payment-core,stablecoin-core,stablecoin-circle"
+    },
     {
       "id": "softworld-api-rss-snapshot-e3afe3ec13a0a4035d2a",
       "origin": "monitoring",
@@ -9786,7 +9846,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-87939e45672db6d3a10d",
-      "matchedRule": "softworld-brand,competitor-global-game"
+      "matchedRule": "softworld-brand,competitor-global-game",
+      "publisherUrl": "https://app.mycard520.com.tw/news-%E7%8D%B2%E6%A0%AA%E5%BC%8F%E6%9C%83%E7%A4%BE%E5%85%89%E6%A6%AE%E7%89%B9%E5%BA%AB%E6%91%A9%E9%81%8A%E6%88%B2%E3%80%8A%E4%BF%A1%E5%96%B5%E4%B9%8B%E9%87%8E%E6%9C%9B%E3%80%8Bip%E6%8E%88%E6%AC%8A/"
     },
     {
       "id": "softworld-api-rss-snapshot-5cf7c26dff17c6f49a91",
@@ -9911,7 +9972,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-11bb6802e0d7224c6d1b",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.ettoday.net/news/20260930/3246183.htm"
     },
     {
       "id": "softworld-api-google-news-255df30b6903e37661ff",
@@ -9934,7 +9996,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-255df30b6903e37661ff",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.nownews.com/news/6879192"
     },
     {
       "id": "softworld-api-google-news-6ecc4357f07dc3ef812f",
@@ -9964,7 +10027,8 @@
           "source": "三立新聞網",
           "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1qWWRISHh2aW9TcnlUa1lFWG1HTXBQSmFPX3IzYmxEaVFSdDdCdzNYOHBhTjR1MjBsU0lob2pYY3RsQzZFYkN3aNIBTEFVX3lxTFA1NlA5Si1wZVpnZzh1UDhicnRfQlVObzBKNUl4Ri1HYmhZcFVTYTNqNnNfQmJPaEJJYUFNMVo2bVc5QW5RRENvS1gzZjU?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://tw.news.yahoo.com/%E6%9C%80%E5%BE%8C%E6%A9%9F%E6%9C%83-line-1%E5%8A%9F%E8%83%BD%E4%BB%8A%E5%81%9C%E7%94%A8-%E5%BF%AB%E5%82%99%E4%BB%BD%E7%85%A7%E7%89%87-003800074.html"
     },
     {
       "id": "softworld-api-google-news-b02d780fb1299502bc12",
@@ -9987,7 +10051,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-b02d780fb1299502bc12",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://news.ebc.net.tw/news/living/573518"
     },
     {
       "id": "softworld-api-google-news-e0c293a40a19786aa1d2",
@@ -10017,7 +10082,8 @@
           "source": "中國時報／中時新聞網",
           "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1VMWZWdk50RlBlZEw0V3dDMjFGSEdpZnJuSWhQQ1JSMlA2UGxseGJOQ0tLcTUyMGZkT2NpclVxV2szNmU0d2dqQ3hQWkNvZVNWdlBDbmJxOXU2bHNkS2VtN2FHT2VDemRqMlVQTG13?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://www.ctee.com.tw/news/20260930700528-431401"
     },
     {
       "id": "softworld-api-google-news-c975d8f597389ce4aa2b",
@@ -10040,7 +10106,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-c975d8f597389ce4aa2b",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.mirrormedia.mg/external/setn_1914871"
     },
     {
       "id": "softworld-api-google-news-38ecbc641ffcf956e413",
@@ -10063,7 +10130,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-e6b3627c1da79d9e4a9d",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://today.line.me/tw/v3/article/LXemE3z"
     },
     {
       "id": "softworld-monitoring-google-news-42dcd1a33662368e7329",
@@ -10085,7 +10153,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-153e49c31afb9c64f093",
-      "matchedRule": "industry-game-platform"
+      "matchedRule": "industry-game-platform",
+      "publisherUrl": "https://today.line.me/tw/v3/article/oqpZJEP"
     },
     {
       "id": "softworld-api-1dca7bff-a3e0-454e-9594-79478c0e90ac",
@@ -10190,7 +10259,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-dd59c221d5e28ae5eb05",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://tw.news.yahoo.com/line-1%E5%8A%9F%E8%83%BD-%E4%BB%8A10%E9%BB%9E%E8%B5%B7%E5%81%9C%E7%94%A8-%E8%B3%87%E6%96%99-%E7%85%A7%E7%89%87%E6%B2%92%E5%82%99%E4%BB%BD%E5%BC%B7%E5%88%B6%E5%88%AA%E9%99%A4-235158291.html"
     },
     {
       "id": "softworld-api-google-news-4f3d2d01694619ae34d1",
@@ -10213,7 +10283,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-4f3d2d01694619ae34d1",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.chinatimes.com/realtimenews/20260930000984-260405"
     },
     {
       "id": "softworld-api-ba7126c4-1841-42af-b471-d87be717ba50",
@@ -10256,7 +10327,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-a75fcc74f23a32d9830e",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://tw.news.yahoo.com/line%E6%96%B0%E5%8A%9F%E8%83%BD-15%E5%88%86%E9%90%98%E5%85%A7-%E8%A8%8A%E6%81%AF%E5%8F%AF%E4%BF%AE%E6%94%B9-%E5%85%8D%E8%B2%BB%E9%96%8B%E5%95%9F%E6%95%99%E5%AD%B8%E7%9C%8B%E9%80%99-231030379.html"
     },
     {
       "id": "softworld-monitoring-google-news-9e7c38ee40bfe196d3d7",
