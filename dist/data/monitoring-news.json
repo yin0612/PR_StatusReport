@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-10-07T12:48:33.103707Z",
-  "syncedAt": "2026-10-07T13:17:36.779Z",
+  "generatedAt": "2026-10-07T16:40:52.470Z",
+  "syncedAt": "2026-10-07T19:57:56.870Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,24 +10,533 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 2435,
-    "matchedItems": 2173,
+    "totalItems": 2473,
+    "matchedItems": 2211,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 2435,
-        "matchedItems": 2281,
-        "generatedAt": "2026-10-07T12:48:33.103707Z",
+        "totalItems": 2473,
+        "matchedItems": 2319,
+        "generatedAt": "2026-10-07T16:40:52.470Z",
         "range": {
-          "from": "2026-08-07",
-          "to": "2026-10-07"
+          "from": "2026-08-08",
+          "to": "2026-10-08"
         }
       }
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-rss-snapshot-d7acf7b327ff1d84b6b1",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "AI生財 2／Swatch把AI變成腕錶設計師！同句提示詞，也不會做出同一支錶",
+      "source": "經濟日報 產經國際",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-07T16:06:46.000Z",
+      "url": "https://money.udn.com/money/story/122979/9744174",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "編按：日經TRENDY規劃「成功之鑰」系列，瑞士腕錶品牌Swatch推出「AI-DADA」，這是用AI設計腕錶的新服務，透過提示詞創造無限變化。文／大谷真幸；譯／泉采子(接上篇：AI生財 1／",
+      "sourceId": "rss-snapshot-d7acf7b327ff1d84b6b1",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-88c454a2bd3fc3455522",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "AI生財 1／40年設計資料庫餵給AI！Swatch把品牌歷史變成客製化生意",
+      "source": "經濟日報 產經國際",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-07T16:03:00.000Z",
+      "url": "https://money.udn.com/money/story/122979/9744171",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "瑞士腕錶品牌Swatch於2026年3月，在日本推出使用AI設計工具「AI-DADA」的服務。使用者只要在官方網站輸入提示詞，AI就會生成腕錶設計，完成後還能直接把這項設計製作成商品讓人購買。AI-DADA中的AI代表「Artistic Intelligence（藝術智慧）」，DADA則源自藝術運動「達達主義」。這項服務在歐洲已於2026年2月率先從法國開始，之後陸續推展至其他市場。使用者須登入Swatch帳號才能使用這項服務。在AI-DADA設計工具的輸入欄中，輸入自己構思的提示詞後，AI便會依據內容開始設計，約兩分鐘即可顯示生成的圖案。據Swatch表示，這些設計是以公司40多年來累積的產品設計及檔案資料為基礎生成。",
+      "sourceId": "rss-snapshot-88c454a2bd3fc3455522",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-cc394ed30161e6c5e502",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Agentic payments expose blind spots in fraud controls",
+      "source": "Fintech Global",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T15:29:07.000Z",
+      "url": "https://fintech.global/2026/10/07/agentic-payments-expose-blind-spots-in-fraud-controls/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=agentic-payments-expose-blind-spots-in-fraud-controls",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "中",
+      "tags": [
+        "金融支付",
+        "產業監測"
+      ],
+      "excerpt": "As AI agents begin making purchases for customers, the financial crime controls built around human behaviour may be looking in the wrong place. According to Vivox AI, a transaction can sit comfortably within every spending limit and still stem from a manipulated decision made long before checkout. Vivox AI&#8217;s analysis draws on a panel held [&#8230;] The post Agentic payments expose blind spots in fraud controls appeared first on FinTech Global . As AI agents begin making purchases for customers, the financial crime controls built around human behaviour may be looking in the wrong place. A",
+      "sourceId": "rss-snapshot-cc394ed30161e6c5e502",
+      "matchedRule": "international-fintech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-4192f5452f8e8a518f81",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "“iPod 之父”法德尔分析 Rabbit R1 等初代 AI 设备为何失败：没能真正满足任何需求",
+      "source": "IT之家",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T15:19:07.000Z",
+      "url": "https://www.ithome.com/1/010/299.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "<p data-vmark=\"882d\">IT之家 10 月 7 日消息，被誉为“iPod 之父”的托尼 · 法德尔最近在首届麻省理工未来节发表演讲。他上台时展示了三款曾经备受追捧的第一代 AI 设备：Rabbit R1、Humane AI Pin 和 Limitless Pendant，并说道：“这些产品背后的公司都找过我，希望我能给些建议，然而我都拒绝了。”</p><p style=\"text-align: center;\" data-vmark=\"55bb\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/10/26612049-dba4-431f-aaec-fd3ba12f9779.jpg?x-bce-process=image/format,f_auto\" w=\"640\" h=\"480\" data-weibo=\"0\" data-vmark=\"d7ef\" class=\"no-alt-img\"></p><p data-vmark=\"0c7b\">托尼 · 法德尔表示：“这些设备失败的原因很简单，<strong>它们没能真正满足任何实际需求</strong>。极客看到这些小玩意可能觉得很有意思，但普通用户只会觉得，它们确实很酷，但和我的生活并没什么关系。所以你必须真正理解自己想做什么，以及需要解决什么痛点。”</p><p",
+      "sourceId": "rss-snapshot-4192f5452f8e8a518f81",
+      "matchedRule": "industry-platform-business"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-8b262fd9dba965617365",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "The State of Fintech: The Top Insights into European Payments Evolution",
+      "source": "Finextra",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T15:00:00.000Z",
+      "url": "https://www.finextra.com/videoarticle/3597/the-state-of-fintech-the-top-insights-into-european-payments-evolution?utm_medium=rssfinextra&utm_source=finextrafeed",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "中",
+      "tags": [
+        "金融支付",
+        "產業監測"
+      ],
+      "excerpt": "In this interview, we break down the results from a recent State of Fintech report, providing a concise overview of the top insights. Recording with FinextraTV from the Visa Direct offices, Olga Ovchinnikova, VP, Head of Visa Direct Europe covers: - How complexity within cross-border is becoming a barrier to growth - What the report teaches about the role of partners and how to avoid overdependence - The rise of Neobanks and how their success is expanding beyond just Europe - How demographic shifts are redefining definitions of 'wealth' and what these means for fintech offerings",
+      "sourceId": "rss-snapshot-8b262fd9dba965617365",
+      "matchedRule": "international-fintech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-0f3bf0c4050aaf37ea7b",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《教妹妹開車》測試版玩家暴增20倍 開發團隊透露Gemini AI每日燒掉近千美元得申請貸款維持",
+      "source": "4Gamers",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T15:00:00.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82482/teach-sister-to-drive-ai-costs",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "在 Steam 提供試玩版的 AI 互動遊戲《教妹妹開車》（Teach the Sister to Drive），近期因玩家人數快速增加，讓開發團隊面臨意料之外的 AI 服務成本壓力。官方近日發布公告詳細說明目前 AI 服務遇到的額外收費問題，坦言團隊甚至已經申請銀行貸款來維持試玩版的營運。 <p><picture><source srcset=\"https://img.4gamers.com.tw/puku-clone-version/e89e66cce49815639a9194348e16b26811a43873.jpg\" media=\"(min-width: 992px)\"><img alt=\"ss_4ebfbf872baba573f51fabc7b3eb307e3d4bdd4c.1920x1080\" height=\"450\" src=\"https://thumbor.4gamers.com.tw/O7BjHqXL9ykOUa_-rEYOo035tdU=/800x0/filters:extract_cover():no_upscale():quality(80)/https%3A%2F%2Fimg.4gamers.com.tw%2Fpuku-clone-version%2Fe89e66cce49815639a9194348e16b26811a43873.jpg\" width=",
+      "sourceId": "rss-snapshot-0f3bf0c4050aaf37ea7b",
+      "matchedRule": "industry-game-platform,industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-9319d1820dade765d87a",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "赛豆 AIVA ME7 量产路测车无伪谍照曝光，定位介于轿车与 SUV 之间的跨界车",
+      "source": "IT之家",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T14:51:53.000Z",
+      "url": "https://www.ithome.com/1/010/294.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "<p data-vmark=\"9cb5\">IT之家 10 月 7 日消息，博主 @SugarDesign 今日曝光了赛豆 AIVA ME7 量产版路测无伪谍照。</p><p style=\"text-align: center;\" data-vmark=\"9d48\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/10/8f05849b-6cba-4cef-bb44-a8095e507774.png?x-bce-process=image/format,f_auto\" w=\"798\" h=\"800\" data-weibo=\"0\" data-snap-from=\"%7B%22from%22%3A%22weibo%22%2C%22url%22%3A%22https%3A%2F%2Fweibo.com%2F2133500025%2FRlBB1mE8L%22%2C%22qualityMode%22%3A%22auto%22%2C%22qualityValue%22%3A%22png256%22%7D\" data-mpos=\"2,0\" data-marks=\"1931fd9d012eb6d10145c12e57675c1f99e483f2082734cb1b950fbff817d51aa61eaf5ccc2c01cd4900b995c",
+      "sourceId": "rss-snapshot-9319d1820dade765d87a",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-577067aec73548431c57",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "SAP expands into payments",
+      "source": "Payments Dive",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T14:48:00.000Z",
+      "url": "https://www.paymentsdive.com/news/sap-expands-payments-finance-automation-push-deepens/832358/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "<figure><div><img src=\"https://imgproxy.divecdn.com/pq6u43gClZ2Fwiip_mhbs6yxJlG2k27A4V1lGHsfpHM/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9HZXR0eUltYWdlcy0yMTgwNzk1NzE1X1pOZ0YzVzIuanBn.webp\"/></div></figure><p>A new service from the software firm supports multiple payment methods, including wires and stablecoin-based transactions, the company said.</p>",
+      "sourceId": "rss-snapshot-577067aec73548431c57",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-7a4a967b765e198054bc",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "谷歌 SynthID 面向全球用户开放，可检测 AI 生成内容",
+      "source": "IT之家",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T14:47:41.000Z",
+      "url": "https://www.ithome.com/1/010/293.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "<p data-vmark=\"3ee5\">IT之家 10 月 7 日消息，谷歌公司昨天宣布，其 AI 生成内容检测网站 SynthID 已面向全球用户开放，用户可使用该产品检测图片、视频或音频是否由 AI 生成。</p><p style=\"text-align: center;\" data-vmark=\"2a32\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/10/8ac72608-e47b-4f89-ae32-14a98c405a95.jpg?x-bce-process=image/format,f_auto\" w=\"1440\" h=\"781\" data-weibo=\"0\" data-mpos=\"0,2\" data-vmark=\"a619\" class=\"no-alt-img\"></p><p data-vmark=\"7999\">据介绍，该网站使用 SynthID 识别媒体内容是否由 AI 生成。作为参考，<strong>谷歌 2023 年推出 SynthID</strong>，这是一种嵌入在 Nano Banana、Veo 和 Lyria 模型的隐形水印。除此之外，<strong>OpenAI、英伟达和 Kakao 也支持该工具</strong>。</p><p data-vmark=\"8506\">谷歌已经将 Synt",
+      "sourceId": "rss-snapshot-7a4a967b765e198054bc",
+      "matchedRule": "industry-platform-business"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-3cbaecaa12d2029e40ba",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Stripe, FedEx team on SMB lending",
+      "source": "Payments Dive",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T14:41:17.000Z",
+      "url": "https://www.paymentsdive.com/news/stripe-fedex-team-on-smb-lending-business-capital-logistics/832368/",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "中",
+      "tags": [
+        "金融支付",
+        "產業監測"
+      ],
+      "excerpt": "<figure><div><img src=\"https://imgproxy.divecdn.com/DyGxnBTJRh9RPeOiPHnBDoI9SqlN_mqdfHAEwph3BEI/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9HZXR0eUltYWdlcy0xMzU3NTEzNzM3X3JMYldBWEsuanBn.webp\"/></div></figure><p>Merging operational and financial data will offer insights into smaller businesses and guide an effort to extend capital to them, the companies said.</p>",
+      "sourceId": "rss-snapshot-3cbaecaa12d2029e40ba",
+      "matchedRule": "international-fintech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-f7a5ced9bdef82d55d3d",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Netflix發行《魔物獵人崛起》手機版登陸雙平台 提供觸控操作介面與新增功能",
+      "source": "4Gamers",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T14:39:23.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82480/monster-hunter-rise-netflix-mobile",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "卡普空的狩獵動作遊戲《魔物獵人 崛起》（Monster Hunter Rise）即將透過 Netflix 登陸 iOS 與 Android 平台，目前發行區域僅為菲律賓及馬來西亞，台灣商店尚未上架。 <p><img alt=\"1unnamed\" height=\"900\" src=\"https://img.4gamers.com.tw/puku-clone-version/40c319b0032bb42616d584d6d0e49f6bdae6e282.webp\" width=\"1600\"></p> <p> </p> <p>卡普空的狩獵動作遊戲《魔物獵人 崛起》（Monster Hunter Rise）即將透過 Netflix 登陸 iOS 與 Android 平台，目前發行區域僅為菲律賓及馬來西亞，台灣商店尚未上架。</p> <p> </p> <p><img alt=\"3unnamed\" height=\"900\" src=\"https://img.4gamers.com.tw/puku-clone-version/aa66667379b168534a7a3df03dd85aed40c0a9f1.webp\" width=\"1600\" loading=\"lazy\"></p> <p> </p> <p>《魔物獵人 崛起》是款以和風聚落「神火村」為主題帶來嶄新的狩獵環境，並提供玩家可以使用翔",
+      "sourceId": "rss-snapshot-f7a5ced9bdef82d55d3d",
+      "matchedRule": "competitor-global-game"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-e37c9f415df9cfaa1b24",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "余承东：华为 Mate XT 2 三折叠手机出货已近 10 万台，预计总量也将超百万台",
+      "source": "IT之家",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T14:18:13.000Z",
+      "url": "https://www.ithome.com/1/010/290.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "<p data-vmark=\"6ad0\">IT之家 10 月 7 日消息，在 9 月初的 HarmonyOS 7 | HUAWEI Mate XT 2 及全场景新品发布会上，华为常务董事、产品投资评审委员会主任、终端 BG 董事长余承东正式发布了 Mate XT 2 非凡大师全新展翼三折叠手机。</p><p style=\"text-align: center;\" data-vmark=\"cde6\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/9/c82a0cbf-96a8-4661-9f95-dc07b847f9d1.jpg?x-bce-process=image/auto-orient,o_1\" w=\"1440\" h=\"637\" data-vmark=\"50dc\" data-mpos=\"0,0\" data-weibo=\"0\" class=\"no-alt-img\"></p><p data-vmark=\"7e46\">据余承东在 9 月 29 日的国际媒体圆桌会议上透露，Mate XT 2 是华为的第二代三折叠手机，<strong>截至目前，出货量已经接近 10 万台，华为预计其总出货量将超过 100 万台</strong>。</p><p data-vmark=\"d7e1\">他表示，华为已经在折叠屏手机领域耕耘了八年，在折",
+      "sourceId": "rss-snapshot-e37c9f415df9cfaa1b24",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-d8d2d6900ebf8345e2d9",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "余承东分享华为终端未来十年长期战略，围绕鸿蒙智行 / 办公、智能家居、运动健康、影音娱乐展开",
+      "source": "IT之家",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T14:00:12.000Z",
+      "url": "https://www.ithome.com/1/010/288.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "<p data-vmark=\"6aa5\">IT之家 10 月 7 日消息，华为海外 X 账号昨日发布了 9 月 29 日的国际媒体圆桌会议摘要。</p><p data-vmark=\"1d0c\" style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/10/eb45de52-0c3d-41ea-9820-427af6a85621.jpg\" w=\"740\" h=\"492\" data-vmark=\"b7bc\" data-mpos=\"1,0\" data-weibo=\"0\" data-marks=\"1931fd9d012eb6d1341cd6a228d8eb9877b5bd059b4d5378f0f616564fe8ffdc756bd8b296fce55a478bc47f38891140\" class=\"no-alt-img\"></p><p data-vmark=\"880a\">据华为常务董事、产品投资评审委员会主任、终端 BG 董事长余承东回忆，自己于 1993 年加入华为，距今已经 33 年。</p><p data-vmark=\"c6cc\">刚加入公司时，余承东参与了华为第一代程控交换机的研发。后来，他参与创立了华为无线通信业务，这项业务最初从 GSM 起步。</p><p data-",
+      "sourceId": "rss-snapshot-d8d2d6900ebf8345e2d9",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-9bbfc6b0c81233589942",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "比特幣跌破 8.3 萬鎂、以太坊失守 $2600！全網爆倉近 7 億美元",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T13:54:10.000Z",
+      "url": "https://www.blocktempo.com/crypto-market-crash-btc-83k-eth-2600-liquidations-695m/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "加密貨幣市場再度遭遇無情賣壓！台北時間 10 月 7 日晚間，比特幣（BTC）短線急墜跌破 8.3 萬美元大關 [&#8230;] 〈 比特幣跌破 8.3 萬鎂、以太坊失守 $2600！全網爆倉近 7 億美元 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 加密貨幣市場再度遭遇無情賣壓！台北時間 10 月 7 日晚間，比特幣（BTC）短線急墜跌破 8.3 萬美元大關，以太坊（ETH）亦失守 2,600 美元。突如其來的暴跌讓多頭慘遭血洗，根據 CoinGlass 數據，過去 24 小時全網爆倉金額高達 6.95 億美元，超過 12 萬名投資者慘遭清算，最大單筆損失更超過 2,600 萬美元。 （前情提要：SEC 首開 3 倍槓桿加密 ETF！比特幣以太坊上陣，但專家警告：只適合短線交易） （背景補充：Glassnode 示警：比特幣衝 8.5 萬鎂遇壓，短期持有者狂倒貨、8.1 萬成防守關鍵） 加密貨幣市場在台北時間 10 月 7 日晚間再次迎來劇烈震盪，強大的賣壓讓多頭防線全面潰堤。市值最大的加密貨幣比特幣（BTC）短線急挫，直接跌破 83,000 美元大關；而以太坊（ETH）同樣無法倖免，失守 2,600 美元重要心理關口，市場恐慌情緒迅速升溫。 逾 12 萬人遭清算，單筆最慘噴掉 2664 萬鎂 這波急跌行情讓合約市場的投資者付出了",
+      "sourceId": "rss-snapshot-9bbfc6b0c81233589942",
+      "matchedRule": "industry-game-market,stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-4bdb298622782c250e09",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "川普家族加密項目 WLFI 要把 USD1 推到各大電商！Q4 上線，自己發幣離信託銀行牌照又近一步",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T13:28:29.000Z",
+      "url": "https://www.blocktempo.com/wlfi-brings-usd1-payments-to-online-platforms-mesh-partnership-q4-2026/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "川普家族支援的 WLFI 宣布與 Mesh 合作，將 USD1 穩定幣推向電商與線上商家，Q4 上線；同時 W [&#8230;] 〈 川普家族加密項目 WLFI 要把 USD1 推到各大電商！Q4 上線，自己發幣離信託銀行牌照又近一步 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 川普家族支援的 WLFI 宣布與 Mesh 合作，將 USD1 穩定幣推向電商與線上商家，Q4 上線；同時 WLFI 已獲 OCC 信託銀行條件性核准，有望自行發行 USD1。 （前情提要：川普家族 WLFI 傳出將獲「國家信託銀行」牌照！前 OCC 官員表示難以駁回） （背景補充：社群銀行團體起訴美國貨幣署！控加密公司拿信託銀行牌照「規避監管」） 川普家族支援的加密專案 World Liberty Financial（WLFI）週三在 Token2049 新加坡展上公布兩項進展：與支付基礎設施公司 Mesh 合作，將 USD1 穩定幣推向電商與線上商家，預計本季上線；同時，WLFI 已獲得美國貨幣監管局（OCC）信託銀行牌照條件性核准，可將 USD1 發行權從 BitGo 收歸己有。 USD1 上線電商，Q4 就能看到 WLFI 執行長 Zach Witkoff、共同創辦人 Zak Folkman 與 Mesh 共同創辦人兼執行長 Bam Azizi 在穩",
+      "sourceId": "rss-snapshot-4bdb298622782c250e09",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-63dd1799f249cb03f0e0",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Polymarket CEO：追 100x 代幣是不理性狂熱，交易員在玩「熱土豆」遊戲",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T13:22:22.000Z",
+      "url": "https://www.blocktempo.com/polymarket-ceo-coplan-chasing-100x-tokens-irrational-exuberance-hot-potato/",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "Polymarket 執行長 Shayne Coplan 在 Token2049 新加坡直言，加密交易變成「不 [&#8230;] 〈 Polymarket CEO：追 100x 代幣是不理性狂熱，交易員在玩「熱土豆」遊戲 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 Polymarket 執行長 Shayne Coplan 在 Token2049 新加坡直言，加密交易變成「不理性狂熱」和「熱土豆」遊戲，交易員明知代幣不值錢仍搶進，賭漲 100 倍後落跑。他同時指出，部分交易者已轉向預測市場尋求更穩定的勝率，Polymarket 七天交易量達 12.1 億美元、僅次於 Kalshi 的 23 億美元。 （前情提要：Polymarket發幣？預告Token 2049驚喜，社群猜測將公布代幣訊息） （背景補充：30 個名校菁英「秘密群組」專押 Polymarket，兩年賺 4000 萬鎂） 預測市場平台 Polymarket 執行長 Shayne Coplan 在 Token2049 新加坡的火爐對話中放話：加密貨幣交易正變成一場「不理性狂熱」（irrational exuberance），交易員搶著當最早挖到下一個 100 倍幣的投資人，但實際上在玩的是「熱土豆」遊戲。 「人們以為自己在買東西，但那東西根本不值錢，他們還是買。能漲 100",
+      "sourceId": "rss-snapshot-63dd1799f249cb03f0e0",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-0a3ac39bdd846e62f781",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Sumsub launches reusable KYC gateway",
+      "source": "Finextra",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T13:22:00.000Z",
+      "url": "https://www.finextra.com/pressarticle/111179/sumsub-launches-reusable-kyc-gateway?utm_medium=rssfinextra&utm_source=finextrafeed",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "Sumsub, the AI-powered trust infrastructure for compliance operations at scale, today launched Reusable KYC Gateway at Token2049 Singapore. MiniPay, one of the fastest growing stablecoin wallets, is the first live integrator, giving its users a shared verification experience across MiniPay's partner network.",
+      "sourceId": "rss-snapshot-0a3ac39bdd846e62f781",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-31ebfdb5798f381f3f81",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Tether 結盟哈薩克央行！簽署 MoU 探討堅戈穩定幣與 RWA 代幣化試點",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T13:16:38.000Z",
+      "url": "https://www.blocktempo.com/tether-signs-mou-kazakhstan-national-bank-alatau-tokenization/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "穩定幣巨頭 Tether 正式進軍中亞主權金融基礎設施！據 Tether 於今（7）日發布的官方公告，該公司已 [&#8230;] 〈 Tether 結盟哈薩克央行！簽署 MoU 探討堅戈穩定幣與 RWA 代幣化試點 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 穩定幣巨頭 Tether 正式進軍中亞主權金融基礎設施！據 Tether 於今（7）日發布的官方公告，該公司已與哈薩克共和國央行（NBK）及阿拉套市管理局（ACA）正式簽署諒解備忘錄（MoU）。三方將共同探討國際穩定幣發行模式、規劃錨定哈薩克本國貨幣堅戈（tenge）的穩定幣概念與試點提案，並評估導入 Tether 旗下代幣化平台「Hadron by Tether」推進現實世界資產（RWA）代幣化。 （前情提要：Tether 被告了！凍結 276 萬美元 USDT 沒說理由，Conduit 開戰） （背景補充：USDT 重回比特幣網路！Tether 在 RGB 協議發行：私密轉帳與 BTC 抵押一次到位） 數位資產產業巨頭 Tether 於 2026 年 10 月 7 日宣布，已與哈薩克共和國央行——哈薩克國家銀行（National Bank of Kazakhstan, NBK）以及阿拉套市管理局（Alatau City Authority, ACA）共同簽署三方諒解備忘錄（",
+      "sourceId": "rss-snapshot-31ebfdb5798f381f3f81",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-351c2f6e0332a2357e46",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "1 億美元押注鏈上信貸！加密做市巨頭 GSR 成立「Hare」金庫，攜手 Aave、Paxos 推出黃金與穩定幣收益",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T13:04:48.000Z",
+      "url": "https://www.blocktempo.com/gsr-launches-100m-onchain-credit-vault-business-hare/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "據 CoinDesk 報導，加密貨幣做市商與交易巨頭 GSR 正式推出名為「Hare」的鏈上信貸與金庫（Vau [&#8230;] 〈 1 億美元押注鏈上信貸！加密做市巨頭 GSR 成立「Hare」金庫，攜手 Aave、Paxos 推出黃金與穩定幣收益 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 據 CoinDesk 報導，加密貨幣做市商與交易巨頭 GSR 正式推出名為「Hare」的鏈上信貸與金庫（Vault）業務，並承諾提供高達 1 億美元的信貸額度作為錨定流動性。Hare 首波推出由 Aave 與 Paxos 支持的穩定幣與代幣化黃金收益產品，全力押注機構金融上鏈趨勢。 （前情提要：加密做市大洗牌：GSR 獲銀行入股，集中度飆升） （背景補充：造市商巨頭 GSR 推出首檔主動型多幣種加密 ETF「BESO」：追蹤 BTC、ETH、SOL 並含質押收益） 隨著機構金融加速轉向區塊鏈，加密做市商巨頭 GSR 正在為鏈上信貸市場注入強大資金動能。根據 CoinDesk 報導，GSR 已承諾投入高達 1 億美元資金，成立名為「Hare」的全新鏈上信貸與金庫（Vault）業務，展現其對鏈上機構金融前景的強烈信心。 1 億美元信貸額度做後盾，自家資金注入錨定流動性 這項全新的金庫業務是 GSR 與流動性分發平台 Turtle 共同搭建，專門負",
+      "sourceId": "rss-snapshot-351c2f6e0332a2357e46",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-4286124f2431e60b3911",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "SIBOS Miami 2026: Mick Fennell &#8211; Business Line Director Payments &#8211; Temenos",
+      "source": "The Fintech Times",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T13:00:40.000Z",
+      "url": "https://thefintechtimes.com/sibos-miami-2026-mick-fennell-business-line-director-payments-temenos/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "where agentic commerce actually stands today, what breaks first in machine-to-machine payments, and how banks should think about tokenized deposits, stablecoins, CBDCs, and crypto The post SIBOS Miami 2026: Mick Fennell &#8211; Business Line Director Payments &#8211; Temenos appeared first on The Fintech Times . Mark Walker of The Fintech Times speaks with Mick Fennell , Business Line Director for Payments for Temenos , at Sibos in Miami about where agentic commerce actually stands today, what breaks first in machine-to-machine payments, and how banks should think about tokenized deposits, sta",
+      "sourceId": "rss-snapshot-4286124f2431e60b3911",
+      "matchedRule": "stablecoin-core,stablecoin-settlement"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-7cdb6f91970937d9c2ce",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Bitcoin Price Analysis: What’s Next for BTC After Sharp Drop Below $84K?",
+      "source": "CryptoPotato",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T12:59:15.000Z",
+      "url": "https://cryptopotato.com/bitcoin-price-analysis-whats-next-for-btc-after-sharp-drop-below-84k/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "Bitcoin is trading below $84K after failing to continue its latest push toward the $90K region. While the general structure remains constructive, the latest pullback and weakening futures taker activity suggest that BTC may need to consolidate before attempting another breakout. Bitcoin Price Analysis: The Daily Chart The daily chart shows a significant structural improvement [&#8230;] Bitcoin is trading below $84K after failing to continue its latest push toward the $90K region. While the general structure remains constructive, the latest pullback and weakening futures taker activity suggest ",
+      "sourceId": "rss-snapshot-7cdb6f91970937d9c2ce",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-af8339cc507854fa95c9",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "保时捷发布面向 2035 年的全新战略：计划最多裁员 30%，明确回归燃油车",
+      "source": "IT之家",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T12:53:24.000Z",
+      "url": "https://www.ithome.com/1/010/282.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "<p data-vmark=\"8b6b\">IT之家 10 月 7 日消息，德国豪华车巨头保时捷今日发布了聚焦中期目标的“Sportwagenschmiede'35”战略。此次计划最多裁员 30% 以缩减组织规模，同时将增加中大型跑车的投放，明确回归燃油车，意在改善盈利。</p><p data-vmark=\"d280\" style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/10/0bac0d6d-0e88-46be-b65e-ecc1ba3414f2.png\" w=\"1440\" h=\"997\" data-weibo=\"0\" data-vmark=\"842e\" class=\"no-alt-img\"></p><p data-vmark=\"b28e\">保时捷官方表示，公司未来将遵循“质大于量”的原则。在更加精简、快速和灵活的组织架构以及更高效流程的配合下，保时捷旨在显著降低盈亏平衡点，使其在低于 20 万辆的新车销量水平下实现盈亏平衡。</p><p data-vmark=\"452b\">产品层面，<strong>保时捷计划将车型衍生版本数量削减约 20%</strong>，以降低组合复杂性，预计中期内每个衍生版本的平均销量提升约 30%；同时把布局重心向利润率更高的 D 级和 E 级",
+      "sourceId": "rss-snapshot-af8339cc507854fa95c9",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-2d46cc281e550942d4a1",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《明日方舟：終末地》10/15 Steam上線 推全新版本「丹青渡」與新幹員祀、明河",
+      "source": "4Gamers",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T12:13:57.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82478/arknights-endfield-ver-1-6-launches-soon",
+      "topic": "遊戲產業",
+      "reportGroup": "industry-new-games",
+      "priority": "中",
+      "tags": [
+        "市場新遊",
+        "重點遊戲"
+      ],
+      "excerpt": "由鷹角網絡出品的 3D 即時策略 RPG 《明日方舟：終末地》於今（7）日宣布，將於 10 月 15 日推出全新版本「丹青渡」。 <p style=\"text-align:center\"><picture><source srcset=\"https://img.4gamers.com.tw/puku-clone-version/739a264ac2a018cc5d578d0e09cc73657b2d81ae.jpg\" media=\"(min-width: 992px)\"><img alt=\"圖01\" height=\"450\" src=\"https://thumbor.4gamers.com.tw/9OpaaWmx9Zok2lLSwnuunu21Et0=/800x0/filters:extract_cover():no_upscale():quality(80)/https%3A%2F%2Fimg.4gamers.com.tw%2Fpuku-clone-version%2F739a264ac2a018cc5d578d0e09cc73657b2d81ae.jpg\" width=\"800\" data-puku-raw-src=\"https://img.4gamers.com.tw/puku-clone-version/739a264ac2a018cc5d578d0e09cc73657b2",
+      "sourceId": "rss-snapshot-2d46cc281e550942d4a1",
+      "matchedRule": "mobile-top-grossing-games,mobile-game-watchlist"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-129781e53cbb3c2c2133",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "台積電為何是最值得投資的AI股？美媒：產能規模無與倫比",
+      "source": "自由電子報 財經",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T12:12:23.000Z",
+      "url": "https://ec.ltn.com.tw/article/breakingnews/5599012",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "人工智慧（AI）浪潮席捲全球，投資人都想買進AI概念股，以在這股熱潮中分一杯羹。美國投資媒體《The Motley Fool》科技分析師德魯里（Keithen Drury...…",
+      "sourceId": "rss-snapshot-129781e53cbb3c2c2133",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-ca0095237d557c5d758d",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Noah raises $38m for stablecoin payments platform",
+      "source": "Finextra",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T12:07:00.000Z",
+      "url": "https://www.finextra.com/newsarticle/48548/noah-raises-38m-for-stablecoin-payments-platform?utm_medium=rssfinextra&utm_source=finextrafeed",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "Stablecoin payments infrastructure provider Noah has closed its seeding round after pulling in $38 in funding.",
+      "sourceId": "rss-snapshot-ca0095237d557c5d758d",
+      "matchedRule": "stablecoin-core,stablecoin-settlement"
+    },
     {
       "id": "softworld-api-google-news-b0b8dfaf7963cf2a93f8",
       "origin": "monitoring",
@@ -51,6 +560,27 @@
       "sourceId": "google-news-b0b8dfaf7963cf2a93f8",
       "matchedRule": "industry-martech",
       "publisherUrl": "https://money.udn.com/money/story/123828/9801237"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-b602d9c520965ad848ef",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "谷歌 Gmail 新功能曝光：Gemini 帮你回邮件",
+      "source": "IT之家",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T11:44:20.000Z",
+      "url": "https://www.ithome.com/1/010/279.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "<p data-vmark=\"e325\">IT之家 10 月 7 日消息，科技媒体 Android Authority 今日报道称，Gmail 应用最新版（v2026.09.28）APK 拆解显示，谷歌或许正在为 Gmail 新增 Gemini 智能体，<strong>让用户可以通过 AI 自动回复邮件</strong>。</p><p style=\"text-align: center;\" data-vmark=\"7a91\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/10/eb669404-eacf-4f14-a805-0be2994756d8.jpg?x-bce-process=image/format,f_auto\" w=\"738\" h=\"415\" data-weibo=\"0\" data-vmark=\"0909\" class=\"no-alt-img\"></p><p data-vmark=\"8ceb\">IT之家从原报道获悉，最新版 Gmail 应用已经出现多段相关代码。我们透过这些隐藏注释可以看到，该功能上线后，AI 收件箱可能会在待办事项旁边显示“使用 Gemini”按钮。用户点击后即可让 Gemini 查看收件箱，如果遇到需要回复的邮件，UI 可能会弹出“起草回复”选项。</p><p data-vmark=\"1",
+      "sourceId": "rss-snapshot-b602d9c520965ad848ef",
+      "matchedRule": "industry-martech"
     },
     {
       "id": "softworld-api-google-news-b2664bc99f891415405c",
@@ -105,6 +635,66 @@
       "publisherUrl": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=86c461b0-c483-45d1-b845-211f14a3058a"
     },
     {
+      "id": "softworld-api-rss-snapshot-25790ebb00efdf3f25fc",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "國產養成新作《NEKO MAKER 2：星籠少女》釋出排課節奏與 UI 改版 曝光新實機截圖",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T11:09:00.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313050",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "台灣獨立遊戲開發者 Chen Liang-Yu 今（7）日宣布，旗下開發中新作《NEKO MAKER 2：星籠少女（NEKO MAKER 2: Starlit Girl）》已針對每月排課節奏與 UI 進行改版，新的遊戲實機截圖同步公開。 《NEKO MAKE....",
+      "sourceId": "rss-snapshot-25790ebb00efdf3f25fc",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-caaf00d2d66e02df852a",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Ripple (XRP) Lands New South Korea Deal as Meritz Securities Explores Digital Asset Custody",
+      "source": "CryptoPotato",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T10:58:47.000Z",
+      "url": "https://cryptopotato.com/ripple-xrp-lands-new-south-korea-deal-as-meritz-securities-explores-digital-asset-custody/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "The partnership adds Ripple's custody and tokenization technology to Meritz Securities' plans for entering South Korea's digital asset sector. Meritz Securities is stepping further into digital assets through a new partnership with Ripple. The South Korean securities firm said on October 7 that it signed a strategic agreement with the blockchain company to explore digital asset infrastructure for the domestic market. The deal will focus on custody and tokenization as digital assets move closer to formal recognition within South Korea&#8217;s financial system. Ripple&#8217;s Korean Expansion Th",
+      "sourceId": "rss-snapshot-caaf00d2d66e02df852a",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-939b6c5109099642de06",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "溫馨如《星露谷物語》遇上《勇者鬥惡龍 創世小玩家》，治癒系社區重建模擬遊戲《月霜》即將登場",
+      "source": "遊戲基地",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T10:55:46.000Z",
+      "url": "https://news.gamebase.com.tw/news/detail/99441650",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "獨立工作室 Oxalis Games今日宣布，《月霜》將於2026年10月13日（週二）凌晨1:00（香港／台北時間）登陸 Steam 供搶先體驗。本作為模擬遊戲注入獨特巧思，將治癒系生活模擬的溫暖與深度建造系統結合，玩家將修復一座殘破的村莊，與形形色色的角色建立羈絆，從內部治癒整個社區。 《月霜》將輕鬆愜意的慢活體驗與扎實的主線敘事結合在一起。玩家可以採集、釣魚、採摘、製作與烹飪，同時重建並自訂這座被隕石風暴摧毀的小鎮的每一處細節。身為霜之獵人，玩家將學會駕馭 月霜 神秘的力量，把墜落的隕石轉化為各式各樣的建築，在混亂中重塑秩序。隨著村莊重新恢復生機，居民們的故事也將逐漸展開。 《月霜》的核心，是建立並修復一個你會逐漸產生感情的社區。與每一位角色建立關係，協助他們重建家園與事業，正是本作獨有的魅力所在。每個角色都擁有鮮明的個性與不斷發展的故事線，玩家的選擇將形塑周遭世界的走向。 深入且充實的遊戲循環將一切串聯起來：採集原料、製作與建造，接取任務解鎖新工具，探索隱藏的神殿區域，並透過委託與交易籌措後續製作資金。天氣、日夜循環與睡眠等自然要素讓世界更加鮮活，進階的物品欄與資源管理系統也為玩家提供了充分的鑽研空間。 核心特色 生活模擬式重建： 修復、建造並自訂村莊及其建築。 敘事導向的世界： 角色導向的劇情、深厚的世界觀設定，以及貫穿全篇、神秘莫測的第二顆月亮。 動態人際關係： 建立羈",
+      "sourceId": "rss-snapshot-939b6c5109099642de06",
+      "matchedRule": "industry-game-platform"
+    },
+    {
       "id": "softworld-api-google-news-ed0ccbc559e190e05657",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -136,6 +726,26 @@
       "publisherUrl": "https://esport.setn.com/news/1918733"
     },
     {
+      "id": "softworld-api-rss-snapshot-8c04445304a5e826ff47",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "休閒新作《放置像素女僕》於 Steam 平台推出 與 14 位女僕共度悠閒時光",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T10:46:05.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313049",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "獨立遊戲團隊 WhyDuck Studio 旗下休閒新作《放置像素女僕（Idle Pixel Maids）》於 Steam 平台推出，玩家將可以與 14 位女僕共度悠閒時光。 《放置像素女僕》是一款像素風格咖啡廳放置遊戲，玩家將可以用 280 種家具佈置咖啡廳、摸摸來訪的貓咪，透過 MoC....",
+      "sourceId": "rss-snapshot-8c04445304a5e826ff47",
+      "matchedRule": "industry-game-platform"
+    },
+    {
       "id": "softworld-api-google-news-c39548c32c5cb10955fe",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -160,6 +770,66 @@
       "publisherUrl": "https://tw.news.yahoo.com/line%E6%8E%A8%E6%96%B0%E5%8A%9F%E8%83%BD-%E6%8D%B2%E5%8B%95%E9%A0%90%E8%A6%BD-%E5%81%B7%E7%9C%8B%E8%A8%8A%E6%81%AF%E4%B8%8D%E6%9C%83%E9%A1%AF%E7%A4%BA%E5%B7%B2%E8%AE%80-%E6%97%A5%E6%9C%AC%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%B7%9A-104600502.html"
     },
     {
+      "id": "softworld-api-rss-snapshot-9af1b540f94c91d1ec3c",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《跑 Online》三騎士再度集結 新「卡美洛競技場」開跑",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T10:19:38.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313046",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "經典競速遊戲《跑 Online》釋出更新，傳說中的三騎士再次重聚焦結，玩家將隨機加入「亞瑟隊」、「梅林隊」或「蘭斯洛特隊」，展開刺激的聖杯爭奪戰。本次更新也帶來新 12 人團體戰地圖《卡美洛競技場》、三騎士委託、皇家下午茶，以及新翻牌小遊戲「摩根的惡作劇」。 【以下內容為廠商提供資料原文】 ....",
+      "sourceId": "rss-snapshot-9af1b540f94c91d1ec3c",
+      "matchedRule": "industry-game-platform,industry-platform-business"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-7f6e3d1fc69329f10fca",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《戰艦世界》《戰艦世界：傳奇》10 月版本更新上線 與《蔚藍檔案》合作內容限時登場",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T10:16:03.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313045",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "戰遊網宣布，旗下《戰艦世界》與《戰艦世界：傳奇》皆釋出 10 月版本更新，本次更新的最大亮點為 《蔚藍檔案》合作內容將再度重返兩款遊戲，玩家將再次有機會取得以人氣角色為靈感打造的戰艦與指揮官，為艦隊增添新戰力。 《戰艦世界》與《戰艦世界：傳奇》在 10 月迎來《....",
+      "sourceId": "rss-snapshot-7f6e3d1fc69329f10fca",
+      "matchedRule": "competitor-global-game,industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-6bf503465daf9656d4ac",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "休閒釣魚遊戲《獵戶座之藍》展開遊戲測試 預計 11 月 30 日發售",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T10:06:09.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313043",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "遊戲研發團隊 EXLIX 宣布，旗下開發中新作《獵戶座之藍》將於 11 月 30 日在 Steam 平台發售，目前本作正在進行遊戲測試（Playtest），玩家可透過 Steam 頁面申請參加即可遊玩。此外，本作也將參加 10 月 19 日至 26 日舉行的 Steam 新品節（Next Fest）。 &nb....",
+      "sourceId": "rss-snapshot-6bf503465daf9656d4ac",
+      "matchedRule": "industry-game-platform"
+    },
+    {
       "id": "softworld-api-google-news-7d8f10cfdd6c430d6dd8",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -182,6 +852,46 @@
       "sourceId": "google-news-7d8f10cfdd6c430d6dd8",
       "matchedRule": "industry-martech",
       "publisherUrl": "https://www.ctee.com.tw/news/20261007702044-431202"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-8fbc40f32f5980f84f29",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "恐怖名作《P.T.》粉絲逆向工程打造原生PC版遊戲 獲小島秀夫轉發肯定",
+      "source": "4Gamers",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T09:59:00.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82473/pt-fan-made-native-pc-port-hideo-kojima",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "已成絕響的恐怖遊戲《P.T.》正透過粉絲打造的原生 PC 版遊戲重返玩家視野，負責推進計畫的獨立開發者 LoreanXavier 自稱已完成 97%，不靠模擬器，也不是在其他遊戲引擎重製，而是用原版 PS4 執行檔進行逆向工程，目標是在 Windows 重現當年的《P.T.》。 <p style=\"text-align:center\"><picture><source srcset=\"https://img.4gamers.com.tw/puku-clone-version/d7c60b6258422f33168bd2d7a1c0ed8d3c1a0b3b.png\" media=\"(min-width: 992px)\"><img alt=\"P.T. Native PC Port _ 30 Minutes of Gameplay (Decompiled, Not an Emulator) _ WIP 11-7 screenshot\" height=\"450\" src=\"https://thumbor.4gamers.com.tw/C-UNKB3k25X0ID90YoVKJTpOjpk=/800x0/filters:extract_cover():no_upscale():quality(80):format(jpeg):background_color(FFFFFF)/https%3A",
+      "sourceId": "rss-snapshot-8fbc40f32f5980f84f29",
+      "matchedRule": "competitor-global-game,industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-0336ac575d4c7f779b43",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "免費網頁遊戲《煉金解謎：無限合成》正式上線 煉出第一種物質的人將留名圖鑑",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T09:58:37.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313041",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "開發團隊 Alchemy Puzzle 宣布，旗下免費網頁遊戲《煉金解謎：無限合成》正式上線，這是一款合成解謎遊戲，並提供暗棋式卡牌對戰玩法。每當玩家煉出新的物質，你的遊戲名稱就會留在全服共用的圖鑑中。 《煉金解謎：無限合成》是一款合成解謎遊戲，玩家從水、火、土....",
+      "sourceId": "rss-snapshot-0336ac575d4c7f779b43",
+      "matchedRule": "industry-game-platform"
     },
     {
       "id": "softworld-api-google-news-683655c61ad59d8b97c7",
@@ -255,6 +965,26 @@
       "publisherUrl": "https://tw.news.yahoo.com/youtube-%E4%B8%8D%E5%8F%AA%E7%94%A8%E4%BE%86%E7%9C%8B%E5%BD%B1%E7%89%87-%E8%B3%BC%E7%89%A9-%E9%81%8A%E6%88%B2%E6%96%B0%E5%8A%9F%E8%83%BD%E7%99%BB%E5%A0%B4-094501938.html"
     },
     {
+      "id": "softworld-api-rss-snapshot-d212c47b6a9ca1d5f402",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "TOKEN2049新加坡站 美專家看好亞洲區塊鏈發展",
+      "source": "中央社 科技",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T09:42:55.000Z",
+      "url": "https://www.cna.com.tw/news/ait/202610070266.aspx",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "（中央社記者吳昇鴻新加坡7日專電）全球Web3系列活動TOKEN2049今天在新加坡登場，加密貨幣生態系統的決策者齊聚交流。美國麻省理工學院專家告訴中央社，亞洲市場有多元數位金融需求，對科技創新持開放態度，具備發展區塊鏈及去中心化金融（DeFi）的條件；而新加坡在明確監管制度、人才方面具有優勢。",
+      "sourceId": "rss-snapshot-d212c47b6a9ca1d5f402",
+      "matchedRule": "industry-game-market"
+    },
+    {
       "id": "softworld-api-google-news-b2fa2cb41c3a066de71b",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -279,6 +1009,27 @@
       "publisherUrl": "https://tw.news.yahoo.com/%E4%B8%8D%E6%9C%83%E9%A1%AF%E7%A4%BA%E5%B7%B2%E8%AE%80-line%E6%96%B0%E5%8A%9F%E8%83%BD%E5%8F%AF-%E5%81%B7%E7%9C%8B%E8%A8%8A%E6%81%AF-%E6%97%A5%E6%9C%AC%E5%85%88%E4%B8%8A%E7%B7%9A-093633144.html"
     },
     {
+      "id": "softworld-api-rss-snapshot-cf8548082c00191d2104",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《聖火降魔錄 英雄雲集》舉辦超英雄召喚活動「收穫祭的選擇」",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T09:35:04.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313036",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "任天堂宣布，旗下智慧型手機遊戲《聖火降魔錄 英雄雲集》舉辦超英雄召喚活動「收穫祭的選擇」。換上扮裝，對收穫祭感到雀躍不已的超英雄齊聚一堂。於本召喚活動舉辦期間，超英雄們將以★5 精選登場。此外，有超英雄們登場的外傳「收穫祭的選擇」與期間限定任務也同時發布。 日文版影片....",
+      "sourceId": "rss-snapshot-cf8548082c00191d2104",
+      "matchedRule": "industry-platform-business"
+    },
+    {
       "id": "softworld-api-google-news-5437e7042062e6d588b2",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -301,6 +1052,27 @@
       "sourceId": "google-news-5437e7042062e6d588b2",
       "matchedRule": "industry-platform-business",
       "publisherUrl": "https://www.bnext.com.tw/article/92549/youtube-brandcast-2026-shopping-creator-shorts-ai"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-0e6870527d268adda21e",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "苹果 Apple TV 平台 F1 赛事转播将支持杜比全景声，本月底上线",
+      "source": "IT之家",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T09:33:24.000Z",
+      "url": "https://www.ithome.com/1/010/242.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "<p data-vmark=\"3475\">IT之家 10 月 7 日消息，苹果最近宣布，Apple TV 平台的一级方程式赛车（F1）赛事转播将在本月底支持杜比全景声。</p><p style=\"text-align: center;\" data-vmark=\"32c4\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/10/3d343f49-34cd-4694-947d-e4d75a1d9d8c.jpg?x-bce-process=image/format,f_auto\" w=\"1440\" h=\"810\" data-weibo=\"0\" data-vmark=\"1d87\" class=\"no-alt-img\"></p><p data-vmark=\"4fa0\">苹果表示，从 10 月 23 日在美国得克萨斯州奥斯汀举行的美国大奖赛开始，Apple TV 平台 F1 赛事转播将支持杜比全景声体验。<strong>观众可坐在大荧幕前听到</strong><strong>车队无线电通话、赛事解说、引擎声、赛道上的激烈争夺以及维修区内的各种活动</strong>，<strong>宛如置身现场</strong>。</p><p data-vmark=\"7e92\">该功能将支持各种苹果设备，以及兼容杜比技术的电视、音箱和家庭影院系统。IT",
+      "sourceId": "rss-snapshot-0e6870527d268adda21e",
+      "matchedRule": "industry-platform-business"
     },
     {
       "id": "softworld-api-google-news-ca92c9fdee894afc2dc7",
@@ -347,7 +1119,130 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-82114eaf3ef9d878fc90",
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://today.line.me/tw/v3/article/EXwkLGQ"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-dffdfc66a91755ac121f",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "手機電力搶奪遊戲《Power Struggle》 手速慢就會等著電池被榨乾",
+      "source": "4Gamers",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T09:28:39.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82472/power-struggle-game",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "現在不少手機都有支援反向充電功能，可以輸出手機電力給其他設備充電，但近期有開發者腦洞大開，打造了一款猶如手機版《鐘點戰》的遊戲，雙方需要比拚手速爭取充電權力，讓玩家與朋友賭上最後的電力來場手機間的生死對決。 <p style=\"text-align:center\"><picture><source srcset=\"https://img.4gamers.com.tw/puku-clone-version/417b9e56dd66ecea76cae66aa6a169f6dced0648.jpg\" media=\"(min-width: 992px)\"><img alt=\"359021a76e\" height=\"602\" src=\"https://thumbor.4gamers.com.tw/6iG9xQ_3Os-YulLuguBqQQGh-Lo=/800x0/filters:extract_cover():no_upscale():quality(80)/https%3A%2F%2Fimg.4gamers.com.tw%2Fpuku-clone-version%2F417b9e56dd66ecea76cae66aa6a169f6dced0648.jpg\" width=\"800\" data-puku-raw-src=\"https://img.4gamers.com.tw/puku-clo",
+      "sourceId": "rss-snapshot-dffdfc66a91755ac121f",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-e314fc060e5a98f9ca63",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Meta 再推 AI Agent 新標準 PAP，為什麼 Agent 協議越來越多？",
+      "source": "科技報橘 TechOrange",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T09:27:10.000Z",
+      "url": "https://techorange.com/2026/10/07/personal-agent-protocol-pap-ai-agent/?utm_source=rss&utm_medium=feed&utm_campaign=techorange_rss",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "高",
+      "tags": [
+        "金融支付",
+        "產業監測"
+      ],
+      "excerpt": "AI Agent（AI 代理）的協議名單又變長了。Meta 與企業 AI 新創 Sierra 10/6 宣布，將聯合 Genesys、Instinct、Rocket、Shopify、Stripe、Walmart 等業者開發「Personal Agent Protocol（PAP）」，希望建立一套個人 AI Agent 與企業互動的共同標準，包括身分驗證、使用者授權，以及企業如何掌握 Agent 透過網站、API 或企業 Agent 執行的行動。 不過 AI Agent 相關的協議已經越來越多：MCP、A2A、UCP、ACP、AP2、TAP，如今又多了 PAP。這些名稱看起來都在處理 Agent，實際上各自解決什麼問題？為什麼還需要再多一套？ PAP 此時出現，反映了個人 AI Agent 與企業互動已經碰到實際問題。Sierra 共同創辦人 Bret Taylor 向《CNBC》形容，在共同標準出現以前，企業面對個人 Agent 如何存取資訊仍處於「有點混亂」的狀態。 《TechCrunch》報導，Amazon 近期開始阻擋 Meta 的個人 AI Agent Muse 進入購物網站；Walmart 雖已與 Muse 合作，部分使用者仍因網站要求點擊按鈕證明「是真人」，導致 Agent 無法完成購物。報導指出，這些案例顯示，原本用來驗證真人、防範垃圾訊息（spam）與惡意機器人（b",
+      "sourceId": "rss-snapshot-e314fc060e5a98f9ca63",
+      "matchedRule": "taiwan-payment-core,industry-platform-business,industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-765bfa1ea8f5fe70a41c",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《淵舟蝕影》新試玩版今日推出 改善動畫、加入英文 / 俄文配音",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T09:15:16.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313031",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測"
+      ],
+      "excerpt": "由 Dream Dock 開發、Digital Vortex Entertainment 發行新作《淵舟蝕影（DREADMOOR）》新試玩版今日推出，玩家不僅可以體驗改善後的遊戲內容，還可以聆聽到英文、俄文配音，同時本次試玩版也將支援在 Steam Deck 裝置上遊玩。 《淵舟蝕影》是一....",
+      "sourceId": "rss-snapshot-765bfa1ea8f5fe70a41c",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-309b5d4783e46d95bea5",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "小米官宣澎湃 OS 4 全面兼容苹果生态：重要信息双向同步、妙享桌面支持 Apple 三件套等",
+      "source": "IT之家",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T09:06:22.000Z",
+      "url": "https://www.ithome.com/1/010/238.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "<p data-vmark=\"21d7\">IT之家 10 月 7 日消息，小米澎湃 OS 官方微博今日宣布，<strong>澎湃 HyperOS 4 系统全面兼容苹果生态</strong>。</p><blockquote><ul class=\"medium-size list-paddingleft-2\"><li><p data-vmark=\"5180\">贴贴一下，跨生态分享一步直达，支持分享照片、文件、联系人、浏览器；</p></li><li><p data-vmark=\"dcb0\">支持双向查看 iPhone 和小米手机云相册；</p></li><li><p data-vmark=\"3c4b\">重要通知不错过，手机不切换，消息秒回复（消息通知，双向同步）；</p></li><li><p data-vmark=\"9254\">妙享桌面支持苹果三件套，换台设备接着用。</p></li></ul></blockquote><p style=\"text-align: center;\" data-vmark=\"a074\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/10/b1849377-7a61-4482-a1f5-f62b38922c2a.jpg?x-bce-process=image/format,f_auto\" w=\"",
+      "sourceId": "rss-snapshot-309b5d4783e46d95bea5",
       "matchedRule": "industry-platform-business"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-9fd5dc7cc3030fdcf23b",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Ledger Launches Bitcoin Loans, Letting Holders Borrow Without Selling",
+      "source": "Decrypt",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T09:01:03.000Z",
+      "url": "https://decrypt.co/380224/ledger-bitcoin-loans-holders-borrow-without-selling",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "Unveiled at TOKEN2049 Singapore, the Morpho-powered Crypto Loan feature lets users borrow stablecoins against wrapped Bitcoin while keeping private keys and final approval on their hardware device.",
+      "sourceId": "rss-snapshot-9fd5dc7cc3030fdcf23b",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-e0cacf02998830b4dcba",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "曝英特尔 \"Raptor Lake Next HX\" 移动端处理器使用“酷睿 2000 HX”命名",
+      "source": "IT之家",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T09:00:27.000Z",
+      "url": "https://www.ithome.com/1/010/235.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "<p data-vmark=\"b85b\">IT之家 10 月 7 日消息，消息人士 @金猪升级包 本月 5 日爆料称，<strong>英特尔 \"Raptor Lake Next\" 处理器的桌面级移动端 \"HX\" 变体将使用 \" 酷睿 2000 HX\" 的命名格式</strong>。</p><p data-vmark=\"cee8\" style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/10/855f37d5-1d98-4f4a-a71f-eed1fc3875d3.jpg\" w=\"750\" h=\"280\" data-weibo=\"0\" data-vmark=\"3712\" class=\"no-alt-img\"></p><p data-vmark=\"2f87\">IT之家注意到，此前已有消息指出，英特尔在 \"Nova Lake\" 处理器的 \"S\" 与 \"HX\" 变体上将采用四位数字的命名，这意味着 <strong>\"Nova Lake HX\" 将是“酷睿 Ultra 4000 HX”</strong>。\"Raptor Lake Next HX\" 的命名实现了格式对齐。</p><p data-vmark=\"e1ab\"><strong>相关阅读：</strong></p><ul clas",
+      "sourceId": "rss-snapshot-e0cacf02998830b4dcba",
+      "matchedRule": "industry-martech"
     },
     {
       "id": "softworld-api-rss-snapshot-129d1fc2f00f046c344f",
@@ -472,13 +1367,14 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-b91523ca1ace043da1e4",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.ctee.com.tw/news/20261007701704-430301"
     },
     {
       "id": "softworld-api-rss-snapshot-6c6a1a820b29e4209fba",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
-      "title": "生存射擊新作《時間掌控者》預告 11 月啟動第 2 輪測試 新影片介紹改善內容",
+      "title": "生存射擊新作《時間掌控者 Time Takers》預告 11 月啟動第 2 輪測試 將強化角色個性與操作手感等",
       "source": "巴哈姆特 GNN",
       "date": "2026-10-07",
       "publishedAt": "2026-10-07T08:11:47.000Z",
@@ -534,7 +1430,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-620a16496351c501fd87",
-      "matchedRule": "industry-game-platform"
+      "matchedRule": "industry-game-platform",
+      "publisherUrl": "https://tw.news.yahoo.com/%E4%B8%8D%E5%A4%A0%E5%B8%A5%E7%9A%84%E6%9C%83%E8%A2%AB%E9%AC%BC%E8%BF%BD%E6%AE%BA-%E6%90%9E%E7%AC%91%E6%81%90%E6%80%96%E9%81%8A%E6%88%B2-mogged-%E9%96%8B%E6%94%BE%E8%A9%A6%E7%8E%A9-%E7%8E%A9%E5%AE%B6%E8%A9%95-080600437.html"
     },
     {
       "id": "softworld-api-google-news-2d7338780a105d595c9b",
@@ -556,7 +1453,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-2d7338780a105d595c9b",
-      "matchedRule": "industry-game-platform"
+      "matchedRule": "industry-game-platform",
+      "publisherUrl": "https://app.mycard520.com.tw/news-%E6%BA%AB%E9%A6%A8%E5%A6%82%E3%80%8A%E6%98%9F%E9%9C%B2%E8%B0%B7%E7%89%A9%E8%AA%9E%E3%80%8B%E9%81%87%E4%B8%8A%E3%80%8A%E5%8B%87%E8%80%85%E9%AC%A5%E6%83%A1%E9%BE%8D-%E5%89%B5%E4%B8%96%E5%B0%8F/"
     },
     {
       "id": "softworld-api-google-news-2d0aebe67ab58d12f3cf",
@@ -579,7 +1477,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-2d0aebe67ab58d12f3cf",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://www.ettoday.net/news/20261007/3250690.htm"
     },
     {
       "id": "softworld-api-rss-snapshot-f0fba68dd28797728641",
@@ -623,7 +1522,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-a0dc49a096b90f553632",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://news.ebc.net.tw/news/business/574611"
     },
     {
       "id": "softworld-api-rss-snapshot-9a673410bde8cb1c881a",
@@ -728,7 +1628,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-d6ca06b08d1eb5382de9",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.techbang.com/posts/133776-google-pixel-11-standard-review"
     },
     {
       "id": "softworld-api-rss-snapshot-fd9fbb8509206dda4474",
@@ -813,7 +1714,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-4a3de73bc91b57ac960d",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.ettoday.net/news/20261007/3250729.htm"
     },
     {
       "id": "softworld-api-google-news-b206ba7033cb403c9103",
@@ -836,7 +1738,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-b206ba7033cb403c9103",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.techbang.com/posts/133907-youtube-playables-launch-1000-games"
     },
     {
       "id": "softworld-api-rss-snapshot-f1316f84bda554d60762",
@@ -932,7 +1835,8 @@
           "source": "PChome新聞",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQLTNLRmNmUklyU25UWmVrS0N0NHhhMXNkM0I4eWQ4NXRpb05lQmtkd3JLRENtNlBiT2ZwcjdlZUZGdjlwdzZLWk1jMlNQM3lxUzZUalF4TDVJX0M1NG11U3JtUF9MejRtYV9oLWVzQ244bW5mdXI0VlE3UmN6TXJESHNBbmJUVmx1RHRCOQ?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://today.line.me/tw/v3/posts/list/article/eLpvrmg"
     },
     {
       "id": "softworld-api-google-news-89b9205ef90757038807",
@@ -955,7 +1859,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-89b9205ef90757038807",
-      "matchedRule": "industry-game-platform"
+      "matchedRule": "industry-game-platform",
+      "publisherUrl": "https://tw.news.yahoo.com/%E9%81%8A%E6%88%B2%E4%B8%BB%E6%A9%9F%E9%A3%86%E7%A0%B445%E8%90%AC%E5%85%83%EF%BC%81ps5-pro%E7%8F%BE%E8%B2%A8%E6%9A%B4%E6%BC%B2%E8%BF%912%E8%90%AC-%E7%8E%A9%E5%AE%B6%E8%BD%9F%E5%BA%97%E5%AE%B6%EF%BC%9A%E6%A0%B9%E6%9C%AC%E8%B6%81%E7%81%AB%E6%89%93%E5%8A%AB-064844308.html"
     },
     {
       "id": "softworld-api-google-news-5da403c201df4b76730a",
@@ -978,7 +1883,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-5da403c201df4b76730a",
-      "matchedRule": "industry-platform-business,industry-martech"
+      "matchedRule": "industry-platform-business,industry-martech",
+      "publisherUrl": "https://www.mirrormedia.mg/external/setn_1918733"
     },
     {
       "id": "softworld-api-rss-snapshot-15704e9b308b554e45a8",
@@ -2877,6 +3783,27 @@
       ]
     },
     {
+      "id": "softworld-api-rss-snapshot-e44f5529e1c89f78949c",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "維基媒體揭露OpenAI代理未授權活動，大規模抓取與工具探測加重伺服器負擔",
+      "source": "iThome",
+      "date": "2026-10-07",
+      "publishedAt": "2026-10-07T00:10:50.000Z",
+      "url": "https://www.ithome.com.tw/news/179490",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技"
+      ],
+      "excerpt": "維基媒體基金會（Wikimedia Foundation）調查發現，旗下網站出現多起疑似由OpenAI操作的AI代理活動，包括未經社群核准編輯維基網站、探測公開協作筆記工具Etherpad，以及大量抓取維基媒體資料。相關代理曾向公開資料介面發出數百萬次自動化要求、抓取數百萬個頁面，並對Wikidata查詢服務送出數十萬次查詢。維基媒體認為，相關流量可能是今年5月Wikidata查詢服務部分中斷的影響因素之一。",
+      "sourceId": "rss-snapshot-e44f5529e1c89f78949c",
+      "matchedRule": "industry-martech"
+    },
+    {
       "id": "softworld-api-rss-snapshot-b812bd0e1430b579424f",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -3428,48 +4355,6 @@
       "matchedRule": "stablecoin-core"
     },
     {
-      "id": "softworld-api-rss-snapshot-d7acf7b327ff1d84b6b1",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "AI設計師 2／Swatch把AI變成腕錶設計師！同句提示詞，也不會做出同一支錶",
-      "source": "經濟日報 產經國際",
-      "date": "2026-10-07",
-      "publishedAt": "2026-10-06T16:06:46.000Z",
-      "url": "https://money.udn.com/money/story/122979/9744174",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技"
-      ],
-      "excerpt": "編按：日經TRENDY規劃「成功之鑰」系列，瑞士腕錶品牌Swatch推出「AI-DADA」，這是用AI設計腕錶的新服務，透過提示詞創造無限變化。文／大谷真幸；譯／泉采子「有沒有什麼讓人印象深刻",
-      "sourceId": "rss-snapshot-d7acf7b327ff1d84b6b1",
-      "matchedRule": "industry-martech"
-    },
-    {
-      "id": "softworld-api-rss-snapshot-88c454a2bd3fc3455522",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "AI設計師 1／40年設計資料庫餵給AI！Swatch把品牌歷史變成客製化生意",
-      "source": "經濟日報 產經國際",
-      "date": "2026-10-07",
-      "publishedAt": "2026-10-06T16:03:00.000Z",
-      "url": "https://money.udn.com/money/story/122979/9744171",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技"
-      ],
-      "excerpt": "瑞士腕錶品牌Swatch於2026年3月，在日本推出使用AI設計工具「AI-DADA」的服務。使用者只要在官方網站輸入提示詞，AI就會生成腕錶設計，完成後還能直接把這項設計製作成商品讓人購買。AI-DADA中的AI代表「Artistic Intelligence（藝術智慧）」，DADA則源自藝術運動「達達主義」。這項服務在歐洲已於2026年2月率先從法國開始，之後陸續推展至其他市場。使用者須登入Swatch帳號才能使用這項服務。在AI-DADA設計工具的輸入欄中，輸入自己構思的提示詞後，AI便會依據內容開始設計，約兩分鐘即可顯示生成的圖案。據Swatch表示，這些設計是以公司40多年來累積的產品設計及檔案資料為基礎生成。",
-      "sourceId": "rss-snapshot-88c454a2bd3fc3455522",
-      "matchedRule": "industry-martech"
-    },
-    {
       "id": "softworld-api-google-news-635c080617388be3263a",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -3625,7 +4510,7 @@
       "id": "softworld-api-rss-snapshot-0d4b2eb3e52adce941f1",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
-      "title": "How can banks serve SME’s growing cross-border needs?",
+      "title": "How Can Banks Serve SME’s Growing Cross-Border Needs?",
       "source": "Finextra",
       "date": "2026-10-06",
       "publishedAt": "2026-10-06T15:00:00.000Z",
@@ -3637,7 +4522,7 @@
         "金融支付",
         "產業監測"
       ],
-      "excerpt": "Joining FinextraTV at Sibos 2026 in Miami, Pratik Khowala, Executive Vice President and Global Head of Transfer Solutions at Mastercard, covers:",
+      "excerpt": "At Sibos 2026, Mastercard’s Pratik Khowala reveals how banks and fintechs can retain SME loyalty through trust, speed, and value-added services.",
       "sourceId": "rss-snapshot-0d4b2eb3e52adce941f1",
       "matchedRule": "international-fintech"
     },
@@ -45594,109 +46479,6 @@
       "excerpt": "Financial literacy is becoming a key feature in the competition for the next generation of banking customers. Google’s latest Wallet update reflects that shift, introducing parent-managed accounts that allow children to make purchases while parents set limits and monitor activity. Google Wallet will now allow parents to establish a balance for children under 18, complete [&#8230;] The post Google Wallet Targets the Next Generation of Banking Customers appeared first on PaymentsJournal . Financial literacy is becoming a key feature in the competition for the next generation of banking customers",
       "sourceId": "rss-snapshot-a9843ace68e954ab6b68",
       "matchedRule": "stablecoin-core"
-    },
-    {
-      "id": "softworld-api-google-news-4fc3b3f8497eb26d862e",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "《Pokémon GO》迎戰2026世界錦標賽！全新扮裝皮卡丘與豐富賽事活動登場 | Zeek玩家誌",
-      "source": "LINE TODAY",
-      "date": "2026-08-07",
-      "publishedAt": "2026-08-07T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE16b1R0YTI5SW9GNFJMam5YU3BWX1YzYzhXWnM3Sk9BRHpueVBYbGp4NzJtX2tFRUVkZF96NkRxLUNzczhEU3BNVlF6NmpYLU5WejZhZnFB?oc=5",
-      "topic": "遊戲產業",
-      "reportGroup": "industry-new-games",
-      "priority": "中",
-      "tags": [
-        "市場新遊",
-        "重點遊戲",
-        "Pokémon GO"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-4fc3b3f8497eb26d862e",
-      "matchedRule": "mobile-top-grossing-games"
-    },
-    {
-      "id": "softworld-api-google-news-15e401db3f48053b4aac",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "獨家／國旅卡、信用卡帳號全曝光 中國駭客論壇驚見13萬筆台灣訂房資料",
-      "source": "民視新聞網",
-      "date": "2026-08-07",
-      "publishedAt": "2026-08-07T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9oNTRnWnNWbVJYUkJ1dHNaTnY3aEFLdTlEek1MQ3NVUkthb0FHXzFoZEd6Qzk5TllmLXJ5c0RqaF9EdVUzUTU3dVlabUc5WmpoVEdNdUpMX0VLNWJEekNTQQ?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "中",
-      "tags": [
-        "金融支付",
-        "產業監測",
-        "信用卡"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-15e401db3f48053b4aac",
-      "matchedRule": "taiwan-payment-google-news"
-    },
-    {
-      "id": "softworld-api-google-news-768d5c0eb639b6aeecd3",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "別只看EPS！AI熱潮讓華爾街改盯「自由現金流」",
-      "source": "民視新聞網",
-      "date": "2026-08-07",
-      "publishedAt": "2026-08-07T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5iNEVMS0xuemxMd01IenlHSDllNURvdjJNWTNPbjkxTS00aWZ4WGdadkpLeWp3VFVYdG81NFJCYnB2cGdnMFhNWEpQNV91WXRybXN6ODFpU1did2FvelFmLXVEZ1Nmdw?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "中",
-      "tags": [
-        "金融支付",
-        "產業監測",
-        "金流"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-768d5c0eb639b6aeecd3",
-      "matchedRule": "taiwan-payment-google-news"
-    },
-    {
-      "id": "softworld-api-rss-snapshot-5c2e7bce6dcb7104443c",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "Visa Acquires BioCatch as AI Reshapes Payment Fraud",
-      "source": "Payments Journal",
-      "date": "2026-08-07",
-      "publishedAt": "2026-08-06T19:00:00.000Z",
-      "url": "https://www.paymentsjournal.com/visa-acquires-biocatch-as-ai-reshapes-payment-fraud/",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "中",
-      "tags": [
-        "金融支付",
-        "產業監測"
-      ],
-      "excerpt": "Visa’s $2.4 billion acquisition of fintech BioCatch signals a major shift in the fight against payment fraud. As AI makes scams more sophisticated and harder to detect, behavioral biometrics are emerging as one of the financial industry’s most important tools for distinguishing legitimate customers from fraudsters. Biometrics are increasingly being used to enhance identity verification [&#8230;] The post Visa Acquires BioCatch as AI Reshapes Payment Fraud appeared first on PaymentsJournal . Visa’s $2.4 billion acquisition of fintech BioCatch signals a major shift in the fight against payment f",
-      "sourceId": "rss-snapshot-5c2e7bce6dcb7104443c",
-      "matchedRule": "international-fintech"
-    },
-    {
-      "id": "softworld-api-rss-snapshot-0516cbdd020b91b15eee",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "Circle Assembles Impressive Backing for Arc Blockchain",
-      "source": "Payments Journal",
-      "date": "2026-08-07",
-      "publishedAt": "2026-08-06T17:52:55.000Z",
-      "url": "https://www.paymentsjournal.com/circle-assembles-impressive-backing-for-arc-blockchain/",
-      "topic": "金融支付",
-      "reportGroup": "industry-stablecoin",
-      "priority": "高",
-      "tags": [
-        "穩定幣",
-        "鏈上結算"
-      ],
-      "excerpt": "Circle has unveiled a blockchain purpose-built for the industry—and for the agentic environment on the horizon. The digital asset firm’s Arc blockchain is due to launch in September and has already attracted substantial support from leading payments organizations. These backers include Visa, Mastercard, BlackRock, MoneyGram, Standard Chartered, and New York Stock Exchange parent company Intercontinental [&#8230;] The post Circle Assembles Impressive Backing for Arc Blockchain appeared first on PaymentsJournal . Circle has unveiled a blockchain purpose-built for the industry—and for the agentic",
-      "sourceId": "rss-snapshot-0516cbdd020b91b15eee",
-      "matchedRule": "international-fintech,stablecoin-core,stablecoin-circle"
     }
   ]
 }
