@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-10-08T12:57:23.178022Z",
-  "syncedAt": "2026-10-08T13:24:22.569Z",
+  "generatedAt": "2026-10-08T16:38:22.669Z",
+  "syncedAt": "2026-10-08T19:55:48.799Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,24 +10,311 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 2277,
-    "matchedItems": 2006,
+    "totalItems": 2310,
+    "matchedItems": 2038,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 2277,
-        "matchedItems": 2119,
-        "generatedAt": "2026-10-08T12:57:23.178022Z",
+        "totalItems": 2310,
+        "matchedItems": 2151,
+        "generatedAt": "2026-10-08T16:38:22.669Z",
         "range": {
-          "from": "2026-08-08",
-          "to": "2026-10-08"
+          "from": "2026-08-09",
+          "to": "2026-10-09"
         }
       }
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-rss-snapshot-0f6f9c7714288a212a10",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《決勝時刻：現代戰爭 4》限定周邊搶先開箱 一窺馬克杯、戰術方巾與紀念幣實品",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T15:38:09.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313157",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "玩家"
+      ],
+      "excerpt": "由 Activision 發行、Infinity Ward 領銜開發的第一人稱射擊遊戲《決勝時刻：現代戰爭 4（Call of Duty: Modern Warfare 4）》預定於 2026 年 10 月 23 日推出，配合新作上市，台灣微軟與代理商傑仕登推出實體版預購登錄抽獎活動，讓玩家有機會獲得限定周邊。....",
+      "sourceId": "rss-snapshot-0f6f9c7714288a212a10",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-3e7c55c16a4e4bca8135",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "CNBC：川普8月賣出上看100萬美元的輝達股票",
+      "source": "經濟日報 產經國際",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T15:35:14.000Z",
+      "url": "https://money.udn.com/money/story/123398/9804135",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "創新",
+        "Meta"
+      ],
+      "excerpt": "美國總統川普8日將頒發獎章給輝達（NVIDIA）執行長黃仁勳、馬斯克等科技巨頭，以表彰他們在科學與技術創新領域的貢獻。但CNBC最新報導指出，川普8月時脫手50萬至100萬美元的輝達股票，而在當月他進行了超過500筆證券交易，也斥資高達2,500萬美元，買進Meta股票。",
+      "sourceId": "rss-snapshot-3e7c55c16a4e4bca8135",
+      "matchedRule": "industry-platform-business"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-193ff3f513af324a4987",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Mastercard to enable offline payments across Europe",
+      "source": "Finextra",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T15:17:00.000Z",
+      "url": "https://www.finextra.com/newsarticle/48560/mastercard-to-enable-offline-payments-across-europe?utm_medium=rssfinextra&utm_source=finextrafeed",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "中",
+      "tags": [
+        "金融支付",
+        "產業監測",
+        "mastercard"
+      ],
+      "excerpt": "Mastercard is introducing offline payment requirements that mean that from 2027 Europeans will be able to pay during power and network outages.",
+      "sourceId": "rss-snapshot-193ff3f513af324a4987",
+      "matchedRule": "international-fintech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-d79a0cc07ab8f5e68c22",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "XBOX成立全新部門「 XP」 遊戲擴展電影、周邊與主題樂園等四大領域",
+      "source": "4Gamers",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T14:24:52.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82513/xbox-xp-division-game-ip-movie-theme-park",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "XBOX"
+      ],
+      "excerpt": "XBOX 今（8）日無預警宣布成立全新部門「XP」，由麥塊開發商 Mojang Studios 前總裁 Kayleen Walters 擔任部門總裁，專責將旗下遊戲 IP 延伸至遊戲之外，拓展電影、電視、周邊商品、品牌合作、主題樂園與各類線下體驗。 XBOX 今（8）日無預警宣布成立全新部門「XP」，由麥塊開發商 Mojang Studios 前總裁 Kayleen Walters 擔任部門總裁，專責將旗下遊戲 IP 延伸至遊戲之外，拓展電影、電視、周邊商品、品牌合作、主題樂園與各類線下體驗。 同時，前 Reddit 產品長（Chief Product Officer）Maria Angelidou-Smith 將接任 Mojang Studios 執行長，負責《Minecraft》的後續發展。 這項人事與組織調整由 XBOX 負責人 Asha Sharma 公布，XP 的名稱取自遊戲中的「Experience Points（經驗值）」，象徵 XBOX 希望讓玩家對旗下作品的體驗不再侷限實際遊玩遊戲的時間。 Today, we announced XP, a new XBOX division that will help grow our great games into experiences beyond the games themselves. https://t.co/",
+      "sourceId": "rss-snapshot-d79a0cc07ab8f5e68c22",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-dea55fecdb45a7620a70",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "台灣YouTuber曝光賺錢秘訣！不靠業配「這功能」竟貢獻近8成收益",
+      "source": "自由電子報 財經",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T13:54:37.000Z",
+      "url": "https://ec.ltn.com.tw/article/breakingnews/5600383",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "成效",
+        "Youtube"
+      ],
+      "excerpt": "台灣YouTube創作者奎丁在年度Brandcast活動中透露，目前「YouTube Shopping」分潤已占其頻道收益80%以上，成效遠超過她原先的預期，YouTub...…",
+      "sourceId": "rss-snapshot-dea55fecdb45a7620a70",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-81601dd773810b90d471",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "LINE盜帳通報暴增近1倍！TWNIC示警：企業網站、Email都要防假冒",
+      "source": "自由電子報 財經",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T13:50:51.000Z",
+      "url": "https://ec.ltn.com.tw/article/breakingnews/5600376",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "社群",
+        "LINE"
+      ],
+      "excerpt": "近期社群平台帳號盜用事件頻傳，不少民眾收到親友傳來「幫孩子投票」的連結，輸入帳號密碼後，卻失去通訊軟體控制權，根據LINE於2026年9月公布的數據，8月帳號被盜客服通報...…",
+      "sourceId": "rss-snapshot-81601dd773810b90d471",
+      "matchedRule": "industry-platform-business,industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-ec5c63b45cf724bb4a21",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Solana Network Growth Jumps 124%: Here’s Why It Could Matter for SOL",
+      "source": "CryptoPotato",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T13:50:50.000Z",
+      "url": "https://cryptopotato.com/solana-network-growth-jumps-124-heres-why-it-could-matter-for-sol/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "stablecoin"
+      ],
+      "excerpt": "Solana's growing wallet count and rising activity are strengthening the long-term case for SOL. Solana appears to be pulling in users at a much faster rate. Since early September, network growth has risen 124%, with about 1.71 million new wallets being created each day. Activity is rising too. Network Growth Accelerates According to Santiment’s latest findings, daily active addresses are up 58% over the same period, having reached around 4.27 million unique wallets. In other words, more people are not just creating wallets but actually using the network. The growth gives SOL a stronger long-te",
+      "sourceId": "rss-snapshot-ec5c63b45cf724bb4a21",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-fefd3cc91f416ab91fca",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Cloud9 hits $1m funding to power African cross-border trade",
+      "source": "Fintech Global",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T13:43:32.000Z",
+      "url": "https://fintech.global/2026/10/08/cloud9-hits-1m-funding-to-power-african-cross-border-trade/?utm_source=rss&utm_medium=rss&utm_campaign=cloud9-hits-1m-funding-to-power-african-cross-border-trade",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "stablecoin"
+      ],
+      "excerpt": "Cloud9, a digital bank offering instant international payments and modern money tools to African consumers and businesses, has secured a strategic investment from Alliance, taking its total funding to $1m. Alliance, which describes itself as a leading accelerator and fund for digital asset and FinTech start-ups, is backing the company as it pursues its goal […] The post Cloud9 hits $1m funding to power African cross-border trade appeared first on FinTech Global . Cloud9 , a digital bank offering instant international payments and modern money tools to African consumers and businesses, has secu",
+      "sourceId": "rss-snapshot-fefd3cc91f416ab91fca",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-e4bee1ff809a626c5a76",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "孫宇晨出席 TOKEN 2049 新加坡：真實需求驅動波場 TRON 發展，持續賦能 AI Agent 經濟",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T12:47:13.000Z",
+      "url": "https://www.blocktempo.com/justin-sun-token2049-singapore-dialogue-tron-ai-agent-economy-blockchain/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "USDT",
+        "USDC"
+      ],
+      "excerpt": "波場TRON創始人孫宇晨在TOKEN2049新加坡活動中分享創業理念，強調以真實使用者需求為核心，推動穩定幣規 […] 〈 孫宇晨出席 TOKEN 2049 新加坡：真實需求驅動波場 TRON 發展，持續賦能 AI Agent 經濟 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 波場TRON創始人孫宇晨在TOKEN2049新加坡活動中分享創業理念，強調以真實使用者需求為核心，推動穩定幣規模化應用。他看好AI與區塊鏈融合，認為AI Agent將是未來五年重要場景，並透露計劃發行代幣化股票。同時，他介紹了孫宇晨獎，旨在高頻激勵數學與AI領域的突破，回饋科學並反哺加密生態。 （前情提要：方舟女股神：當 Agent 開始花錢，投資人須關注 AI 使用什麼基礎設施） （背景補充：Sui 離鏈通道衝 4061 萬 TPS！AI Agent 壓力測試破紀錄） （本文為廣編稿，由波場TRON 撰文、提供，不代表動區立場，亦非投資建議、購買或出售建議。詳見文末責任警示。） 10月8日，波場TRON創始人孫宇晨出席了TOKEN2049新加坡主會場活動，並與播客《When Shift Happens》創辦人Kevin Follonier進行對話。孫宇晨分享了自己的加密產業經歷，並圍繞AI與區塊鏈融合發展趨勢，以及「孫宇晨獎」的願景等話題，進一步明確了波場TR",
+      "sourceId": "rss-snapshot-e4bee1ff809a626c5a76",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-9c51e81f397b4221139a",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "YouTube 推六大新功能，YouTube Shorts 看短劇、新增千款遊戲",
+      "source": "TechNews 科技新報",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T12:39:56.000Z",
+      "url": "https://technews.tw/2026/10/08/2026-youtube-brandcast/",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "遊戲",
+        "功能"
+      ],
+      "excerpt": "針對創作者與廣告主所舉行的 2026 YouTube Brandcast 年度盛會在 7 日下午登場，YouT […]",
+      "sourceId": "rss-snapshot-9c51e81f397b4221139a",
+      "matchedRule": "industry-platform-business,industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-1cbeaf2c91ecb1956b4a",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Stablecoins Are Quietly Becoming Business Infrastructure, NOWPayments Data Shows",
+      "source": "CryptoPotato",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T12:14:38.000Z",
+      "url": "https://cryptopotato.com/stablecoins-are-quietly-becoming-business-infrastructure-nowpayments-data-shows/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "stablecoin",
+        "USDT",
+        "stablecoin payment"
+      ],
+      "excerpt": "[PRESS RELEASE – Tallinn, Estonia, October 8th, 2026] SaaS and eCommerce increased their combined share from 48.26% to 55.54%, while Trading moved from 14.07% to 13.15%. Businesses can build stablecoin infrastructure around the wrong problem. The mistake is treating stablecoins primarily as a coin-and-network decision. For a digital business, they may need to support a […] [PRESS RELEASE – Tallinn, Estonia, October 8th, 2026] SaaS and eCommerce increased their combined share from 48.26% to 55.54%, while Trading moved from 14.07% to 13.15%. Businesses can build stablecoin infrastructure around ",
+      "sourceId": "rss-snapshot-1cbeaf2c91ecb1956b4a",
+      "matchedRule": "stablecoin-core,stablecoin-settlement"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-08e91357e675c1299722",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Travala Launches Native AI Travel Agent with BNB Chain & Binance Pay",
+      "source": "CryptoPotato",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T12:14:12.000Z",
+      "url": "https://cryptopotato.com/travala-launches-native-ai-travel-agent-with-bnb-chain-binance-pay/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "USDT"
+      ],
+      "excerpt": "[PRESS RELEASE – Singapore, Singapore, October 6th, 2026] Travala has teamed up with BNB Chain and Binance Pay to launch a native AI travel booking agent directly on Travala that lets travellers search and book hotels using only a BNB Smart Chain (BSC) wallet with no setup required. To use the agent, travellers simply open […] [PRESS RELEASE – Singapore, Singapore, October 6th, 2026] Travala has teamed up with BNB Chain and Binance Pay to launch a native AI travel booking agent directly on Travala that lets travellers search and book hotels using only a BNB Smart Chain (BSC) wallet with no set",
+      "sourceId": "rss-snapshot-08e91357e675c1299722",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-5a048b2c4045f694d58e",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《軌跡》系列累計銷售突破 1000 萬套 帶動 Nihon Falcom 業績創歷史新高",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T12:01:02.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313155",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "Falcom"
+      ],
+      "excerpt": "Nihon Falcom 於 10 月 7 日宣布，劇情角色扮演遊戲《軌跡》系列累計銷售已突破 1000 萬套，公司業績也受到《空之軌跡 the 2nd》等作品熱賣的帶動大幅成長，因此將再次調整 2026 年 9 月期 ※ 的預測業績。 ※ 2025 年 10 月 1 日至 2026 年 9 月....",
+      "sourceId": "rss-snapshot-5a048b2c4045f694d58e",
+      "matchedRule": "competitor-global-game"
+    },
     {
       "id": "softworld-api-google-news-172d72f0a23a1bfdbe28",
       "origin": "monitoring",
@@ -51,6 +338,72 @@
       "publisherUrl": "https://tw.news.yahoo.com/%E6%B0%91%E7%9C%BE%E8%B3%BC%E8%B2%B7%E5%8A%9B%E5%A4%A7%E6%8F%90%E5%8D%87-%E5%89%8D8%E6%9C%88%E4%BF%A1%E7%94%A8%E5%8D%A1%E7%B0%BD%E5%B8%B3%E9%87%91%E9%A1%8D%E9%80%BE3-7%E5%85%86-%E5%89%B5%E5%90%8C%E6%9C%9F%E6%96%B0%E9%AB%98-113058905.html"
     },
     {
+      "id": "softworld-api-rss-snapshot-065ee0a3914ffd9bc41b",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Important Ripple News and XRP Price Update: October 8",
+      "source": "CryptoPotato",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T11:26:05.000Z",
+      "url": "https://cryptopotato.com/important-ripple-news-and-xrp-price-update-october-8/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "Paypal",
+        "stablecoin",
+        "PYUSD"
+      ],
+      "excerpt": "XRP was predicted to break out this week, but the actual move is quite disappointing for the bulls. The past week or so has been quite eventful for the broader Ripple and XRP ecosystem, with new partnerships and developments concerning both the company and the underlying asset behind it. We will review the key points in this article and outline some reasons behind the native token’s price slump. Big Win on Wall Street, Another in Korea But before we dive into XRP’s price moves, let’s examine some of the big news coming this week. Ripple strengthened its partnership with the Wall Street giant B",
+      "sourceId": "rss-snapshot-065ee0a3914ffd9bc41b",
+      "matchedRule": "international-fintech,stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-21b1d2191e28a9a9eeec",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "IMF：代幣化市場成長快但「規模小又分散」，四種限制拖慢擴張",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T11:14:20.000Z",
+      "url": "https://www.blocktempo.com/imf-gfsr-tokenization-markets-small-fragmented-four-constraints-financial-stability/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "國際貨幣基金組織（IMF）10 月 8 日發文指出，代幣化市場成長很快，但規模仍小、交易分散。部落格依據的報告 […] 〈 IMF：代幣化市場成長快但「規模小又分散」，四種限制拖慢擴張 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 國際貨幣基金組織（IMF）10 月 8 日發文指出，代幣化市場成長很快，但規模仍小、交易分散。部落格依據的報告統計，不含附買回的公開市場代幣化資產約 650 億美元（截至 7 月）。IMF 點出法律、監管、互通與結算資產四項限制，並提醒規模變大後風險可能放大。 （前情提要：IMF 警告：代幣化金融重塑全球市場，但 275 億美元 RWA 規模暗藏「系統性風險」） （背景補充：SEC 創新豁免卡住 Robinhood：代幣化股票交易量很可能觸上限） 重點摘要 IMF 點出代幣化四項限制：法律、監管、互通與結算資產 截至 7 月，不含附買回的公開代幣化資產約 650 億美元 代幣化股票約 80% 交易小於 1 股，逾半在美股正常時段外成交 國際貨幣基金組織（IMF）10 月 8 日在官方部落格發文，由貨幣與資本市場部副主任 Athanasios Vamvakidis 等四位作者署名，談代幣化的現況。IMF 指出，代幣化承諾交易更快、成本更低，前景誘人，但至少目前，現實複雜得多。代幣化市場雖然成長很快，規模仍然很小",
+      "sourceId": "rss-snapshot-21b1d2191e28a9a9eeec",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-359de96a0d1de31bf132",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "三星錢包 10 月底開放 USDC 跨境轉帳，美國 Galaxy 先上線",
+      "source": "ABMedia 區塊鏈媒體",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T11:10:49.000Z",
+      "url": "https://abmedia.io/samsung-wallet-usdc-transfers-us-launch",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "USDC",
+        "幣託",
+        "數位資產"
+      ],
+      "excerpt": "三星錢包 10 月最後一週在美國開放 USDC 轉帳，涵蓋 8,200 萬台相容 Galaxy 裝置；轉到加密錢包三星不收費，匯到 60 多國銀行帳戶需付手續費，由 Bastion 與 Coinbase 託管。 這篇文章 三星錢包 10 月底開放 USDC 跨境轉帳，美國 Galaxy 先上線 最早出現於 鏈新聞 ABMedia 。 三星錢包的穩定幣功能確定上線時間。根據 三星電子美國分公司 10 月 7 日發布的新聞稿 ，美國符合資格的 Galaxy 用戶從 10 月最後一週起，可以直接在三星錢包（Samsung Wallet）內轉帳 USDC，上線時將涵蓋 8,200 萬台美國 Galaxy 裝置。三星註明，這個數字指的是美國境內相容三星錢包的 Galaxy 裝置數量。 三星 7 月在倫敦的 Galaxy Unpacked 發表會上只預告三星錢包將支援穩定幣，當時展示畫面中出現 USDC，但沒有公布區塊鏈網路、合作夥伴與上線時間， 鏈新聞先前曾報導 。這次新聞稿補上了上線時程、合作夥伴與收費方式。 轉到加密錢包三星不收費，匯到 60 多國銀行帳戶要付手續費 新聞稿說明，用戶可以把 USDC 從三星錢包直接轉到海外相容的加密貨幣錢包，三星不收轉帳費，但收款方的錢包或交易所可能另外收費，轉帳速度則取決於區塊鏈網路狀況。 用戶也可以把錢匯到 60 多個國家的合格銀行帳戶，收款人會收到",
+      "sourceId": "rss-snapshot-359de96a0d1de31bf132",
+      "matchedRule": "stablecoin-core,stablecoin-bitopro"
+    },
+    {
       "id": "softworld-api-google-news-169ef528f092d2b12867",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -71,6 +424,29 @@
       "sourceId": "google-news-169ef528f092d2b12867",
       "matchedRule": "taiwan-payment-google-news",
       "publisherUrl": "https://news.tvbs.com.tw/money/4033613"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-9f1f2a3abaf5ec7b0930",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "eFootball Championship 2027 全新賽季揭幕並擴增 World Finals 晉級名額",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T11:04:12.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313147",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "KONAMI",
+        "電競賽事"
+      ],
+      "excerpt": "Konami Digital Entertainment Limited（KONAMI）今日公布可於家用主機、PC、行動裝置平台遊玩之免費足球遊戲《eFootball》的官方電競賽事 eFootball Championship 2027 的詳細資訊。2027 賽季除了將增加全新的競技晉級途徑外，eFootba....",
+      "sourceId": "rss-snapshot-9f1f2a3abaf5ec7b0930",
+      "matchedRule": "competitor-global-game,industry-game-platform"
     },
     {
       "id": "softworld-api-google-news-6b5055ce259a876091b0",
@@ -127,6 +503,75 @@
       "publisherUrl": "https://tw.news.yahoo.com/%E3%80%8A%E6%B3%95%E7%92%B0%E3%80%8B%E8%AE%8A%E5%B0%84%E6%93%8A%E9%81%8A%E6%88%B2%EF%BC%81%E7%A5%9E%E4%BA%BA%E6%8A%8A%E3%80%8Aapex%E8%8B%B1%E9%9B%84%E3%80%8B%E7%B8%AB%E9%80%B2%E5%8E%BB%E9%82%84%E9%96%8B%E6%94%BE%E7%8E%A9%E5%AE%B6%E4%B8%8B%E8%BC%89-%E5%A4%A7%E6%A8%B9%E5%AE%88%E8%A1%9B%E6%85%98%E8%A2%AB%E7%88%86%E5%B0%84-105222505.html"
     },
     {
+      "id": "softworld-api-rss-snapshot-e4e272ad2057a0ceab8d",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "才獲德媒關注！這家無人機廠今遭調查局搜索",
+      "source": "自由電子報 財經",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T10:47:22.000Z",
+      "url": "https://ec.ltn.com.tw/article/breakingnews/5600227",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "產業",
+        "蘋果"
+      ],
+      "excerpt": "從蘋果iPod供應鏈跨足軍用無人機的錦明（3230），近日才獲德國《商報》（Handelsblatt）關注，報導其從消費電子轉型國防產業的歷程，不料錦明今爆被法務部調查局...…",
+      "sourceId": "rss-snapshot-e4e272ad2057a0ceab8d",
+      "matchedRule": "industry-platform-business"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-b43f813d4b2ac8d0ddfe",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《超級槍彈辯駁 2×2》公開全新繪製的角色插圖",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T10:27:36.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313143",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "XBOX",
+        "SWITCH"
+      ],
+      "excerpt": "Spike Chunsoft Co., Ltd. 今日公開高速推理動作遊戲《超級槍彈辯駁 2&times;2》（Nintendo Switch 2 / Nintendo Switch / PlayStation 5 / Xbox Series X|S / Steam / Epic Games Store）全新繪....",
+      "sourceId": "rss-snapshot-b43f813d4b2ac8d0ddfe",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-6692eb5f1c1103a1f8a5",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "索尼AI專利曝Boss將「看穿」玩家打法 記錄格檔、攻擊與閃避並即時反制",
+      "source": "4Gamers",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T10:23:14.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82508/sony-ai-patent-boss-read-player-combat-style-block-attack-dodge-counter",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "互動",
+        "機器學習"
+      ],
+      "excerpt": "索尼互動娛樂（SIE）近期公開一項人工智慧專利，文件描述能按照玩家實際遊玩方式即時調整非玩家角色（NPC）行為的系統，該技術可分析玩家的攻擊、移動、武器使用與閃避習慣，再透過機器學習模型改變 NPC 的戰鬥策略、對話甚至互動方式。 索尼互動娛樂（SIE）近期公開一項人工智慧專利，文件描述能按照玩家實際遊玩方式即時調整非玩家角色（NPC）行為的系統，該技術可分析玩家的攻擊、移動、武器使用與閃避習慣，再透過機器學習模型改變 NPC 的戰鬥策略、對話甚至互動方式。 外媒 Wccftech 報導 ，專利名稱為「自適應 AI 的遊戲系統 NPC」，SIE 於 2025 年 3 月 31 日提出申請並在 2026 年 10 月 1 日公開，消息由 專利媒體 Patentlyze 發現 。 按照專利描述，系統可以收集玩家與 NPC／Boss 交戰期間的大量資料，包括玩家使用哪些能力或特殊招式、使用頻率與時機，以及所持武器、消耗品和移動模式。 連玩家的防禦習慣都可能被納入分析，例如「閃避、格擋與彈反」的使用頻率與成功率，系統還能記錄玩家造成與承受的傷害，最後是勝利還是敗北，以及為了擊敗敵人重試了多少次。 另一方面，Boss 本身的行為也會被 AI 系統追蹤，包括攻擊模式與生命值變化，以及玩家避開或反制特定招式的頻率，收集這些資料後，系統就能將結果交給機器學習模型來調整 NPC 的移動模式與對話、互",
+      "sourceId": "rss-snapshot-6692eb5f1c1103a1f8a5",
+      "matchedRule": "industry-martech"
+    },
+    {
       "id": "softworld-api-google-news-dede4863b4c85adde015",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -159,6 +604,252 @@
         }
       ],
       "publisherUrl": "https://money.udn.com/money/story/5612/9803568?from=edn_newest_index"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-f5f2c9840c10f153ef7a",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "川普出招組AI部隊！台灣這三大產業鏈成最大贏家？",
+      "source": "遠見雜誌",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T10:07:00.000Z",
+      "url": "https://www.gvm.com.tw/article/133582",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "優化",
+        "AI"
+      ],
+      "excerpt": "編按：川普喊出組建「AI部隊」、推動AI國家戰略，讓全球的科技競賽進一步升溫。而從先進製程、AI伺服器，到IC設計，台灣有哪些產業將直接受惠？又有哪些戰略挑戰值得關注？美國政治與科技版圖近期再度迎來震撼彈，隨著美國總統川普高調喊出籌組「AI部隊」，並準備設置「AI沙皇」，人工智慧的發展軌跡正式跨越分水嶺。這項舉動不僅模仿第一任期內創設「太空軍」的風格，更向全球宣告，AI已不再僅僅是民間企業優化營運、降低成本的生產力工具，而是正式躍升為決定國家生存、經濟命脈與地緣政治勝負的最高戰略資產。回顧生成式AI爆發之初，社會大眾多半視為一場由科技巨頭引領的商業革命與軟體競賽。然而，隨著算力、演算法與龐大能",
+      "sourceId": "rss-snapshot-f5f2c9840c10f153ef7a",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-ad59bf4bd50edd5e689d",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "孫宇晨出席 TOKEN2049：區塊鏈將成 AI 時代重要的基礎設施",
+      "source": "ABMedia 區塊鏈媒體",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T10:06:57.000Z",
+      "url": "https://abmedia.io/sun-yuchen-token2049-singapore-blockchain-ai-infrastructure",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "USDT",
+        "USDC"
+      ],
+      "excerpt": "10 月 8 日，波場 TRON 創辦人孫宇晨出席 TOKEN2049 新加坡主會場活動，並與播客《When […] 這篇文章 孫宇晨出席 TOKEN2049：區塊鏈將成 AI 時代重要的基礎設施 最早出現於 鏈新聞 ABMedia 。 10 月 8 日，波場 TRON 創辦人孫宇晨出席 TOKEN2049 新加坡主會場活動，並與播客《When Shift Happens》創辦人 Kevin Follonier 進行對話。孫宇晨分享了自己的加密產業經歷，並圍繞 AI 與區塊鏈融合發展趨勢，以及「孫宇晨獎」的願景等話題，進一步明確了波場 TRON 在 AI 時代的戰略定位。他表示，加密貨幣與 AI Agent 的融合將是未來 5 年最重要的應用場景。 加密產業創業初衷：以真實用戶需求為核心 孫宇晨在回顧 2017 年加密產業早期階段時表示，當時多數從業者仍聚焦於技術本身，而他更關注如何讓加密貨幣真正服務日常用戶。 「人們使用加密貨幣，不應僅因為對它感興趣，而應因為在日常生活中真正需要它。」基於這一理念，孫宇晨從創業初期就布局推動穩定幣的全球規模化應用。他強調，目前波場 TRON 生態已服務全球超過 4 億個帳戶，這一成果正是堅持真實需求導向的直接體現。 在比較加密與傳統銀行體系時，孫宇晨指出，銀行系統歷經百年卻幾乎沒有實質性變革，而當時的加密技術就如同現在的 AI，屬於可持續迭代的軟",
+      "sourceId": "rss-snapshot-ad59bf4bd50edd5e689d",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-b0ce874424d747f63682",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《星際爭霸戰：航行者 穿越未知》免費 Roguelite 模式「Q 的試煉」、DLC「分節號 」已上線",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T10:04:01.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313140",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "玩家"
+      ],
+      "excerpt": "發行商 Daedalic Entertainment 與開發商 gameXcite 宣布，已於《星際爭霸戰：航行者 穿越未知》中推出新 Roguelite 模式「Q 的試煉」，該模式透過免費更新向所有擁有遊戲本體的玩家開放，並與第二款 DLC「分節號」 同步上線。後者既可單獨購買，也包含在擴展通行證中。 &n....",
+      "sourceId": "rss-snapshot-b0ce874424d747f63682",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-c23291389988c5863323",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "揮別 Meta 收購破局，Manus 新輪募資狂吸 5 億美元劍指香港 IPO",
+      "source": "TechNews 科技新報",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T10:00:45.000Z",
+      "url": "https://technews.tw/2026/10/08/manus-secures-500m-funding/",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "IPO",
+        "Meta"
+      ],
+      "excerpt": "AI 代理（AI Agent）新創公司 Manus 的母公司 Butterfly Effect 於 2026 […]",
+      "sourceId": "rss-snapshot-c23291389988c5863323",
+      "matchedRule": "industry-platform-business"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-4f05da5c5d7bc765fe3a",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《三國志 霸道》第 61 回直播活動 10 月 14 日登場",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T09:58:38.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313138",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "光榮",
+        "facebook"
+      ],
+      "excerpt": "臺灣光榮特庫摩宣布，由光榮特庫摩推出的 MMO 戰略模擬手機遊戲《三國志 霸道》，將於 10 月 14 日（三）20:00 GMT+8 於官方 Facebook 粉絲專頁與臺灣光榮特庫摩 YouTube 頻道舉辦《霸道群雄生放送》第 62 回直播活動。節目將由知名歌手及主持人 - 安娜&middot;李、以及戶....",
+      "sourceId": "rss-snapshot-4f05da5c5d7bc765fe3a",
+      "matchedRule": "competitor-global-game,industry-platform-business"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-695d6791d3db72efaca7",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Coinbase and Samsung Wallet partner for USDC",
+      "source": "Finextra",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T09:47:00.000Z",
+      "url": "https://www.finextra.com/pressarticle/111189/coinbase-and-samsung-wallet-partner-for-usdc?utm_medium=rssfinextra&utm_source=finextrafeed",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "USDC"
+      ],
+      "excerpt": "Last July, Coinbase added Samsung Pay as a payment option, making it easier for users to buy crypto in the Coinbase app.",
+      "sourceId": "rss-snapshot-695d6791d3db72efaca7",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-b471f92bc5000173f1e9",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《伊卡洛斯 Online》確定 10 月 22 日上市 10 月 16 日起搶先建立角色",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T09:46:07.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313136",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "玩家"
+      ],
+      "excerpt": "遊戲平台企業 VALOFE 宣布，PC MMORPG《伊卡洛斯 Online》將於 10 月 22 日（四）上市，玩家可於 10 月 16 日起搶先建立角色，為進入遊戲做準備。 《伊卡洛斯 Online》是一款以廣闊的米德拉斯大陸為舞台的 MMORPG。玩家可....",
+      "sourceId": "rss-snapshot-b471f92bc5000173f1e9",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-5c572eb00911f451efd2",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "巴哈商城 10 月 4 日當週預購排行榜 現象級超大作《俠盜獵車手 6》實體版排名竄升",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T09:42:32.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313134",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "玩家"
+      ],
+      "excerpt": "每週公布的遊戲資訊繁多，相信不少玩家都想知道哪些遊戲已經可以預購了？哪些遊戲快要推出了？大家最期待哪幾款新作？那些遊戲的預購狀況最火熱等。為了幫助玩家了解近期即將在台灣推出的新作、作為自己選購遊戲的依據，GNN 與巴哈商城合作，每週定期刊載當週實體預購排行榜，供玩家參考。 ....",
+      "sourceId": "rss-snapshot-5c572eb00911f451efd2",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-39d6ccf60650de5e3b69",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Google攜手Unity推AI遊戲平台 Playground打字生成遊戲、Unity Spark升級3D創作",
+      "source": "4Gamers",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T09:40:27.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82506/google-unity-ai-game-platform-playground-unity-spark-3d-creation",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "遊戲",
+        "google"
+      ],
+      "excerpt": "Google 與 Unity 於 10 月 7 日宣布建立策略合作夥伴關係，雙方聯手打造結合 AI 遊戲創作、遊玩與作品分享的新平台。Google 首波推出實驗性平台「Playground」，讓使用者只要透過文字提示，就能在不需要程式設計經驗的情況下建立可遊玩的遊戲。 Google 與 Unity 於 10 月 7 日宣布建立策略合作夥伴關係，雙方聯手打造結合 AI 遊戲創作、遊玩與作品分享的新平台。Google 首波推出實驗性平台「Playground」，讓使用者只要透過文字提示，就能在不需要程式設計經驗的情況下建立可遊玩的遊戲。 而針對希望製作完整作品的創作者，Unity 也將推出「Unity Spark」，提供更完整的遊戲編輯環境、專業級遊戲機制與高品質 3D 開發能力。 Google Playground 試驗版 10 月 7 日當天在美國推出，開放年滿 18 歲的使用者使用，後續也將依 Google AI 訂閱方案逐步提供不同層級的創作權限，使用者只要描述「想做什麼」，就能開始製作遊戲，不需要先學習遊戲引擎或撰寫程式碼。 根據 Google 官方部落格 ，Playground 採用對話式介面，使用者可以從空白畫布開始，也能套用起始提示或透過引導功能逐步建立概念。完成初版後能再要求 AI 修改物理效果、遊戲規則、角色或場景環境，從最初構想到最後成品都能持續調整。 遊戲完成後",
+      "sourceId": "rss-snapshot-39d6ccf60650de5e3b69",
+      "matchedRule": "industry-platform-business"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-75f08ddc0139f95e3de5",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《FGO》繁中版舉辦「培育吧！我的小小龍」限時活動 推出新從者 「★5（SSR）比修內」",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T09:31:17.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313132",
+      "topic": "遊戲產業",
+      "reportGroup": "industry-new-games",
+      "priority": "中",
+      "tags": [
+        "市場新遊",
+        "重點遊戲",
+        "Fate/Grand Order",
+        "Fate／Grand Order"
+      ],
+      "excerpt": "《Fate/Grand Order》繁中版（中文名：命運－冠位指定，以下簡稱《FGO》繁中版）於今（8）日展開「培育吧！ 我的小小龍 ～披鱗者們所見之幻想～」限時活動，全新從者「★5（SSR）比修內」也於 PICK UP 召喚現身，培育小小龍的任務旅程即刻展開。 《Fate/Gran....",
+      "sourceId": "rss-snapshot-75f08ddc0139f95e3de5",
+      "matchedRule": "mobile-top-grossing-games"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-bf6e683b00f33d0c6956",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《偶像傳奇！閃耀再臨》Switch 下載版今日發售",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T09:17:57.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313129",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "傳奇",
+        "SWITCH"
+      ],
+      "excerpt": "由 Frontier Works Inc. 營運的遊戲品牌「FWGames」宣布，偶像 &times; 城鎮建設模擬遊戲《偶像傳奇！閃耀再臨》Nintendo Switch 下載版，已於今日 2026 年 10 月 8 日（四）正式發售。 【以下內容為廠商提供資料原....",
+      "sourceId": "rss-snapshot-bf6e683b00f33d0c6956",
+      "matchedRule": "competitor-global-game,industry-game-platform"
     },
     {
       "id": "softworld-api-google-news-c3ed8afab54e9867bda9",
@@ -203,6 +894,29 @@
       "excerpt": "Users can send USDC across borders from late October, three months after Samsung teased stablecoin support without naming a blockchain.",
       "sourceId": "rss-snapshot-ba40ee4868e40bdc4b30",
       "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-5381161a3edc1c1bf625",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "AI 模型越便宜反而越花錢？史丹佛等機構研究：近 1/3 模型成本比較出現「反轉」",
+      "source": "科技報橘 TechOrange",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T09:03:12.000Z",
+      "url": "https://techorange.com/2026/10/08/cheaper-ai-models-cost-more-price-reversal-study/?utm_source=rss&utm_medium=feed&utm_campaign=techorange_rss",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "互動",
+        "Google"
+      ],
+      "excerpt": "AI 模型的 API 價格持續下降，企業選擇較便宜的模型，就一定能降低成本嗎？史丹佛大學等機構一項研究發現，在 336 組 AI 模型成本比較中，約 32% 出現「價格逆轉」（Price Reversal）現象，也就是 API 單價較低的模型，執行相同測試任務反而更花錢。隨著 AI Agent（AI 代理）開始承接更多複雜工作，這項發現也對企業過去依據模型單價比較成本的方式提出挑戰。 API 單價便宜 80%，實際成本卻高出 38% 這項由史丹佛大學、卡內基美隆大學、加州大學柏克萊分校及 Microsoft Research 研究人員共同完成的論文《The Price Reversal Phenomenon》，最初於今年 3 月發表、5 月修訂。 研究比較 GPT-5.4、Gemini 3 Flash、Claude Opus 4.7 等 8 款前沿推理模型，涵蓋數學、科學問答、程式設計，以及需要多次與外部環境互動的 AI Agent 任務，共計 12 類測試。 以 Google Gemini 3 Flash 與 OpenAI GPT-5.4 為例，研究將每百萬輸入與輸出 Token 的價格相加作為比較指標，Gemini [&hellip;] AI 模型的 API 價格持續下降，企業選擇較便宜的模型，就一定能降低成本嗎？史丹佛大學等機構一項研究發現，在 336 組 AI 模型成本比較",
+      "sourceId": "rss-snapshot-5381161a3edc1c1bf625",
+      "matchedRule": "industry-martech"
     },
     {
       "id": "softworld-api-rss-snapshot-1175914c83ad7ab7aca9",
@@ -313,6 +1027,29 @@
       "excerpt": "Anthropic 開始每月送 Claude Max 與 Team 訂閱戶一筆 API 額度，Max 20x […] 〈 舒服！Claude 宣布每月送 Max 與 Team 訂閱戶免費 API 額度 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 Anthropic 開始每月送 Claude Max 與 Team 訂閱戶一筆 API 額度，Max 20x 是 200 美元、Team 整隊最高 500 美元，Pro 沒有。 （前情提要：Anthropic 臨時喊卡 Agent SDK 計費新制，訂閱補貼上看 30 倍） （背景補充：實測 Claude $200 訂閱：全跑 Opus 5.5 額度等值 1.17 萬美元 API 費(差58倍)） 每月多 200～500 美元，但不是讓你拿來跑 Claude Code。Anthropic 今晨在 Claude Haiku 5.5 發表文裡順帶推出新制：Claude Max 與 Team 訂閱戶每月可領一筆 Claude Platform 的 API 額度。 Max 5x 是 100 美元，Max 20x 是 200 美元，Team 標準席位每席 20 美元、Premium 席位每席 100 美元，整隊合併上限 500 美元，本週內分批開放。Free、Pro 與 Enterprise 方案不在名",
       "sourceId": "rss-snapshot-d6ed75e1caaf644e8d5f",
       "matchedRule": "taiwan-payment-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-153e77c1e81912540575",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "AI 落地的關鍵，在於找到合適的 Use Case：高通攜手生態系共創 Edge AI 加速產業部署",
+      "source": "科技報橘 TechOrange",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-08T08:44:19.000Z",
+      "url": "https://techorange.com/2026/10/08/edge-ai-ecosystem-use-case/?utm_source=rss&utm_medium=feed&utm_campaign=techorange_rss",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "行銷",
+        "優化"
+      ],
+      "excerpt": "TechOrange 科技報橘與美國高通公司（Qualcomm）於 9 月 17 日在新竹共同舉辦「AI 智造領航午宴」，邀集多位高科技製造業中高階主管蒞臨餐敘交流，共同探討 AI 落地製造現場的實務路徑。 科技報橘社長戴季全致詞時表示，台灣企業正進入全球佈局與國際經營的新階段，研發與創新服務更不可或缺。他觀察到，台灣廠商彼此之間正從單純的上下游供應鏈，轉向奠基於共同技術基礎上合作、研發與開拓市場的「生態系」模式，這也是 Edge AI 從技術驗證走向產業部署的重要基礎。 高通行銷行政經理朱俊翰於專題分享中指出，根據產業預估，全球邊緣 AI 的市場規模目前約為 200 億美元，至 2030 年更可望突破 1,000 億美元，成為 AI 產業成長最快的領域之一。企業導入邊緣 AI 時所關注的重點，勢必也將從模型效能或算力堆疊，轉向如何實踐分散式邊緣運算。對此，朱俊翰表示，「現在 AI 落地的關鍵，在於依據實際需求配置合適的模型、找到適當的平台，以及真正有價值的 Use Case。」 朱俊翰進一步表示，若說過去幾年的產業焦點是大型語言模型（LLM），接下來更值得關注的將是代理式 AI（Agentic AI）。AI 正從只是提供答案，逐步延伸至理解目標、整合資訊，並在適當的系統與治理機制下協助執行任務。對企業而言，這代表 AI 的價值正從模型能力本身，逐步轉向如何提升營運效率、優化決策流",
+      "sourceId": "rss-snapshot-153e77c1e81912540575",
+      "matchedRule": "industry-martech"
     },
     {
       "id": "softworld-api-rss-snapshot-a72fee67af8d8b40614b",
@@ -577,7 +1314,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-65a8556194294a4329c8",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.nownews.com/amp/news/6881759"
     },
     {
       "id": "softworld-api-google-news-2ec32625bfd3eeb18ea3",
@@ -600,7 +1338,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-2ec32625bfd3eeb18ea3",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.ettoday.net/news/20261008/3251194.htm"
     },
     {
       "id": "softworld-api-rss-snapshot-ec3f2136ef37f1f55ae0",
@@ -655,7 +1394,8 @@
           "source": "鉅亨網",
           "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFAxQ1JwcFhiOGpBXzIzY1hmRFVxeUF4ZlhSQXdTWUtxc0R3bmtKM1J3b0JRcjdaY25reWlsOFpTNmtVcmYtTnVrTVJHa0RQWWc?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://today.line.me/tw/v3/article/RBKeBB3"
     },
     {
       "id": "softworld-api-rss-snapshot-72a47c4926bc467cc878",
@@ -701,7 +1441,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-3f40b7e0ac04269637fb",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://news.pchome.com.tw/game/technice/20261008/index-79144444085376338104.html"
     },
     {
       "id": "softworld-api-rss-snapshot-f306cd600f6575473a77",
@@ -812,7 +1553,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-707417bfb932b1e96f6c",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://www.bnext.com.tw/article/92562/world-space-week-2026-astronaut-pikachu-pokemon-go"
     },
     {
       "id": "softworld-api-rss-snapshot-a182802ecff35befcad0",
@@ -863,7 +1605,8 @@
           "source": "網易",
           "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1ua2VLai03aTduQ053Z2lDcHMzU1pFR3pfM3I0SWVTRi1XN29PWW5TcmFJaEQ0T2NuS2ZUaUt4bUtCZWNNekRTVlV0WEFpVy0xOHlxMm94ZTJDbDJoTng0RWd3?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://m.sohu.com/a/1085150565_121814834?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
     },
     {
       "id": "softworld-api-google-news-fd99e20bd38bbd97171d",
@@ -884,7 +1627,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-fd99e20bd38bbd97171d",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.ctee.com.tw/news/20261008701688-430201"
     },
     {
       "id": "softworld-api-google-news-65061eeec5e684891bee",
@@ -905,7 +1649,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-65061eeec5e684891bee",
-      "matchedRule": "competitor-brand"
+      "matchedRule": "competitor-brand",
+      "publisherUrl": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=ddaa022b-16e1-4d9b-be93-0a42241b54ed"
     },
     {
       "id": "softworld-api-google-news-9146e772cfc95df17c63",
@@ -950,7 +1695,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-14a505b63270ec23b329",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.cmoney.tw/forum/readmo/5cda488f-df39-469a-b135-efbf8babb6d8"
     },
     {
       "id": "softworld-api-rss-snapshot-ffd44eb26ac2f8e54578",
@@ -1093,7 +1839,8 @@
           "source": "PChome新聞",
           "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNTG01eU9CN2tMZHllalpJdC1DTTVSbHFfTy0tSFRxSGlYNVpJS3V0amxJM0s5Rm5qSThGcXAyRVpQTUtrR0tEaURkbHAyN1I1LThNbzZPNlBKU0hyZW4yd1c2ekJVVk4ySnBMR3lWbmd5NkNoRHBPYUNkazlDWDZEeE1fcW0zSzAxVWc?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://www.ftvnews.com.tw/news/detail/2026A08W0395"
     },
     {
       "id": "softworld-api-google-news-67689b91c58399d80e27",
@@ -1116,7 +1863,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-67689b91c58399d80e27",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.inside.com.tw/article/42599-google-playground-experimental-gaming-platform"
     },
     {
       "id": "softworld-api-rss-snapshot-ea680e070099081a2d53",
@@ -1160,7 +1908,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-5b155414ff44d8a594ec",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.bnext.com.tw/article/92514/aircard-apple-pay-card-art-tutorial"
     },
     {
       "id": "softworld-api-google-news-897660e86cceb3ab4007",
@@ -2040,6 +2789,29 @@
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-57248f3491045e345482",
       "matchedRule": "industry-platform-business"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-8c624791ea2b475050fb",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Google推出AI遊戲平臺Playground，文字指令即可建立、發布遊戲",
+      "source": "iThome",
+      "date": "2026-10-08",
+      "publishedAt": "2026-10-07T21:10:50.000Z",
+      "url": "https://www.ithome.com.tw/news/179535",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "玩家",
+        "google"
+      ],
+      "excerpt": "Google推出實驗性AI遊戲平臺Playground，使用者只要透過文字描述遊戲構想，就能建立可直接遊玩的遊戲，並以對話方式修改玩法、角色及場景，不需要自行撰寫程式碼。完成的作品可以透過連結分享，也能公開發布供其他玩家遊玩。Google計畫整合Unity Spark，讓使用者未來能製作更複雜的3D遊戲。",
+      "sourceId": "rss-snapshot-8c624791ea2b475050fb",
+      "matchedRule": "industry-game-platform,industry-platform-business"
     },
     {
       "id": "softworld-api-google-news-629e979face89f39fe50",
@@ -45243,50 +46015,6 @@
           "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9fOGhCLVM1OFZsOUpVbnQ5b18zZ2dBNGNnMEx5dTdRTmhaR2pxZmtEWGIyU0V2WGZKZEg4b2IyenV6bDV1QWUxSmdvMXBvbkN5elIyRVV3Y0RJXzlBSkw3UEstVmswX1NFUmw1YjZJVkQ?oc=5"
         }
       ]
-    },
-    {
-      "id": "softworld-api-rss-snapshot-5e3e8ec31a4c4de1850f",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "KuCoin Brings Stablecoin Prepaid Cards to Businesses",
-      "source": "Payments Journal",
-      "date": "2026-08-08",
-      "publishedAt": "2026-08-07T18:00:00.000Z",
-      "url": "https://www.paymentsjournal.com/kucoin-brings-stablecoin-prepaid-cards-to-businesses/",
-      "topic": "金融支付",
-      "reportGroup": "industry-stablecoin",
-      "priority": "高",
-      "tags": [
-        "穩定幣",
-        "鏈上結算",
-        "stablecoin",
-        "USDT",
-        "USDC"
-      ],
-      "excerpt": "KuCoin is bringing stablecoin payments into a more familiar business tool: the prepaid card. The crypto exchange’s payments arm has launched an enterprise gift card that allows companies to issue USDT and USDC-based cards for rewards, promotions and other business uses, marking another effort to connect digital assets with everyday commerce. The KuCoin Gift […] The post KuCoin Brings Stablecoin Prepaid Cards to Businesses appeared first on PaymentsJournal . KuCoin is bringing stablecoin payments into a more familiar business tool: the prepaid card. The crypto exchange’s payments arm has launch",
-      "sourceId": "rss-snapshot-5e3e8ec31a4c4de1850f",
-      "matchedRule": "stablecoin-core,stablecoin-settlement,stablecoin-circle"
-    },
-    {
-      "id": "softworld-api-rss-snapshot-a9843ace68e954ab6b68",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "Google Wallet Targets the Next Generation of Banking Customers",
-      "source": "Payments Journal",
-      "date": "2026-08-08",
-      "publishedAt": "2026-08-07T16:50:15.000Z",
-      "url": "https://www.paymentsjournal.com/google-wallet-targets-the-next-generation-of-banking-customers/",
-      "topic": "金融支付",
-      "reportGroup": "industry-stablecoin",
-      "priority": "高",
-      "tags": [
-        "穩定幣",
-        "鏈上結算",
-        "stablecoin"
-      ],
-      "excerpt": "Financial literacy is becoming a key feature in the competition for the next generation of banking customers. Google’s latest Wallet update reflects that shift, introducing parent-managed accounts that allow children to make purchases while parents set limits and monitor activity. Google Wallet will now allow parents to establish a balance for children under 18, complete […] The post Google Wallet Targets the Next Generation of Banking Customers appeared first on PaymentsJournal . Financial literacy is becoming a key feature in the competition for the next generation of banking customers. Goog",
-      "sourceId": "rss-snapshot-a9843ace68e954ab6b68",
-      "matchedRule": "stablecoin-core"
     }
   ]
 }
