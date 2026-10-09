@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-10-09T12:43:28.831945Z",
-  "syncedAt": "2026-10-09T15:16:36.989Z",
+  "generatedAt": "2026-10-09T16:22:53.264Z",
+  "syncedAt": "2026-10-09T20:07:52.515Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,24 +10,112 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 2328,
-    "matchedItems": 2062,
+    "totalItems": 2333,
+    "matchedItems": 2067,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 2328,
-        "matchedItems": 2165,
-        "generatedAt": "2026-10-09T12:43:28.831945Z",
+        "totalItems": 2333,
+        "matchedItems": 2170,
+        "generatedAt": "2026-10-09T16:22:53.264Z",
         "range": {
-          "from": "2026-08-09",
-          "to": "2026-10-09"
+          "from": "2026-08-10",
+          "to": "2026-10-10"
         }
       }
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-rss-snapshot-aa0c33cc604fcc3daf6f",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "滑手機停不下來不是沒定力，科學證實科技正悄悄改寫你的大腦化學",
+      "source": "TechNews 科技新報",
+      "date": "2026-10-10",
+      "publishedAt": "2026-10-09T16:00:07.000Z",
+      "url": "https://technews.tw/2026/10/10/technology-reshapes-brain/",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "媒體",
+        "社群"
+      ],
+      "excerpt": "最新觀點指出，智慧型手機、社群媒體與生成式 AI 對人類的影響，早已超越單純的「讓人分心」，而是正在化學層面上 […]",
+      "sourceId": "rss-snapshot-aa0c33cc604fcc3daf6f",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-9359488f9f7dc9801fb3",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "英國制裁 3 家加密交易所！跟俄羅斯 A7 網路洗錢扯上關係，HTX 也在名單上",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-09",
+      "publishedAt": "2026-10-09T14:05:54.000Z",
+      "url": "https://www.blocktempo.com/uk-sanctions-three-crypto-exchanges-russian-illicit-funds-a7-network/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "英國政府制裁三家加密交易所與兩家支付平台，指控它們協助俄羅斯實體規避金融制裁。其中兩家與克里姆林宮支援的 A7 […] 〈 英國制裁 3 家加密交易所！跟俄羅斯 A7 網路洗錢扯上關係，HTX 也在名單上 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 英國政府制裁三家加密交易所與兩家支付平台，指控它們協助俄羅斯實體規避金融制裁。其中兩家與克里姆林宮支援的 A7 網路交易，A7 去年移動資金超過 900 億美元。 （前情提要：歐盟第 21 輪制裁封殺俄羅斯加密後門！鎖定 1,200 億美元加密支付網路與 14 家平台） （背景補充：FinCEN 撤回加密混幣器新規！川普去管制 agenda，兩項爭議草案直接砍） 英國政府週四宣布制裁三家加密貨幣交易所與兩家支付處理平台，指控它們協助俄羅斯實體規避西方金融制裁。英國外交部（FCDO）表示，這些服務商與數千個俄羅斯受制裁實體有關聯，其中兩家還與克里姆林宮支援的 A7 加密支付網路有資金往來。 英國外交部指出，被制裁的三家服務提供商與吉爾吉斯有關，兩家則為 A7 網路處理交易。A7 聲稱去年移轉超過 900 億美元資金，佔俄羅斯年度軍費支出的近一半。英國外相強調，切斷這些平台將讓受制裁實體更難移動和存取資金。 Chainalysis：兩家支付處理器來自 900 個非法實體 鏈上分析公司 Chai",
+      "sourceId": "rss-snapshot-9359488f9f7dc9801fb3",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-b5bad98d567b9e45d014",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Powerful September funding drives strong third quarter for RegTech deals",
+      "source": "Fintech Global",
+      "date": "2026-10-09",
+      "publishedAt": "2026-10-09T12:35:57.000Z",
+      "url": "https://fintech.global/2026/10/09/powerful-september-funding-drives-strong-third-quarter-for-regtech-deals/?utm_source=rss&utm_medium=rss&utm_campaign=powerful-september-funding-drives-strong-third-quarter-for-regtech-deals",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "Stripe",
+        "stablecoin"
+      ],
+      "excerpt": "As the sizzling hot summer of 2026 rolled through, equally intense was the climbing investment in the RegTech sector seen through the third quarter of the year. Despite total funding across the top deals for July, August and September 2026 being down on the second quarter, the performance seen for big deals across the three […] The post Powerful September funding drives strong third quarter for RegTech deals appeared first on FinTech Global . As the sizzling hot summer of 2026 rolled through, equally intense was the climbing investment in the RegTech sector seen through the third quarter of th",
+      "sourceId": "rss-snapshot-b5bad98d567b9e45d014",
+      "matchedRule": "international-fintech,stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-70ff6b710dc071b38ff2",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "樑子結大了！Meta封殺TikTok廣告 7國平台即刻生效",
+      "source": "自由電子報 財經",
+      "date": "2026-10-09",
+      "publishedAt": "2026-10-09T12:13:36.000Z",
+      "url": "https://ec.ltn.com.tw/article/breakingnews/5601232",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "社群",
+        "臉書"
+      ],
+      "excerpt": "擁有臉書與Instagram的Meta 8日宣佈，禁止TikTok中國母公司字節跳動在美國與其他一些國家的旗下平台投放廣告。此舉使兩大社群影音平台的競爭加劇。 彭博報...…",
+      "sourceId": "rss-snapshot-70ff6b710dc071b38ff2",
+      "matchedRule": "industry-platform-business,industry-martech"
+    },
     {
       "id": "softworld-api-google-news-58577f5c5843de55006f",
       "origin": "monitoring",
@@ -119,6 +207,50 @@
       "sourceId": "google-news-d20359e131591264d025",
       "matchedRule": "taiwan-payment-google-news",
       "publisherUrl": "https://news.ebc.net.tw/news/living/574944"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-989890b6c8e7776a3e16",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Sumsub’s reusable KYC ends repeat checks for MiniPay users",
+      "source": "Fintech Global",
+      "date": "2026-10-09",
+      "publishedAt": "2026-10-09T09:29:57.000Z",
+      "url": "https://fintech.global/2026/10/09/sumsubs-reusable-kyc-ends-repeat-checks-for-minipay-users/?utm_source=rss&utm_medium=rss&utm_campaign=sumsubs-reusable-kyc-ends-repeat-checks-for-minipay-users",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "stablecoin"
+      ],
+      "excerpt": "Sumsub has unveiled Reusable KYC Gateway at Token2049 Singapore, with MiniPay, a fast-growing stablecoin wallet, signing up as the first live integrator to give its users a single identity check that works across its partner network. The tool lets MiniPay customers prove who they are one time and then carry that verified status to every […] The post Sumsub’s reusable KYC ends repeat checks for MiniPay users appeared first on FinTech Global . Sumsub has unveiled Reusable KYC Gateway at Token2049 Singapore, with MiniPay, a fast-growing stablecoin wallet, signing up as the first live integrator t",
+      "sourceId": "rss-snapshot-989890b6c8e7776a3e16",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-762b1496d4d3ce8cb096",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Regulators tighten grip as October deadlines loom",
+      "source": "Fintech Global",
+      "date": "2026-10-09",
+      "publishedAt": "2026-10-09T09:24:28.000Z",
+      "url": "https://fintech.global/2026/10/09/regulators-tighten-grip-as-october-deadlines-loom/?utm_source=rss&utm_medium=rss&utm_campaign=regulators-tighten-grip-as-october-deadlines-loom",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "中",
+      "tags": [
+        "金融支付",
+        "產業監測",
+        "Square",
+        "visa",
+        "mastercard"
+      ],
+      "excerpt": "October brings a dense compliance calendar for financial institutions worldwide. Horizon Scanning’s Regulatory Deadlines Calendar tracks 66 deadlines this month. According to Vixio, of these, 21 are consultation periods closing and awaiting industry responses, and 39 are actionable requirements taking effect. For compliance teams, the message is clear: the window for preparation is narrowing across […] The post Regulators tighten grip as October deadlines loom appeared first on FinTech Global . October brings a dense compliance calendar for financial institutions worldwide. Horizon Scanning’s ",
+      "sourceId": "rss-snapshot-762b1496d4d3ce8cb096",
+      "matchedRule": "international-fintech"
     },
     {
       "id": "softworld-api-rss-snapshot-6d58537096f304ed80d8",
@@ -525,7 +657,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-1039cdea6a825bcfa161",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://www.chinatimes.com/realtimenews/20261009001712-260410"
     },
     {
       "id": "softworld-api-rss-snapshot-b5d19d33c6e09191667f",
@@ -569,7 +702,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-af6bb5a7e8879ad5e485",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://www.chinatimes.com/realtimenews/20261009002020-260409"
     },
     {
       "id": "softworld-api-google-news-f4bdaa59945300a5bd89",
@@ -592,7 +726,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-f4bdaa59945300a5bd89",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://www.ctee.com.tw/news/20261009700588-430801"
     },
     {
       "id": "softworld-api-rss-snapshot-debaa17ebd136572fa0e",
@@ -636,7 +771,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-e85a45f09ccfdc52531e",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://news.tvbs.com.tw/world/4033846"
     },
     {
       "id": "softworld-api-rss-snapshot-7771b539fa9e576997eb",
@@ -1210,7 +1346,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-aa1ea0cddb4b5db6ab57",
-      "matchedRule": "competitor-brand"
+      "matchedRule": "competitor-brand",
+      "publisherUrl": "https://news.cnyes.com/news/aigc/answer/9%E6%9C%88%E7%87%9F%E6%94%B6%E5%B9%B4%E5%A2%9E-58520770?utm_campaign=aigc_hot&utm_content=news&utm_term=9%E6%9C%88%E7%87%9F%E6%94%B6%E5%B9%B4%E5%A2%9E25.29%%EF%BC%8C%E9%88%8A%E8%B1%A1%E7%9A%84%E7%9F%AD%E6%9C%9F%E7%8D%B2%E5%88%A9%E5%8B%95%E8%83%BD%E8%83%BD%E5%90%A6%E5%BB%B6%E7%BA%8C%EF%BC%9F"
     },
     {
       "id": "softworld-api-rss-snapshot-9ea2bd3275e22f87514c",
@@ -1345,7 +1482,8 @@
           "source": "卡優新聞網熱門新聞",
           "url": "https://www.cardu.com.tw/news/detail.php?65903"
         }
-      ]
+      ],
+      "publisherUrl": "https://news.pchome.com.tw/finance/cardu/20261009/index-17914899069150941003.html"
     },
     {
       "id": "softworld-api-68375358-f19b-46c2-b2e5-eb7fc0ef5ec9",
@@ -2152,7 +2290,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-9d07c51a93266310689a",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.taisounds.com/news/content/76/292962"
     },
     {
       "id": "softworld-api-rss-snapshot-065ee0a3914ffd9bc41b",
@@ -2690,7 +2829,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-7891245e74af0cddb6c6",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://news.pchome.com.tw/finance/sunmedia/20261008/index-79145228885372329003.html"
     },
     {
       "id": "softworld-api-rss-snapshot-75f08ddc0139f95e3de5",
@@ -2756,7 +2896,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-c3ed8afab54e9867bda9",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://money.udn.com/money/story/124512/9803363?from=edn_newestlist_cate_side"
     },
     {
       "id": "softworld-api-rss-snapshot-ba40ee4868e40bdc4b30",
@@ -3772,7 +3913,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-6b2e71116a8c548a02b5",
-      "matchedRule": "stablecoin-core"
+      "matchedRule": "stablecoin-core",
+      "publisherUrl": "https://news.cnyes.com/news/id/6624758"
     },
     {
       "id": "softworld-api-google-news-897660e86cceb3ab4007",
@@ -3870,7 +4012,8 @@
           "source": "PChome新聞",
           "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGppSjZvUGdrY3NBcC11ZHczUTZBTS1ZYmFKYzhxa2g1dWJLVF8ycmMtbDJUY1ZoZ2ljM1hXendQVlVzZ0VPVm9yLUN5T1ZSOFU0eW5ZUkFkSEYybTBBakhIemJpa3BWXzQxOF9mOThDSVhjc08zanVTcy1XeURaekJHQlV3dFlRbFE?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://tw.news.yahoo.com/1%E7%B4%9A%E8%83%BD%E5%8A%9B%E5%8D%BB%E8%B2%B710%E7%B4%9A%E8%A3%9D%E5%82%99-%E5%BE%9E%E9%81%8A%E6%88%B2%E5%AD%B8%E5%88%B0%E7%9A%84%E7%8E%A9%E5%AE%B6%E5%BF%83%E6%85%8B-%E4%BA%BA%E7%94%9F%E4%B8%8D%E8%83%BD%E9%9D%A0%E8%A3%9D%E5%82%99%E4%BB%A3%E6%89%93-020000378.html"
     },
     {
       "id": "softworld-api-google-news-c4ea3398c629f71e18a7",
@@ -3892,7 +4035,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-0d176b175547c4f2ead8",
-      "matchedRule": "industry-game-platform"
+      "matchedRule": "industry-game-platform",
+      "publisherUrl": "https://tw.news.yahoo.com/%E9%81%8A%E6%88%B2%E7%88%86%E7%B4%85%E5%8F%8D%E8%80%8C%E6%92%90%E4%B8%8D%E4%BD%8F%EF%BC%9F%E7%8E%A9%E5%AE%B6%E6%9A%B4%E5%A2%9E20%E5%80%8D-%E5%AE%98%E6%96%B9%E5%82%BB%E7%9C%BC%E3%80%8Cai%E8%B2%BB%E7%94%A8%E9%AB%98%E5%88%B0%E8%A6%81%E8%B2%B8%E6%AC%BE%E3%80%8D-040733382.html"
     },
     {
       "id": "softworld-api-rss-snapshot-e35daee64e5a65d66e86",
@@ -46464,29 +46608,6 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-9d68e101e1a9165973da",
-      "matchedRule": "industry-platform-business"
-    },
-    {
-      "id": "softworld-api-google-news-4a2a46c4adc7a15fd765",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "Google Maps 也可以訂餐了！預計與 Uber Eats 合作， 可惜台灣還沒辦法用",
-      "source": "T客邦",
-      "date": "2026-08-09",
-      "publishedAt": "2026-08-09T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9GVm1EMnpGdGxyOUVLYmpackdlM1VVenhBRm1rQ0E4WHc1VGNxSlppYmljaVpFMnBpNEgwR3V6cWdqZDV0UE5VcmRpcUk1OEZ6TnE4TlZ4Y0ZDeW9vcXZuR0lnQzBZTkJZTnVnWDFmaG5Oa1hiVjhsQkJTQ0xfZw?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技",
-        "合作",
-        "google"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-4a2a46c4adc7a15fd765",
       "matchedRule": "industry-platform-business"
     }
   ]
