@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-10-10T12:02:11.673890Z",
-  "syncedAt": "2026-10-10T12:27:29.182Z",
+  "generatedAt": "2026-10-10T13:52:30.681Z",
+  "syncedAt": "2026-10-10T17:50:50.315Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,24 +10,286 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 2350,
-    "matchedItems": 2099,
+    "totalItems": 2354,
+    "matchedItems": 2106,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 2350,
-        "matchedItems": 2186,
-        "generatedAt": "2026-10-10T12:02:11.673890Z",
+        "totalItems": 2354,
+        "matchedItems": 2193,
+        "generatedAt": "2026-10-10T13:52:30.681Z",
         "range": {
-          "from": "2026-08-10",
-          "to": "2026-10-10"
+          "from": "2026-08-11",
+          "to": "2026-10-11"
         }
       }
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-rss-snapshot-82271341af2b1913d930",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Ex Goldman Sachs CEO got into Harvard University at 16 from public housing—and says higher education is the best way to break into the middle class",
+      "source": "Fortune",
+      "date": "2026-10-10",
+      "publishedAt": "2026-10-10T13:29:01.000Z",
+      "url": "https://fortune.com/article/former-goldman-sachs-ceo-lloyd-blankfein-got-into-harvard-at-16-from-brooklyn-public-housing-says-higher-education-best-way-break-into-middle-class/",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "中",
+      "tags": [
+        "金融支付",
+        "產業監測",
+        "Paypal"
+      ],
+      "excerpt": "Lloyd Blankfein, the former CEO of financial giant Goldman Sachs, says education is the “real accelerator” of wealth and success—hitting back at anti-college leaders like Peter Thiel. Some business CEOs have put the college degree on blast , questioning if higher education is really setting students up for success in the workforce. But the former CEO of Goldman Sachs , Lloyd Blankfein , is pushing back against that narrative. Blankfein has witnessed the power of a strong college education firsthand. The billionaire finance leader was born into public housing in Brooklyn, sharing a bedroom in h",
+      "sourceId": "rss-snapshot-82271341af2b1913d930",
+      "matchedRule": "international-fintech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-1636f411b7bbc87e33e6",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "French Committee Backs Stablecoin Swap Tax and Crypto Exit Tax, Then Rejects the Budget",
+      "source": "Decrypt",
+      "date": "2026-10-10",
+      "publishedAt": "2026-10-10T13:01:03.000Z",
+      "url": "https://decrypt.co/380630/france-stablecoin-swap-crypto-exit-tax",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "stablecoin"
+      ],
+      "excerpt": "A National Assembly committee adopted amendments taxing stablecoin swaps and crypto exits by wealthy holders, then rejected the 2027 budget's revenue section.",
+      "sourceId": "rss-snapshot-1636f411b7bbc87e33e6",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-bd85eee12349f88aa328",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "【電玩瘋】手機週報《劍之川》、《Dynamite Blue》與《熱血倖存者：活屍之城》等遊戲",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-10-10",
+      "publishedAt": "2026-10-10T12:00:03.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=313170",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "放置"
+      ],
+      "excerpt": "巴哈姆特電玩瘋本週介紹共 9 款手機遊戲，包含《魅影再臨》開發團隊新作《Dynamite Blue》、方塊放置 x 混合 Roguelite 遊戲《疊疊樂公國（Drop Duchy）》、以猴子打氣球聞名的塔防遊戲《Bloons》系列推出了全新衍生生存動作新作《Bloons Blitz》、經典方塊射擊遊戲《Pix....",
+      "sourceId": "rss-snapshot-bd85eee12349f88aa328",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-63ef3e7fc6124a004bd9",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Stripe 創辦人：AI Agent 將改寫市場競爭規則，好產品不再輸給行銷與流量",
+      "source": "ABMedia 區塊鏈媒體",
+      "date": "2026-10-10",
+      "publishedAt": "2026-10-10T11:25:59.000Z",
+      "url": "https://abmedia.io/stripe-ai-agent-patrick-collison",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "行銷",
+        "AI"
+      ],
+      "excerpt": "當 AI Agent 開始替人類搜尋商品、比較價格，甚至直接完成購物，企業過去依賴廣告曝光、消費者資訊不足與複 […] 這篇文章 Stripe 創辦人：AI Agent 將改寫市場競爭規則，好產品不再輸給行銷與流量 最早出現於 鏈新聞 ABMedia 。 當 AI Agent 開始替人類搜尋商品、比較價格，甚至直接完成購物，企業過去依賴廣告曝光、消費者資訊不足與複雜定價策略獲利的商業模式，可能迎來重大改變。 支付巨頭 Stripe 共同創辦人暨執行長 Patrick Collison 近日在 X 發表 長文 ，探討個人 AI Agent 進入經濟體系後，將如何重新分配企業與消費者之間的資訊優勢。他認為，AI Agent 最深遠的影響，可能不是幫助人們省下多少錢，而是讓真正優質的產品更容易獲得市場回報。 這篇貼文也獲得特斯拉執行長 Elon Musk 轉發。Collison 指出，企業長期以來擁有遠超過個別消費者的資訊處理與決策能力，但隨著每個人都能使用 AI Agent 研究商品、尋找優惠及比較品質，市場可能逐漸從依賴廣告與流量分配，轉向更加重視產品本身的競爭。 企業其實是最早的「超級智慧」 Collison 首先提出一個有趣的觀點：企業某種程度上就是人類最早建立的超級智慧（Superintelligence）。他的意思並不是企業真的擁有超越人類的人工智慧，而是企業能夠整合大量員工",
+      "sourceId": "rss-snapshot-63ef3e7fc6124a004bd9",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-a3e52cc807826b7abddb",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "如何解讀 Polymarket 上的地方選舉賠率？一文看懂預測市場賠率與民調差異",
+      "source": "ABMedia 區塊鏈媒體",
+      "date": "2026-10-10",
+      "publishedAt": "2026-10-10T10:21:39.000Z",
+      "url": "https://abmedia.io/polymarket-rate-election-taipei",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "USDC"
+      ],
+      "excerpt": "2026 年台北市長選舉受到關注，近日一份民調顯示，台北市長蔣萬安以 41.7% 的支持率領先民進黨立委沈伯洋 […] 這篇文章 如何解讀 Polymarket 上的地方選舉賠率？一文看懂預測市場賠率與民調差異 最早出現於 鏈新聞 ABMedia 。 2026 年台北市長選舉受到關注，近日一份民調顯示，台北市長蔣萬安以 41.7% 的支持率領先民進黨立委沈伯洋的 40.5%，雙方僅相差 1.2 個百分點。然而，同時間 Polymarket 預測市場顯示蔣萬安的勝選機率卻高達 80%，沈伯洋則只有約 19%。 同樣是預測選舉結果，為什麼民調顯示雙方勢均力敵，預測市場卻出現如此懸殊的差距？有網友認為，「真金白銀」交易得出的市場數據，比傳統民調更值得相信。然而，這其實涉及兩種完全不同的統計與市場運作邏輯。 Polymarket 並不是民調機構，而是一個讓使用者交易未來事件結果的預測市場（Prediction Market）。平台顯示的價格雖然可以解讀為市場隱含的事件發生機率，卻不能直接視為候選人的支持率，更不是對選舉結果的保證。 此外，與傳統運動彩券不同，Polymarket 的事件合約可以在結果揭曉前反覆買賣，價格隨市場供需變動。對台灣使用者而言，參與選舉相關交易還可能涉及賭博罪及《公職人員選舉罷免法》的法律責任。 Polymarket 曾精準預測川普勝選 事實上，Polymarket",
+      "sourceId": "rss-snapshot-a3e52cc807826b7abddb",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-0117cf18b5a69127f38c",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Visa 亞太調查：46% 想用穩定幣，真正懂的僅 6%",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-10",
+      "publishedAt": "2026-10-10T09:17:01.000Z",
+      "url": "https://www.blocktempo.com/visa-asia-pacific-stablecoin-survey-interest-46-understanding-gap-6/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "穩定幣結算"
+      ],
+      "excerpt": "Visa 調查亞太 1.4 萬名消費者發現，46% 未來五年可能用穩定幣，但過去一年實際用過的僅 16%，真正 […] 〈 Visa 亞太調查：46% 想用穩定幣，真正懂的僅 6% 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 Visa 調查亞太 1.4 萬名消費者發現，46% 未來五年可能用穩定幣，但過去一年實際用過的僅 16%，真正理解運作方式的只有 6%；近半數誤以為穩定幣只能買賣加密貨幣，詐騙疑慮仍是最大障礙。 （前情提要：Tangem 發物理 Visa 卡！首輪只 5000 張，20 國根本寄不到） （背景補充：方舟女股神：當 Agent 開始花錢，投資人須關注 AI 使用什麼基礎設施） 穩定幣在亞太的採用看似起飛，但 CoinDesk 報導指出，Visa 最新調查揭露一個巨大落差：興趣與理解嚴重脫節。這份覆蓋 1.4 萬名消費者的研究顯示，46% 受訪者願意在五年內使用穩定幣，卻只有 6% 真正懂它如何運作——對支付巨頭與銀行來說，這既是機會也是警訊。 亞太地區消費者對把穩定幣用於日常消費、旅行和跨境轉賬的興趣正在升溫，這是支付巨頭 Visa（V）一項新調研得出的結論。 Visa 表示，調查發現亞太約 25 億消費者中，近一半願意在未來五年內開始使用與法幣掛鉤的加密貨幣。 興趣與認知斷層：僅 6% 真懂穩定幣 「我們看到亞太",
+      "sourceId": "rss-snapshot-0117cf18b5a69127f38c",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-de6468a45df1a0eb9004",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "OpenAI 要申請 15 個頂級網域！13 家 AI 企業搶 .agent",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-10",
+      "publishedAt": "2026-10-10T09:07:17.000Z",
+      "url": "https://www.blocktempo.com/icann-gtld-applications-openai-chatgpt-agent-meta-google-anthropic-domains/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "USDT",
+        "Tether"
+      ],
+      "excerpt": "ICANN 10 月 7 日公布新通用頂級網域（gTLD）「2026 輪」申請名單，481 家申請者共送出 1 […] 〈 OpenAI 要申請 15 個頂級網域！13 家 AI 企業搶 .agent 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 ICANN 10 月 7 日公布新通用頂級網域（gTLD）「2026 輪」申請名單，481 家申請者共送出 1,615 件。OpenAI 申請 15 個、Google 子公司申請 39 個、Meta 申請 18 個，Anthropic 只申請 2 個。.agent 有 13 家申請，是名單中申請者最多的字串。 （前情提要：網域龍頭 Unstoppable 放棄多個頂級域名：Web3 太小眾了） （背景補充：HCCF 申請新頂級域名「.self」：主打一人一免費子域名，把網路身分還給大眾） 重點摘要 ICANN 收到 1,615 件新頂級網域申請，來自 481 家申請者 OpenAI 申請 15 個、Google 子公司 39 個，Anthropic 只申請 2 個 .agent 有 13 家申請，OpenAI、Meta、Google 都在其中 網際網路名稱與數字位址分配機構（ICANN）10 月 7 日公布新一輪頂級網域申請名單。這一輪稱為「2026 輪」，共收到 1,615 件申請，來自 4",
+      "sourceId": "rss-snapshot-de6468a45df1a0eb9004",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-666aef7bc5cade629a3c",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "BKN301’s CTO on Why Cards May Carry Stablecoins Mainstream",
+      "source": "The Fintech Times",
+      "date": "2026-10-10",
+      "publishedAt": "2026-10-10T09:00:08.000Z",
+      "url": "https://thefintechtimes.com/bkn301s-cto-on-why-cards-may-carry-stablecoins-mainstream/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "visa",
+        "stablecoin"
+      ],
+      "excerpt": "Mahesh Paolini-Subramanya, CTO of BKN301, on stablecoin card spending, what banks must rebuild behind the card, and which markets are set to move first. The post BKN301’s CTO on Why Cards May Carry Stablecoins Mainstream appeared first on The Fintech Times . Stablecoin card spending passed $1 billion a month in July and is forecast to reach $50 billion a year by 2028, according to research reported by Reuters in August. Mahesh Paolini-Subramanya, CTO at BKN301 Mahesh Paolini-Subramanya , chief technology officer at fintech infrastructure provider BKN301 , argues that the familiar payment card,",
+      "sourceId": "rss-snapshot-666aef7bc5cade629a3c",
+      "matchedRule": "international-fintech,stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-2449133e27169c444e33",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Steam錢包儲值金6個月沒用會被清空 Valve日本條款更新引發討論",
+      "source": "4Gamers",
+      "date": "2026-10-10",
+      "publishedAt": "2026-10-10T08:13:29.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82530/steam-wallet-japan-funds-expire-after-six-months",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "高",
+      "tags": [
+        "金融支付",
+        "產業監測",
+        "信用卡",
+        "台灣"
+      ],
+      "excerpt": "Valve 更新日本版《Steam 訂戶協議》明定日本使用者存入 Steam 錢包的資金若自儲值日起 6 個月內未使用就會失效，該規定早在 2026 年 4 月 20 日的條款更新加入，近期才被玩家注意進而引發討論，新規上路前儲值的餘額是否會影響有待進一步釐清。 Valve 更新日本版《Steam 訂戶協議》明定日本使用者存入 Steam 錢包的資金若自儲值日起 6 個月內未使用就會失效，該規定早在 2026 年 4 月 20 日的條款更新加入，近期才被玩家注意進而引發討論，新規上路前儲值的餘額是否會影響有待進一步釐清。 Steam 錢包是與 Steam 帳號連結的預付餘額，玩家可以透過信用卡、預付卡、促銷代碼等方式儲值，再買遊戲、軟體、遊戲內商品及其他 Steam 提供的內容與服務，Steam 也提供類似禮券的數位禮物卡，可將儲值金額贈送給親友。 Valve 自今年 4 月 20 日更新《Steam 訂戶協議》中「收費、付款及其他權利」（Charges, Payments, and Other Entitlements）章節的 Steam 錢包條款，新增「以日本為據點的用戶」（For Japanese Subscribers）專屬規定。 條款 英文版 與 日文版 均明確寫道，依據日本法律，Steam 錢包內新增的資金若在加入帳戶後的 6 個月內未使用就會消失，用戶可透過 Stea",
+      "sourceId": "rss-snapshot-2449133e27169c444e33",
+      "matchedRule": "taiwan-payment-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-b3febae6b2125fbd1e9f",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Toobit Wins Best Exchange for Trading Tokenized Equities Award",
+      "source": "CryptoPotato",
+      "date": "2026-10-10",
+      "publishedAt": "2026-10-10T08:10:10.000Z",
+      "url": "https://cryptopotato.com/toobit-wins-best-exchange-for-trading-tokenized-equities-award/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "USDT"
+      ],
+      "excerpt": "Toobit is an award-winning international cryptocurrency exchange that recently announced that it has been named the Best Exchange for Trading Tokenized Equities at the CoinGape Global Onchain Awards 2026. Toobit, among other nominees, was evaluated on tokenized equity listings, trading volume, and institutional trading capabilities. Winners were determined through quantitative research, expert jury review, and […] Toobit is an award-winning international cryptocurrency exchange that recently announced that it has been named the Best Exchange for Trading Tokenized Equities at the CoinGape Globa",
+      "sourceId": "rss-snapshot-b3febae6b2125fbd1e9f",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-71d2925f37c6e8f680c7",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "「41 歲護理師」韓國 AI 帳號釣男人！網友留言自曝居住地等個資",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-10",
+      "publishedAt": "2026-10-10T07:36:02.000Z",
+      "url": "https://www.blocktempo.com/ai-generated-nurse-accounts-korea-romance-scam-users-reveal-details/",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "社群",
+        "AI"
+      ],
+      "excerpt": "韓國社群平台近日接連出現疑似 AI 生成的女性帳號。其中一個自稱「住在浦項的 41 歲護理師」十分有名，釣到不 […] 〈 「41 歲護理師」韓國 AI 帳號釣男人！網友留言自曝居住地等個資 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 韓國社群平台近日接連出現疑似 AI 生成的女性帳號。其中一個自稱「住在浦項的 41 歲護理師」十分有名，釣到不少中年以上的網友，留言報出年齡與住處。 （前情提要：韓國女臨演和「李棟旭」網戀 8 個月，被詐騙 3500 萬韓元） （背景補充：韓國半年抓 166 件 AI 假醫師、假藥師推薦的違規廣告，食藥處坦言：無法完全分辨 AI） 重點摘要 韓國社群冒出疑似 AI 帳號，有的自稱浦項 41 歲護理師 留言者自報 42 歲、68 歲等年齡與住處，有人要求確認私訊 警察廳統計 2025 年戀愛詐騙損失 1,360 億韓元 韓國社群平台近來接連出現疑似用生成式 AI 製作的女性帳號。紐西斯通訊社（뉴시스）10 月 8 日報導了這個現象。這些 AI 帳號會公開年齡、職業、興趣與感情經歷，在社群平台上「想認識新朋友」，其中一個 AI 帳號十分活躍，自稱「住在浦項的 41 歲護理師」，說自己上班時間是輪三班制、不菸不酒。 其他 AI 社群詐騙的帳號人設各不相同，有男性帳號說自己身高 185 公分，常被問是不是運動員",
+      "sourceId": "rss-snapshot-71d2925f37c6e8f680c7",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-2faff0d116c30b464916",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "AI 設計抗體實測出爐：最佳化既有抗體成效最佳，從零設計仍需實驗把關",
+      "source": "TechNews 科技新報",
+      "date": "2026-10-10",
+      "publishedAt": "2026-10-10T07:30:31.000Z",
+      "url": "https://technews.tw/2026/10/10/ai-and-therapeutic-antibody-design/",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "成效",
+        "AI"
+      ],
+      "excerpt": "人工智慧（AI）正逐步改變新藥研發方式，改良治療用抗體正是最受期待的應用之一。抗體是能辨識特定標的的蛋白質，已 […]",
+      "sourceId": "rss-snapshot-2faff0d116c30b464916",
+      "matchedRule": "industry-martech"
+    },
     {
       "id": "softworld-api-google-news-c9ec58705ba52bbe39b7",
       "origin": "monitoring",
@@ -519,7 +781,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-2fa171efb9b5981155aa",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://www.techbang.com/posts/133979-anthropic-broadcom-samsung-2nm-ai-chip"
     },
     {
       "id": "softworld-api-rss-snapshot-6301bc9e9f53540170d4",
@@ -562,7 +825,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-36deb42aee2ef84f3b37",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://www.nownews.com/news/6882067"
     },
     {
       "id": "softworld-api-google-news-03185d85302fb8566c94",
@@ -583,7 +847,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-03185d85302fb8566c94",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://uu.163.com/cht/blog/roblox-mobile-download.html"
     },
     {
       "id": "softworld-api-rss-snapshot-3ab8e776eb928aa6bf6b",
@@ -739,7 +1004,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-308a3cba10b89003ed6a",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://www.ctee.com.tw/news/20261010700032-439901"
     },
     {
       "id": "softworld-api-rss-snapshot-81b7084ce9e44b8b904c",
@@ -780,7 +1046,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-e69c8c7ba28a06b8e1ea",
-      "matchedRule": "stablecoin-core"
+      "matchedRule": "stablecoin-core",
+      "publisherUrl": "https://today.line.me/tw/v3/article/YapEGaW"
     },
     {
       "id": "softworld-api-rss-snapshot-7fd774d6d561c8470dd0",
@@ -979,7 +1246,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-5d8ed60af4ada96586ee",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://newtalk.tw/forum/post/98158"
     },
     {
       "id": "softworld-api-google-news-284ac88bfc4b97ded5e9",
@@ -1067,7 +1335,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-d1a000ec4b7da5f5316f",
-      "matchedRule": "taiwan-payment-google-news,industry-platform-business"
+      "matchedRule": "taiwan-payment-google-news,industry-platform-business",
+      "publisherUrl": "https://www.cmoney.tw/forum/readmo/63af4141-b020-40fc-8613-1419ba122741"
     },
     {
       "id": "softworld-api-rss-snapshot-b5bad98d567b9e45d014",
@@ -1214,7 +1483,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-1a8959b75c8544bbf5b8",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://tw.news.yahoo.com/%E5%B9%B3%E5%A3%A4%E9%AB%98%E6%A8%93%E6%9E%97%E7%AB%8B-%E5%95%9F%E7%94%A8%E8%A1%8C%E5%8B%95%E6%94%AF%E4%BB%98-%E5%8D%97%E9%9F%93%E4%BC%B0%E5%8C%97%E9%9F%93gdp%E6%88%90%E9%95%B7%E7%8E%87%E7%A0%B43-060944529.html"
     },
     {
       "id": "softworld-api-google-news-ed2304a23f9e1316ba85",
@@ -1237,7 +1507,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-ed2304a23f9e1316ba85",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://tw.news.yahoo.com/faker%E6%96%B0%E5%BB%A3%E5%91%8A%E5%8F%88%E6%98%AF%E5%B9%B9%E7%89%87%EF%BC%81keria%E8%AE%8A%E8%B1%AA%E5%AE%85%E7%AE%A1%E5%AE%B6-%E7%B6%B2%E7%88%86%E7%AC%91%EF%BC%9A%E7%9C%9F%E4%BA%BA%E6%8B%8D%E5%BE%97%E8%B7%9Fai%E4%B8%80%E6%A8%A3-094944951.html"
     },
     {
       "id": "softworld-api-google-news-d20359e131591264d025",
@@ -1571,7 +1842,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-83d128ec73cd99c38911",
-      "matchedRule": "industry-cn-game-approval"
+      "matchedRule": "industry-cn-game-approval",
+      "publisherUrl": "https://news.qq.com/rain/a/20261009A083J900"
     },
     {
       "id": "softworld-api-google-news-f0bb82193b97cabfb49e",
@@ -2076,7 +2348,8 @@
           "source": "PChome新聞",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPcFNzRDNMWFpSUHVMMzJKVWl4bjVMb0dKclFab25QemctMjlycWt5ZzYwN0NoeDBIQ29CTG5heUtTWEdNQndyejRNUUlScGQyUnV0MktfMjYydjBqQWRhQ0hTZHBQemJkbExKSk5qdzBhRGRCX2NGSTVtRFR0M1U0TVpzZ0ZXNFJZV2ZxVg?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://today.line.me/tw/v3/posts/list/article/1DPkmJv"
     },
     {
       "id": "softworld-api-rss-snapshot-6af769c34fd3a1c204f5",
@@ -2422,7 +2695,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-d8c047f1dc9ac5ff5677",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://today.line.me/tw/v3/article/gzpVGwZ"
     },
     {
       "id": "softworld-api-google-news-aa1ea0cddb4b5db6ab57",
@@ -47042,116 +47316,6 @@
       "excerpt": "Venmo started as a way to split a dinner bill. Now, the platform is moving further into everyday digital spending, giving users the ability to pay for games, apps, and content on the Google Play Store. The process is relatively simple. Once their Venmo account is linked to Google Play, users can make purchases via […] The post Google Play Adds Venmo for App and Subscription Payments appeared first on PaymentsJournal . Venmo started as a way to split a dinner bill. Now, the platform is moving further into everyday digital spending, giving users the ability to pay for games, apps, and content on",
       "sourceId": "rss-snapshot-ca6e43adb32377666696",
       "matchedRule": "stablecoin-core"
-    },
-    {
-      "id": "softworld-api-google-news-2ce90e97c69cbf7a4791",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "群星齊聚鬥氣大陸！《鬥破蒼穹 M》預約突破 80 萬 八位人氣 KOL 化身經典角色",
-      "source": "PChome新聞",
-      "date": "2026-08-10",
-      "publishedAt": "2026-08-10T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOVG9WQVo0LWFmSXd0SjlJZy1BUXphSUh3WUtJX0VwaDJQVmJZandLZGREWHBxVUhWTDJldU82Nk5mY2EtbXlSVFNWQ3dLejlZOFNsTFZIR2UzcEs5QndoN2FhVXFzaFZWQ1cwNHYwa1d1RjFNay1qLUgzbURzRnRFSzlmWFE?oc=5",
-      "topic": "遊戲產業",
-      "reportGroup": "industry-new-games",
-      "priority": "中",
-      "tags": [
-        "市場新遊",
-        "重點遊戲",
-        "鬥破蒼穹 M"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-2ce90e97c69cbf7a4791",
-      "matchedRule": "mobile-top-grossing-games"
-    },
-    {
-      "id": "softworld-api-google-news-70959a821442098d8489",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "擬真狩獵續作《獵人征途 2》預定 9 月 29 日正式上市 - 遊戲新聞 - PChome Online 新聞",
-      "source": "PChome新聞",
-      "date": "2026-08-10",
-      "publishedAt": "2026-08-10T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNN056bExFekFvTGllajJ0MkNvRWZ1dVp4YnRpemtuSkZUT0M0b3JPRF8xdlNzdGY5eVhJMW9IWWVYU08wY3NWMDdHMG9tc240cFJHb2tIX3NyZjh6cGhDUE80TVN0SHBybURpM08tNjhjQkNCRHRVZ0NEUnhndWdDTm9YUFo?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技",
-        "遊戲",
-        "pchome"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-70959a821442098d8489",
-      "matchedRule": "industry-platform-business"
-    },
-    {
-      "id": "softworld-api-google-news-de77c1d074cf902017dc",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "《毀滅戰士》之父自爆曾聯手台灣盜版商推廣正版遊戲，揭開三十年前FPS 霸主稱霸亞洲的傳奇秘辛",
-      "source": "T客邦",
-      "date": "2026-08-10",
-      "publishedAt": "2026-08-10T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPcFpBMTNncC0zUG1rYnlNV01uXzJyYUlRNkpmcXRBWHltb3VLakJRbmdQNG9BQUtERWpvTGI1dDNLdnRXempFSW44c1VWRUVhaDJMd2l2cUY4SXlISEVjVkF2MDJPSkExNUVKQ3llMmZDZmVrXzFpSFJScXBZNWZaYVJPLVJyOFk?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "遊戲",
-        "傳奇"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-de77c1d074cf902017dc",
-      "matchedRule": "competitor-global-game"
-    },
-    {
-      "id": "softworld-api-google-news-9d68e101e1a9165973da",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "《LINE Bubble 2》與「電影蠟筆小新：奇奇怪怪！我的妖怪假期」聯名合作來囉！ 蠟筆小新與夥伴們化身電影版限定角色登場！",
-      "source": "MyCard 娛樂中心",
-      "date": "2026-08-10",
-      "publishedAt": "2026-08-10T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMizAJBVV95cUxNX2VyUE8zRVlSWnQ3YTRMUlhEcUcyMk1iREZoQjJzODFWRTRXWk9GUmRLTUVJT1NBcXZ0NUF2TWYxdTlNazV3QkFVQXZJdHFjY1dmMGp1SGEyMjV6dlUxQ19VZm02Yk84aVBmYUJySG9fQVd2SXpHSC1ZX2JIcmVETG8zeVZyRjY0YWc0aHluVDNVUm5jeHhQREJkYVJWeS1kZnhDYkJYWXBmMnlMeHIxRnZFekRUMmJxbTJZLVNtdTRlS1BLaVUxRUNmdUdycEQ2dG96cTQ3M3h1Umd0Um5UcG9reS14MFdyT05OTDA2Z29DWlZHS0J6VEgzcWFrTklRemtXN2dXQjBRUUppSzdhdjFranlBVHpvNFd6VU16LXhnOWw2WHg5YWd2UE9NN3VHVFRsSUV5SzNYZ1U0UFNFR1Fjc01Cb0F3cm12Rw?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技",
-        "合作",
-        "LINE"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-9d68e101e1a9165973da",
-      "matchedRule": "industry-platform-business"
-    },
-    {
-      "id": "softworld-api-google-news-b56917e37cdb371c4740",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "鈊象自結7月合併稅前獲利14.74億元，每股稅前5.23元",
-      "source": "MoneyDJ 理財網",
-      "date": "2026-08-10",
-      "publishedAt": "2026-08-10T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPcDlTaUNuclRYd1FuMTUyLXpJSV9ZS0VXME9Tc1RERENLSVgteUJYN3VTTU5tMXdrQUVtZzkzd0FCdXk0U0sxY2Q0SXcwaFR2ejh1Z3N1X0RLY3dDOFUyemtLV1FmLXYydExnV2tmdHdTUXVmSXBtdlZ6SjNQRzRGbkdIRDVPTmoxbEpkM1dEVDlUZw?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "鈊象"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-b56917e37cdb371c4740",
-      "matchedRule": "competitor-brand"
     }
   ]
 }
