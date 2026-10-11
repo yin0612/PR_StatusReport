@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-10-11T12:15:19.754874Z",
-  "syncedAt": "2026-10-11T14:00:59.982Z",
+  "generatedAt": "2026-10-11T15:49:27.673Z",
+  "syncedAt": "2026-10-11T18:52:22.014Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,24 +10,46 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 2363,
-    "matchedItems": 2119,
+    "totalItems": 2357,
+    "matchedItems": 2114,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 2363,
-        "matchedItems": 2211,
-        "generatedAt": "2026-10-11T12:15:19.754874Z",
+        "totalItems": 2357,
+        "matchedItems": 2206,
+        "generatedAt": "2026-10-11T15:49:27.673Z",
         "range": {
-          "from": "2026-08-11",
-          "to": "2026-10-11"
+          "from": "2026-08-12",
+          "to": "2026-10-12"
         }
       }
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-rss-snapshot-c122cc5898153348d330",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Square Enix《王国之心》系列游戏 Steam 价格永降：国区各作调整至 198 元",
+      "source": "IT之家",
+      "date": "2026-10-11",
+      "publishedAt": "2026-10-11T13:30:04.000Z",
+      "url": "https://www.ithome.com/1/011/699.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "游戏",
+        "SQUARE ENIX"
+      ],
+      "excerpt": "IT之家 10 月 11 日消息，Square Enix 旗下《王国之心》系列游戏现已在 Steam 平台开启永降，IT之家附游戏国区价格如下： 《KINGDOM HEARTS -HD 1.5+2.5 ReMIX》 原价格 298 元，新价格 198 元 《王国之心 HD 1.5+2.5 ReMIX》是 Square Enix 推出的一部大规模高清重制合集，其核心目的是将系列早期的关键剧情整合到现代主机平台上。该合集包含了六部作品的内容：四款动作角色扮演游戏（《王国之心最终混合版》、《王国之心记忆之链重制版》、《王国之心 2 最终混合版》、《王国之心梦中降生最终混合版》），以及两部以高清 CG 影像呈现的剧情电影（《358/2 天》与《编码重制版》）。 在游戏机制上，玩家主要扮演主角索拉，穿越各大迪士尼经典世界，结合最终幻想系列的魔法与动作元素对抗“无心”等黑暗生物。本作没有对原版的底层玩法进行颠覆性修改，主要提升了分辨率与帧率（支持 60 帧运行），并重新编排了背景音乐。 在系列中的定位上，这部合集号称是“入门与回顾的基础”。它补全了从系列开端到第三部正传之前的绝大部分主线故事。特别是《梦中降生》交待了系列的世界观起源与反派背景，是新玩家了解整个“暗之探求者篇”故事脉络最完整、最直接的途径。 《KINGDOM HEARTS HD 2.8 Final Chapter Prologu",
+      "sourceId": "rss-snapshot-c122cc5898153348d330",
+      "matchedRule": "competitor-global-game"
+    },
     {
       "id": "softworld-api-google-news-1a6c66ea0fe4cdf8622c",
       "origin": "monitoring",
@@ -48,6 +70,29 @@
       "sourceId": "google-news-1a6c66ea0fe4cdf8622c",
       "matchedRule": "stablecoin-core",
       "publisherUrl": "https://readmo.cmoney.tw/article/6a404017-a3bb-4d83-a6a7-a8c2ff3e7dad"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-ad214975cebf16eb03f8",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "金融時報：輝達討論加強投資或收購Reflection AI",
+      "source": "中央社 產經證券",
+      "date": "2026-10-11",
+      "publishedAt": "2026-10-11T09:12:06.000Z",
+      "url": "https://www.cna.com.tw/news/aopl/202610110140.aspx",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "新創",
+        "金融"
+      ],
+      "excerpt": "（中央社舊金山10日綜合外電報導）英國「金融時報」今天引述知情人士報導，美國人工智慧（AI）晶片業巨擘輝達（Nvidia）正與美國開源AI新創公司Reflection AI討論對其加強投資，或是直接予以收購",
+      "sourceId": "rss-snapshot-ad214975cebf16eb03f8",
+      "matchedRule": "industry-new-business"
     },
     {
       "id": "softworld-api-rss-snapshot-6176af49897e888561cf",
@@ -4890,7 +4935,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-e0d2cc67931d2da0ff41",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://news.pchome.com.tw/finance/cna_business/20261008/index-17914536357497722003.html"
     },
     {
       "id": "softworld-api-rss-snapshot-4f05da5c5d7bc765fe3a",
@@ -5068,7 +5114,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-cef82cb9a33684a44cee",
-      "matchedRule": "competitor-global-game,industry-game-platform"
+      "matchedRule": "competitor-global-game,industry-game-platform",
+      "publisherUrl": "https://news.pchome.com.tw/game/gamer/20261008/index-79145107761183203104.html"
     },
     {
       "id": "softworld-api-rss-snapshot-bf6e683b00f33d0c6956",
@@ -5336,7 +5383,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-9b99be14586325f191f2",
-      "matchedRule": "competitor-global-game"
+      "matchedRule": "competitor-global-game",
+      "publisherUrl": "https://news.pchome.com.tw/game/gamer/20261008/index-79144904391410203104.html"
     },
     {
       "id": "softworld-api-rss-snapshot-a72fee67af8d8b40614b",
@@ -5589,7 +5637,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-2ec32625bfd3eeb18ea3",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.ettoday.net/news/20261008/3251194.htm"
     },
     {
       "id": "softworld-api-rss-snapshot-ec3f2136ef37f1f55ae0",
@@ -6433,7 +6482,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-c6c4b351e923954a2702",
-      "matchedRule": "competitor-tw-game"
+      "matchedRule": "competitor-tw-game",
+      "publisherUrl": "https://news.pchome.com.tw/game/gamer/20261008/index-79143110017026203104.html"
     },
     {
       "id": "softworld-api-rss-snapshot-a55d5dc8cf9817503ecd",
@@ -6477,7 +6527,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-1458f875d2a373c623ab",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://www.nownews.com/news/6881626"
     },
     {
       "id": "softworld-api-google-news-cc7c089aca369cb02228",
@@ -6499,7 +6550,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-cc7c089aca369cb02228",
-      "matchedRule": "softworld-games,mobile-game-watchlist"
+      "matchedRule": "softworld-games,mobile-game-watchlist",
+      "publisherUrl": "https://news.pchome.com.tw/game/gamer/20261008/index-79142924586586203104.html"
     },
     {
       "id": "softworld-api-rss-snapshot-e9acd5f043d9b492e12b",
@@ -6663,7 +6715,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-e4abc9a2056456e78aca",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.sohu.com/a/1084983941_122598898"
     },
     {
       "id": "softworld-api-google-news-040568b649b80392ff10",
@@ -6684,7 +6737,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-040568b649b80392ff10",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://www.chinatimes.com/realtimenews/20261008001752-260405"
     },
     {
       "id": "softworld-api-google-news-4ab10611e68c5a931cee",
@@ -6705,7 +6759,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-4ab10611e68c5a931cee",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.businessweekly.com.tw/archive/article?strid=7014752"
     },
     {
       "id": "softworld-api-rss-snapshot-b18d3c2b2eb3ef0e6bd8",
@@ -6747,7 +6802,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-cdb5e6dc76de3617b486",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://www.nownews.com/news/6881586"
     },
     {
       "id": "softworld-api-rss-snapshot-111683e2bc9eb54886e2",
@@ -6813,7 +6869,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-417b7fa818c4a8654cea",
-      "matchedRule": "industry-platform-business,industry-martech"
+      "matchedRule": "industry-platform-business,industry-martech",
+      "publisherUrl": "https://tw.news.yahoo.com/%E5%81%B7%E7%9C%8B%E8%A8%8A%E6%81%AF%E4%B8%8D%E7%95%99%E5%B7%B2%E8%AE%80-line%E6%96%B0%E5%8A%9F%E8%83%BD%E6%9B%9D%E5%85%89-%E6%97%A5%E6%9C%AC%E6%90%B6%E5%85%88%E4%B8%8A%E7%B7%9A-010529826.html"
     },
     {
       "id": "softworld-api-google-news-32b00ec7dced4c5105dd",
@@ -47494,155 +47551,6 @@
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-9319621fc88b3758b06e",
       "matchedRule": "competitor-brand"
-    },
-    {
-      "id": "softworld-api-google-news-9207ba5bf1d37955731c",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "LINE Pay上半年營收年增15% EPS 4.35元年增28%",
-      "source": "太報",
-      "date": "2026-08-11",
-      "publishedAt": "2026-08-11T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1nUk1jR1V4SHFZVTY0OFVJWHpiZ2VGZm54Y3Fza0ZpMlB0MU82N2drUU9ZZmliajlmUTI4YnBad010SUFYWmxweU81cDhoVWpZMW5jSXk2am1GY3R6?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "高",
-      "tags": [
-        "金融支付",
-        "產業監測",
-        "line pay"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-9207ba5bf1d37955731c",
-      "matchedRule": "taiwan-payment-google-news"
-    },
-    {
-      "id": "softworld-api-google-news-89524700d9308e680fc6",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "首例！逾6千件信用卡爭議款擱9年 合作金庫慘賠1億「金管會開鍘了」",
-      "source": "太報",
-      "date": "2026-08-11",
-      "publishedAt": "2026-08-11T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBOMlY4SnY4VVJhN1puR20tdVQ3N3gtYlROLUw3dlI0akMtZWhvMlZWM2xpazVqT2RUR2VQSlF3VklYRnZOWk9Ecm1qNEJEdlRWaWg5elZpeThwYjhj?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "中",
-      "tags": [
-        "金融支付",
-        "產業監測",
-        "信用卡"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-9b902580c92fb332debd",
-      "matchedRule": "taiwan-payment-google-news"
-    },
-    {
-      "id": "softworld-api-google-news-a18393a3bc5bbbf46d08",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "一卡通董事長換人！廖泰翔卸任 前高市府秘書長郭添貴接棒",
-      "source": "財訊",
-      "date": "2026-08-11",
-      "publishedAt": "2026-08-11T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFAwR2Qxd1g0Q3ZsN21WcU5zeEZDZFZoYWlwbFdhNW1kYlNOcFRfU1RiaFlxRGthNTFvbWNtNDdvVlgydlRQR0ZEWGNMMGVlanU5VC1wVFZkRmJnbVFXMWh6LUNBTWVFaldTNmF4bmtPcksxdVlaeUllZWl2dw?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "中",
-      "tags": [
-        "金融支付",
-        "產業監測",
-        "一卡通"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-a18393a3bc5bbbf46d08",
-      "matchedRule": "taiwan-payment-google-news"
-    },
-    {
-      "id": "softworld-api-google-news-02872fedbb6246568e5a",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "為促進生育率放大絕 中國政府管制AI擬人化互動，用戶被迫和AI伴侶「分手」",
-      "source": "財訊",
-      "date": "2026-08-11",
-      "publishedAt": "2026-08-11T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFAtRlctNjZfQUQ5Y0dOWUpDRXVOWkdVekNJMEpDUnZJTUNXaHl3clhtTDFzbkp5R3JJSmtkMF9IVDRXTkk5WFRMRWZ2YldOMUU5WnNaTWVTeFVMQTV6Vi11bVlzNGN6eHR5bmlZanJlWEI1ZkU3MTc1ZndnOA?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技",
-        "互動",
-        "AI"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-02872fedbb6246568e5a",
-      "matchedRule": "industry-martech"
-    },
-    {
-      "id": "softworld-api-google-news-85218424261dde43bd1c",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "一卡通結束4年代理董座！前高市秘書長郭添貴接任，「電支二哥」面臨哪些考驗？",
-      "source": "數位時代",
-      "date": "2026-08-11",
-      "publishedAt": "2026-08-11T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1wZkw5V0xpemF4R0JvZ3pvTERyVU0tZy0yOXVCUjlaN0U3WTdqTk9zNThxMWZ6VUUwb2xxU1FacThTa2RtMGRfX3dPRmQzY3hKQlFFWjZUX0FyeEgtcXQ4MEFaMkdTT3A1dXdweHM2cw?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "中",
-      "tags": [
-        "金融支付",
-        "產業監測",
-        "一卡通"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-85218424261dde43bd1c",
-      "matchedRule": "taiwan-payment-google-news"
-    },
-    {
-      "id": "softworld-api-google-news-e24fc4efeed220d503dc",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "幣安被列入台灣VASP警示名單，不得提供虛擬資產服務！加密市場監管再度升溫",
-      "source": "數位時代",
-      "date": "2026-08-11",
-      "publishedAt": "2026-08-11T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBtOTl2MVlVOVhsektoMjllajU3RmFfQUNLVmhUSWRfY3RZUkIxR3dlZ1prVHV3bDdOUGJuYnJnYWdCQ05aOFF1MTRESWdwV2EyTW9NbFhVQXUtcFA5czJiek8tVEpMdG82NHdMTjlUMHJiYW9sLUo0Qzg1VQ?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-stablecoin",
-      "priority": "高",
-      "tags": [
-        "穩定幣",
-        "鏈上結算",
-        "VASP"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-e24fc4efeed220d503dc",
-      "matchedRule": "stablecoin-vasp"
-    },
-    {
-      "id": "softworld-api-rss-snapshot-ca6e43adb32377666696",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "Google Play Adds Venmo for App and Subscription Payments",
-      "source": "Payments Journal",
-      "date": "2026-08-11",
-      "publishedAt": "2026-08-10T17:31:16.000Z",
-      "url": "https://www.paymentsjournal.com/google-play-adds-venmo-for-app-and-subscription-payments/",
-      "topic": "金融支付",
-      "reportGroup": "industry-stablecoin",
-      "priority": "高",
-      "tags": [
-        "穩定幣",
-        "鏈上結算",
-        "stablecoin"
-      ],
-      "excerpt": "Venmo started as a way to split a dinner bill. Now, the platform is moving further into everyday digital spending, giving users the ability to pay for games, apps, and content on the Google Play Store. The process is relatively simple. Once their Venmo account is linked to Google Play, users can make purchases via […] The post Google Play Adds Venmo for App and Subscription Payments appeared first on PaymentsJournal . Venmo started as a way to split a dinner bill. Now, the platform is moving further into everyday digital spending, giving users the ability to pay for games, apps, and content on",
-      "sourceId": "rss-snapshot-ca6e43adb32377666696",
-      "matchedRule": "stablecoin-core"
     }
   ]
 }
