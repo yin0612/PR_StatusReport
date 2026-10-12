@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-10-11T21:35:47.565952Z",
-  "syncedAt": "2026-10-11T22:52:13.022Z",
+  "generatedAt": "2026-10-12T02:18:12.416Z",
+  "syncedAt": "2026-10-12T02:21:56.866Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,16 +10,16 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 2363,
-    "matchedItems": 2122,
+    "totalItems": 2371,
+    "matchedItems": 2130,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 2363,
-        "matchedItems": 2209,
-        "generatedAt": "2026-10-11T21:35:47.565952Z",
+        "totalItems": 2371,
+        "matchedItems": 2217,
+        "generatedAt": "2026-10-12T02:18:12.416Z",
         "range": {
           "from": "2026-08-12",
           "to": "2026-10-12"
@@ -28,6 +28,186 @@
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-b577866e-15eb-4629-9190-9916b7d4a447",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《AION2》、《WARDOGS》等新作人氣旺 Steam同時上線創4,350萬人新紀錄",
+      "source": "4Gamers",
+      "date": "2026-10-12",
+      "publishedAt": "2026-10-12T02:04:17.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82543/steam-breaks-43-million-concurrent-users-record-october-2026",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "玩家"
+      ],
+      "excerpt": "Valve 旗下 PC 遊戲平台 Steam 繼今年 1 月同時上線人數突破 4,200 萬人後，Steam 於 10 月 11 日正式突破 4,350 萬人。除《絕對武力 2》、《Dota 2》等長期熱門作品，近期推出的新作如《WARDOGS》、《AION 2》也成為這波玩家活躍的重要背景。 Valve 旗下 PC 遊戲平台 Steam 繼今年 1 月同時上線人數突破 4,200 萬人後，Steam 於 10 月 11 日正式突破 4,350 萬人。除《絕對武力 2》、《Dota 2》等長期熱門作品，近期推出的新作如《WARDOGS》、《AION 2》也成為這波玩家活躍的重要背景。 據 Steam 官方統計，《絕對武力 2》（Counter-Strike 2）當日最高同時遊玩人數達 140 萬人，《Dota 2》則突破 103 萬人，兩款 Valve 旗下作品依然是 Steam 最穩定的玩家來源。 但近期新作同樣有不錯的表現。NC《AION2》國際版於 10 月初正式登上 Steam，最高同時遊玩人數接近 40 萬人；Bulkhead 開發的大規模多人射擊遊戲《WARDOGS》也持續吸引玩家，10 月 11 日單日最高同時遊玩人數接近 20 萬人。 另一方面，Valve 尚在邀請制測試階段的《Deadlock》，隨著更新英雄 Solomon 登場，10 月 9 日最高同時遊玩人數",
+      "sourceId": "b577866e-15eb-4629-9190-9916b7d4a447",
+      "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-07013dac-6150-4769-b818-a3e5363746b6",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "千倍槓桿平台 Papertrade 遭拉價套利，交易員獲利 128 萬美元",
+      "source": "ABMedia 區塊鏈媒體",
+      "date": "2026-10-12",
+      "publishedAt": "2026-10-12T01:47:10.000Z",
+      "url": "https://abmedia.io/papertrade-eth-price-manipulation",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "USDC"
+      ],
+      "excerpt": "Hyperliquid 生態永續合約平台 Papertrade 上線首日，一個錢包反覆在 Hyperliquid 買賣以太坊移動參考價，累計獲利約 128 萬美元。Papertrade 稱是上線期未平倉量上限過寬，已開始收緊。 這篇文章 千倍槓桿平台 Papertrade 遭拉價套利，交易員獲利 128 萬美元 最早出現於 鏈新聞 ABMedia 。 Hyperliquid 生態永續合約平台 Papertrade 上線第一天就遭遇價格操縱。根據 The Block 整理的鏈上交易紀錄 ，一個錢包在美東時間 10 月 10 日週六晚間，反覆在 Hyperliquid 大量買賣以太坊，推動 Papertrade 用來定價的參考價格，在 Papertrade 上累計獲利約 128 萬美元。Papertrade 隔天在 X 上回應，表示已開始收緊未平倉量上限。 一買一賣移動 3 美元，1000 倍槓桿下就是整筆保證金 Papertrade 每筆交易都以 Hyperliquid 最佳買價與賣價的中間價成交，交易者的對手方是平台的 USDC 流動性池，池子的資金來自交易者的虧損。在 1000 倍槓桿下，價格只要變動 0.1%，就等於整筆保證金。這套設計上線前後，社群就已提出 流動性池恐遭套利掏空 的疑慮。 The Block 列出的時間軸顯示，Papertrade 在週六上午 10 點於 Hy",
+      "sourceId": "07013dac-6150-4769-b818-a3e5363746b6",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-df789f43-2f0e-4738-8742-7d9eb433f001",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "IMF 正式警告代幣化股票！24 小時交易很火，但波動是傳統 1.5 倍、流動性不足",
+      "source": "動區動趨 BlockTempo",
+      "date": "2026-10-12",
+      "publishedAt": "2026-10-12T01:29:13.000Z",
+      "url": "https://www.blocktempo.com/imf-warns-tokenized-stocks-volatility-liquidity-247-trading-risks/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "USDC",
+        "Circle",
+        "區塊鏈"
+      ],
+      "excerpt": "IMF 最新 GFSR 報告確認代幣化美股有真實需求，24/7 交易與碎片化持有成為主流行為；但警告波動率是傳 […] 〈 IMF 正式警告代幣化股票！24 小時交易很火，但波動是傳統 1.5 倍、流動性不足 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 IMF 最新 GFSR 報告確認代幣化美股有真實需求，24/7 交易與碎片化持有成為主流行為；但警告波動率是傳統市場 1.5 倍、流動性不足、系統碎片化，需先建立法律與結算保障。 （前情提要：美股代幣化爆發：Bybit、Robinhood、Kraken 同步發車，本週期最大敘事誕生？） （背景補充：RWA 代幣化股票市值飆漲 5 倍！a16z：AI 晶片成大熱門，傳統金融加速上鏈） 國際貨幣基金組織（IMF）在最新一期《全球金融穩定報告》（GFSR）中，正面評估了代幣化股票的真實需求，同時也敲響警鐘：這個市場仍處於早期，波動率顯著偏高、流動性不足，且系統碎片化可能放大風險。 24/7 交易不是噱頭，散戶真的在用 IMF 的研究團隊檢視了五檔交易最活躍的代幣化美股，包括 Tesla（TSLA）、Nvidia（NVDA）、Alphabet（GOOG），以及如 Nasdaq 100 指數等標的，橫跨集中式與去中心化場外交易場域。 報告指出，超過五成的交易發生在美國股市正式交易時段之外，約八成",
+      "sourceId": "df789f43-2f0e-4738-8742-7d9eb433f001",
+      "matchedRule": "stablecoin-core,stablecoin-circle"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-836ee34329a093b972df",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "假冒 Meta Muse 與各大 AI 品牌，新型「瀏覽器內建瀏覽器」釣魚攻擊手法曝光",
+      "source": "TechNews 科技新報",
+      "date": "2026-10-12",
+      "publishedAt": "2026-10-12T00:30:04.000Z",
+      "url": "https://infosecu.technews.tw/2026/10/12/new-phishing-attack/",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "曝光",
+        "品牌"
+      ],
+      "excerpt": "資安研究人員近日發出警告，一波鎖定廣告產業的新型網路釣魚攻擊正悄悄蔓延。駭客將惡意網站精心包裝成時下熱門的 A […]",
+      "sourceId": "rss-snapshot-836ee34329a093b972df",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-f476f7a977ac834e97b5",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "AI 搶工作不再是重點，麥肯錫估美國每年 77 萬人得完全轉換跑道",
+      "source": "TechNews 科技新報",
+      "date": "2026-10-12",
+      "publishedAt": "2026-10-11T23:20:26.000Z",
+      "url": "https://technews.tw/2026/10/12/mckinsey-ai-will-create-more-jobs-than-it-kills-after-destroying-11-million/",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "轉換",
+        "AI"
+      ],
+      "excerpt": "麥肯錫全球研究院最新報告指出，人工智慧與自動化雖然可能在未來十年為美國帶來更多新職缺，但真正的難題不在於工作消 […]",
+      "sourceId": "rss-snapshot-f476f7a977ac834e97b5",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-8b076a6908c0c5d82a5f",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "网易《极限战场》首曝被指 1:1 复刻《使命召唤：战区》引争议，部分 COD 玩家反而叫好",
+      "source": "IT之家",
+      "date": "2026-10-12",
+      "publishedAt": "2026-10-11T23:17:35.000Z",
+      "url": "https://www.ithome.com/1/011/723.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "游戏",
+        "网易游戏"
+      ],
+      "excerpt": "IT之家 10 月 12 日消息，网易游戏 10 月 9 日公布了新作《极限战场》，将其定位为“自研极限运动战术射击游戏”，计划登陆 Steam 和移动端，目前尚未公布发售日期，但已确认为免费游玩模式。 据 IGN 今日报道，该游戏首曝后迅速引发海外玩家社区讨论，争议焦点在于它与动视《使命召唤：战区》的高度相似性。有玩家将其称为“对《战区》的 1:1 复刻”，相关话题在 YouTube 和 Reddit 上拥有较高讨论度。 玩家指出的相似之处并不局限于玩法框架，枪械的外观、后坐力和动作表现都与《战区》高度接近，UI 布局、音效风格乃至从高处坠落时第一人称视角的模糊效果，都让《战区》玩家感到“似曾相识”。尽管《极限战场》的角色拥有独特能力和道具，仍未能摆脱这种对比。 一条 YouTube 评论将游戏概括为“战区 + 三角洲行动 + 血战突袭”，另一条 Reddit 评论则称“这就是战区 1:1 复刻，太搞笑了”，还有玩家直接表示网易“连 UI 和徽章都照搬了使命召唤”。 IGN 称，这种反应的出现，与《使命召唤：战区》自身近况有关。自 2019 年《现代战争》重启版引入《战区》以来已过去六年，这款大逃杀衍生作品的人气起伏不定，许多老玩家仍将首发版本和初代地图“佛丹斯克”视为巅峰时期。动视曾尝试让佛丹斯克回归以回应怀旧情绪，但效果有限。 正因如此，部分《使命召唤》玩家对《极限战场》的出",
+      "sourceId": "rss-snapshot-8b076a6908c0c5d82a5f",
+      "matchedRule": "competitor-global-game"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-9a94eb45702a8b8802f2",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "餐飲 AI 不只會點餐，達美樂、麥當勞如何把 AI 深入門市營運系統？",
+      "source": "科技報橘 TechOrange",
+      "date": "2026-10-12",
+      "publishedAt": "2026-10-11T22:02:00.000Z",
+      "url": "https://techorange.com/2026/10/12/dominos-mcdonalds-ai/?utm_source=rss&utm_medium=feed&utm_campaign=techorange_rss",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "策略",
+        "功能"
+      ],
+      "excerpt": "當餐飲業開始導入 AI，最早受到關注的往往是消費者看得見的功能，例如語音點餐、聊天機器人或行銷工具。但近期達美樂（Domino’s）與麥當勞的動作，顯示餐飲科技正在往更深的營運層移動：AI 不再只是附加功能，而是逐步嵌入點餐、備餐、庫存、設備與外送等流程，成為串聯餐廳日常運作的核心系統。 達美樂以自研 DomOS 升級追蹤器，用精準預測解除顧客「等待焦慮」 達美樂近期大幅升級了自 2008 年問世的經典服務 Pizza Tracker。這項功能最初讓顧客透過簡單的視覺化介面，即時掌握披薩從下單、製作到送達的狀態，至今已累計追蹤超過 25 億筆訂單。而最新的升級，核心底層搭載了自研作業系統「DomOS」與機器學習模型，能夠動態且精準地重新計算披薩完成與送達時間。 這套系統現在不只能夠看單一門市進度，還可以同步分析訂購內容、門市當下的繁忙程度、特定時段的訂單聚集效應，如大型賽事轉播或電視廣告時段，以及外送端即時發生的路況與車程。達美樂全球數位行銷副總 Mark Messing 指出，AI 的關鍵作用在於將這些過往孤立的訊號整合在一起，模型會汲取歷史模式進行持續學習，並隨即時動態自動調整預估時間。 這項升級延續了達美樂將科技深化於消費體驗的策略。繼 2019 年導入 GPS 外送追蹤後，全新版本進一步將 AI 預測與即時地圖動態結合。主介面刻意簡化為四大關鍵階段，讓顧客一眼掌握進度，Ap",
+      "sourceId": "rss-snapshot-9a94eb45702a8b8802f2",
+      "matchedRule": "industry-platform-business,industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-f6c2f73492b239324f77",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "【科技早餐】OpenAI 年化營收為何差約 200 億美元？關鍵在計算口徑",
+      "source": "科技報橘 TechOrange",
+      "date": "2026-10-12",
+      "publishedAt": "2026-10-11T21:30:00.000Z",
+      "url": "https://techorange.com/2026/10/12/openai-annualized-revenue-gap/?utm_source=rss&utm_medium=feed&utm_campaign=techorange_rss",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "成長",
+        "合作"
+      ],
+      "excerpt": "【科技早餐】今天精選 8 則國內外重要科技新聞。 ＊OpenAI 年化營收近 500 億美元，與先前數字差距涉及計算口徑 《路透社》引述知情人士報導，OpenAI 向投資人表示，9 月年化營收接近 500 億美元，低於先前在另一場投資人活動透露的接近 700 億美元。消息人士指出，差距主要涉及嘗試將 OpenAI 的數字與 Anthropic 直接比較時，採用了不同計算口徑。報導指出，Anthropic 納入透過亞馬遜（Amazon）AWS、Google Cloud 等雲端合作夥伴取得的銷售收入，OpenAI 則未採用相同方式。OpenAI 未回應《路透社》的置評要求。 年化營收通常以單月等較短期間的收入推算全年，並不等於公司已實現的全年營收，也不是經查核的全年財報。這次數字差異不能直接解讀為實際營收下滑，或全年營收目標落空。隨著 AI 業者持續募資並準備上市，收入認列範圍、計算期間及不同公司的比較基準，將影響外界如何判斷成長速度；高額營收數字也仍需與成本及獲利能力一併檢視。 ＊台積電與格羅方德簽 20 億美元合作，補強美國 AI 封裝供應鏈 台積電（TSMC）與美國晶圓代工業者格羅方德（GlobalFoundries）達成 20 億美元製造合作協議，將在紐約州馬爾他工廠增加產能，供應台積電 CoWoS 先進封裝所需的矽中介層。根據格羅方德 10 月 8 日公告，協議初期為五年，預",
+      "sourceId": "rss-snapshot-f6c2f73492b239324f77",
+      "matchedRule": "industry-platform-business"
+    },
     {
       "id": "softworld-api-rss-snapshot-d7e0797e97d1ae22dacf",
       "origin": "monitoring",
@@ -6516,7 +6696,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-ecf89da4a35a31bc1941",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://news.tvbs.com.tw/tech/4033277"
     },
     {
       "id": "softworld-api-google-news-3a90224870394390b37a",
@@ -6949,7 +7130,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-0003d8f4cfb904080c94",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://www.nownews.com/news/6881497"
     },
     {
       "id": "softworld-api-287e97f3-19d3-48ef-87d8-b11344dbec98",
@@ -7019,7 +7201,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-4e69ab86fb922ab9094a",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://tw.news.yahoo.com/%E4%B8%8D%E6%80%95%E5%B7%B2%E8%AE%80%E5%B0%8D%E6%96%B9%E4%BA%86-line%E6%96%B0%E5%8A%9F%E8%83%BD-%E5%81%B7%E7%9C%8B%E8%A8%8A%E6%81%AF-%E4%B8%8A%E8%B7%AF-000821872.html"
     },
     {
       "id": "softworld-api-google-news-89e791a5670adb77c333",
@@ -7042,7 +7225,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-89e791a5670adb77c333",
-      "matchedRule": "industry-platform-business,industry-martech"
+      "matchedRule": "industry-platform-business,industry-martech",
+      "publisherUrl": "https://www.ftvnews.com.tw/news/detail/2026A08W0116"
     },
     {
       "id": "softworld-api-rss-snapshot-e7324398cdb0df2ac52a",
@@ -7088,7 +7272,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-4132a2beeb6ed97341a3",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.ftvnews.com.tw/news/detail/2026A08W0057"
     },
     {
       "id": "softworld-api-google-news-57248f3491045e345482",
@@ -7111,7 +7296,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-57248f3491045e345482",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://today.line.me/tw/v3/article/JPyv1vy"
     },
     {
       "id": "softworld-api-rss-snapshot-8c624791ea2b475050fb",
@@ -7156,7 +7342,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-caeeb2d212f405385c1f",
-      "matchedRule": "industry-game-platform"
+      "matchedRule": "industry-game-platform",
+      "publisherUrl": "https://today.line.me/tw/v3/posts/list/article/j7p0ggg"
     },
     {
       "id": "softworld-api-google-news-a8447371b6647865b9de",
@@ -7220,7 +7407,8 @@
           "source": "卡優新聞網熱門新聞",
           "url": "https://www.cardu.com.tw/news/detail.php?65855"
         }
-      ]
+      ],
+      "publisherUrl": "https://today.line.me/tw/v3/article/2D9zVrj"
     },
     {
       "id": "softworld-api-rss-snapshot-dc115f8a68532e80ecc2",
@@ -7287,7 +7475,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-e4ff77588d6d55f2f538",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.ctee.com.tw/news/20261008700177-439901"
     },
     {
       "id": "softworld-api-rss-snapshot-19578dc3248a6ce3347a",
@@ -7418,7 +7607,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-bd453aa988e972b2062e",
-      "matchedRule": "stablecoin-core,stablecoin-circle"
+      "matchedRule": "stablecoin-core,stablecoin-circle",
+      "publisherUrl": "https://www.cmoney.tw/forum/article/185217549"
     },
     {
       "id": "softworld-api-rss-snapshot-f0346cc6dffb6d49e43a",
@@ -7506,7 +7696,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-e0ff7d031a0a39ec5dad",
-      "matchedRule": "taiwan-payment-google-news,softworld-brand"
+      "matchedRule": "taiwan-payment-google-news,softworld-brand",
+      "publisherUrl": "https://app.mycard520.com.tw/mobilepay-taiwanpay/"
     },
     {
       "id": "softworld-api-rss-snapshot-cc394ed30161e6c5e502",
@@ -7828,7 +8019,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-bbaa3b905ed024900411",
-      "matchedRule": "stablecoin-vasp"
+      "matchedRule": "stablecoin-vasp",
+      "publisherUrl": "https://www.cmoney.tw/forum/readmo/6baee764-ae03-4dfd-9678-cf183fccbb8c"
     },
     {
       "id": "softworld-api-rss-snapshot-351c2f6e0332a2357e46",
