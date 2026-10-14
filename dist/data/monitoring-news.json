@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-10-13T22:22:16.818946Z",
-  "syncedAt": "2026-10-13T22:41:41.447Z",
+  "generatedAt": "2026-10-14T00:26:20.800Z",
+  "syncedAt": "2026-10-14T01:53:42.924Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,16 +10,16 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 2534,
-    "matchedItems": 2312,
+    "totalItems": 2538,
+    "matchedItems": 2316,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 2534,
-        "matchedItems": 2419,
-        "generatedAt": "2026-10-13T22:22:16.818946Z",
+        "totalItems": 2538,
+        "matchedItems": 2423,
+        "generatedAt": "2026-10-14T00:26:20.800Z",
         "range": {
           "from": "2026-08-14",
           "to": "2026-10-14"
@@ -28,6 +28,49 @@
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-rss-snapshot-6269343c09cdc90adca5",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "South Korea Blocks 27 Crypto Exchange Websites, Including KuCoin and MEXC",
+      "source": "CryptoPotato",
+      "date": "2026-10-14",
+      "publishedAt": "2026-10-13T22:12:41.000Z",
+      "url": "https://cryptopotato.com/south-korea-blocks-27-crypto-exchange-websites-including-kucoin-and-mexc/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "Virtual Asset Service Provider",
+        "Virtual Asset Service Providers"
+      ],
+      "excerpt": "KuCoin, MEXC, and 25 other overseas crypto platforms face website restrictions in South Korea for operating without required local registration. South Korea is expanding its crackdown on unregistered exchanges. Financial authorities have ordered blocks on 27 overseas cryptocurrency exchange websites operating without registration in the country. The list includes major platforms such as KuCoin, MEXC, BingX, Phemex, XT.com, Bitrue, CoinW, Poloniex, BTCC, and BitMart. The decision comes after two reviews held on October 6 and 7 by the Korea Communications Standards Commission. New Restrictions T",
+      "sourceId": "rss-snapshot-6269343c09cdc90adca5",
+      "matchedRule": "stablecoin-vasp"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-1273e80c572e22b6ef52",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "NVIDIA DLSS 5新模型性能翻倍，11月導入《燕雲十六聲》、《霍格華茲的傳承》",
+      "source": "4Gamers",
+      "date": "2026-10-14",
+      "publishedAt": "2026-10-13T21:00:00.000Z",
+      "url": "https://www.4gamers.com.tw/news/detail/82601/nvidia-dlss-5-powered-by-2x-faster-model",
+      "topic": "遊戲產業",
+      "reportGroup": "industry-new-games",
+      "priority": "中",
+      "tags": [
+        "市場新遊",
+        "重點遊戲",
+        "燕雲十六聲"
+      ],
+      "excerpt": "正式上線才 1 個多月的 NVIDIA DLSS 5 技術，即將在《NBA 2K27》導入性能翻倍的全新模型。該模型還會在 11 月導入《霍格華茲的傳承》（Hogwarts Legacy）與《燕雲十六聲》（Where Winds Meet）。 正式上線才 1 個多月的 NVIDIA DLSS 5 技術，即將在《NBA 2K27》導入性能翻倍的全新模型。該模型還會在 11 月導入《霍格華茲的傳承》（Hogwarts Legacy）與《燕雲十六聲》（Where Winds Meet）。 透過系統性管線最佳化與神經模型改進，DLSS 5 使用的 3D 化神經渲染模型，其性將於本週再提升至 2 倍，相當於今（2026）年 3 月剛發表時的 10 倍。 全新模型已確定在 10 月 16 日導入《NBA 2K27》，預估 fps 可提升至 1.4 倍。 此外，最早導入 DLSS 4 多畫格生成技術的《霍格華茲的傳承》，已確定在 11 月 5 日導入 DLSS 5 神經渲染技術，運用 AI 生成逼真的打光和材質細節，把將影像品質、真實感和沈浸感提升到新的高度。開發商 Avalanche Software 充分利用 DLSS 5 SDK 控制功能，最佳化整合效果，以保持遊戲的藝術概念與風格。 最後是在 Steam 拿下「極度好評」的《燕雲十六聲》，預計在 11 月下旬導入 DLSS 5，目前開發團",
+      "sourceId": "rss-snapshot-1273e80c572e22b6ef52",
+      "matchedRule": "mobile-top-grossing-games"
+    },
     {
       "id": "softworld-api-google-news-408472daf0820fd46c33",
       "origin": "monitoring",
@@ -143,6 +186,50 @@
       "sourceId": "google-news-817fa4ab17e6c3165abf",
       "matchedRule": "taiwan-payment-google-news,softworld-brand",
       "publisherUrl": "https://news.pchome.com.tw/living/leho/20261014/index-79192060181002356009.html"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-ff0e49aa8994344860b0",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "小小兵拖拉包首刷上陣 富邦J卡給26吋拉鍊箱",
+      "source": "卡優新聞網熱門新聞",
+      "date": "2026-10-14",
+      "publishedAt": "2026-10-13T19:18:02.000Z",
+      "url": "https://www.cardu.com.tw/news/detail.php?65967",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "高",
+      "tags": [
+        "金融支付",
+        "產業監測",
+        "信用卡"
+      ],
+      "excerpt": "百貨週年慶掀起購物熱，「閃靈刷手」們必備高回饋信用卡。上海商銀「小小兵Bello卡」祭出全新首刷禮，不僅刷滿168元贈超商券，累積...",
+      "sourceId": "rss-snapshot-ff0e49aa8994344860b0",
+      "matchedRule": "taiwan-payment-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-14043a1250a4b2a0b1a9",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "LINE聊天有AI更聰明 輕鬆整理行事曆相片",
+      "source": "卡優新聞網熱門新聞",
+      "date": "2026-10-14",
+      "publishedAt": "2026-10-13T19:17:54.000Z",
+      "url": "https://www.cardu.com.tw/news/detail.php?65965",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "發展",
+        "未來"
+      ],
+      "excerpt": "進入AI時代，通訊軟體打造全新體驗。LINE今(13)天宣布以「Life on LINE with AI」為創新發展方向，未來透過...",
+      "sourceId": "rss-snapshot-14043a1250a4b2a0b1a9",
+      "matchedRule": "industry-platform-business"
     },
     {
       "id": "softworld-api-rss-snapshot-f6fc28edb26a8d2e47a2",
@@ -716,7 +803,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-d37b4bd7258271b7b2d6",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://money.udn.com/money/story/5613/9812705?from=edn_maintab_cate"
     },
     {
       "id": "softworld-api-google-news-8d015c5db5ffd3949721",
@@ -739,7 +827,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-8d015c5db5ffd3949721",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.xfastest.com/forum.php?mod=viewthread&tid=314277"
     },
     {
       "id": "softworld-api-rss-snapshot-824d279b7d676d123e42",
@@ -791,7 +880,8 @@
           "source": "CMoney／信傳媒",
           "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE4xdVM5dGY5c05NWWxKTUFxYmQ1WEJTdTdrNUlieUQ2OUVmRFVIX0dfa2NRZVVtNTVKZjUySXV6a3hSOFBDMnd4NnRDanZwOVU2aGNlcG9BX1c?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://money.udn.com/money/story/122328/9811879"
     },
     {
       "id": "softworld-api-rss-snapshot-ab2cd3d761dd50948e3a",
@@ -866,7 +956,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-3729aa88863ecd828da3",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://www.ctee.com.tw/news/20261013702092-430801"
     },
     {
       "id": "softworld-api-google-news-7defdc2312871a00f021",
@@ -889,7 +980,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-7defdc2312871a00f021",
-      "matchedRule": "industry-new-business"
+      "matchedRule": "industry-new-business",
+      "publisherUrl": "https://news.pchome.com.tw/finance/cna/20261013/index-17918972483660518003.html"
     },
     {
       "id": "softworld-api-rss-snapshot-514e27b9da758ff1a094",
@@ -1043,7 +1135,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-d521013f2b64131c70fe",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://today.line.me/tw/v3/article/rmpgL20"
     },
     {
       "id": "softworld-api-rss-snapshot-9420b9a9d8959202372e",
@@ -1155,7 +1248,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-a8296b968f9e6ee05b3d",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://readmo.cmoney.tw/article/e4ff9abf-6df3-4742-8cb4-2f89ccea713f"
     },
     {
       "id": "softworld-api-google-news-56546bf30893b54ad466",
@@ -1307,7 +1401,8 @@
           "source": "鏡傳媒／鏡週刊",
           "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9tWDhnUnZNcThDMF9RaDhxQ0szTHpyTS12UXVDLU42Ykw0N1hPT3UtbDd2TEVsbnotZkZwOENRVUNGLXJMcm42ek8xUDE4ZXQzTXdqQ3hMazBQRm5TcXfSAWJBVV95cUxQTm5ncmdjLVJScXJHYTdkNnktOHRTT0VSMGZJWVM0WkVwdzN6R052a1hYcXdUa2pjcWZiTWJlQ3hMelBFOTVSaVpxS3RpLTRXQnBYbFY3enJ5b0NZWl90MkRlZw?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://www.mirrormedia.mg/external/setn_1921402"
     },
     {
       "id": "softworld-api-google-news-d47f82df8c507feb1333",
@@ -1342,7 +1437,8 @@
           "source": "中央社 科技",
           "url": "https://www.cna.com.tw/news/ahel/202610130265.aspx"
         }
-      ]
+      ],
+      "publisherUrl": "https://www.cmoney.tw/forum/article/185591323"
     },
     {
       "id": "softworld-api-google-news-ae5bea2f2af2f971634b",
@@ -1424,7 +1520,8 @@
           "source": "CMoney／信傳媒",
           "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBoWDMzeElDWV8tRFN2bWFmSTJyX2RabjEtdXNGNjB4OFl0ZTZodzVtcU1idFJMZlRQbkh3VThRb1lZS0NRMEVPTXVBU2hOb0xTZjBnZ2JjUEw?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://www.cmoney.tw/forum/article/185588487"
     },
     {
       "id": "softworld-api-google-news-5b5a5386f075ee367755",
@@ -1529,7 +1626,8 @@
           "source": "Yahoo台灣新聞",
           "url": "https://news.google.com/rss/articles/CBMizwJBVV95cUxQNF9OV3pweHVaN0Rnd0loRnBfbHRqeWVmcEhidE11Um9JaVNaSDBCbWdTbU5YYzhtbVNmUFNYQXlDOE56OUhEVGM5UDJubl93dUxxbW1YcWpmUmFhSTRkZHhKYjhxSnladGh6UjNTb3VzYy1wREVzSnVyZVBwN1VTSVdhbE1ZOVhsRmtPbmM3cGgwR0lKX0Vka2JVb0NGX3ZCZW14bldwOVotQ1pUOHFia1BWeEFiaGJGd094dDNsUmx6dVQ0b0NyR19VY09sczRKdXh5V2VJVEVvQ2V4TEJyN0hyUV9fOXlfSER1bkczMkxEWmVWXzBzanhobUI1ek1YUkFGX3pSUFZtbnJ6NnRuamNZTmVlbXM1bThXdkJnc0Z5TnlRNW5wWjhMb3F5eTVuTXdHR1dfNUVqY2JmU1FoelFpTUVLdlMtc0JQRHBRNA?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://www.ftvnews.com.tw/news/detail/2026A13W0533"
     },
     {
       "id": "softworld-api-google-news-0e5a1ffd4346972596b5",
@@ -1552,7 +1650,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-0e5a1ffd4346972596b5",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://tw.news.yahoo.com/line%E5%85%A9%E5%A4%A7%E5%85%8D%E8%B2%BB%E5%8A%9F%E8%83%BD%E8%A6%81%E6%94%B6%E8%B2%BB%E4%BA%86-10-20%E6%97%A5%E5%85%88%E5%81%9C-%E9%A0%85-%E6%83%B3%E7%B9%BC%E7%BA%8C%E7%94%A8%E9%A0%88%E6%9C%88%E4%BB%98165%E5%85%83-100248299.html"
     },
     {
       "id": "softworld-api-google-news-1b44874905999d2d31ed",
