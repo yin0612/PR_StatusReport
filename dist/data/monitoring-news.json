@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-10-14T21:20:49.322638Z",
-  "syncedAt": "2026-10-14T22:16:59.311Z",
+  "generatedAt": "2026-10-15T00:18:00.706Z",
+  "syncedAt": "2026-10-15T00:33:33.201Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,16 +10,16 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 2645,
-    "matchedItems": 2406,
+    "totalItems": 2649,
+    "matchedItems": 2408,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 2645,
-        "matchedItems": 2529,
-        "generatedAt": "2026-10-14T21:20:49.322638Z",
+        "totalItems": 2649,
+        "matchedItems": 2533,
+        "generatedAt": "2026-10-15T00:18:00.706Z",
         "range": {
           "from": "2026-08-15",
           "to": "2026-10-15"
@@ -28,6 +28,59 @@
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-rss-snapshot-0756eccc735a6d0bc677",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "OpenAI員工投靠蘋果 老東家控攜走機密",
+      "source": "經濟日報 產經國際",
+      "date": "2026-10-15",
+      "publishedAt": "2026-10-14T22:54:30.000Z",
+      "url": "https://money.udn.com/money/story/5599/9815584",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "發展",
+        "蘋果"
+      ],
+      "excerpt": "OpenAI與蘋果之間的營業秘密訴訟今天有進一步發展，OpenAI指控1名跳槽至蘋果的前員工，離職前將逾100份未公開產...",
+      "sourceId": "rss-snapshot-0756eccc735a6d0bc677",
+      "matchedRule": "industry-platform-business",
+      "relatedSources": [
+        {
+          "title": "OpenAI員工投靠蘋果 老東家控攜走機密",
+          "source": "中央社 產經證券",
+          "url": "https://www.cna.com.tw/news/aopl/202610150013.aspx"
+        }
+      ]
+    },
+    {
+      "id": "softworld-api-rss-snapshot-10814fe55a11a0756cae",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "【科技早餐】日本出資、美國持股！最高 210 億美元晶圓廠計畫出爐",
+      "source": "科技報橘 TechOrange",
+      "date": "2026-10-15",
+      "publishedAt": "2026-10-14T21:30:00.000Z",
+      "url": "https://techorange.com/2026/10/15/japan-us-chip-fabs-investment/?utm_source=rss&utm_medium=feed&utm_campaign=techorange_rss",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "合作",
+        "蘋果"
+      ],
+      "excerpt": "【科技早餐】今天精選 8 則國內外重要科技新聞。 ＊日本擬投最高 210 億美元在美建晶圓廠，格羅方德獲選營運 格羅方德（GlobalFoundries）10 月 14 日宣布，獲選為美日合作計畫中兩座新晶圓廠的技術提供者與營運商，廠址位於美國紐約州馬爾他，日本將提供最高 210 億美元資金。第一座廠預計以約 100 億美元加速建置，今年稍晚動工、2029 年投產；第二座廠則納入另一筆約 100 億美元的後續投資規劃。首座廠全面運作後，預計增加每年約 90 萬片 12 吋晶圓產能，主要服務汽車、工業及連網基礎設施需求。 這項安排是日本與川普政府貿易及投資協議的一部分。根據《路透社》，美國政府與日方將共同持有新廠，資本投資由日本提供，格羅方德透過建廠、營運及技術授權收取費用。執行長 Tim Breen 表示，初期客戶包括瑞薩電子（Renesas Electronics）與蘋果（Apple），希望優先供應美日客戶，具體產能分配仍待敲定。美國商務部另將依獨立協議取得格羅方德約 4% 股權，與新廠的持股安排不同。兩座廠尚未建成，最高投資額也不等於已投入金額；計畫將貿易政策與政府資本帶入晶片產能配置。 ＊軟銀發債最高票息達 9.75%，孫正義 AI 投資回報受檢驗 軟銀集團（SoftBank Group）上月發行外幣債券，依 9 月 24 日公告，總額折合約 111 億美元，包括 100 億",
+      "sourceId": "rss-snapshot-10814fe55a11a0756cae",
+      "matchedRule": "industry-platform-business"
+    },
     {
       "id": "softworld-api-google-news-7ece792d7a208dcec768",
       "origin": "monitoring",
@@ -70,6 +123,13 @@
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-32c85bac29a37c142d63",
       "matchedRule": "taiwan-payment-google-news",
+      "relatedSources": [
+        {
+          "title": "健身房運動揮汗有禮 10張信用卡最高回饋5%",
+          "source": "卡優新聞網熱門新聞",
+          "url": "https://www.cardu.com.tw/news/detail.php?65986"
+        }
+      ],
       "publisherUrl": "https://tw.news.yahoo.com/%E5%81%A5%E8%BA%AB%E6%88%BF%E9%81%8B%E5%8B%95%E6%8F%AE%E6%B1%97%E6%9C%89%E7%A6%AE-10%E5%BC%B5%E4%BF%A1%E7%94%A8%E5%8D%A1%E6%9C%80%E9%AB%98%E5%9B%9E%E9%A5%8B5-194754284.html"
     },
     {
@@ -2433,7 +2493,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-0271ff32a3d0e44f5dd3",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.ctee.com.tw/news/20261014701311-431401"
     },
     {
       "id": "softworld-api-google-news-9a9c5c9fa432cd1c3d12",
@@ -2456,7 +2517,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-9a9c5c9fa432cd1c3d12",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://tw.news.yahoo.com/line-%E5%B8%B3%E8%99%9F%E8%A2%AB%E7%9B%9C%E6%9C%89%E6%95%91%E4%BA%86-%E4%B8%89%E5%A4%A7%E5%AE%89%E5%85%A8%E6%96%B0%E5%8A%9F%E8%83%BD%E7%99%BB%E5%A0%B4-%E6%8F%9B%E6%89%8B%E6%A9%9F%E4%B9%9F%E6%9B%B4%E6%96%B9%E4%BE%BF-043502648.html"
     },
     {
       "id": "softworld-api-google-news-1cd77c3eca5980748e7d",
@@ -2479,7 +2541,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-1cd77c3eca5980748e7d",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.nownews.com/news/6883244"
     },
     {
       "id": "softworld-api-google-news-4bd8ef814eaec68fb66c",
@@ -2508,7 +2571,8 @@
           "source": "PChome新聞",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbkhoN0h4T01lSGNKYWc0UTdVeDg1UWZOV2ZKeVJrTU43dHJTSFU3Ri1UNERvazg0Ri1UdEVLOUM5VHJGXzEybEZDaUJ4NTBmcS1HRDdhQzB6Q28zQ3o3eVVkdlkxX2ttMExNWUIzRXFDazA4bWlKcWY4WXRnSGJicGZqVE5aWU85bmZUNQ?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://today.line.me/tw/v3/article/8nM0rGR"
     },
     {
       "id": "softworld-api-rss-snapshot-f6a3477311124650a7cd",
@@ -2552,7 +2616,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-204fa70254873f115e44",
-      "matchedRule": "competitor-brand"
+      "matchedRule": "competitor-brand",
+      "publisherUrl": "https://wantrich.chinatimes.com/news/20261014900268-420101"
     },
     {
       "id": "softworld-api-rss-snapshot-3e8830da169b133c48a9",
@@ -2618,7 +2683,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-ab20894e6bd19f8a2a0d",
-      "matchedRule": "competitor-brand"
+      "matchedRule": "competitor-brand",
+      "publisherUrl": "https://www.ctee.com.tw/news/20261014701180-430201"
     },
     {
       "id": "softworld-api-rss-snapshot-7ef760e79535fbdc2c98",
@@ -2662,7 +2728,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-9f042eb288c8ba94fc5d",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.mirrormedia.mg/story/20261011inv003"
     },
     {
       "id": "softworld-api-rss-snapshot-5b4eb5a55a5576565045",
@@ -2814,7 +2881,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-cb27768aa937fea6b60c",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://news.cnyes.com/news/id/6630066"
     },
     {
       "id": "softworld-api-rss-snapshot-373722a47ee87d72455a",
@@ -2962,7 +3030,8 @@
           "source": "PChome新聞",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNbV9pT3k1X0VOU2UxTlFQNllhTlc4Qm9oRmg3UmpnSFJROHVKRktzaUlvejN4SVFJMTBXS1AtYUd4Rk1BaW1DODV1WHN5WE55N2poQkxpdk5MakpzTTZsRUxkUktuWHNtMGdpQ2dOam1xOGRCejhxREtUc0NqMFlkdVBWcGNUTlE1bGptUA?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://today.line.me/tw/v3/article/wJvgXQr"
     },
     {
       "id": "softworld-api-rss-snapshot-dce0164445f48079bf68",
@@ -3299,7 +3368,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-561d8b063f8df5b98e67",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=9742d665-0d0a-4934-8077-8c264f830e58"
     },
     {
       "id": "softworld-api-91c9b805-56f1-4688-bcfa-49f9c7a40d11",
@@ -3344,7 +3414,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-5a2057938e3a0f209bbd",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://www.setn.com/news/1922165"
     },
     {
       "id": "softworld-api-google-news-1ce47ef42c3620ebfcef",
@@ -3365,7 +3436,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-1ce47ef42c3620ebfcef",
-      "matchedRule": "competitor-brand"
+      "matchedRule": "competitor-brand",
+      "publisherUrl": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=67e343a2-5ad7-46ea-9758-786496476c38"
     },
     {
       "id": "softworld-api-google-news-65767b09537247b1aaf4",
