@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-10-18T20:12:58.995772Z",
-  "syncedAt": "2026-10-18T20:38:25.276Z",
+  "generatedAt": "2026-10-18T21:36:23.478Z",
+  "syncedAt": "2026-10-18T23:09:02.171Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,16 +10,16 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 2879,
-    "matchedItems": 2649,
+    "totalItems": 2880,
+    "matchedItems": 2650,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 2879,
-        "matchedItems": 2756,
-        "generatedAt": "2026-10-18T20:12:58.995772Z",
+        "totalItems": 2880,
+        "matchedItems": 2757,
+        "generatedAt": "2026-10-18T21:36:23.478Z",
         "range": {
           "from": "2026-08-19",
           "to": "2026-10-19"
@@ -28,6 +28,27 @@
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-rss-snapshot-5361c7e264c9817e877f",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "US Is Importing Bitcoin and Exporting Digital Dollars: What Does it Mean?",
+      "source": "CryptoPotato",
+      "date": "2026-10-19",
+      "publishedAt": "2026-10-18T20:03:30.000Z",
+      "url": "https://cryptopotato.com/us-is-importing-bitcoin-and-exporting-digital-dollars-what-does-it-mean/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "stablecoin"
+      ],
+      "excerpt": "How is the US importing BTC while exporting digital dollars and what does it mean for the crypto industry? Chainalysis breaks it down. A recent report by Chainalysis claimed that the United States has become a net importer of bitcoin this year while continuing to export dollar-backed stablecoins around the world. The trend highlights an increasingly unusual dynamic: institutions are pulling BTC into the US, while the rest of the world is becoming more dependent on tokenized dollars. Institutions Bring BTC Into the US The report found that the US became a net importer of BTC this year for the f",
+      "sourceId": "rss-snapshot-5361c7e264c9817e877f",
+      "matchedRule": "stablecoin-core"
+    },
     {
       "id": "softworld-api-google-news-ab33c527f3d2584db792",
       "origin": "monitoring",
@@ -6108,7 +6129,8 @@
           "source": "鏡傳媒／鏡週刊",
           "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE56dXE0dF9ONHItRGdPWWM3UjZPbHpLWUp6OU1HLU05YUpka3hScC1qaEFPc09fVmY3UmxzSVQzdU9rUmQ3RVNLNVQ4SVlmY0ZDcS1Hb1R1ZHRRRVBIelg0M2c0WVpHQQ?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://tw.news.yahoo.com/%E6%96%B0%E5%8F%B0%E5%B9%A3%E7%A9%A9%E5%AE%9A%E5%B9%A3-%E6%B2%92%E5%BF%85%E8%A6%81%E7%99%BC-%E9%8A%80%E8%A1%8C%E5%85%AC%E6%9C%83%E7%90%86%E4%BA%8B%E9%95%B7%E8%91%A3%E7%91%9E%E6%96%8C-%E4%B8%8D%E5%A6%82%E5%BC%95%E9%80%B2%E7%BE%8E%E5%85%83%E7%A9%A9%E5%AE%9A%E5%B9%A3%E6%90%B6%E6%94%BB%E8%B7%A8%E5%A2%83%E6%94%AF%E4%BB%98-130200820.html"
     },
     {
       "id": "softworld-api-rss-snapshot-815ac1a8d85aeb7c9c42",
@@ -8127,7 +8149,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-8eec7e313f292c44ee52",
-      "matchedRule": "industry-cn-game-approval"
+      "matchedRule": "industry-cn-game-approval",
+      "publisherUrl": "https://news.qq.com/rain/a/20261015A04PH800?ptag=ima"
     },
     {
       "id": "softworld-api-rss-snapshot-91645c3d8726f94a8288",
@@ -8217,7 +8240,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-60002d9fe105276b1b54",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.nownews.com/news/6883368"
     },
     {
       "id": "softworld-api-rss-snapshot-fa2d726bb47a51d429e2",
@@ -8381,7 +8405,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-c8a843a3bd157d78d6fc",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://www.nownews.com/news/6883343"
     },
     {
       "id": "softworld-api-rss-snapshot-0756eccc735a6d0bc677",
@@ -8488,7 +8513,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-8620b8f1ef37ab0b8c15",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://today.line.me/tw/v3/article/MLBee9M"
     },
     {
       "id": "softworld-api-rss-snapshot-10814fe55a11a0756cae",
@@ -10768,7 +10794,8 @@
           "source": "PChome新聞",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQRmFGVDZhWXBKQTZqLVpvS0VQbEl1ZWNFZG9kVEpLMWlpcUZHV3lXd2IxQlJ6WFBkMjU2amVZcFRDU3REeENlWnVGR1NQTGtLV3JLc0FlQVZPaXRQb0Q3b2NxSWZmUkdJWlhLcWpwbDZCaE9CSXBFX1F1dVpaSXZYdDdqdDVqUHVpVHM4SQ?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://tw.news.yahoo.com/%E6%A1%83%E5%9C%92%E5%A5%BD%E5%B8%82pay%E4%BD%A0%E8%B3%BC-%E9%96%8B%E8%B7%91-3%E5%A4%A7%E7%A4%BA%E7%AF%84%E5%B8%82%E5%A0%B4twqr%E6%94%AF%E4%BB%98%E4%BA%AB20-%E5%9B%9E%E9%A5%8B-033342372.html"
     },
     {
       "id": "softworld-api-google-news-f9761401ea55adf98390",
@@ -11003,7 +11030,8 @@
           "source": "搜狐網",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQVE5CV1NCUFZJR1BCT3ktMXMyaGtkM1FJVHlNV0hJR2N6QUNKU0p0MHFZdllsS01zbDNScGJVSFVSWDFNTE1MNmdMdlpQeFV3UXRPdGlxRnJ4UVhOMUc0N0VwbHF0TnhJS0FuSmNrX1QwN1I1T0NNRXphNnhXRGZuT2p1bS1mRktEaWRYQQ?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://timeline.sohu.com/news/cQUuLXovGB"
     },
     {
       "id": "softworld-api-rss-snapshot-e28e0492e2f5bfc4b195",
@@ -11117,7 +11145,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-2c6973a5f6a76574f02e",
-      "matchedRule": "competitor-brand"
+      "matchedRule": "competitor-brand",
+      "publisherUrl": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=279ee300-4e87-496b-9183-2c7aec9f316d"
     },
     {
       "id": "softworld-api-a90bf423-6f71-4c3e-bb1a-02a0cc3d84a6",
@@ -11250,7 +11279,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-65767b09537247b1aaf4",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://news.pchome.com.tw/realestate/myhousing/20261014/index-79193960070170259101.html"
     },
     {
       "id": "softworld-api-google-news-654b9f1b49243f176a12",
@@ -11273,7 +11303,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-654b9f1b49243f176a12",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.bnext.com.tw/article/92618/gemini-4-argon-google-ai-model-pricing"
     },
     {
       "id": "softworld-api-google-news-e62bacaa9a152b362e0c",
@@ -11296,7 +11327,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-e62bacaa9a152b362e0c",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.techbang.com/posts/134080-line-premium-new-features-message-edit-call-record"
     },
     {
       "id": "softworld-api-google-news-d4b436f3fb2eeecac429",
@@ -11331,7 +11363,8 @@
           "source": "工商時報",
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9oaGZyTkQzVXFDQ1gyLXh2bVhYYlZ5MW44c0d6X0FTNTh5OXRwMlVSZ3pxS3ZmcnlhN080UnVXQkEzR3QyMEl6d2JKazI4QXgxTEtLa3hCRmFoajZnZXF3?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://wantrich.chinatimes.com/news/20261014900090-420501"
     },
     {
       "id": "softworld-api-rss-snapshot-6269343c09cdc90adca5",
