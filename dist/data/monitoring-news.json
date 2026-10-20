@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-10-20T18:33:00.501Z",
-  "syncedAt": "2026-10-20T19:13:27.238Z",
+  "generatedAt": "2026-10-20T21:20:28.907736Z",
+  "syncedAt": "2026-10-20T22:17:23.975Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,16 +10,16 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 3024,
-    "matchedItems": 2809,
+    "totalItems": 3026,
+    "matchedItems": 2808,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 3024,
-        "matchedItems": 2891,
-        "generatedAt": "2026-10-20T18:33:00.501Z",
+        "totalItems": 3026,
+        "matchedItems": 2895,
+        "generatedAt": "2026-10-20T21:20:28.907736Z",
         "range": {
           "from": "2026-08-21",
           "to": "2026-10-21"
@@ -28,6 +28,30 @@
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-google-news-2a0968d322f02f99a73b",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "谷歌、臉書詐騙通報數Q3暴增- 產業特刊- 工商時報",
+      "source": "中國時報／中時新聞網",
+      "date": "2026-10-21",
+      "publishedAt": "2026-10-20T20:10:00Z",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1Udmhyb1J5Qk44RnJUanE1ZGRvN3NlUG5GMUxhN01TbHROdTRDY3gweWNGbWdSbHhMRUFMYlBJZWI5alZzYlJ1UHR4S1NXOHR5aGxtWFladC1US2hsak5WQW0zNGVvYnExZG13?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "產業",
+        "臉書"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-2a0968d322f02f99a73b",
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.chinatimes.com/newspapers/20261021000240-260210"
+    },
     {
       "id": "softworld-api-rss-snapshot-1eb6fbc696a33abb196f",
       "origin": "monitoring",
@@ -71,6 +95,36 @@
       "matchedRule": "international-fintech"
     },
     {
+      "id": "softworld-api-google-news-4623361fcf2b4c59636a",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "討論牆 | 《最後一戰》玩家自製平台引爭議 揭示遊戲產業深層轉變",
+      "source": "LINE TODAY",
+      "date": "2026-10-21",
+      "publishedAt": "2026-10-20T17:07:23Z",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE51ZjJ2dVBRTFpPRENQejBlSExaSmN5bjNoNU5TbG1KamVoczVTdXozWXM4X0FBWWZjNGNfNkFsR2d0aXVlLWZnZDQ3RUNDTUtPblJZZXNOTndFclBWcnBQRFQ0dm0?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "玩家"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-fd1b5ceb13d7d2d4cb30",
+      "matchedRule": "industry-game-platform",
+      "relatedSources": [
+        {
+          "title": "《最後一戰》玩家自製平台引爭議 揭示遊戲產業深層轉變 | 商傳媒",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA4NVVfQVRqWk5pbXBlU2lJdVB4V3R0d1N6QU9icEN6Z3JEM0U5QlFPeHhSb3pYUDM5ckk4Q0JLZ2lkNDY0OGV6UEVLeDVkWER0eld0SDhR?oc=5"
+        }
+      ],
+      "publisherUrl": "https://today.line.me/tw/v3/posts/list/article/JPy9XOq"
+    },
+    {
       "id": "softworld-api-rss-snapshot-4431780d2d8bafbb5811",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -91,6 +145,28 @@
       "excerpt": "財政部賦稅署今天表示，澎湖縣張姓男子涉嫌於近日持2張新台幣1000萬元中獎發票至銀行兌領獎金，行員察覺他持多張中獎發票且神色不寧，立即通報管制並報請警察機關協助調查，後經國稅局調查，其中1張發票已有實際中獎人出示憑據領獎，顯見張男確有冒詐領情形，全案已由檢警偵辦中。財政部賦稅署署長樓美鐘今天下午出席「為確保民眾兌領獎權益，對於領獎人須嚴謹把關」記者會，她指出，賦稅署上週接獲訊息，隨即交由所轄國稅局盡速查證釐清。據了解，張男是透過ibon機台列印中獎發票證明聯，並持2張千萬元特別獎中獎發票向銀行兌領，但行員察覺他神色不寧、且一次拿了2張千萬元中獎發票可說是「史無前例」，疑有冒詐領統一發票中獎獎金",
       "sourceId": "rss-snapshot-4431780d2d8bafbb5811",
       "matchedRule": "industry-einvoice"
+    },
+    {
+      "id": "softworld-api-google-news-4d3cb6c771f35f3a838e",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "3045 台灣大- 台灣大BNPL 搶進寵物消費- 股市爆料同學會",
+      "source": "CMoney／信傳媒",
+      "date": "2026-10-21",
+      "publishedAt": "2026-10-20T16:45:32Z",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBEYnVWZDlBT1RPQV9sMkI4dnk3WHVwc2w5SUJVWUstamN1UC1QcG4wazFiQ3JBVHF3S3VvOGxlelRYaGp4TktQWGs3b1phaWhQdjJvSXh4LWM?oc=5",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "中",
+      "tags": [
+        "金融支付",
+        "產業監測",
+        "bnpl"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-4d3cb6c771f35f3a838e",
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.cmoney.tw/forum/article/186343256"
     },
     {
       "id": "softworld-api-rss-snapshot-4afb3cfea74309d7d1fb",
@@ -226,6 +302,35 @@
       "publisherUrl": "https://money.udn.com/money/story/5710/9827326"
     },
     {
+      "id": "softworld-api-google-news-9d4fd002e44361e3826a",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "宏碁遊戲-創 代子公司Winking Studios Limited公告庫藏股執行情形 | MoneyDJ理財網",
+      "source": "LINE TODAY",
+      "date": "2026-10-20",
+      "publishedAt": "2026-10-20T15:59:02Z",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1SQUYzYWE4bHNWUmlzTDRBUnBNRWhmME94blJMSk9RdTVBc1dzUF85UHB6S0FrRkliVlVuVGpvajUweDVjXzVlQmdhWFpVZUc4ampZTVhR?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "宏碁遊戲"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-6e3446ff9a82727d07f7",
+      "matchedRule": "competitor-brand",
+      "relatedSources": [
+        {
+          "title": "宏碁遊戲-創代子公司Winking Studios Limited公告庫藏股執行情形- 新聞",
+          "source": "MoneyDJ 理財網",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPbkRrNUY3a1JSd1Jyb0lldGZIVlBtWUZvTlJkRElCTDV5Sm1BY0ptTWZ3WnRuTjRMaHNNOW1uNzdIR0FULUpLc3VKWlIwcTZ2TnNoemVrZnFhZ1V1WmRpRkhNRS15UEw5QnNSN21fOE1EWmYxaHRaOUt4eUtCdUdfQmJ5NXZEMWItQnNYWlJWWmNYZw?oc=5"
+        }
+      ],
+      "publisherUrl": "https://today.line.me/tw/v3/article/EXw5o3Y"
+    },
+    {
       "id": "softworld-api-rss-snapshot-b4b0b88f635bd690bc7c",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -247,28 +352,6 @@
       "excerpt": "OKX 與洲際交易所合資的代幣化股票平台 OKXICE 更新公開通知，微軟、Alphabet、高盛等 7 家新加入異議名單，提出異議的美國上市公司增至 16 家。 這篇文章 微軟、高盛也反對 OKX 交易代幣化自家股票，異議公司增至 16 家 最早出現於 鏈新聞 ABMedia 。 反對代幣化自家股票的美國上市公司又多了 7 家。OKX 與紐約證交所母公司洲際交易所（ICE）合資的代幣化股票平台 OKXICE，在 10 月 19 日更新的 公開通知 中列出 16 家提出異議的公司，微軟、Alphabet 與高盛都在其中。 4 天內從 9 家增至 16 家，新增 7 家含微軟 這次新增的 7 家是高盛、微軟、高通、開拓重工（Caterpillar）、麥當勞、威騰電子（Western Digital）與 Alphabet。加上 10 月 15 日通知 已列出的 Cerebras Systems、AppLovin、Applied Digital、Rocket Lab、CoreWeave、Verizon、Applied Optoelectronics、博通與聯合健康集團，總數來到 16 家。 通知同樣沒有說明各家反對的理由，也沒有寫明是什麼時候提出的。 CoinDesk 比對 ，OKXICE 最初的通知列出 62 家公司、63 個股票代號（Alphabet 有兩類股），其中 15 家已經提",
       "sourceId": "rss-snapshot-b4b0b88f635bd690bc7c",
       "matchedRule": "stablecoin-core"
-    },
-    {
-      "id": "softworld-api-google-news-9d4fd002e44361e3826a",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "宏碁遊戲-創代子公司Winking Studios Limited公告庫藏股執行情形- 新聞",
-      "source": "MoneyDJ 理財網",
-      "date": "2026-10-20",
-      "publishedAt": "2026-10-20T15:38:00Z",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPbkRrNUY3a1JSd1Jyb0lldGZIVlBtWUZvTlJkRElCTDV5Sm1BY0ptTWZ3WnRuTjRMaHNNOW1uNzdIR0FULUpLc3VKWlIwcTZ2TnNoemVrZnFhZ1V1WmRpRkhNRS15UEw5QnNSN21fOE1EWmYxaHRaOUt4eUtCdUdfQmJ5NXZEMWItQnNYWlJWWmNYZw?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "宏碁遊戲"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-cad9cea6403d543358b4",
-      "matchedRule": "competitor-brand",
-      "publisherUrl": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=0daa720f-0107-46bc-9880-7a552b5a53b8"
     },
     {
       "id": "softworld-api-rss-snapshot-c8b39a70923bc30f21a5",
@@ -400,6 +483,28 @@
       "matchedRule": "competitor-brand"
     },
     {
+      "id": "softworld-api-google-news-b08b7f21c27ca463a5d5",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "穩定幣支付暴漲 45% - 供應卻停滯：錢都被誰賺走了？",
+      "source": "鉅亨網",
+      "date": "2026-10-20",
+      "publishedAt": "2026-10-20T14:00:09Z",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5CQmFodDA5U0lEbFRfNzQ0blg4NUVsZ0ZsZ1Y4czlta2pKYVVnV3FvVHU5VDhDZTB3RU9Pc2xral9RNU1JUGQxRlZIcGpiSVE?oc=5",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "穩定幣支付"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-b08b7f21c27ca463a5d5",
+      "matchedRule": "stablecoin-core",
+      "publisherUrl": "https://news.cnyes.com/news/id/6634503"
+    },
+    {
       "id": "softworld-api-rss-snapshot-203e87754e1a91f5f77c",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -442,29 +547,6 @@
       "excerpt": "Thredd, the AI-first issuer processing platform, today announced a new partnership with Finsei, a London-based payments company, to power the processing infrastructure behind Finsei’s new Mastercard debit offering.",
       "sourceId": "rss-snapshot-4eede8f5abd5bda433fb",
       "matchedRule": "international-fintech"
-    },
-    {
-      "id": "softworld-api-google-news-4623361fcf2b4c59636a",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "《最後一戰》玩家自製平台引爭議 揭示遊戲產業深層轉變 | 商傳媒",
-      "source": "LINE TODAY",
-      "date": "2026-10-20",
-      "publishedAt": "2026-10-20T13:30:14Z",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA4NVVfQVRqWk5pbXBlU2lJdVB4V3R0d1N6QU9icEN6Z3JEM0U5QlFPeHhSb3pYUDM5ckk4Q0JLZ2lkNDY0OGV6UEVLeDVkWER0eld0SDhR?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "遊戲",
-        "玩家"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-4623361fcf2b4c59636a",
-      "matchedRule": "industry-game-platform",
-      "publisherUrl": "https://today.line.me/tw/v3/article/JPy9XOq"
     },
     {
       "id": "softworld-api-rss-snapshot-e68ae7ba4f028efffe05",
@@ -531,6 +613,30 @@
       "matchedRule": "competitor-global-game"
     },
     {
+      "id": "softworld-api-google-news-2878ad7c2696bb569ce8",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "PS5 不只玩遊戲！玩家破解主機改造成AI 伺服器，成功離線執行270 億參數模型| 三嘻行動哇Yipee!",
+      "source": "LINE TODAY",
+      "date": "2026-10-20",
+      "publishedAt": "2026-10-20T12:51:34Z",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE91emFfMTNZSGdLcWxUcGVEVWFyWDhCNVVmYnlKTkxsUE1uYUFNR2xSZ1E1Z3hkSWhqZ3Z2Nlpua2dfZ1kzZmpZWnVyZDZFVnRLLVp5cUpR?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "PS5",
+        "玩家"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-2878ad7c2696bb569ce8",
+      "matchedRule": "industry-game-platform",
+      "publisherUrl": "https://today.line.me/tw/v3/article/9m35OvR"
+    },
+    {
       "id": "softworld-api-rss-snapshot-bc2860dc2ac67d1f77f9",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -552,30 +658,6 @@
       "excerpt": "瑞士金融市場監管局（FINMA）於台北時間 10 月 20 日宣布，首度核准一檔直接持有比特幣、可向一般大眾發 […] 〈 瑞士 FINMA 核准首檔比特幣 ETF！直接持幣的公募基金開放散戶，但發行商未公開 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 瑞士金融市場監管局（FINMA）於台北時間 10 月 20 日宣布，首度核准一檔直接持有比特幣、可向一般大眾發售的瑞士法律基金，也就是所謂的「比特幣 ETF」。不過，瑞士交易所掛牌的比特幣 ETP 早已行之有年，這次真正的「第一」是比特幣首度裝進受核准的公募基金外殼，且發行商身分尚未獲官方證實。 （前情提要：打破壁壘！瑞士證券交易所 SIX 獲准提供「加密貨幣託管」服務，全面整合數位與傳統資產） （背景補充：重磅！SEC批准11檔「比特幣現貨ETF」，BTC不漲反跌？） 瑞士金融監管機構 FINMA 台北時間 10 月 20 日發布公告，宣布首度核准一檔在交易所交易、直接投資比特幣的公募基金（Publikumsfonds，可向一般投資人銷售的基金）。 FINMA 核准了什麼？ 根據 FINMA 公告，這檔基金屬於瑞士法律下「其他另類投資基金」（übrige Fonds für alternative Anlagen），並被歸類為具特殊風險。由於基金只持有單一資產，FINMA 特別給予風",
       "sourceId": "rss-snapshot-bc2860dc2ac67d1f77f9",
       "matchedRule": "stablecoin-core,stablecoin-bitopro"
-    },
-    {
-      "id": "softworld-api-google-news-2878ad7c2696bb569ce8",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "PS5 不只玩遊戲！玩家破解主機改造成AI 伺服器，成功離線執行270 億參數模型| 三嘻行動哇Yipee!",
-      "source": "LINE TODAY",
-      "date": "2026-10-20",
-      "publishedAt": "2026-10-20T12:46:34Z",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE91emFfMTNZSGdLcWxUcGVEVWFyWDhCNVVmYnlKTkxsUE1uYUFNR2xSZ1E1Z3hkSWhqZ3Z2Nlpua2dfZ1kzZmpZWnVyZDZFVnRLLVp5cUpR?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "遊戲",
-        "PS5",
-        "玩家"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-2878ad7c2696bb569ce8",
-      "matchedRule": "industry-game-platform",
-      "publisherUrl": "https://today.line.me/tw/v3/article/9m35OvR"
     },
     {
       "id": "softworld-api-google-news-993a167b157a20a950ab",
@@ -1119,7 +1201,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-0293eace6690fa82659d",
-      "matchedRule": "industry-platform-business,industry-martech"
+      "matchedRule": "industry-platform-business,industry-martech",
+      "publisherUrl": "https://today.line.me/tw/v3/article/pepj8vp"
     },
     {
       "id": "softworld-api-google-news-7427f19b197659761ea0",
@@ -1142,7 +1225,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-7427f19b197659761ea0",
-      "matchedRule": "industry-platform-business,industry-martech"
+      "matchedRule": "industry-platform-business,industry-martech",
+      "publisherUrl": "https://news.tvbs.com.tw/tech/4038756"
     },
     {
       "id": "softworld-api-rss-snapshot-d89dc638af6967b08633",
@@ -1251,7 +1335,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-6a5ee2a3a82c1e0c37a7",
-      "matchedRule": "industry-game-platform"
+      "matchedRule": "industry-game-platform",
+      "publisherUrl": "https://news.pchome.com.tw/game/gamer/20261020/index-79248792482773203104.html"
     },
     {
       "id": "softworld-api-rss-snapshot-2ebc17eb5e7ded6c04d2",
@@ -1294,7 +1379,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-593985b300af8e8cc209",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://money.udn.com/money/story/123882/9824236"
     },
     {
       "id": "softworld-api-rss-snapshot-d98b8cc386d26c697817",
@@ -1450,7 +1536,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-c608ed0b9831f46938b9",
-      "matchedRule": "industry-game-platform"
+      "matchedRule": "industry-game-platform",
+      "publisherUrl": "https://today.line.me/tw/v3/article/EXwDqxn?view=topic&referral=foodinfo"
     },
     {
       "id": "softworld-api-rss-snapshot-82438f8ce02e6013e575",
@@ -1473,6 +1560,30 @@
       "excerpt": "Dragonfly 管理合夥人 Haseeb Qureshi 在 TOKEN2049 新加坡演講認錯，指 x402 九成支付量是刷量、AI 代理實際用信用卡，但代理會讓加密貨幣更安全，也讓隱私變成「一句 prompt」。 這篇文章 Dragonfly 合夥人認錯：AI 代理不需要加密貨幣，需要的是人類 最早出現於 鏈新聞 ABMedia 。 加密創投 Dragonfly 管理合夥人 Haseeb Qureshi 公開認錯。他 10 月 7 日在 TOKEN2049 新加坡站以《Agents + Crypto: What’s Real and What’s Cope》為題演講，開場就說自己過去主張「AI 代理都會使用加密貨幣」是錯的。主辦單位已在 YouTube 公開完整影片，Qureshi 10 月 19 日也 在 X 轉貼 並寫道：「代理不需要加密貨幣，需要的是我們人類。」 x402 九成支付量是刷量，代理實際刷的是信用卡 Qureshi 回顧今年初的氣氛：幣安創辦人趙長鵬、Coinbase 執行長 Brian Armstrong 都在談代理支付即將爆發，Coinbase 推動的代理支付協議 x402 交易量一路上升，業界普遍認為加密貨幣真正的使用者會是 AI 而不是人。他說後來的發展是交易量大幅下滑，「x402 上 90% 的支付量是在刷獎勵」。 他指出，AI 代理現在已是大眾",
       "sourceId": "rss-snapshot-82438f8ce02e6013e575",
       "matchedRule": "taiwan-payment-core,stablecoin-core"
+    },
+    {
+      "id": "softworld-api-google-news-9babb86be6dad7e7cf78",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "儘管支出增加，分析師為何仍上調Meta未來獲利預估？",
+      "source": "鉅亨網",
+      "date": "2026-10-20",
+      "publishedAt": "2026-10-20T08:34:00Z",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWjZxV0UwZ2hKeUI4RWhua2Y1c0tKZ3BXdFRJY25RN2hrZVZpb05mWEt2QjRjbl92eG0zSllGZjFMaVhZcUNjVmMyVTZiX0UzOEVOdXNBVXNKdERMVWdUYk1RbjBLYUVzTnRISlV5Tk5IaGEzZnctcHVsTFRrNFV3LTNKdjRFLVZXd0J6LW8waVMzS2FTY3RURWxoS0t2MEJLMFN4bTBn?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "未來",
+        "Meta"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-9babb86be6dad7e7cf78",
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://news.cnyes.com/news/aigc/answer/%E5%84%98%E7%AE%A1%E6%94%AF%E5%87%BA%E5%A2%9E%E5%8A%A0-58871898"
     },
     {
       "id": "softworld-api-google-news-a41eaf0fbcf5207af820",
@@ -1528,7 +1639,8 @@
           "source": "理財周刊",
           "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0xNDRIQnZpQ1MtOGU4dU92eGh3ZDFqTFRndmFvTU9lNU1rUXFDZlhoZUdZTmZLNFNqQzF5clREN2xoTFF5TlhoOVk5MUJFcExZdkduUWlPUnlpblBLV0R1bGtKby14cENJYUM2b1BHbw?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://today.line.me/tw/v3/article/OplGp0D"
     },
     {
       "id": "softworld-api-google-news-3d23ca37cad25c5c8356",
@@ -1938,29 +2050,6 @@
       "matchedRule": "mobile-top-grossing-games"
     },
     {
-      "id": "softworld-api-google-news-0ca3027c5b8f9edd4d13",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "奧丁丁赴美上市週年 王俊凱：跨境支付從願景走向實現",
-      "source": "Yahoo台灣新聞",
-      "date": "2026-10-20",
-      "publishedAt": "2026-10-20T06:18:12Z",
-      "url": "https://news.google.com/rss/articles/CBMi6gJBVV95cUxNS19lclN5ZUhtUTAzWGJUaUxuTWJhME83VjZfbEtuUlRmTDJxck5sRTR4cHl6bGcwaXJJT0x6SXh5RVlkUUUxWm0wV2MxbDFXejBzWXhid3UwU0pCbUpNREFVVUkyVm9OdDN0N2FyWGc4NVRneFVjSDU3YW02aEZ1ZlVKMVltQVpqOUZ3Z1o0MFhiRkxBY0RCbVg4a3pQZnU3eGItMWV2ODRZOEhsdzRmOWpHU2ZfbnpMaGtaazAySWNNeXZKc1hvYmlRSGNaYUJWZ1VCeENHNkZWWTU4TVZ1UGhncXdncG1TSHN3OHlGcE5jN1JrdkRoUWVSbk5HX1BMY250dEhjeGtnbG5TeWlzTXNEaFJCYmYzSUNUenJHdUJ0VlhiOHRpVU5oOG45bWtsVjRaeGxiWktmcFllamhaSVNzMVNFRVFkTWFYSWdrM01OSzR0Tk1XUlIxSGdyMGVEUmdrWUQteEpyZw?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-stablecoin",
-      "priority": "高",
-      "tags": [
-        "穩定幣",
-        "鏈上結算",
-        "跨境支付",
-        "奧丁丁",
-        "支付"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-0ca3027c5b8f9edd4d13",
-      "matchedRule": "taiwan-payment-google-news,stablecoin-brand"
-    },
-    {
       "id": "softworld-api-google-news-293030a8884e66c18bf7",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -2016,6 +2105,29 @@
       "publisherUrl": "https://newtalk.tw/news/view/2026-10-20/1066601"
     },
     {
+      "id": "softworld-api-google-news-84361fe3f14bbfc4bf59",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "LINE Premium 2026 發布 6 大會員進階功能：編輯訊息、無聲訊息、通話錄製、預約訊息、無痕預覽、稍後標為已讀",
+      "source": "CMoney／信傳媒",
+      "date": "2026-10-20",
+      "publishedAt": "2026-10-20T05:55:43Z",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFA3bnRhbVRzcXVEUGJOSlFOTm1sQ01RSWU5cHNCYzlUUzdMQWV0N09RSEtBS0pvQllDX0JIcUtkLTJ2bUVIZExLdTFTUjd1cXEwamZjQXM5UmE?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "功能",
+        "LINE"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-84361fe3f14bbfc4bf59",
+      "matchedRule": "industry-platform-business"
+    },
+    {
       "id": "softworld-api-rss-snapshot-195c3fd98c4bdbd340a3",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -2037,27 +2149,6 @@
       "excerpt": "人工智慧新創公司 Anthropic 正在籌備首次公開發行（IPO）。Google 前執行長施密特（Eric […]",
       "sourceId": "rss-snapshot-195c3fd98c4bdbd340a3",
       "matchedRule": "industry-platform-business"
-    },
-    {
-      "id": "softworld-api-google-news-163129fc5bd41937abd3",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "2340 台亞- LINE Pay優惠一路到年底！萬家福週一享8%、旅遊票券週末最高18%回饋 - 股市爆料同學會",
-      "source": "CMoney／信傳媒",
-      "date": "2026-10-20",
-      "publishedAt": "2026-10-20T05:41:13Z",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5xcWdsMXNUQ0I3TzdGZG9Vek5BdEVVRWhVZmN6SmFGdGdaOTg2STNKalp4YmFueklUUHVyWVNZcV9ON3puSVJJd2xoTTRmWjhETWRsTXJOTmk?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "高",
-      "tags": [
-        "金融支付",
-        "產業監測",
-        "line pay"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-163129fc5bd41937abd3",
-      "matchedRule": "taiwan-payment-google-news"
     },
     {
       "id": "softworld-api-google-news-d475d06934dc5f37b23d",
@@ -2105,6 +2196,29 @@
       "excerpt": "過去幾週，資安公司 NorForge 首席威脅研究員 Snorre Fagerland 從旁看著一名使用中文的駭客，攻破 100 多家企業的網站，包括農機製造商 Deere、家電公司 SharkNinja 與引擎製造商 Cummins。然而，這名駭客幾乎沒有親自動手，而是把這波攻擊近乎全數交給 AI 代理（AI Agent），讓代理花上數小時自主探測、入侵目標網站。 這是《Reuters》美國時間 10 月 19 日的獨家報導，素材來自 NorForge 同日公布的研究報告。Fagerland 認為，這次發現是真實世界的證據，顯示市售 AI 代理能在沒有人介入的情況下，從頭到尾完成複雜的入侵，大幅放大單一攻擊者的能力。他說：「現在已經是一個新的世界。」AI 代理是怎麼完成這些入侵的？防守方又能從中看見什麼？ 只下不到 100 字中文指令，AI 代理嘗試入侵逾 1,200 個網站 Fagerland 的發現，來自網路上意外外洩的 Cairn 控制面板。Cairn 是一套開源的 AI 問題解決平台，在駭客之間相當受歡迎；NorForge 指出，它的面板就是一般的網頁介面，用商用網路掃描平台就能辨識出來。 Cairn 作者（社群帳號 le1xia0）近期在 X 上表示，這個平台「是一種創新的多代理架構，並非為駭客攻擊而設計。若被用於實施有害的駭客攻擊，那並非我的本意」。 約從 10 月 ",
       "sourceId": "rss-snapshot-c6aa859661ecfcfdf1af",
       "matchedRule": "taiwan-payment-core,taiwan-payment-authority,industry-martech"
+    },
+    {
+      "id": "softworld-api-google-news-c2616792d52efd85479b",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "不忍了！禁令上路快1年「未成年仍能用社群」 澳洲擬告TikTok臉書等平台| 國際焦點",
+      "source": "太報",
+      "date": "2026-10-20",
+      "publishedAt": "2026-10-20T05:35:23Z",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAtYkpiV3VKbDdyV2R6X3lfVGdUcTVzMEdqTm1ZRndub1dXSWpZb09HQWg2RzJJLTlQd2o3bVJyUkxhcS0weWZHT2t3RmFLc2VweUtvUkZFSF9mei1G?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "社群",
+        "臉書"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-c2616792d52efd85479b",
+      "matchedRule": "industry-platform-business,industry-martech"
     },
     {
       "id": "softworld-api-rss-snapshot-5e1e47556503a258a953",
@@ -2293,7 +2407,7 @@
       "source": "NOWnews今日新聞",
       "date": "2026-10-20",
       "publishedAt": "2026-10-20T04:34:25Z",
-      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE52VF9LZ19zMVZLdnhSTXVBMm9WVzJwZkhKbGctSl9SRlc4dk1OODN2ajhQd1k2NXhPZ0t3emxaOGlwWFFSTTJiM2FPQ0rSAVJBVV95cUxObXJvUm9oZUdwRS1kRVdWb1RFbFdScjh6YTFQdEJIZ3NabEt0eHBEUzV0UjIxOFE4amp5MEltTmtib3ItekM2RXJzMFNGYm1yUmxB?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5tcm9Sb2hlR3BFLWRFV1ZvVEVsV1JyOHphMVB0Qkhnc1psS3R4cERTNXRSMjE4UThqankwSW1Oa2Jvci16QzZFcnMwU0ZibXJSbEHSAVJBVV95cUxObXJvUm9oZUdwRS1kRVdWb1RFbFdScjh6YTFQdEJIZ3NabEt0eHBEUzV0UjIxOFE4amp5MEltTmtib3ItekM2RXJzMFNGYm1yUmxB?oc=5",
       "topic": "遊戲產業",
       "reportGroup": "industry-new-games",
       "priority": "中",
@@ -2303,8 +2417,15 @@
         "皮克敏"
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-a6cb80b8a879cfcd1f63",
-      "matchedRule": "mobile-top-grossing-games"
+      "sourceId": "google-news-c74d5896870006e3f0e6",
+      "matchedRule": "mobile-top-grossing-games",
+      "relatedSources": [
+        {
+          "title": "皮克敏「鈕扣飾品、明信片」不用錢！3間快閃店10~12月限時開幕",
+          "source": "NOWnews今日新聞",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE52VF9LZ19zMVZLdnhSTXVBMm9WVzJwZkhKbGctSl9SRlc4dk1OODN2ajhQd1k2NXhPZ0t3emxaOGlwWFFSTTJiM2FPQ0rSAVJBVV95cUxObXJvUm9oZUdwRS1kRVdWb1RFbFdScjh6YTFQdEJIZ3NabEt0eHBEUzV0UjIxOFE4amp5MEltTmtib3ItekM2RXJzMFNGYm1yUmxB?oc=5"
+        }
+      ]
     },
     {
       "id": "softworld-api-rss-snapshot-843b6f55c5a7a0407bf0",
@@ -2384,7 +2505,7 @@
       "source": "NOWnews今日新聞",
       "date": "2026-10-20",
       "publishedAt": "2026-10-20T04:14:03Z",
-      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5FMld0U0c4N2ZuWHAydTF3Tk4yX3BQNFFkdlNRTVc3T0hQUUFQcWxuRmJPUDhLUG9Uc0FMRl90SWpIWlNMcUE4ejQ1MkrSAVJBVV95cUxOejBSSndPOGxiSHROZGhUTVpZRDh6eU1PU1NsUmZnWThwbW1WYzNYNlAwMDFPaGFfQ3NkU0pPUUZxV2hTTnpyRTdRQnVyZWZKZGhB?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE56MFJKd084bGJIdE5kaFRNWllEOHp5TU9TU2xSZmdZOHBtbVZjM1g2UDAwMU9oYV9Dc2RTSk9RRnFXaFNOenJFN1FCdXJlZkpkaEHSAVJBVV95cUxOejBSSndPOGxiSHROZGhUTVpZRDh6eU1PU1NsUmZnWThwbW1WYzNYNlAwMDFPaGFfQ3NkU0pPUUZxV2hTTnpyRTdRQnVyZWZKZGhB?oc=5",
       "topic": "遊戲產業",
       "reportGroup": "industry-new-games",
       "priority": "中",
@@ -2394,8 +2515,15 @@
         "Pokémon GO"
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-7f085fa393485afc14ac",
-      "matchedRule": "mobile-top-grossing-games"
+      "sourceId": "google-news-d50b582052a20cbe5b97",
+      "matchedRule": "mobile-top-grossing-games",
+      "relatedSources": [
+        {
+          "title": "獵戶座流星雨落進手遊《Pokémon GO》！寶可夢「小隕星」首度登場",
+          "source": "NOWnews今日新聞",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5FMld0U0c4N2ZuWHAydTF3Tk4yX3BQNFFkdlNRTVc3T0hQUUFQcWxuRmJPUDhLUG9Uc0FMRl90SWpIWlNMcUE4ejQ1MkrSAVJBVV95cUxOejBSSndPOGxiSHROZGhUTVpZRDh6eU1PU1NsUmZnWThwbW1WYzNYNlAwMDFPaGFfQ3NkU0pPUUZxV2hTTnpyRTdRQnVyZWZKZGhB?oc=5"
+        }
+      ]
     },
     {
       "id": "softworld-api-google-news-cadc4a060fa2c746307e",
@@ -2668,6 +2796,40 @@
       "matchedRule": "industry-martech"
     },
     {
+      "id": "softworld-api-google-news-1be6ebda0b969a931596",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "討論牆 | 跨平台遊戲新突破：Xodus Nexus 讓 Xbox Game Pass 登陸 Linux",
+      "source": "LINE TODAY",
+      "date": "2026-10-20",
+      "publishedAt": "2026-10-20T02:02:17Z",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBkSWE1dzN6R3Yyd2VpTHpDZzdqTjI4WVJ5OEF5WkVYcDZHRkt0U2pKdlh2RmxEc0VPYlZtVVFac0hMcmV5UktQbHljRUs5OTF1ZVpuTHFVVDM3VTNtNXVlNGZEdEk?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "XBOX"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-75a30a3db7913e3d2b75",
+      "matchedRule": "industry-game-platform",
+      "relatedSources": [
+        {
+          "title": "跨平台遊戲新突破：Xodus Nexus 讓 Xbox Game Pass 登陸 Linux | 商傳媒",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1mYWxQbkt0SUtldDZnZXhKZEtfRHQ3UE1OLXFWV0d1aFdsQ2xIekpaa05xQzZHQXc1dDVuRzhyUHNOdWp2RDZ6Q0JBUFNZWlVyVEIzc05n?oc=5"
+        },
+        {
+          "title": "跨平台遊戲新突破：Xodus Nexus 讓 Xbox Game Pass 登陸 Linux",
+          "source": "Yahoo台灣新聞",
+          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOaXVsbVI1Z3JTemNfT2JGVnMxa3djeWRTMGs2NWdXcE9FZHE5RVlUX1c2X2JueDNrY044QlpiT1dlUHRpMUJJYk5mRXV1NHQzTEc2NzNoZkpaVWg0SlNoX2drT3ozZ0lzM3hONmotME1VSXZDSVNPZUlVTndfODEyR0NKQ2xvUDdJc0lPQnJmRlJPTjROYnZDX25KdnNBc0txUkdhczkyNzhPUFFTb1JTZjQxY1JQOU5sT1d0b3l1alRfc1ZqNnlHdUdwMWgyR3hzZnhNVTF6bw?oc=5"
+        }
+      ]
+    },
+    {
       "id": "softworld-api-rss-snapshot-0e18c6a9b3dc8c987236",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -2710,35 +2872,6 @@
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-76be7257132c0252fe5b",
       "matchedRule": "taiwan-payment-google-news"
-    },
-    {
-      "id": "softworld-api-google-news-1be6ebda0b969a931596",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "跨平台遊戲新突破：Xodus Nexus 讓 Xbox Game Pass 登陸 Linux | 商傳媒",
-      "source": "LINE TODAY",
-      "date": "2026-10-20",
-      "publishedAt": "2026-10-20T01:11:22Z",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1mYWxQbkt0SUtldDZnZXhKZEtfRHQ3UE1OLXFWV0d1aFdsQ2xIekpaa05xQzZHQXc1dDVuRzhyUHNOdWp2RDZ6Q0JBUFNZWlVyVEIzc05n?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "遊戲",
-        "XBOX"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-1be6ebda0b969a931596",
-      "matchedRule": "industry-game-platform",
-      "relatedSources": [
-        {
-          "title": "跨平台遊戲新突破：Xodus Nexus 讓 Xbox Game Pass 登陸 Linux",
-          "source": "Yahoo台灣新聞",
-          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOaXVsbVI1Z3JTemNfT2JGVnMxa3djeWRTMGs2NWdXcE9FZHE5RVlUX1c2X2JueDNrY044QlpiT1dlUHRpMUJJYk5mRXV1NHQzTEc2NzNoZkpaVWg0SlNoX2drT3ozZ0lzM3hONmotME1VSXZDSVNPZUlVTndfODEyR0NKQ2xvUDdJc0lPQnJmRlJPTjROYnZDX25KdnNBc0txUkdhczkyNzhPUFFTb1JTZjQxY1JQOU5sT1d0b3l1alRfc1ZqNnlHdUdwMWgyR3hzZnhNVTF6bw?oc=5"
-        }
-      ]
     },
     {
       "id": "softworld-api-google-news-38c746ee83d5733772fa",
@@ -3205,29 +3338,6 @@
       "matchedRule": "industry-game-platform"
     },
     {
-      "id": "softworld-api-google-news-27269e488701817e870d",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "討論牆 | 蘋果Arcade邁向七週年 遊戲策略穩健不變、擁抱獨立開發者",
-      "source": "LINE TODAY",
-      "date": "2026-10-20",
-      "publishedAt": "2026-10-19T17:39:01Z",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBxYW55YXQxZlMzRDFIeTQzSGY1Y2VpMlRmb1VSMnNoNXJCMXdaRjV1ZmY4RUppVVBzeUZqcDg0S2hxVFVJTjZ2THNlSndrWTE3QVRxU3hYWVZ1NWZoZEpTQVFRM3M?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技",
-        "遊戲",
-        "策略"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-d6394f9c77faca3e5c36",
-      "matchedRule": "industry-platform-business"
-    },
-    {
       "id": "softworld-api-rss-snapshot-e8c42928ae21d46d98bf",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -3339,29 +3449,6 @@
       "matchedRule": "stablecoin-core"
     },
     {
-      "id": "softworld-api-google-news-8da48b30c3f5d43cb3b6",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "《傳奇與冒險：電玩交響樂》當經典遊戲旋律化為史詩樂章 重燃熱血冒險！ | 藝點新聞",
-      "source": "LINE TODAY",
-      "date": "2026-10-20",
-      "publishedAt": "2026-10-19T16:08:49Z",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5yT2RhVVJvYmpXLWlDUlBfMW5LeTd0MlhwdHdjbjBwLVowVEsyMzJreUZGZk0yZGdyOVYySDZnUnFUY21JUUdkWG9nRWYyd1Ztbkt5WkFn?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "遊戲",
-        "傳奇"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-8da48b30c3f5d43cb3b6",
-      "matchedRule": "competitor-global-game",
-      "publisherUrl": "https://today.line.me/tw/v3/article/3N1978E"
-    },
-    {
       "id": "softworld-api-rss-snapshot-c8c93e5a927065afc8c1",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -3381,6 +3468,29 @@
       "excerpt": "MoneyGram today launched a new global consumer experience that brings together digital money movement, cash access and stablecoin-powered capabilities in one connected experience.",
       "sourceId": "rss-snapshot-c8c93e5a927065afc8c1",
       "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-google-news-8da48b30c3f5d43cb3b6",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《傳奇與冒險：電玩交響樂》當經典遊戲旋律化為史詩樂章 重燃熱血冒險！ | 藝點新聞",
+      "source": "LINE TODAY",
+      "date": "2026-10-20",
+      "publishedAt": "2026-10-19T16:03:57Z",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5yT2RhVVJvYmpXLWlDUlBfMW5LeTd0MlhwdHdjbjBwLVowVEsyMzJreUZGZk0yZGdyOVYySDZnUnFUY21JUUdkWG9nRWYyd1Ztbkt5WkFn?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "傳奇"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-8da48b30c3f5d43cb3b6",
+      "matchedRule": "competitor-global-game",
+      "publisherUrl": "https://today.line.me/tw/v3/article/3N1978E"
     },
     {
       "id": "softworld-api-rss-snapshot-ce5e819726a357d5b7d5",
@@ -3692,40 +3802,6 @@
       "matchedRule": "international-fintech"
     },
     {
-      "id": "softworld-api-google-news-47381db154a2293fd4f9",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "討論牆 | AI助攻遊戲創作門檻大降 玩家可望「秒變開發者」",
-      "source": "LINE TODAY",
-      "date": "2026-10-19",
-      "publishedAt": "2026-10-19T11:48:14Z",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1KUlRoV29XM05OUHdKamRaNEJOUmNHTFRQa3hfcDlaQVFCd1RDUmJZNGR0Z0lnYjA2bGMzZGZSVWFhUmlYbjRkMUM3MTZ5Y0U1TWRpZjZNbzhZTlpBZnByOHlaYmY?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "遊戲",
-        "玩家"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-e74acdf49f5a1fc6b282",
-      "matchedRule": "industry-game-platform",
-      "relatedSources": [
-        {
-          "title": "AI助攻遊戲創作門檻大降 玩家可望「秒變開發者」 | 商傳媒",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBKOTloLURvcC1wTVIyY3FkVDVKWTZXQlBSekRNbG9tNkc5bG1hZXJpRW9IQ2Rnb3pCb25CZlU1MFlaZVlPV0pSRzBuVndJWW9aX3UyN013?oc=5"
-        },
-        {
-          "title": "AI助攻遊戲創作門檻大降 玩家可望「秒變開發者」",
-          "source": "PChome新聞",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNazN4WW5GT3Z0UlFJZEVFcWtfVjNOVHVybjVDQ0x3MkVndEZHWVJVZmdPeVVrOHJNYkYtMDFvWlotUEo1OFllUm0tZnRyZDNiY0pJak02Tzh1MTF4SXhXS3RJQ1FmdE50Z2xnWmQ1dFdBOHdMdWV4aElqRjB0amJWaHhHNlE0M19jRGhXUw?oc=5"
-        }
-      ]
-    },
-    {
       "id": "softworld-api-rss-snapshot-b10455790be1f1f86c23",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -3799,6 +3875,35 @@
         }
       ],
       "publisherUrl": "https://www.cmoney.tw/forum/article/186182252"
+    },
+    {
+      "id": "softworld-api-google-news-47381db154a2293fd4f9",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "AI助攻遊戲創作門檻大降 玩家可望「秒變開發者」 | 商傳媒",
+      "source": "LINE TODAY",
+      "date": "2026-10-19",
+      "publishedAt": "2026-10-19T10:51:20Z",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBKOTloLURvcC1wTVIyY3FkVDVKWTZXQlBSekRNbG9tNkc5bG1hZXJpRW9IQ2Rnb3pCb25CZlU1MFlaZVlPV0pSRzBuVndJWW9aX3UyN013?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "玩家"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-47381db154a2293fd4f9",
+      "matchedRule": "industry-game-platform",
+      "relatedSources": [
+        {
+          "title": "AI助攻遊戲創作門檻大降 玩家可望「秒變開發者」",
+          "source": "PChome新聞",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNazN4WW5GT3Z0UlFJZEVFcWtfVjNOVHVybjVDQ0x3MkVndEZHWVJVZmdPeVVrOHJNYkYtMDFvWlotUEo1OFllUm0tZnRyZDNiY0pJak02Tzh1MTF4SXhXS3RJQ1FmdE50Z2xnWmQ1dFdBOHdMdWV4aElqRjB0amJWaHhHNlE0M19jRGhXUw?oc=5"
+        }
+      ]
     },
     {
       "id": "softworld-api-rss-snapshot-d99dcea10a1288c0618b",
@@ -3919,29 +4024,6 @@
       "excerpt": "KRAFTON, Inc. 旗下工作室 PUBG STUDIOS 知名作品《絕地求生》(PUBG: BATTLEGROUNDS，以下簡稱 PUBG) 於上週正式推出 43.2 版本更新，帶來與頂級豪華汽車品牌 Bentley 的全新聯名載具造型合作、與全球知名遊戲開發商 People Can Fly 攜手打造的全新合作 PvE 模式、PUBG：藍圈實驗室全新社群創作內容，以及多項遊戲性改善。 PUBG x Bentley 聯名合作推出了三款賓利特殊載具造型，靈感源自品牌兩大代表性車款：Bentley Flying Spur Mulliner 以及 Bentley Continental GTC Mulliner。三款特殊載具造型包含：Bentley Flying Spur Mulliner (Luxe) 轎車、Bentley Flying Spur Mulliner 轎車，以及 Bentley Continental GTC Mulliner 跑車。每款造型皆具備該車型專屬的細節，包括客製化的駕駛、引擎啟動與喇叭音效，並擁有全景天窗與折疊軟頂等專屬設計元素。 本次合作亦加入了載具外觀、漆色、內裝與車牌等專屬自訂道具，並同步推出「工匠通行證：Bentley」。在 PUBG x Bentley 合作活動期間，玩家完成載具造型裝備任務即可獲得「宏偉書房」自訂大廳造型。此外，《絕地求生》亦",
       "sourceId": "rss-snapshot-49a04e0589053442f76a",
       "matchedRule": "industry-game-platform"
-    },
-    {
-      "id": "softworld-api-google-news-6adae2bde7dbed4870af",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "卡普空超威！三款大作獲「年度最佳家用主機遊戲」提名 -手機版",
-      "source": "XFastest",
-      "date": "2026-10-19",
-      "publishedAt": "2026-10-19T10:29:21Z",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9uTmd4Sm1Ba0lMRGN3MFI5NW13Q2t2MmlrRmNET3JnZWFlZWl1UUMtQXUxVGtnSEJEOWcwZF9NV2FQZ0VNQUJ2cmF3WWZEbkktWXFDUW9RS3NEOU0?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "遊戲",
-        "卡普空",
-        "主機遊戲"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-6adae2bde7dbed4870af",
-      "matchedRule": "competitor-global-game,industry-game-platform"
     },
     {
       "id": "softworld-api-google-news-2ae2be6508c38fda56fa",
@@ -4283,6 +4365,29 @@
       "excerpt": "67% want one card for debit, credit and BNPL. Don&rsquo;t let a competitor give it to them first.",
       "sourceId": "rss-snapshot-42596547887ad9741fb7",
       "matchedRule": "international-fintech"
+    },
+    {
+      "id": "softworld-api-google-news-a7ffe5a919ad2f9f0089",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "台北金融科技展本週登場新創交流展區10國齊聚- 金融",
+      "source": "工商時報",
+      "date": "2026-10-19",
+      "publishedAt": "2026-10-19T08:56:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBMUGkxYzFwdWdGckpmX3l4Y3AwMnlRQ0QwcDExMVFYWV8tUzJscWlZcVZvRmpGd2Z3MkVBbGxQdUpIMW9YWV9WR0lhQmtTdFFpLUdOY0dvaHRwVlY0aEpV?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "新創",
+        "金融"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-a7ffe5a919ad2f9f0089",
+      "matchedRule": "industry-new-business"
     },
     {
       "id": "softworld-api-rss-snapshot-a7048c73b8bad2754183",
@@ -4753,14 +4858,7 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-3b9d118c26c2603436e6",
-      "matchedRule": "stablecoin-core,stablecoin-vasp",
-      "relatedSources": [
-        {
-          "title": "穩定幣如何接軌傳統金融？VASP揭2關鍵",
-          "source": "工商時報",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBWbmdQdVA4eXQ5YXRRcEZwUkE5bVFkZlV3Q0JBOXpuOWFHbk42c0swYUlXdmNCNU9OMGVNNVB0WlM2SnlGMkU1eTZLUHFVTkk5VG1MbmdiSjFLbXpPb0Fv?oc=5"
-        }
-      ]
+      "matchedRule": "stablecoin-core,stablecoin-vasp"
     },
     {
       "id": "softworld-api-rss-snapshot-d987e72446fcff333435",
@@ -5396,15 +5494,33 @@
       "relatedSources": [
         {
           "title": "9月获批版号数量延续高位，游戏板块估值性价比凸显",
-          "source": "騰訊網",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1BWWdxU0VZSGtpY25LZnhGREpxdTd0ZEhVeGp0QWUtS090WkpsWVZtNGZ1ajh1U0R1eXFtV3hrc1ltTjlfVTVFWEhQTXpZRGVBbld6QkdR?oc=5"
-        },
-        {
-          "title": "9月获批版号数量延续高位，游戏板块估值性价比凸显",
           "source": "搜狐網",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNRzI2TUtSVGs5TDE3aE5BSUlaNkZCeHlybmR0STdqQlhJRzNQTEc0b2hzQ2ZuN2lFV2FTN1JHc0hxTWdWTEtIX2MyYzdjZWxTU251UHZuSXRXTmplWUNmdVltb1JxVEU4NG5sUUpIMXBOdXVGYVIwc1I2eVhwT1dnZ0ozODc0eUc0ZjB3?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1taDhYdFBseUNMOFl3Qll1U3RwY0Z0aVZHQmRrQWF1a0JxVjAxVk1MVEppZ05PdmZLQXBJbkc4RTJ1TTlXR1JjR0o2S1ViTTkyZ1E?oc=5"
         }
       ]
+    },
+    {
+      "id": "softworld-api-google-news-7f02dbfac54e629ce875",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "卡普空超威！三款大作獲「年度最佳家用主機遊戲」提名",
+      "source": "XFastest",
+      "date": "2026-10-19",
+      "publishedAt": "2026-10-19T02:38:41Z",
+      "url": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxOVkRqZHZ3MFhRbEU4N3NRbUYxcUpGYzZCZlp0VUVhcWhRTDVicjZ1RXFlb0ZfbC0xbmp3bGhUMWdmck1JQ2ZJYWotQWt3UkJYcUE0bHp0cTY3OFdETlZkWXd2dmRPcDZ4NjBudnlQS1pLSU1WY1lDUlRzeDYtaHFvdTUxX2cyUzNhUExpRTFMZFdxR0NuX2wyZ0N0NmJlTk04em9oUWd1NktEODhXM1czQmVjRW52d3M4YTBaeHZhSU9VU0wtcTNzTUR2cG52OS1MNzhEMTJzOHp4UmVUMVA5RWZJS3pKN1hranVNUmFlUVk1bHhlYzBJaFdvODByaURzR2huS3VtUWFKOGJlSmZlSllxdTlPQ0hMS2ktVE8zZU1rUlR3Vmc5emRlb2lVR29ZQXRrVGxqUEtSY3YyUnJyZHVNcGJBWURqSTJTOXBUNEpXZw?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "卡普空",
+        "主機遊戲"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-7f02dbfac54e629ce875",
+      "matchedRule": "competitor-global-game,industry-game-platform"
     },
     {
       "id": "softworld-api-google-news-87dbdcd43f6b7a591dd3",
@@ -5424,28 +5540,6 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-87dbdcd43f6b7a591dd3",
-      "matchedRule": "stablecoin-core"
-    },
-    {
-      "id": "softworld-api-google-news-b3cbb16669e21f82a14f",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "鉅亨買幣速報- USDC(USDC)24小時成交量超過23億美元，NFPrompt Token(NFP)24小時漲幅達65.8%",
-      "source": "鉅亨網",
-      "date": "2026-10-19",
-      "publishedAt": "2026-10-19T02:15:19Z",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1DMjI1NFRFNlotU0NKMV9idkQzOWVxeHgxS1pyeW93YkNCVHhwODN4MDFMUnVxeU5PSjdjVnRDWGZZb1hteTZBM21sMkU0LUE?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-stablecoin",
-      "priority": "高",
-      "tags": [
-        "穩定幣",
-        "鏈上結算",
-        "usdc",
-        "USDC"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-b3cbb16669e21f82a14f",
       "matchedRule": "stablecoin-core"
     },
     {
@@ -5469,6 +5563,29 @@
       ],
       "excerpt": "蘋果近年持續為 iPhone 的「電話」App 加入新功能，讓這項最基本的通訊工具變得更加聰明。根據最新整理， […]",
       "sourceId": "rss-snapshot-89a6850d3ec5a42d8a90",
+      "matchedRule": "industry-platform-business"
+    },
+    {
+      "id": "softworld-api-google-news-27269e488701817e870d",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "蘋果Arcade邁向七週年遊戲策略穩健不變、擁抱獨立開發者- 科技新聞",
+      "source": "PChome新聞",
+      "date": "2026-10-19",
+      "publishedAt": "2026-10-19T02:05:07Z",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNbkhFLW9leFotZVpUVGZnaDlyWWY2MGQxWVhab3plbE1HWHJ6anBmVjRzNlJ1b0VCMTR4ck9WajdCbjQ3SmJyaTUzLWY2TXk0cjR4bHZJRVZHeU0tN2RZaTJzS0dnNWFseU5lVEpITEdod1N0TWdXbmNHamRWQVBDUjhEYUtvUWJpRkNXSQ?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "遊戲",
+        "策略"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-27269e488701817e870d",
       "matchedRule": "industry-platform-business"
     },
     {
@@ -5634,7 +5751,7 @@
       "source": "鏡傳媒／鏡週刊",
       "date": "2026-10-19",
       "publishedAt": "2026-10-18T22:31:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8wYWM1ZndCb09DdEFJbDdGR216dTNRRjVVa21hSHZZXzFxZUIyR2dRVXk4R1QzYVNOX2F5b1ZuRlNMNGdxSmh1NzhjdVhMZnM5UjAxcjdnMUFqWHloMll4X1hSQ1LSAWhBVV95cUxOUDlsWDhDd0hkOVBoOEJza2Q1bExWNzZyd3VUYlZ2ZnpXMl9fTnVjYXV6Qi1NX3pjR3RYRVRXUnpucDZHaVFRVncwMHRPUEZrY2JFMXhoMVY3SFp0LVR4cndOZzR5UXVSSQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE4ycGc4ZWpkb1pCNmtINFRvV1lURWotRWY2MjBSSktuZHBjXzJhVnNHWUhfaVFIbDctRE1ackx4U28tRjU3T3U3RTZMcDJQdlZMTFFtVkVVRWRNMmZlTWRWOTJGMNIBaEFVX3lxTE5QOWxYOEN3SGQ5UGg4QnNrZDVsTFY3NnJ3dVRiVnZmelcyX19OdWNhdXpCLU1femNHdFhFVFdSem5wNkdpUVFWdzAwdE9QRmtjYkUxeGgxVjdIWnQtVHhyd05nNHlRdVJJ?oc=5",
       "topic": "遊戲產業",
       "reportGroup": "industry-new-games",
       "priority": "中",
@@ -5644,7 +5761,7 @@
         "傳說對決"
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-76086e4b8864bd958f2d",
+      "sourceId": "google-news-bb70ab1cb106c10496aa",
       "matchedRule": "mobile-top-grossing-games"
     },
     {
@@ -6337,7 +6454,7 @@
       "source": "鏡傳媒／鏡週刊",
       "date": "2026-10-18",
       "publishedAt": "2026-10-18T07:36:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBQV002OUJGY0FjcDlxMWpwcTgyTDVtSWx6V0RTVVlZYU5zUXd0V0ktM2EzeDlUQUhqRXJCbFVJdXhwUU1RbjE0T2hKcEVmQzF0TzFBVk4wekVmZm5CTXfSAWJBVV95cUxPYVUwMWtKM1U3dmVmaXBXN0JYVGlCeUQwQ2JSSmJsLVhMdmtGb0R0RVpGTzl2R0k1YWp2dHNTa0kzOVZ2d3d2emdfQnlKZmtXUzEzR3FfcThqWld4eTlGNWs1dw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA5TV9fSDFZbUFuMmZ4dnNPMG8wNXhnc29OTHhKTGpsclNPb2dTSVlKOWFsZU1qUWY1MFZzQUwyLXUtczJGZmprREN1UHlXcEpVWUVwMlhpdjlleXpN0gFiQVVfeXFMT2FVMDFrSjNVN3ZlZmlwVzdCWFRpQnlEMENiUkpibC1YTHZrRm9EdEVaRk85dkdJNWFqdnRzU2tJMzlWdnd3dnpnX0J5SmZrV1MxM0dxX3E4alpXeHk5RjVrNXc?oc=5",
       "topic": "競品與產業",
       "reportGroup": "industry-other",
       "priority": "中",
@@ -6349,15 +6466,8 @@
         "LINE"
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-e13edf93dd7380df88f2",
-      "matchedRule": "industry-platform-business",
-      "relatedSources": [
-        {
-          "title": "LINE改錯字這天起收費！還有1功能也中招",
-          "source": "鏡傳媒／鏡週刊",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA5TV9fSDFZbUFuMmZ4dnNPMG8wNXhnc29OTHhKTGpsclNPb2dTSVlKOWFsZU1qUWY1MFZzQUwyLXUtczJGZmprREN1UHlXcEpVWUVwMlhpdjlleXpN0gFiQVVfeXFMT2FVMDFrSjNVN3ZlZmlwVzdCWFRpQnlEMENiUkpibC1YTHZrRm9EdEVaRk85dkdJNWFqdnRzU2tJMzlWdnd3dnpnX0J5SmZrV1MxM0dxX3E4alpXeHk5RjVrNXc?oc=5"
-        }
-      ]
+      "sourceId": "google-news-ece631b0c0afd3611af8",
+      "matchedRule": "industry-platform-business"
     },
     {
       "id": "softworld-api-google-news-4215c9dfa0c92039b6fc",
@@ -6732,6 +6842,34 @@
       "publisherUrl": "https://news.tvbs.com.tw/tech/4037692"
     },
     {
+      "id": "softworld-api-google-news-fa3a8d8af1df4530d008",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "LINE Pay爆75萬筆個資流入暗網！官方急澄清：已報案",
+      "source": "ETtoday新聞雲",
+      "date": "2026-10-18",
+      "publishedAt": "2026-10-18T03:59:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1NQ0VrcFVnOWVvVDQ1Zjc4WG1zTGFjbTZtbVNUWFdJQ1VXd0YydEROQllHUjltVlNmR2JUMk9vcjJSRmJuRDNlbEtKYjUxUkN3YnVqV1FBUVBSVTJVR2fSAVBBVV95cUxQLWxSdzZWbXEtVXR1ZEI3Y2FUa0hJaXVqbDdCbzFpazZYZE5NVE1QdUhJcThhX2FXVVc5WVJzY2hXVUtEWWxYMlRDUV9QQzE3SQ?oc=5",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "高",
+      "tags": [
+        "金融支付",
+        "產業監測",
+        "line pay"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-be3e3e39e86e4c426245",
+      "matchedRule": "taiwan-payment-google-news",
+      "relatedSources": [
+        {
+          "title": "LINE Pay爆75萬筆個資流入暗網！官方急澄清：已報案- 股市爆料同學會",
+          "source": "CMoney／信傳媒",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9TTjd6UlhCNXFMSXJiRk9rb3ZNb0t4dzhWTjFhRm9tR21GRTVmb3FTQTQ3SGR6eVNtSm1ZOEdqMXBjVWlDZ3VsR2l6ZUZZYlZiV293cE5QeWU?oc=5"
+        }
+      ]
+    },
+    {
       "id": "softworld-api-google-news-07ab1915dd35d1ad4e52",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -6807,7 +6945,7 @@
       "source": "NOWnews今日新聞",
       "date": "2026-10-18",
       "publishedAt": "2026-10-18T02:31:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE45VmIwcHgzTnBDZUstMktCSVhhTW9mTnVVYzNnZk9xZDd0NFVOYVM4NjE3NTA0LUxmYnhLdXZ4TmtkOThfV0c5RE1OREnSAVJBVV95cUxPN3pzS2pMOEN6T0JVdnBDRF9hd2tXZklodHNIMlRBcnZrNHFQNElUS3RhYUZBdkJpM3hZYmt1YVhKZXBSaHNtNnBRQVowV1lsSWFR?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE83enNLakw4Q3pPQlV2cENEX2F3a1dmSWh0c0gyVEFydms0cVA0SVRLdGFhRkF2QmkzeFlia3VhWEplcFJoc202cFFBWjBXWWxJYVHSAVJBVV95cUxPN3pzS2pMOEN6T0JVdnBDRF9hd2tXZklodHNIMlRBcnZrNHFQNElUS3RhYUZBdkJpM3hZYmt1YVhKZXBSaHNtNnBRQVowV1lsSWFR?oc=5",
       "topic": "遊戲產業",
       "reportGroup": "industry-new-games",
       "priority": "中",
@@ -6817,8 +6955,15 @@
         "皮克敏"
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-38dba1396f9e8ca54113",
-      "matchedRule": "mobile-top-grossing-games"
+      "sourceId": "google-news-a58288a2f423b027ff0a",
+      "matchedRule": "mobile-top-grossing-games",
+      "relatedSources": [
+        {
+          "title": "皮克敏「骷髏頭飾品」有望回歸？玩家敲碗準備補考 11月要爆肝了",
+          "source": "NOWnews今日新聞",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE45VmIwcHgzTnBDZUstMktCSVhhTW9mTnVVYzNnZk9xZDd0NFVOYVM4NjE3NTA0LUxmYnhLdXZ4TmtkOThfV0c5RE1OREnSAVJBVV95cUxPN3pzS2pMOEN6T0JVdnBDRF9hd2tXZklodHNIMlRBcnZrNHFQNElUS3RhYUZBdkJpM3hZYmt1YVhKZXBSaHNtNnBRQVowV1lsSWFR?oc=5"
+        }
+      ]
     },
     {
       "id": "softworld-api-12bcf4bf-464b-4e6c-baf3-648d801f82e0",
@@ -6990,13 +7135,6 @@
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-d9171cdbe86c0616c3b9",
       "matchedRule": "taiwan-payment-google-news",
-      "relatedSources": [
-        {
-          "title": "LINE Pay爆75萬筆個資暗網兜售！官方急澄清：資料非外洩、已報案",
-          "source": "NOWnews今日新聞",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9ZQnktbkhVRkpTZ0JGNnZCZUU3NTk5dnd4b2hSWXdVX0FFMzZGbTFDdjQ1VlB6MHpBc1Z3YUc1WU5wUTZ0SGdybHMyb3FJOF9Ud1HSAVJBVV95cUxPWUJ5LW5IVUZKU2dCRjZ2QmVFNzU5OXZ3eG9oUll3VV9BRTM2Rm0xQ3Y0NVZQejB6QXNWd2FHNVlOcFE2dEhncmxzMm9xSThfVHdR?oc=5"
-        }
-      ],
       "publisherUrl": "https://www.nownews.com/news/6884389"
     },
     {
@@ -7068,27 +7206,6 @@
       "matchedRule": "industry-platform-business"
     },
     {
-      "id": "softworld-api-google-news-b6a2ccaf2f1206bab5bc",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "「鈊象」的搜尋結果",
-      "source": "工商時報",
-      "date": "2026-10-17",
-      "publishedAt": "2026-10-17T15:41:34Z",
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE01MkdrTTBDazBzeGRSWl82TXh1Tk9WSmdzM1lIczctNk1ZaV9Hd1VIWXFMTDV1TjhDOUN0bUxJYUYtX1hUYmhZUUd6bVVndGp1Zk1kUi1QSmRnbF9XQ2c?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "鈊象"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-b6a2ccaf2f1206bab5bc",
-      "matchedRule": "competitor-brand"
-    },
-    {
       "id": "softworld-api-google-news-04963c71aae079f95de5",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -7155,30 +7272,6 @@
       "sourceId": "google-news-5bda5b818c786689c4d2",
       "matchedRule": "taiwan-payment-google-news",
       "publisherUrl": "https://www.businesstoday.com.tw/article/category/183015/post/202610170014/"
-    },
-    {
-      "id": "softworld-api-google-news-50561e84a73c63159d62",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "八德3C哈樂DAY封街登場電競賽事、復古遊戲吸引玩家- 政府消息新聞",
-      "source": "PChome新聞",
-      "date": "2026-10-17",
-      "publishedAt": "2026-10-17T13:27:56Z",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOQkJzeHFPdXExOXp4MUtsSlp5SXh5am9kS1VjTkxFNUR5Y18wV21qSVVvZjFmVzdVdU9iLVUxMWhvTjVDQ2g3YmVYdV94d0lnQ3ZBSF9TNWszc0JnV1NZS1FFZTFmU1NnTkxyeDJiMzFVT0czRDlLZXpUTHk5NEV4eVJJNWNFMXVPS0xZ?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "遊戲",
-        "電競賽事",
-        "玩家"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-50561e84a73c63159d62",
-      "matchedRule": "industry-game-platform",
-      "publisherUrl": "https://news.pchome.com.tw/public/morenews/20261017/index-79224367696176350016.html"
     },
     {
       "id": "softworld-api-rss-snapshot-12b3625101bf7de8fe8e",
@@ -7352,28 +7445,6 @@
       "publisherUrl": "https://today.line.me/tw/v3/article/0MWj3w3"
     },
     {
-      "id": "softworld-api-google-news-002be7d5022e5fc86f62",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "電商解碼2／買快樂成新商機！淘寶瞄準二次元、寵物經濟- 生活新聞",
-      "source": "PChome新聞",
-      "date": "2026-10-17",
-      "publishedAt": "2026-10-17T11:07:58Z",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPN2UtUWRRcklhbmswOHZyQWZ4SE11aHlHdWVQOFcyNUZJbDdjTmo1UGZuWkRyeU0tUDA3ZTVmUTJ6eldjVk1IWUpmUmNiTlJORUpSdlBXam9sTXVWRVNvclNiTWIySmNQbmtVQjRVakdVekJfUXo3bk84amRwODNTV1NtdUdrQ3c?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技",
-        "電商"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-002be7d5022e5fc86f62",
-      "matchedRule": "industry-new-business"
-    },
-    {
       "id": "softworld-api-rss-snapshot-eb424d9982d3da448fd5",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -7486,28 +7557,6 @@
       "publisherUrl": "https://tw.news.yahoo.com/%E5%98%89%E7%BE%A9%E6%9D%B1%E5%B8%82%E5%A0%B4%E4%B9%9F%E8%83%BD%E7%94%A8line-pay-%E5%84%AA%E6%83%A0%E5%88%B8%E5%8A%A0%E9%BB%9E%E6%95%B8%E5%9B%9E%E9%A5%8B-090713420.html"
     },
     {
-      "id": "softworld-api-google-news-5b7b08b720c4283d216d",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "嘉義東市場也能用LINE Pay！優惠券加點數回饋- 生活新聞",
-      "source": "PChome新聞",
-      "date": "2026-10-17",
-      "publishedAt": "2026-10-17T09:07:13Z",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNbU5mNnpORWsydGhuX25NYkd0clpjal9obGQ4anRBY3dRd2Q1bFhtdkdEb1BMeTgtVEQ2ZVVBblBnVFJJM1F6SFFvakhLaTdBVnFKd01PSEFzcUZoWlJaOEJKcGwxTEZ1OUtrb21FaEthNUdac040bzBVSnhIQ3U2V2I0clg1dUZqYW9NQ0MwbVV4NkU?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "高",
-      "tags": [
-        "金融支付",
-        "產業監測",
-        "line pay"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-5b7b08b720c4283d216d",
-      "matchedRule": "taiwan-payment-google-news",
-      "publisherUrl": "https://news.pchome.com.tw/living/newstaiwandigi/20261017/index-79222803317573279009.html"
-    },
-    {
       "id": "softworld-api-rss-snapshot-4d1ce88b3453b0c3ae3a",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -7574,28 +7623,6 @@
       "excerpt": "雅虎財經（Yahoo Finance）報導，儘管人工智慧（AI）的建設對記憶體的需求持續成長，但投資人對記憶體類股的興趣卻萎縮。Roundhill記憶體ETF（DRAM）...…",
       "sourceId": "rss-snapshot-f721eb25a0929db4fcb7",
       "matchedRule": "industry-platform-business"
-    },
-    {
-      "id": "softworld-api-google-news-30e3fc8f5ab164f45ae7",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "《傳說對決》十週年攜手Hearts2Hearts 推出合作曲〈Next Chapter〉！限時登入免費領專屬語音| 上報",
-      "source": "LINE TODAY",
-      "date": "2026-10-17",
-      "publishedAt": "2026-10-17T08:00:54Z",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE41Yl81dE1tZFVwaVUyM0d2VDREdnd3UHlyYVBIblJKWXFlaV9jdEhjNWFQdURyVkZQbXFSbjdZMmQ0WnBudTNmNW5FTUNUREw4bVVIbnRn?oc=5",
-      "topic": "遊戲產業",
-      "reportGroup": "industry-new-games",
-      "priority": "中",
-      "tags": [
-        "市場新遊",
-        "重點遊戲",
-        "傳說對決"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-30e3fc8f5ab164f45ae7",
-      "matchedRule": "mobile-top-grossing-games",
-      "publisherUrl": "https://today.line.me/tw/v3/article/mWpa9zz"
     },
     {
       "id": "softworld-api-google-news-63c3f9b6e5005ef76abd",
@@ -7730,27 +7757,6 @@
       "excerpt": "The new ecosystem event will be different from the familiar Pi Day and Pi2Day celebrations. The Core Team behind the popular project has unveiled its first-ever Pi Ecosystem Summit, a three-day online event scheduled to begin in a month. It will focus on new platform updates, developer tools, applications, and an upcoming hackathon as Pi Network continues trying to expand real-world utility for Pi. What Will Be Announced According to the latest publication on the only official Pi Network X channel, the three-day event will include platform updates, developer-tool demonstrations, app showcases,",
       "sourceId": "rss-snapshot-0dc3d97d0ba580d79d1c",
       "matchedRule": "stablecoin-core"
-    },
-    {
-      "id": "softworld-api-google-news-fa3a8d8af1df4530d008",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "LINE Pay爆75萬筆個資流入暗網！官方急澄清：已報案- 股市爆料同學會",
-      "source": "CMoney／信傳媒",
-      "date": "2026-10-17",
-      "publishedAt": "2026-10-17T05:32:17Z",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9TTjd6UlhCNXFMSXJiRk9rb3ZNb0t4dzhWTjFhRm9tR21GRTVmb3FTQTQ3SGR6eVNtSm1ZOEdqMXBjVWlDZ3VsR2l6ZUZZYlZiV293cE5QeWU?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "高",
-      "tags": [
-        "金融支付",
-        "產業監測",
-        "line pay"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-fa3a8d8af1df4530d008",
-      "matchedRule": "taiwan-payment-google-news"
     },
     {
       "id": "softworld-api-google-news-5759af5fde2c604f3d06",
@@ -8073,28 +8079,6 @@
       "publisherUrl": "https://tw.news.yahoo.com/%E4%BF%A1%E7%94%A8%E5%8D%A1%E7%B6%81line-pay%E5%9B%9E%E9%A5%8B%E9%AB%98-%E5%8F%AC%E5%96%9A10%E5%BC%B5%E7%A5%9E%E5%8D%A1%E7%B8%BD%E5%8B%95%E5%93%A1-005311749.html"
     },
     {
-      "id": "softworld-api-google-news-31fb507ecf8ebdcb3eef",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "信用卡綁LINE Pay回饋高召喚10張神卡總動員- 財經新聞",
-      "source": "PChome新聞",
-      "date": "2026-10-17",
-      "publishedAt": "2026-10-17T00:53:11Z",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUWp0eDZXYmNuNVNQWGJ6UXU5c2ViVFJOLTVVS2hMWnpLeUk1bkdzdDZJc1E1SVlFbWUzajdWLXBnMERNMW9jdzctamRpbHJXMlVKMlFIMzU3TjRDXzBUbkVaT0QyZ0xERXJQSWFnbUtqLTgtUENxa01wUUtTOVpfU2FiU2hrWHd5?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "高",
-      "tags": [
-        "金融支付",
-        "產業監測",
-        "line pay",
-        "信用卡"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-31fb507ecf8ebdcb3eef",
-      "matchedRule": "taiwan-payment-google-news"
-    },
-    {
       "id": "softworld-api-rss-snapshot-053c3451a0812743be37",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -8223,6 +8207,26 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-b990fbaff717aa6995c3",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-google-news-f74fa3db9d7e6abf4859",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "穩定幣商機 電支業三路搶進- 日報",
+      "source": "工商時報",
+      "date": "2026-10-17",
+      "publishedAt": "2026-10-16T19:00:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE8zeHZnWlJpQjFqcEJCRHZEYjBlVGMycUUwMDB6QjR1SXJONXVFS3puRXpFazNxNkotb2swS3g5U1gzYkJ0SzdRQVJvR0YtdEJuaWlsa2Y4a1NZSms0R3pz?oc=5",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-f74fa3db9d7e6abf4859",
       "matchedRule": "stablecoin-core"
     },
     {
@@ -9207,6 +9211,27 @@
       "publisherUrl": "https://news.pchome.com.tw/living/cna/20261016/index-17921463184835218009.html"
     },
     {
+      "id": "softworld-api-google-news-4ce979e4f8ca27bbf755",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "嘉市東市場導入LINE Pay 推出優惠券及點數回饋- 生活新聞",
+      "source": "PChome新聞",
+      "date": "2026-10-16",
+      "publishedAt": "2026-10-16T10:19:00Z",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOUXJ5aWZ1UklYVV9HSE5pdWRzcXlRcURRZFlRMExhcWh5SFBKbnk3RW9NeFhrM3RZejMyRGhoRWNDVURKa2c3UEx1VmFKcFh4ZVYyZEVEQ0FlaXVRLUh6RENDa1RiOFJsa1JJaWoxZjY0N201elhpUHIzMm1JaC05VzRYaVA?oc=5",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "高",
+      "tags": [
+        "金融支付",
+        "產業監測",
+        "line pay"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-4ce979e4f8ca27bbf755",
+      "matchedRule": "taiwan-payment-google-news"
+    },
+    {
       "id": "softworld-api-rss-snapshot-dc9f5fbcff642c4aa574",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -9928,6 +9953,27 @@
       "excerpt": "PQube 與 Dual Effect 今日於 Nintendo Switch 2 平台推出生存恐怖遊戲《受折磨的靈魂 2》，同時提供實體版（歐洲與北美地區皆有）及數位版，邀請玩家前往赫斯莊園，無論是在家或外出途中皆可親身面對等待著的恐怖。 遊戲的「數位豪華版」亦自今日起開放購買，內容包含....",
       "sourceId": "rss-snapshot-e64344567a603e5f9dfe",
       "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-google-news-4f4f22ba6f5189d71316",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "特企／《SD鋼彈G世代永恆》新活動登場 再生鋼彈、力天使鋼彈亮相",
+      "source": "NOWnews今日新聞",
+      "date": "2026-10-16",
+      "publishedAt": "2026-10-16T06:37:57Z",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5nSHNFSXhjWU12d1ZkWVF4U0IzeWtqamVuVFpabjVCNzhBZE9BM2NrVlNzS1dpQ3RYOGlKRDlBR2szNXJqTGxRa0ZxcndhbFQ4YkHSAVJBVV95cUxOZ0hzRUl4Y1lNdndWZFlReFNCM3lramplblRaWm41Qjc4QWRPQTNja1ZTc0tXaUN0WDhpSkQ5QUdrMzVyakxsUWtGcXJ3YWxUOGJB?oc=5",
+      "topic": "遊戲產業",
+      "reportGroup": "industry-new-games",
+      "priority": "中",
+      "tags": [
+        "市場新遊",
+        "重點遊戲",
+        "SD鋼彈G世代永恆"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-4f4f22ba6f5189d71316",
+      "matchedRule": "mobile-top-grossing-games"
     },
     {
       "id": "softworld-api-rss-snapshot-7d16e8e09dd2cc069162",
@@ -10814,27 +10860,6 @@
       "excerpt": "秋季活動多樣又有趣，跑步健身、體驗原民文化、客家慶典，還能泡泥漿溫泉吃美食。新北市「八個浪Pakelang城市狩獵路跑」結合文化闖...",
       "sourceId": "rss-snapshot-463929763caebe0c9be6",
       "matchedRule": "competitor-brand"
-    },
-    {
-      "id": "softworld-api-google-news-3a53a78e7357f174ff87",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "iPASS MONEY 新增eTag 儲值、遠傳帳單查繳生活繳費整合逾8,400 項服務- 生活新聞",
-      "source": "PChome新聞",
-      "date": "2026-10-16",
-      "publishedAt": "2026-10-15T20:19:29Z",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxONW9qWkJZYm9ISlhZT0V2eWpzVE5qQU1qR3dBSHJxSHNLTmNSbUg1QkZfLWhjTFlCVTRrbWhNbnRiZGFnSFl1V3FQVnV4Q3dONzRwaGY0WWVuYWJiMkpab2M0d2VscDZ1VERIQV9mM09qTENLOVB4dW5SbTUtVTRIcU45VVlBdw?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "高",
-      "tags": [
-        "金融支付",
-        "產業監測",
-        "ipass money"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-3a53a78e7357f174ff87",
-      "matchedRule": "taiwan-payment-google-news"
     },
     {
       "id": "softworld-api-rss-snapshot-c4b8faa3e88ad6e80288",
@@ -12657,7 +12682,7 @@
       "title": "2026網購信用卡》國內/外網購必備18張高回饋信用卡推薦！",
       "source": "Yahoo台灣新聞",
       "date": "2026-10-15",
-      "publishedAt": "2026-10-15T05:36:49Z",
+      "publishedAt": "2026-10-15T05:43:39Z",
       "url": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxQRm8tVWpVbkJjYmY3UXBNS0lqaW5DNklKUUVzaV9GMW5Wb0JuV01ZMEJ6TlZPTXNYMnZqQmZKZEpRaUZzY3dFbDNwbTFmYTRWNHJYMlNRb1ZLRHFGMGFYaWFyX2U4NFJFem9ndHd0SWJmNTFUalEybDljWUR1TjFXNWRJUldScXpKTUdIZVpoZEtibjRsRlJmWkJsd2g4eXhOdHdSLV9yNTl4X05rWjl6ZmlESzlzdUdLcXVTWFBlNHdWQVR3cjUxOVFaZzdkZGRrbHg3dXBXT2tfT0oxekUtc19GdWpkTlpwckZRLTNoRHppSUZMa2FrM29aYzUwNHgtb3VjV0NnNzM1WERNRFIwY0VuOURJOFkweUJ3ai1lM2hodkJZZmxaWXdxQTVyazVGLTFRcmdEYWR1RHl2aGhwS2dxU1o0SVJkbm5fVGRVa2RUZ2JXR2RRZFh3?oc=5",
       "topic": "金融支付",
       "reportGroup": "industry-fintech",
@@ -13823,6 +13848,26 @@
       "sourceId": "google-news-196d8afe0c7f8d21286d",
       "matchedRule": "industry-game-platform,industry-platform-business",
       "publisherUrl": "https://game.ettoday.net/article/3253888.htm"
+    },
+    {
+      "id": "softworld-api-google-news-31fc89edbf66f08d8480",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "銀行公會理事長董瑞斌直言 發行台幣穩定幣 有三難題",
+      "source": "經濟日報 金融",
+      "date": "2026-10-15",
+      "publishedAt": "2026-10-14T18:50:59Z",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBVNFJRWWxpaXBnX2NzRkN3bUlLQUo4VDVmOERBdjMzMDVmT3p4LWtTQml0WWpBcjQ2QmRnazJaR1RsUUlVQjk2N3Z6WVk5aHE1akE0NFVVU3c0UdIBX0FVX3lxTE1aZy1SZnpUSElQSklXTzN3VEVEN1B2VG5NZ0pmN0YweGd3ZnZjOWxqZ2pDU1VZX1d1bl9wRlpuRk1INGx5bjB0ODVGdUs3WUNPX0VhdkxKai1aQU8xUWZJ?oc=5",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-31fc89edbf66f08d8480",
+      "matchedRule": "stablecoin-core"
     },
     {
       "id": "softworld-api-rss-snapshot-af0b5ef0984ac943b753",
@@ -15443,6 +15488,29 @@
       "publisherUrl": "https://www.techbang.com/posts/134081-line-silent-messages-premium-exclusive"
     },
     {
+      "id": "softworld-api-google-news-a7d7d074c3465a9a69f1",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "2026最新Gemini訂閱方案｜Google AI費用多少？價格、功能完整比較",
+      "source": "數位時代",
+      "date": "2026-10-14",
+      "publishedAt": "2026-10-14T07:00:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPR0ZpX0tqaTY2cS00cTFjMFlENHF5akpEUmRjenYtYzc0SVQ4NE5ac0JCLVNBOThWUVpfMTVTTG5VY1Q1QW9yckpoUEpCamY3RVpvT0E5ekdlcnhRbzFBcjliY2FMTFRGcjZUTHB4eDZaaUhjUldQYnRidXFEVWl6Nnp3?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "功能",
+        "google"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-a7d7d074c3465a9a69f1",
+      "matchedRule": "industry-platform-business"
+    },
+    {
       "id": "softworld-api-rss-snapshot-f5fe2bb186f3332b4b41",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -15464,28 +15532,6 @@
       "excerpt": "全球首創放置盲盒手機遊戲《蠟筆小新：GO！》於今（14）日正式開服！透過放置玩法輕鬆累積資源，虛擬盲盒更有機會開出 LINE POINTS、PS5、iPhone 18 等多項實體好禮，輕鬆又紓壓！更同步推出多項開服限定活動，包含 4,000 次抽取機會、限定夥伴「機械小白」與「鋼達姆機器人」坐騎等豐富獎勵等你來領取！ 全球首創放置盲盒手遊機制，虛擬盲盒也能開出實體好禮！ 正版授權手機遊戲《蠟筆小新：GO！》導入全球首創放置盲盒機制，玩家即使離線，角色仍會自動戰鬥並持續累積資源，重新登入遊戲後即可一次累積成果讓玩家輕鬆上手、體驗開盲盒般的爽快感！開啟盲盒除能收集各式遊戲裝備、道具與角色等養成資源外，即日起登入《蠟筆小新：GO！》手機遊戲，一起和Ｑ萌角色解鎖更多驚喜！ ※活動詳細辦法與獎品數量請以官方公告為準。 開服豪送，福利滿滿！四大限時開服活動，陪伴玩家快速成長 開服期間登入《蠟筆小新：GO！》手遊完成指定任務即可陸續獲得多項限時獎勵與滿滿福利，限時闖關、料理衝刺、圖書衝刺多項限時活動也於即日起陸續開放，邀請玩家一起冒險。 第一重 ｜ 開服豪送4,000抽 完成指定主線關卡，即可陸續獲得技能券與夥伴券，累計最高可享 4,000 次抽取機會。 第二重 ｜ 七日登入＋七日衝刺 連續登入可領取 3,000 紅鑽及限定外觀、武器造型、表情包與專屬稱號，完成七日衝刺另可獲 2,100 紅鑽與",
       "sourceId": "rss-snapshot-f5fe2bb186f3332b4b41",
       "matchedRule": "industry-game-platform,industry-platform-business"
-    },
-    {
-      "id": "softworld-api-google-news-61e772a083196ba1dcf1",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "悠遊卡、一卡通有什麼不同？隱藏福利大PK：通勤族「靠1招」爽賺回饋、選這張秒省30％",
-      "source": "風傳媒",
-      "date": "2026-10-14",
-      "publishedAt": "2026-10-14T06:30:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBqNWdJdDJOQW5sV1Z3UmRBMmFpdkhtNERLNG9kbk5XNC0xMTNnVlhaTG9qbGJveE13XzNMTlQ2N0FkTjRrWWZWdG1UTHg4TXdL?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "中",
-      "tags": [
-        "金融支付",
-        "產業監測",
-        "一卡通"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-61e772a083196ba1dcf1",
-      "matchedRule": "taiwan-payment-google-news",
-      "publisherUrl": "https://www.storm.mg/lifestyle/11172271"
     },
     {
       "id": "softworld-api-rss-snapshot-8f46055baf20e86e58c5",
@@ -15574,26 +15620,6 @@
       "excerpt": "透過 AI 進行主動預測性維護，已然成為當前企業避免設備故障與停機風險，進而優化設備效能與使用壽命，並降低人員 […]",
       "sourceId": "rss-snapshot-9c9fac56ad0f7809904a",
       "matchedRule": "industry-martech"
-    },
-    {
-      "id": "softworld-api-google-news-44e214a68f9403a7de2c",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "貨幣效用護城河：穩定幣催生多個區域龍頭",
-      "source": "鉅亨網",
-      "date": "2026-10-14",
-      "publishedAt": "2026-10-14T05:30:06Z",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9qaWl3WDVFQzR3alVEQTYwQTVwWk8wNFRQR3k1ZE4xaWxuX1hab2Flb2wtQk8teGpzMlJ5Zi10Tm5nRGg5WjFmMXhjaHBtNnM?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-stablecoin",
-      "priority": "高",
-      "tags": [
-        "穩定幣",
-        "鏈上結算"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-44e214a68f9403a7de2c",
-      "matchedRule": "stablecoin-core"
     },
     {
       "id": "softworld-api-rss-snapshot-59095dd2e3b69479d01a",
@@ -16014,6 +16040,51 @@
       "matchedRule": "industry-platform-business"
     },
     {
+      "id": "softworld-api-google-news-90f25748a82321b20780",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "9月有多家知名厂商游戏产品获得版号，富春股份、凯撒文化、电魂网络均涨停",
+      "source": "騰訊網",
+      "date": "2026-10-14",
+      "publishedAt": "2026-10-14T02:45:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB0bXU0dUhTWnFWbE5NdkFvSXhxS1VrT0xMYU4ybVFOZGdGZFdjeFB4ZmNhZy16dTB2dG9UZXgxdVI4NUNreE5WT05jOVV5cFVwRTFlSER3?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "版号",
+        "游戏"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-808dca66e1c90fe30f6c",
+      "matchedRule": "industry-cn-game-approval",
+      "relatedSources": [
+        {
+          "title": "9月有多家知名厂商游戏产品获得版号，富春股份、凯撒文化、电魂网络均涨停",
+          "source": "搜狐網",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5zSi1jTU51YUM1ZFRHbDdVZGtzeWV0S3ZlN0FRY1c1OXFmNjZPN21OUFZURmowd3JKR1U5M2hTcmc1TGk2bk41ZVpNbWJydFoxaVZj?oc=5"
+        },
+        {
+          "title": "9月有多家知名厂商游戏产品获得版号，富春股份、凯撒文化、电魂网络均涨停",
+          "source": "搜狐網",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPMW5XZnNsVmdtendveGV6dmlTODhoOGswc0VvMU9KVjNCeUZEQi1jSHVKRXJpQjVHdFFYMG5mRWVEMk5QUUVpaW1UQ1NLTnFCa3NFWUx4VUl6VXhXcDRYbUZmcmR4dXdFY0szaG5YTjE1T2pOTG5qcG5OaXhTaFdiakRrRDlrTGRFZWRZWg?oc=5"
+        },
+        {
+          "title": "9月有多家知名厂商游戏产品获得版号，富春股份、凯撒文化、电魂网络均涨停",
+          "source": "搜狐網",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQVE5CV1NCUFZJR1BCT3ktMXMyaGtkM1FJVHlNV0hJR2N6QUNKU0p0MHFZdllsS01zbDNScGJVSFVSWDFNTE1MNmdMdlpQeFV3UXRPdGlxRnJ4UVhOMUc0N0VwbHF0TnhJS0FuSmNrX1QwN1I1T0NNRXphNnhXRGZuT2p1bS1mRktEaWRYQQ?oc=5"
+        },
+        {
+          "title": "9月有多家知名厂商游戏产品获得版号，富春股份、凯撒文化、电魂网络均涨停",
+          "source": "網易",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5Pd1dHc2M4NXNCSHE5dnFOZ0V1djdaaHdFcUlSOTJiSVpkWnREYUJqM2lQRk9kMXFmZ0QwUmdFS1VsUHN5czE5QzZZemljZ1FpdFZLcVhQWmJjN05qakdSU1Zn?oc=5"
+        }
+      ]
+    },
+    {
       "id": "softworld-api-rss-snapshot-f3a655cf90ba67ba8f65",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -16056,47 +16127,6 @@
       "excerpt": "OpenAI 自曝高層會議室被人暗藏錄音裝置，一名工程師被控企圖偷錄談話，已遭 FBI 逮捕。 （前情提要：前 […] 〈 OpenAI 爆會議室被藏錄音器！35 歲工程師遭 FBI 逮捕，粗糙犯案手法曝光 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 OpenAI 自曝高層會議室被人暗藏錄音裝置，一名工程師被控企圖偷錄談話，已遭 FBI 逮捕。 （前情提要：前 OpenAI、Anthropic 研究員：幾乎確定中國間諜已潛入這兩家 AI 大廠） （背景補充：OpenAI 安全大地震：透明度主管離職轟「文化已壞」、3 名員工涉洩密遭解僱） 一名 OpenAI 工程師被控在舊金山辦公室的高層會議室電視後方暗藏錄音裝置，10 月 9 日遭 FBI 逮捕。罪名是企圖使用裝置攔截口頭通訊，也就是偷錄別人講話。OpenAI 今晨在 X 發出貼文保守的說明此次事件。 We discovered a sophisticated recording device that was hidden inside one of our offices. We used our models to understand the device and where it had come from, identifying that a specific empl",
       "sourceId": "rss-snapshot-86053bf7eaf4e9deb2aa",
       "matchedRule": "taiwan-payment-core"
-    },
-    {
-      "id": "softworld-api-google-news-90f25748a82321b20780",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "9月有多家知名厂商游戏产品获得版号，富春股份、凯撒文化、电魂网络均涨停",
-      "source": "搜狐網",
-      "date": "2026-10-14",
-      "publishedAt": "2026-10-14T02:41:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5zSi1jTU51YUM1ZFRHbDdVZGtzeWV0S3ZlN0FRY1c1OXFmNjZPN21OUFZURmowd3JKR1U5M2hTcmc1TGk2bk41ZVpNbWJydFoxaVZj?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技",
-        "版号",
-        "游戏"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-398eebf4aac288e41926",
-      "matchedRule": "industry-cn-game-approval",
-      "relatedSources": [
-        {
-          "title": "9月有多家知名厂商游戏产品获得版号，富春股份、凯撒文化、电魂网络均涨停",
-          "source": "搜狐網",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPMW5XZnNsVmdtendveGV6dmlTODhoOGswc0VvMU9KVjNCeUZEQi1jSHVKRXJpQjVHdFFYMG5mRWVEMk5QUUVpaW1UQ1NLTnFCa3NFWUx4VUl6VXhXcDRYbUZmcmR4dXdFY0szaG5YTjE1T2pOTG5qcG5OaXhTaFdiakRrRDlrTGRFZWRZWg?oc=5"
-        },
-        {
-          "title": "9月有多家知名厂商游戏产品获得版号，富春股份、凯撒文化、电魂网络均涨停",
-          "source": "搜狐網",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQVE5CV1NCUFZJR1BCT3ktMXMyaGtkM1FJVHlNV0hJR2N6QUNKU0p0MHFZdllsS01zbDNScGJVSFVSWDFNTE1MNmdMdlpQeFV3UXRPdGlxRnJ4UVhOMUc0N0VwbHF0TnhJS0FuSmNrX1QwN1I1T0NNRXphNnhXRGZuT2p1bS1mRktEaWRYQQ?oc=5"
-        },
-        {
-          "title": "9月有多家知名厂商游戏产品获得版号，富春股份、凯撒文化、电魂网络均涨停",
-          "source": "網易",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5Pd1dHc2M4NXNCSHE5dnFOZ0V1djdaaHdFcUlSOTJiSVpkWnREYUJqM2lQRk9kMXFmZ0QwUmdFS1VsUHN5czE5QzZZemljZ1FpdFZLcVhQWmJjN05qakdSU1Zn?oc=5"
-        }
-      ],
-      "publisherUrl": "https://timeline.sohu.com/news/cQUuLXovGB"
     },
     {
       "id": "softworld-api-rss-snapshot-e28e0492e2f5bfc4b195",
@@ -16347,29 +16377,6 @@
       "excerpt": "菲律賓最大加密貨幣交易所 Coins.ph 面臨央行懲戒行動，據悉涉及服務受限制的海外賭博平台。這座位於全球第 […] 〈 菲律賓最大加密交易所 Coins.ph 遭央行處分！涉離岸賭博，恐被撤照 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 菲律賓最大加密貨幣交易所 Coins.ph 面臨央行懲戒行動，據悉涉及服務受限制的海外賭博平台。這座位於全球第四大匯款接收國的核心交易商，擁有 1,800 萬使用者並掌控 75-80% 披索兌穩定幣流動性，一旦撤照將撼動整個菲律賓加密生態。 （前情提要：英國制裁 3 家加密交易所！跟俄羅斯 A7 網路洗錢扯上關係，HTX 也在名單上） （背景補充：Tom Lee 警告：韓國股市暴跌可能波及加密市場） 菲律賓最大加密貨幣交易所 Coins.ph 正遭該國央行 Bangko Sentral ng Pilipinas（BSP）展開懲戒行動，兩位知情人士向 CoinDesk 透露。 違規事由涉及 Coins.ph 為受限制的離岸線上賭博公司處理交易。知情人士指出，此事嚴重到足以讓這家成立 12 年的公司被剝奪營業執照，一旦成真將在菲律賓加密生態圈引發「地震級」衝擊。 央行本月已出手，限制 DCPay 存款通道 今（10）月初，BSP 已對 Coins.ph 的主要電子錢包公司 DCPay Philippi",
       "sourceId": "91c9b805-56f1-4688-bcfa-49f9c7a40d11",
       "matchedRule": "taiwan-payment-authority,stablecoin-core"
-    },
-    {
-      "id": "softworld-api-google-news-5a2057938e3a0f209bbd",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "蘋表首款AI管家 Apple HomeView登場！亮點、售價曝光",
-      "source": "三立新聞網",
-      "date": "2026-10-14",
-      "publishedAt": "2026-10-14T01:31:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5OLVhQb0w4M2NzV3RGYTVKMXJkODlfbFE3SHFxeWpQMWRpZ3NFT0ZWUm5jektlQ3hVc2M1MTR1NXJ4V05ncEhhdNIBTEFVX3lxTFBLLU95cy1XZ0s1XzU4SUl0bkRWcjdkRXpSTTRtbGNBdmRpQVdYNXdrV1BPXzdia1VaU1BFQ19DcDVtOWNPVXl2WmtzR2k?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技",
-        "曝光",
-        "AI"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-5a2057938e3a0f209bbd",
-      "matchedRule": "industry-martech"
     },
     {
       "id": "softworld-api-google-news-1ce47ef42c3620ebfcef",
@@ -18154,29 +18161,6 @@
       "matchedRule": "taiwan-payment-google-news"
     },
     {
-      "id": "softworld-api-google-news-8f51f0292caa56e7d68f",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "LINE偷看訊息不顯示已讀！6大付費新功能曝光 10/20先上線這項",
-      "source": "上報",
-      "date": "2026-10-13",
-      "publishedAt": "2026-10-13T07:30:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBScHdvcWF0SWZOTkFSanZjeW11WDdTWWdvWGVvSk55SERlV3NXaG54THpfbklpMnZwRjBpaGg1RDlwN2Q5X2MyZzh4YnVSMldaN0NkcGRyNlZpems1VkE?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技",
-        "功能",
-        "LINE"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-867d87f1f59bd49484bc",
-      "matchedRule": "industry-platform-business,industry-martech"
-    },
-    {
       "id": "softworld-api-google-news-8d91edfec04dbbfd3571",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -18996,29 +18980,6 @@
       "excerpt": "人工智慧快速改寫創作者經濟，也讓 AI 公司與網紅的關係更微妙。業界人士與創作者經紀人說法，AI 品牌積極將網 […]",
       "sourceId": "rss-snapshot-9dfaa065d9813d1fa336",
       "matchedRule": "industry-martech"
-    },
-    {
-      "id": "softworld-api-google-news-f5c561352ba4c2a07970",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "2027生意怎麼做Google、LINE與人氣創作者10/15免費分享企業成長實戰- 股市爆料同學會",
-      "source": "CMoney／信傳媒",
-      "date": "2026-10-13",
-      "publishedAt": "2026-10-13T00:29:30Z",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1QNmpyTEs5MkJTalFBbzVib1RsMy1IRl9jdkFCSm1JZnNxTFpWZTZPNnhDWW8wTnkxaUlDTHNLOGg1ZTdVSEtOUGVMbkEzUERmdWFrNm9EVWE?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-other",
-      "priority": "中",
-      "tags": [
-        "平台商業",
-        "新商機",
-        "行銷科技",
-        "成長",
-        "google"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-f5c561352ba4c2a07970",
-      "matchedRule": "industry-platform-business"
     },
     {
       "id": "softworld-api-rss-snapshot-1937d1fffdaa63c5109a",
@@ -23515,6 +23476,29 @@
       "excerpt": "Rockstar Games 於 10 月 8 日公開《俠盜獵車手 6》（GTA 6）三張全新遊戲截圖，並提前揭曉遊戲中的雷歐奈達無線電波的精選電台內容，向玩家開放透過官方網站線上試聽其中 6 個頻道。 Rockstar Games 於 10 月 8 日公開《俠盜獵車手 6》（GTA 6）三張全新遊戲截圖，並提前揭曉遊戲中的雷歐奈達無線電波的精選電台內容，向玩家開放透過官方網站線上試聽其中 6 個頻道。 官方聲稱《GTA 6》將帶來系列作歷來規模最大、曲風最多元的遊戲內可選擇廣播體驗（包括 Podcast），從拉丁音樂、鄉村、非洲音樂到金屬、流行與南方饒舌都有涵蓋。 Grand Theft Auto VI will feature the biggest and widest-ranging selection of in-game radio yet. Spanning stations including Classic Rock, Modern Hip-Hop, Pop, Metal, Dance, Latin, ‘80s, Electronic, Blues, Ballads, Talk Radio, Podcasts, and much more: https://t.co/bvAtHkjQAj https://t.co/RjiaO7uNAO — Rockstar Gam",
       "sourceId": "rss-snapshot-180affd1c8f5607583e1",
       "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-google-news-8799ff3074e01144c83c",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "AI行銷最新與熱門精選文章",
+      "source": "今周刊",
+      "date": "2026-10-09",
+      "publishedAt": "2026-10-08T18:02:41Z",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBWTkRoVVBOUEhHYlZSeTJBMUpuRXoxc25UbGlkMW82T0ZJNFZDaWJtWlpvLXJqd2NzWFhSbDFGNjNIZmZlWDhKcnAyYVkwN0RZai1yTmtEMUgwWEVkdlZuVk9FOU1VeGV4UzFFX3NsSQ?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "行銷",
+        "AI"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-8799ff3074e01144c83c",
+      "matchedRule": "industry-martech"
     },
     {
       "id": "softworld-api-rss-snapshot-5a0effa3677c0bbd4657",
@@ -30682,27 +30666,6 @@
       "matchedRule": "competitor-global-game"
     },
     {
-      "id": "softworld-api-google-news-f874d1535aead80d159c",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "嘎嘎特攻T0最神天門劍尊免費拿+史上最多禮包碼+10月最新序號拿最強首抽技能+全套神裝+最完美開局#嘎嘎特攻序號#嘎嘎特攻兌換碼#嘎嘎特攻禮包碼#嘎嘎特攻首抽#嘎嘎特攻巴哈#嘎嘎特攻攻略#嘎嘎特攻技能#嘎嘎特攻組隊#嘎嘎特攻陣容#嘎嘎特攻排行榜#嘎",
-      "source": "Mobile01",
-      "date": "2026-10-05",
-      "publishedAt": "2026-10-05T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5BajRYSEVEMGxLVXUydHdRVkhFN0FFbkNlT2ZGbU9xYTNYeWNScHBnVko4Szd5UEJON0VJRzQ2U1hhcG9TQWZqcVBBQWVxVWRya1lydVJOSnJhX2RRdW9uUTFQVEdmZlE?oc=5",
-      "topic": "遊戲產業",
-      "reportGroup": "industry-new-games",
-      "priority": "中",
-      "tags": [
-        "市場新遊",
-        "重點遊戲",
-        "嘎嘎特攻"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-f874d1535aead80d159c",
-      "matchedRule": "mobile-top-grossing-games"
-    },
-    {
       "id": "softworld-api-google-news-65aaf8ed6c542ea54638",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -35683,6 +35646,29 @@
       "matchedRule": "industry-cn-game-approval,competitor-global-game"
     },
     {
+      "id": "softworld-api-google-news-68c163f3ac32479c083b",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "9月209款游戏版号下发，米哈游、祖龙、四三九九、恺英网络、电魂网络在列",
+      "source": "騰訊網",
+      "date": "2026-10-01",
+      "publishedAt": "2026-10-01T07:00:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA2UmF4Nm9pNnlFZmJReUZ6TFBnX0w1OU9FdWZTSWRjeG5CY2NDeHRrZWVfbURsSzVpbXZHcEtEb2UwLUlpbFc5c2RSTGdyS1ZHRWV2QmVR?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "版号",
+        "游戏",
+        "米哈游"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-68c163f3ac32479c083b",
+      "matchedRule": "industry-cn-game-approval,competitor-global-game"
+    },
+    {
       "id": "softworld-api-google-news-bb8988f1789ea2c5fa6a",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -35704,29 +35690,6 @@
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-bb8988f1789ea2c5fa6a",
       "matchedRule": "industry-cn-game-approval"
-    },
-    {
-      "id": "softworld-api-google-news-23a71afb18e8ab1b8418",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "新一批游戏版号发放：米哈游首款3D写实动作游戏《源初之结》获批",
-      "source": "17173遊戲網",
-      "date": "2026-10-01",
-      "publishedAt": "2026-10-01T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8zTFVDbl9pay04VUM4c3RPcEFFZ05KTWswdWVQSTlqNy00bkxwZlExOTdDelpFem1HUlZJaDE4TG83Z2JFN0hwZ2JyclpJY1I2MkZUalI0NS15Wk5qd05EcWtEQjk?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "版号",
-        "游戏",
-        "米哈游"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-49267f0706b29572ef68",
-      "matchedRule": "industry-cn-game-approval,competitor-global-game"
     },
     {
       "id": "softworld-api-google-news-1dfa7f4497e7dc4d9d8f",
@@ -35756,10 +35719,10 @@
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
       "title": "9月游戏版号发放：米哈游首款3D写实动作《源初之结》获批",
-      "source": "3DMGame",
+      "source": "17173遊戲網",
       "date": "2026-10-01",
       "publishedAt": "2026-10-01T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA3NERZbnZZT3g4Q3oteFRfS3B3MmFUSlRYNmFreXlmR3FPcXYtOUlMVXY1QnVQMG83ZVphZmg3SjhzR0tqN29rRHZ3TkdhQnlxWlI2ZG1BUEhyQWNK?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE45bjRWOXZfYXN2eVlSYXctOXdsQ2xXaWN6Q1R4Ql9LdXB4UzBoTVhLdi11WDNjcmFjYV9TeC0xeXQzMXFRdVpyaEJ4SGJ2WHhaRmZCWjlOdklKWTNJS09DUlgtUFE?oc=5",
       "topic": "競品與產業",
       "reportGroup": "industry-games",
       "priority": "中",
@@ -35771,8 +35734,15 @@
         "米哈游"
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-c45a138ace98fe4f3520",
-      "matchedRule": "industry-cn-game-approval,competitor-global-game"
+      "sourceId": "google-news-957cb037490c93b38028",
+      "matchedRule": "industry-cn-game-approval,competitor-global-game",
+      "relatedSources": [
+        {
+          "title": "9月游戏版号发放：米哈游首款3D写实动作《源初之结》获批",
+          "source": "3DMGame",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA3NERZbnZZT3g4Q3oteFRfS3B3MmFUSlRYNmFreXlmR3FPcXYtOUlMVXY1QnVQMG83ZVphZmg3SjhzR0tqN29rRHZ3TkdhQnlxWlI2ZG1BUEhyQWNK?oc=5"
+        }
+      ]
     },
     {
       "id": "softworld-monitoring-google-news-e03707a1b580a9ef95f6",
@@ -35822,6 +35792,27 @@
       "matchedRule": "competitor-brand,industry-game-platform"
     },
     {
+      "id": "softworld-api-google-news-5bf749deb2c12e022372",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "鈊象美國授權市場續增，TaDa拓中南美/歐洲",
+      "source": "MoneyDJ 理財網",
+      "date": "2026-10-01",
+      "publishedAt": "2026-10-01T07:00:00Z",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOEtLelBzMmJmZEpKbzlNMmg3cGZyOFBOZlM0d1BJbWRaNk9RYkxLN20tSFAzY196UWNodmJDaml6MkhTWndQVnpEX2phTVRwZ2syb1VZZnAwNFQ1NWo1VVF2OVRTZ2tRRWNwV2c3aDdiRTFSTFpSNHVfRlY4VzBjZDlNUFlESDk1akFCRlJCajFtQQ?oc=5",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "鈊象"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-5bf749deb2c12e022372",
+      "matchedRule": "competitor-brand"
+    },
+    {
       "id": "softworld-api-google-news-42ae7daec726ebdf5f7a",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -35843,27 +35834,6 @@
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-42ae7daec726ebdf5f7a",
       "matchedRule": "industry-cn-game-approval"
-    },
-    {
-      "id": "softworld-api-google-news-5bf749deb2c12e022372",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "鈊象美國授權市場續增，TaDa拓中南美/歐洲",
-      "source": "MoneyDJ 理財網",
-      "date": "2026-10-01",
-      "publishedAt": "2026-10-01T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOEtLelBzMmJmZEpKbzlNMmg3cGZyOFBOZlM0d1BJbWRaNk9RYkxLN20tSFAzY196UWNodmJDaml6MkhTWndQVnpEX2phTVRwZ2syb1VZZnAwNFQ1NWo1VVF2OVRTZ2tRRWNwV2c3aDdiRTFSTFpSNHVfRlY4VzBjZDlNUFlESDk1akFCRlJCajFtQQ?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "鈊象"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-5bf749deb2c12e022372",
-      "matchedRule": "competitor-brand"
     },
     {
       "id": "softworld-official-rss-rss-snapshot-b3d6ba56cbebc6b4b9ea",
@@ -36021,29 +35991,6 @@
       "excerpt": "Bitget，全球最大的全景交易所（UEX），宣布推出「Bitget 同行計畫」（Bitget Allianc […] 這篇文章 Bitget 推同行計畫分享 30% 手續費收入，VIP 等級保障同步上線 最早出現於 鏈新聞 ABMedia 。 Bitget ，全球最大的全景交易所（UEX），宣布推出「Bitget 同行計畫」 （Bitget Alliance Program） 。這項為期四週的活動將設立用戶獎勵池，金額相當於平台交易手續費收入的 30%。該計畫旨在感謝平台經歷挑戰期間，Bitget 社群持續展現的信任與支持。 同行計畫活動期間為 2026 年 9 月 28 日上午 8 時至 2026 年 10 月 26 日上午 8 時（UTC）。獎勵將依符合資格用戶於平台上的交易活動及資產持有情況進行分配。獎勵池將以適用計算期間內，符合資格的非機構用戶所產生、並由平台實際留存的淨交易手續費收入之 30% 為計算基礎。 此項計畫是在 Bitget 於 9 月 24 日發現安全事件後推出。交易所表示，用戶資產餘額仍然完整無虞；同時，平台正持續恢復正常服務並進一步強化安全機制。同行計畫為一項獨立措施，旨在感謝在此期間持續信任並支持平台的用戶。 「過去幾天，我們感受到來自用戶、合作夥伴以及整個社群極其熱烈的支持，」Bitget 執行長 Gracy Chen 表示。「這對 Bitget 全",
       "sourceId": "rss-snapshot-1531f1b1f209d6602873",
       "matchedRule": "stablecoin-core"
-    },
-    {
-      "id": "softworld-api-google-news-68c163f3ac32479c083b",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "9月209款游戏版号下发，米哈游、祖龙、四三九九、恺英网络、电魂网络在列",
-      "source": "騰訊網",
-      "date": "2026-10-01",
-      "publishedAt": "2026-10-01T05:41:00Z",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA2UmF4Nm9pNnlFZmJReUZ6TFBnX0w1OU9FdWZTSWRjeG5CY2NDeHRrZWVfbURsSzVpbXZHcEtEb2UwLUlpbFc5c2RSTGdyS1ZHRWV2QmVR?oc=5",
-      "topic": "競品與產業",
-      "reportGroup": "industry-games",
-      "priority": "中",
-      "tags": [
-        "遊戲產業",
-        "競品觀測",
-        "版号",
-        "游戏",
-        "米哈游"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-68c163f3ac32479c083b",
-      "matchedRule": "industry-cn-game-approval,competitor-global-game"
     },
     {
       "id": "softworld-api-c969e314-eee8-4dbc-a18c-ad6ec383de58",
@@ -37231,7 +37178,14 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-e4504d8b6d834c69687b",
-      "matchedRule": "industry-cn-game-approval"
+      "matchedRule": "industry-cn-game-approval",
+      "relatedSources": [
+        {
+          "title": "国家新闻出版署公布2026年9月份国产网络游戏审批信息，共206款游戏获批",
+          "source": "騰訊網",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5xV05pdTEwcE1GZ2d1am9GcU5JNlFNZXRVQUtMYWRxQ0RCZXpLODhMSE1kc0Y5cjkxdml6RjRxak9Ha3gzVi1idHg2eHhUOG9Eb3d6R1B3?oc=5"
+        }
+      ]
     },
     {
       "id": "softworld-official-rss-rss-snapshot-91af014e851b45274dcf",
@@ -40395,29 +40349,6 @@
       "matchedRule": "industry-platform-business"
     },
     {
-      "id": "softworld-api-google-news-9035d4fe0eac38e29341",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "參議院報告稱 Tether USDT 協助伊朗籌資",
-      "source": "LINE TODAY",
-      "date": "2026-09-29",
-      "publishedAt": "2026-09-29T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5LcjFsekxSOE1fY0M1NWNzVDZYX1hDU3UtMFNvYm1OVmI1Q2FON1FwYmlSazQ0cGxseHpBWUN4MHpGNzBPZ0pqYURLM3BoTS1EMkRLM0V3bWZ5Y0RpdFhWSkxfQXVJeEpPZlpoR3RYQWFQd28?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-stablecoin",
-      "priority": "高",
-      "tags": [
-        "穩定幣",
-        "鏈上結算",
-        "usdt",
-        "tether",
-        "USDT"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-9035d4fe0eac38e29341",
-      "matchedRule": "stablecoin-core"
-    },
-    {
       "id": "softworld-monitoring-google-news-3dd6fe265423b90fd3ce",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -40438,6 +40369,27 @@
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-3dd6fe265423b90fd3ce",
       "matchedRule": "competitor-global-game"
+    },
+    {
+      "id": "softworld-api-google-news-183b707300e315539988",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "VASP再增1家業者完成洗錢防制登記 累計達11家",
+      "source": "經濟日報 金融",
+      "date": "2026-09-29",
+      "publishedAt": "2026-09-29T07:00:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9HeXJGakgzaHBKNkNzMzVoYk5FdjcwSXZwNlZlNE95TW8xZEFwV1RETHJUVVdaY2NHTDJpZmczV09oZm5XcWZ2bWZtN1NSUm1MYzBJczRpUVJMZ9IBX0FVX3lxTE5faTVXVVdpVHE3eDhINHZYdEF5ZFZtT091R0ROVjlQRjBtMC1iSVZjSENGRk0xT2IxMmtIUEJ2eDRnVVNnejF3SVF1T2lMUmNyQlpEVmN4cnhTOExnbFEw?oc=5",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "VASP"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-183b707300e315539988",
+      "matchedRule": "stablecoin-vasp"
     },
     {
       "id": "softworld-api-google-news-fbebbf009b9750480c87",
@@ -59676,6 +59628,29 @@
       "matchedRule": "stablecoin-core,stablecoin-bitopro"
     },
     {
+      "id": "softworld-api-google-news-2be052b3a552207c7458",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "幣託與王道銀行啟動全台首例「企業級穩定幣結算先導計畫」",
+      "source": "經濟日報 金融",
+      "date": "2026-09-11",
+      "publishedAt": "2026-09-11T07:00:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBaTFR2dzM2ZEJWWTZ2OFk5bnRjVDk5TEZJOXk5a1ZFRm5kUGRZVG9sNWQ0U05WcHY4WUlfMldDSHhqOVh4bnI2dVhUU2hvcWNpSHhLUXVoZGFvQdIBX0FVX3lxTFB5dUs2ekc1WldvVzMwdnBBQUphZ3YtUWs0Ynp2S29NX2hXYmRqemZnOUxCaVhGOU9JSl92WEY0dkphUE5qR2xwV2g0N2V0WXliaGQxUGs1SGt5VjBwNzNR?oc=5",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "穩定幣結算",
+        "幣託",
+        "結算"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-2be052b3a552207c7458",
+      "matchedRule": "stablecoin-core,stablecoin-bitopro"
+    },
+    {
       "id": "softworld-api-google-news-b7cbc7d938e305b2e95c",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -60533,6 +60508,27 @@
       "matchedRule": "taiwan-payment-google-news"
     },
     {
+      "id": "softworld-api-google-news-5df567f927226a9cf951",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "綠界科技營收穩健成長 今年獲外資精選為「中堅潛力企業獎」",
+      "source": "工商時報",
+      "date": "2026-09-08",
+      "publishedAt": "2026-09-08T07:00:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5wUDN0TDhqa0w3bjFVQUVpb1FOTjBCdjFvbWlvVUhqMkE3OEpPSmRRNEhNR2dOTjhBTTRXcFlZaUxzQUpBOTYyejZRbTdlS3p5cURPYmZ0UE1GRE5ISkFj?oc=5",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "高",
+      "tags": [
+        "金融支付",
+        "產業監測",
+        "綠界科技"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-5df567f927226a9cf951",
+      "matchedRule": "taiwan-payment-google-news"
+    },
+    {
       "id": "softworld-api-d6311437-23ad-493d-a5c8-73768fe965ed",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -61022,6 +61018,27 @@
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-24339e14b5df4196b37c",
       "matchedRule": "industry-game-platform"
+    },
+    {
+      "id": "softworld-api-google-news-f3577244a54e7e5c7389",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "VASP 業者擴增至10家！金管會通過2家虛擬資產業者洗錢防制登記",
+      "source": "經濟日報 金融",
+      "date": "2026-09-03",
+      "publishedAt": "2026-09-03T07:00:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBKdWtWZFFmX2NpeWx5YXVzQ3l2X2tmeXE5UFZUaktsZmFCeEs4UnBEZkgtLVQ0UXdIczFDcTRPOUFzcFY4LTJQYjI3bTZnOFZoQjB5ZjVqWVZmd9IBX0FVX3lxTE0yQmJYVTFHVVlibVM3OW1Wb2tEcmkxeTBDUnRRclpoQjlHZ3BjSHA4dnl5SGtlTDBwaWN5bWRwX0RWSEtTcTMtcEZDVldQV3NuRVA2aFEzazl0STdYMVpN?oc=5",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "VASP"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-f3577244a54e7e5c7389",
+      "matchedRule": "stablecoin-vasp"
     },
     {
       "id": "softworld-api-google-news-3bda04378fb65d820356",
@@ -62192,6 +62209,27 @@
       "matchedRule": "industry-game-platform"
     },
     {
+      "id": "softworld-api-google-news-d495ae74384c209eff29",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "《塔塔冒險隊》儲值教學優惠懶人包",
+      "source": "MyCard 娛樂中心",
+      "date": "2026-08-27",
+      "publishedAt": "2026-08-27T08:02:01Z",
+      "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQOWhuelhodzF5Tm0tR28wcmdleGdCY2pRSDZjamFybnQxeGZ0N25LcGtUeXZJOFFtY09ZdGJnUlBYN0RwTDBzVlYwUnVtbjNuT0puNDc5YzFCbU42WGJvWEd2emw4dUdqd1NIYVREYTlmaHRaemtMUEF3U2ItVjlYTnlYZV9NTy1GcGtIaXctQ0NRRmIwZzV5aTN0emN1Z2RfOHVnTVI2Q2JlQU1GaFlCN01ZMTRPMHBwdk1SbjBBZmY1M1BOWlpReDJYemo4aU9VaVFtN0NmOUdzYkh6di00ekN4UGpwSXY4Z2syWkd0WVA3SkE3RXctMV9leVI2SFdzeEtwcg?oc=5",
+      "topic": "遊戲產業",
+      "reportGroup": "industry-new-games",
+      "priority": "中",
+      "tags": [
+        "市場新遊",
+        "重點遊戲",
+        "塔塔冒險"
+      ],
+      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
+      "sourceId": "google-news-d495ae74384c209eff29",
+      "matchedRule": "mobile-top-grossing-games"
+    },
+    {
       "id": "softworld-api-google-news-616d0550dab87d010ba4",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -62210,27 +62248,6 @@
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-616d0550dab87d010ba4",
       "matchedRule": "stablecoin-core"
-    },
-    {
-      "id": "softworld-api-google-news-1846c793b98f57d894ce",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "手機怎麼快速記帳？Numbers完整教學：7步驟做出自動統計帳本，iPhone、Mac一次搞定",
-      "source": "數位時代",
-      "date": "2026-08-27",
-      "publishedAt": "2026-08-27T07:00:00Z",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE40azFJd0Y0WlNfSlhPUkJnaUpaU29tRGs4cUZEd0JYb1pnZ2ltLXdFWF9uNjJRRHlRSGVhTWlmVHhMZFA1THA1MUU4dDc0cXhhMlBjU2tpSUlKazVoZmlXNDZXMFhpR1RScFJWMU4yQmlhRXBLZ2tDeHhaYw?oc=5",
-      "topic": "金融支付",
-      "reportGroup": "industry-fintech",
-      "priority": "中",
-      "tags": [
-        "金融支付",
-        "產業監測",
-        "記帳"
-      ],
-      "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
-      "sourceId": "google-news-1846c793b98f57d894ce",
-      "matchedRule": "industry-einvoice"
     },
     {
       "id": "softworld-api-6ad72d09-5232-441a-83bd-058233c5e469",
