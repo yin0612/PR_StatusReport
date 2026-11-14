@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-11-14T14:20:20.652Z",
-  "syncedAt": "2026-11-14T17:02:40.208Z",
+  "generatedAt": "2026-11-14T19:18:55.885Z",
+  "syncedAt": "2026-11-14T21:26:44.620Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,16 +10,16 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 4739,
-    "matchedItems": 4400,
+    "totalItems": 4750,
+    "matchedItems": 4410,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 4739,
-        "matchedItems": 4572,
-        "generatedAt": "2026-11-14T14:20:20.652Z",
+        "totalItems": 4750,
+        "matchedItems": 4583,
+        "generatedAt": "2026-11-14T19:18:55.885Z",
         "range": {
           "from": "2026-09-15",
           "to": "2026-11-15"
@@ -28,6 +28,212 @@
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-rss-snapshot-73ecd22a64a978ae6169",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "九合一選戰》「洋流祭」登場！政策島平台實體化，沈伯洋再翻新造勢模式",
+      "source": "遠見雜誌",
+      "date": "2026-11-15",
+      "publishedAt": "2026-11-14T19:05:00.000Z",
+      "url": "https://www.gvm.com.tw/article/134527",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "盛大"
+      ],
+      "excerpt": "選戰進入最後衝刺，民進黨台北市長候選人沈伯洋競選團隊今（14）日於二二八和平紀念公園盛大舉辦「洋流祭」。這場活動打破傳統造勢旗海與單向演說模式，將線上「HEART，政策島」平台轉化為實體闖關遊戲，並結合獨立音樂祭。活動吸引大批支持者湧入二二八公園露天音樂台與國立台灣博物館前廣場，掀起兼具文化共創與政策思辨的選戰浪潮。雖然從約莫2點多開始下起雨來，忽大忽小的雨勢，仍澆不熄支持者的熱情，無論是體驗活動或洋流小物交換區域皆大排長龍，眾多民眾帶來各式各樣的飄帶、旗幟，或是其他自製應援小物，舞台區域更不時有民眾大喊沈伯洋的競選口號：「台北的市長，沈伯洋！」每每都有其他支持者高聲配合齊喊。致敬桌遊！推出政",
+      "sourceId": "rss-snapshot-73ecd22a64a978ae6169",
+      "matchedRule": "competitor-global-game"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-a9247a3cbf6b2c2b472d",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "ChatGPT 錢包 可幫忙購物",
+      "source": "經濟日報 產經國際",
+      "date": "2026-11-15",
+      "publishedAt": "2026-11-14T17:24:19.000Z",
+      "url": "https://money.udn.com/money/story/5599/9879225",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "高",
+      "tags": [
+        "金融支付",
+        "產業監測",
+        "AI",
+        "人工智慧",
+        "購物"
+      ],
+      "excerpt": "OpenAI推出「ChatGPT錢包」，讓自家人工智慧（AI）工具用來代替消費者下單購物，提供用戶全新的安全支付方式。這是繼今年稍早關閉一款即時結帳功能後，OpenAI再度進軍AI購物市場。",
+      "sourceId": "rss-snapshot-a9247a3cbf6b2c2b472d",
+      "matchedRule": "industry-ai-commerce,newebpay-brand,taiwan-payment-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-bab7825324c55286e2d0",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "以太坊基金會錢包五天賣 7,500 枚 ETH，換得 1,450 萬美元",
+      "source": "ABMedia 區塊鏈媒體",
+      "date": "2026-11-15",
+      "publishedAt": "2026-11-14T16:03:36.000Z",
+      "url": "https://abmedia.io/ethereum-foundation-sells-7500-eth",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算"
+      ],
+      "excerpt": "Onchain Lens 標記為以太坊基金會的錢包 11 月 10 日至 14 日透過 CoWSwap 分六筆賣出 7,500 枚 ETH，換得約 1,450 萬 USDS，鏈新聞逐筆核對鏈上紀錄一致，錢包還剩約 7,500 枚。基金會財庫政策寫明，依營運開支準備金決定每季賣多少 ETH。 這篇文章 以太坊基金會錢包五天賣 7,500 枚 ETH，換得 1,450 萬美元 最早出現於 鏈新聞 ABMedia 。 鏈上監控帳號 Onchain Lens 標記為以太坊基金會的錢包，11 月 10 日至 14 日分六筆賣出 7,500 枚 ETH。Onchain Lens 台灣時間 14 日深夜 發文 指出，這個錢包最新一筆透過 CoWSwap 把 2,500 枚 ETH 換成約 460 萬美元的 USDS 穩定幣，五天合計換得約 1,450 萬 USDS。 鏈新聞用區塊鏈瀏覽器逐筆核對這個 錢包地址 ，交易紀錄與 Onchain Lens 的數字一致。以太坊基金會官方帳號截至發稿沒有說明這幾筆交易。 五天六筆，2,500 枚是最大一筆 依鏈上紀錄，這個錢包在台灣時間 11 月 10 日上午 8 點多、11 日凌晨各賣出 1,000 枚 ETH，分別換得約 212.7 萬與 202.5 萬 USDS；13 日下午兩分鐘內連賣兩筆各 1,000 枚，共換得約 386.7 萬 USDS；14",
+      "sourceId": "rss-snapshot-bab7825324c55286e2d0",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-b1f36b94934e73eb7c24",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "台男為何愛娶越南老婆？「花70萬」找漂亮顧家的？12.8萬越配只排第2，6427人揭婚姻變局",
+      "source": "遠見雜誌",
+      "date": "2026-11-15",
+      "publishedAt": "2026-11-14T16:00:00.000Z",
+      "url": "https://www.gvm.com.tw/article/132924",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "社群",
+        "facebook"
+      ],
+      "excerpt": "「越南老婆」「台越夫妻」近年頻頻出現在YouTube、Facebook、TikTok等社群平台，不少台灣人甚至產生一種印象：台灣男性迎娶的外籍配偶中，是不是越南人最多？答案其實不是。根據內政部移民署最新統計，截至2026年7月，台灣共有約62.1萬名外籍及大陸、港澳配偶，其中越南籍配偶12萬7958人，占20.58％，雖然人數相當龐大，仍僅排名第2；第一名依然是大陸地區配偶36萬9616人，占59.44％。但如果不看累積人數，而把鏡頭轉向「現在正在跟台灣人結婚的是誰」，越南的重要性立刻浮現。2025年台灣共有10萬4376對新人辦理結婚登記，其中有1萬9334對的一方為外籍、大陸或港澳人士，占",
+      "sourceId": "rss-snapshot-b1f36b94934e73eb7c24",
+      "matchedRule": "industry-platform-business,industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-592a4ce89036a5d6c07c",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "黃仁勳辭執行長 馬斯克：輝達將失去部分關鍵交易",
+      "source": "中央社 產經證券",
+      "date": "2026-11-14",
+      "publishedAt": "2026-11-14T15:57:47.000Z",
+      "url": "https://www.cna.com.tw/news/aopl/202611140227.aspx",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "媒體",
+        "社群"
+      ],
+      "excerpt": "（中央社紐約14日綜合外電報導）黃仁勳近日辭去人工智慧（AI）晶片公司輝達（NVIDIA）執行長等職務，全球首富馬斯克今天則在社群媒體X平台發文指出，沒有了他，輝達將失去至少部分的關鍵交易。",
+      "sourceId": "rss-snapshot-592a4ce89036a5d6c07c",
+      "matchedRule": "industry-martech"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-f94f19bb25bd35df57f5",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "木村拓哉出道 35 年首度台北開唱 在台慶生秀親筆中文訊息",
+      "source": "巴哈姆特 GNN",
+      "date": "2026-11-14",
+      "publishedAt": "2026-11-14T15:55:48.000Z",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=315024",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "遊戲",
+        "SEGA"
+      ],
+      "excerpt": "曾為吉卜力動畫《霍爾的移動城堡》男主角霍爾配音、並在 SEGA《審判之眼》系列遊戲中飾演主角八神隆之的日本知名藝人木村拓哉，於 11 月 13、14 日在台北流行音樂中心舉辦「TAKUYA KIMURA Live Tour 2026 Checkpoint」台北演唱會。這是他出道 35 年來首度以個人歌手身分在台....",
+      "sourceId": "rss-snapshot-f94f19bb25bd35df57f5",
+      "matchedRule": "competitor-global-game"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-0c5de5983fdab1c25096",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "未獲同意存取用戶資料 義大利開罰Meta逾8億歐元",
+      "source": "經濟日報 產經國際",
+      "date": "2026-11-14",
+      "publishedAt": "2026-11-14T15:30:21.000Z",
+      "url": "https://money.udn.com/money/story/5599/9879252",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "社群",
+        "Meta"
+      ],
+      "excerpt": "義大利資料保護當局今天指出，已經對社群媒體巨擘Meta Platforms開罰8億500萬歐元，因為這間公司在未取得An...",
+      "sourceId": "rss-snapshot-0c5de5983fdab1c25096",
+      "matchedRule": "industry-platform-business,industry-martech",
+      "relatedSources": [
+        {
+          "title": "未獲同意存取用戶資料 義大利開罰Meta逾8億歐元",
+          "source": "中央社 產經證券",
+          "url": "https://www.cna.com.tw/news/aopl/202611140226.aspx"
+        }
+      ]
+    },
+    {
+      "id": "softworld-api-rss-snapshot-723de8d40add2bf51a44",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Bitcoin Price Analysis: Where Is the Bottom as BTC’s Correction Accelerates?",
+      "source": "CryptoPotato",
+      "date": "2026-11-14",
+      "publishedAt": "2026-11-14T15:26:19.000Z",
+      "url": "https://cryptopotato.com/bitcoin-price-analysis-where-is-the-bottom-as-btcs-correction-accelerates/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "USDT"
+      ],
+      "excerpt": "Bitcoin’s correction has sped up over the past week and is now dropping almost vertically. It currently trades around $65K after cutting through several support levels. The latest drop pushed BTC below its daily ascending channel and the key $70K support zone, which leaves deeper demand areas exposed. Meanwhile, the Adjusted SOPR metric indicates that […] Bitcoin’s correction has sped up over the past week and is now dropping almost vertically. It currently trades around $65K after cutting through several support levels. The latest drop pushed BTC below its daily ascending channel and the key ",
+      "sourceId": "rss-snapshot-723de8d40add2bf51a44",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-83159e75f7256776d1f8",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "川普次子投資的軍用機器人新創欠薪，CNBC：執行長曾借 460 萬美元買房",
+      "source": "ABMedia 區塊鏈媒體",
+      "date": "2026-11-14",
+      "publishedAt": "2026-11-14T14:24:07.000Z",
+      "url": "https://abmedia.io/foundation-robot-startup-missed-payroll",
+      "topic": "金融支付",
+      "reportGroup": "industry-fintech",
+      "priority": "高",
+      "tags": [
+        "金融支付",
+        "產業監測",
+        "信用卡",
+        "金融科技"
+      ],
+      "excerpt": "CNBC 引述知情人士報導，川普次子艾瑞克投資的軍用人形機器人新創 Foundation 10 月 30 日起沒有發薪，執行長 Pathak 去年曾向公司借 460 萬美元買房；Pathak 前一家公司 Synapse 倒閉後，最多 9,600 萬美元客戶資金下落不明。 這篇文章 川普次子投資的軍用機器人新創欠薪，CNBC：執行長曾借 460 萬美元買房 最早出現於 鏈新聞 ABMedia 。 美國總統川普次子艾瑞克（Eric Trump）投資的軍用人形機器人新創 Foundation，傳出發不出薪水。根據 CNBC 14 日報導 ，這家舊金山公司 10 月 30 日沒有如期發薪，員工至今還沒領到；執行長兼共同創辦人 Sankaet Pathak 去年曾向公司借款 460 萬美元買房，引起部分員工不滿。 報導內容來自多位要求匿名的知情人士。CNBC 表示，Pathak 的發言人週四已收到報導重點，但沒有回應置評請求。 10 月 30 日起沒發薪，公司仍在以 30 億美元估值募資 依 CNBC 報導，Foundation 8 月也曾發不出薪水，當時員工等了約兩天，公司向一位既有投資人借到過渡貸款才補發。Pathak 本週在給員工的備忘錄中表示，正在籌錢補發積欠的薪水。 公開紀錄顯示，一家以 Pathak 為唯一負責人的有限責任公司，2025 年 10 月買下加州索薩利托一棟 460 ",
+      "sourceId": "rss-snapshot-83159e75f7256776d1f8",
+      "matchedRule": "taiwan-payment-core"
+    },
     {
       "id": "softworld-api-rss-snapshot-56ee52be9154114cc6e2",
       "origin": "monitoring",
@@ -517,7 +723,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-4d2cc3600efbde9d3dbe",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://tw.news.yahoo.com/mygopen%E6%94%9Cline-meta%E6%95%99%E9%98%B2%E8%A9%90-%E7%8E%A9%E9%81%8A%E6%88%B2%E6%8B%86%E8%A9%B1%E8%A1%93-%E5%8F%AF%E7%96%91%E8%A8%8A%E6%81%AF%E5%85%88%E6%9F%A5%E8%AD%89-055800056.html"
     },
     {
       "id": "softworld-api-google-news-bac09a3c974d98fb54c6",
@@ -540,7 +747,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-bac09a3c974d98fb54c6",
-      "matchedRule": "industry-cn-game-approval"
+      "matchedRule": "industry-cn-game-approval",
+      "publisherUrl": "https://m.sohu.com/a/1101511590_122014422?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
     },
     {
       "id": "softworld-api-rss-snapshot-7a2428945605cb9712b9",
@@ -570,7 +778,8 @@
           "source": "自由電子報 財經",
           "url": "https://ec.ltn.com.tw/article/breakingnews/5640588"
         }
-      ]
+      ],
+      "publisherUrl": "https://www.cmoney.tw/forum/article/188723453"
     },
     {
       "id": "softworld-api-google-news-146b02900d94bc0a17e6",
@@ -593,7 +802,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-146b02900d94bc0a17e6",
-      "matchedRule": "industry-martech"
+      "matchedRule": "industry-martech",
+      "publisherUrl": "https://money.udn.com/money/story/5648/9878524?from=edn_newestlist_rank"
     },
     {
       "id": "softworld-api-google-news-557fff76cda619596451",
@@ -622,7 +832,8 @@
           "source": "PChome新聞",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPU1l1VDVkSy1VSThmU0RDcmhZSHRxRzhQaVEwOWdyM09KMk13RXJPOWtBN1Nub254WEdGOUtoN3ltRHFiU2R1bW84Y2E5UnRSbUhHbllLYTB3aVBodkFXelByekZ4eEltVGhIb1VOcXpyZTBieEVKNWJwOFNRTWp4a1J0enpxWkcxNUhzTA?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://today.line.me/tw/v3/article/aGpX2w2"
     },
     {
       "id": "softworld-api-google-news-28f46e22dca323e438fe",
@@ -668,7 +879,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-0e6add722e081b5a568a",
-      "matchedRule": "industry-ai-commerce"
+      "matchedRule": "industry-ai-commerce",
+      "publisherUrl": "https://today.line.me/tw/v3/article/aGp6Gy8"
     },
     {
       "id": "softworld-api-google-news-58c4f5b628f6853c92a1",
@@ -757,7 +969,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-636b003bd73a7a581e18",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://today.line.me/tw/v3/article/60oMpEN"
     },
     {
       "id": "softworld-api-rss-snapshot-9f5e12fce01b4b68b311",
@@ -779,6 +992,29 @@
       "excerpt": "「麻吉大哥」Machibigbrother 在永續合約平台 Papertrade 已被清算超過 2,100 次 […] 〈 麻吉大哥在 Papertrade 爆倉 2,100 次虧 222 萬鎂！丟無聊猿讓網友抽 〉這篇文章最早發佈於動區BlockTempo《 動區動趨-最具影響力的區塊鏈新聞媒體 》。 「麻吉大哥」Machibigbrother 在永續合約平台 Papertrade 已被清算超過 2,100 次，累計虧損 222 萬美元。扣掉平台獎勵，他仍虧約 171 萬美元。他 11 月 9 日把 Hyperliquid 的資金轉往 Papertrade，同一週還把無聊猿與變異猿放進自己的扭蛋池讓網友抽。 （前情提要：麻吉大哥 Hyperliquid 只剩1美元！一個月虧掉千萬還被幣安害到） （背景補充：贏了要排隊，輸了能領幣：一次看懂 Papertrade「爆倉即挖礦」的 1000 倍莊家生意） 重點摘要 黃立成在 Papertrade 被清算逾 2,100 次，虧損 222 萬美元 扣掉 51.4 萬美元獎勵，他在 Papertrade 仍虧約 171 萬美元 Ember 統計他在 Hyperliquid 一年半虧損 3,746 萬美元 鏈上數據分析帳號 Lookonchain 11 月 13 日發文，「麻吉大哥」在 Papertrade 已被清算超過 2,100 次。他在",
       "sourceId": "rss-snapshot-9f5e12fce01b4b68b311",
       "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-8b422d3b9d96816b1fb2",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "AI趨勢周報第294期：AI Agent不只要會看圖，Google新Benchmark直接考專業工作實戰",
+      "source": "iThome",
+      "date": "2026-11-14",
+      "publishedAt": "2026-11-14T03:11:39.000Z",
+      "url": "https://www.ithome.com.tw/news/180507",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "趨勢",
+        "google"
+      ],
+      "excerpt": "重點新聞（1106～1112）",
+      "sourceId": "rss-snapshot-8b422d3b9d96816b1fb2",
+      "matchedRule": "industry-platform-business"
     },
     {
       "id": "softworld-api-google-news-32e9a028945bcb7c38af",
@@ -877,7 +1113,8 @@
           "source": "中央社 產經證券",
           "url": "https://www.cna.com.tw/news/afe/202611140047.aspx"
         }
-      ]
+      ],
+      "publisherUrl": "https://money.udn.com/money/story/5613/9878305?from=edn_related_storybottom"
     },
     {
       "id": "softworld-api-google-news-2e993c96e4ed0f4db629",
@@ -930,7 +1167,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-771a0acbe7bf78fd3ed3",
-      "matchedRule": "stablecoin-core"
+      "matchedRule": "stablecoin-core",
+      "publisherUrl": "https://money.udn.com/money/story/5613/9878296"
     },
     {
       "id": "softworld-api-google-news-5c9882a9c9a50f95b93f",
@@ -1068,7 +1306,8 @@
           "source": "PChome新聞",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNc1hkT05Xb2NCNGJlczh6N1hxdFRwakEtVlR3Mm9QNEw1VDRfT2JKeHA4U19VWFpTeUhDYVpUckw4Sk9wMkwtZnJ0ZnhNekNVWjM1aWF1a1loMDZWMGlpSkdRcHJVeGtqSGRJOU9wVkxBeEJsNC1BM3MwRmFQT0VOT0tnby0weUNERlNTaA?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://today.line.me/tw/v3/article/WBpvve5"
     },
     {
       "id": "softworld-api-google-news-731a451b662de05182ef",
@@ -1091,7 +1330,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-731a451b662de05182ef",
-      "matchedRule": "industry-ai-commerce,industry-martech"
+      "matchedRule": "industry-ai-commerce,industry-martech",
+      "publisherUrl": "https://fc.bnext.com.tw/articles/view/5050"
     },
     {
       "id": "softworld-api-google-news-3acdf703ce2d59be77e9",
@@ -1124,7 +1364,8 @@
           "source": "卡優新聞網熱門新聞",
           "url": "https://www.cardu.com.tw/news/detail.php?66601"
         }
-      ]
+      ],
+      "publisherUrl": "https://tw.news.yahoo.com/%E5%85%A8%E5%AE%B6%E6%8E%83%E5%8F%B0%E7%81%A3pay%E6%89%939%E6%8A%98-%E8%90%AC%E5%AE%B6%E7%A6%8F%E6%97%A5%E8%A1%97%E5%8F%A3%E5%9B%9E%E9%A5%8B18-003049044.html"
     },
     {
       "id": "softworld-api-google-news-749352a980e2cb7329c1",
