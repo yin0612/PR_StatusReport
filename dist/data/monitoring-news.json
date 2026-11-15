@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-11-15T13:34:28.605672Z",
-  "syncedAt": "2026-11-15T17:05:19.673Z",
+  "generatedAt": "2026-11-15T17:52:00.169Z",
+  "syncedAt": "2026-11-15T21:45:33.514Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,16 +10,16 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 4650,
-    "matchedItems": 4319,
+    "totalItems": 4657,
+    "matchedItems": 4326,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 4650,
-        "matchedItems": 4484,
-        "generatedAt": "2026-11-15T13:34:28.605672Z",
+        "totalItems": 4657,
+        "matchedItems": 4491,
+        "generatedAt": "2026-11-15T17:52:00.169Z",
         "range": {
           "from": "2026-09-16",
           "to": "2026-11-16"
@@ -28,6 +28,94 @@
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-rss-snapshot-ee81dcf1d37f7d4d80f7",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "CZ 否認幣安賣幣，Richard Teng 與何一同晚貼一字不差聲明",
+      "source": "ABMedia 區塊鏈媒體",
+      "date": "2026-11-16",
+      "publishedAt": "2026-11-15T17:17:49.000Z",
+      "url": "https://abmedia.io/binance-leaders-crypto-selloff-posts",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "USDT"
+      ],
+      "excerpt": "比特幣一度跌至 62,006 美元後，CZ 列出 Anthropic 上市、ETF 流出、安全疑慮、升息預期與期中選舉五個可能原因，強調幣安沒有賣幣、自己這幾天買進；幣安執行長 Richard Teng 與共同創辦人何一相隔 70 分鐘貼出一字不差的聲明。 這篇文章 CZ 否認幣安賣幣，Richard Teng 與何一同晚貼一字不差聲明 最早出現於 鏈新聞 ABMedia 。 比特幣 15 日一度跌至 62,006 美元後，幣安高層同一晚接連在 X 上喊話。共同創辦人趙長鵬（CZ）16 日凌晨列出幣價下跌的五個可能原因，強調「幣安沒有賣幣」，自己這幾天反而買進。 在他之前，幣安執行長 Richard Teng 與共同創辦人何一 15 日晚間先後發文，兩則內容一字不差，發布時間相隔 70 分鐘。 CZ：「沒人確定」，列 Anthropic IPO、ETF 流出等五個可能原因 CZ 台灣時間 16 日 00:13 發文 問「幣價為什麼跌？」，接著說沒人能確定，相關不代表因果，以下只是可能的原因。 第一是資金轉向 Anthropic 上市。他引用分析帳號 ColeMacro 的比較：SpaceX 6 月 12 日上市前 50 天，比特幣跌了 19%；Anthropic 預計 11 月 19 日上市，ColeMacro 13 日發文時算出比特幣同期跌了 18%。 第二是 ETF 資金流出，",
+      "sourceId": "rss-snapshot-ee81dcf1d37f7d4d80f7",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-b5e611f9da51c666d325",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Bitcoin’s Rebound Is Failing: 3 Reasons BTC Could Face More Pressure",
+      "source": "CryptoPotato",
+      "date": "2026-11-16",
+      "publishedAt": "2026-11-15T17:06:14.000Z",
+      "url": "https://cryptopotato.com/bitcoins-rebound-is-failing-3-reasons-btc-could-face-more-pressure/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "stablecoin"
+      ],
+      "excerpt": "CryptoQuant warned that a sustainable rebound would require something the market currently lacks: fresh buyers. Bitcoin’s latest rebound attempt has failed miserably, with the asset falling from $81,000 last Wednesday to $62,000 on Saturday, a 23% drop in mere days. New CryptoQuant data suggests this weakness is not simply the result of leverage being flushed out , as underlying spot demand remains poor and several other sources of selling pressure are simultaneously intensifying. Buyers Are Nowhere to Be Found Perhaps the most worrying signal came from CQ’s Spot and Perpetual Futures Demand G",
+      "sourceId": "rss-snapshot-b5e611f9da51c666d325",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-f11c2aac88dc902d7551",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "How Wall Street Is Racing to Claim the Onchain Dollar",
+      "source": "Decrypt",
+      "date": "2026-11-16",
+      "publishedAt": "2026-11-15T16:01:02.000Z",
+      "url": "https://decrypt.co/383284/how-wall-street-racing-onchain-dollar-stablecoins",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "visa",
+        "mastercard",
+        "Tether"
+      ],
+      "excerpt": "From Goldman and Citi’s $270 million “Project Faro” to SoFi, Anchorage, Mastercard, Visa and Circle, traditional finance is racing to claim the onchain dollar once dominated by Tether and Circle.",
+      "sourceId": "rss-snapshot-f11c2aac88dc902d7551",
+      "matchedRule": "international-fintech,stablecoin-core,stablecoin-circle"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-877f02856fda79211869",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "防 AI 傳遞稅務假訊息 英國官方出手了",
+      "source": "經濟日報 產經國際",
+      "date": "2026-11-15",
+      "publishedAt": "2026-11-15T15:12:33.000Z",
+      "url": "https://money.udn.com/money/story/122381/9880366",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "媒體",
+        "社群"
+      ],
+      "excerpt": "英國稅務海關總署（HMRC）擔心，人工智慧（AI）與社群媒體正大量傳播錯誤稅務資訊，計劃派出「數位大使」，進駐Reddit等網路論壇與社群平台，主動回應使用者並指出正確資訊。HMRC也正調整官方內容，讓大型語言模型（LLM）更容易辨識及引用。",
+      "sourceId": "rss-snapshot-877f02856fda79211869",
+      "matchedRule": "industry-martech"
+    },
     {
       "id": "softworld-api-google-news-5b32d447b5756e34155b",
       "origin": "monitoring",
@@ -106,6 +194,72 @@
         }
       ],
       "publisherUrl": "https://www.cmoney.tw/forum/article/188734403"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-05c284a68a1ac0c51b07",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "義大利重罰 Meta 8.05 億歐元：臉書未經同意讀取安卓用戶相簿",
+      "source": "ABMedia 區塊鏈媒體",
+      "date": "2026-11-15",
+      "publishedAt": "2026-11-15T11:44:35.000Z",
+      "url": "https://abmedia.io/italy-fines-meta-android-gallery",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "功能",
+        "臉書"
+      ],
+      "excerpt": "義大利個資保護局對 Meta 開罰 8.05 億歐元（約 8.87 億美元），認定臉書「從相簿取得建議」功能預設開啟、用單一權限包辦多種用途，未取得明確同意就讀取安卓用戶的照片與影片；Meta 須在 60 天內改為預設關閉，並表示將上訴。 這篇文章 義大利重罰 Meta 8.05 億歐元：臉書未經同意讀取安卓用戶相簿 最早出現於 鏈新聞 ABMedia 。 義大利個人資料保護局 14 日宣布，對 Meta 開罰 8.05 億歐元（約 8.87 億美元），認定臉書在沒有取得明確同意、也沒有充分告知的情況下，讀取安卓用戶手機相簿裡的照片與影片。Meta 表示將上訴，稱罰款「不成比例」。 根據 路透社經 CNBC 刊出的報導 ，問題出在臉書 App 一項會從用戶個人相簿挑出內容、建議他們發文的功能。主管機關要求 Meta 在 60 天內把這項功能改成預設關閉，並另外徵求用戶同意。 「從相簿取得建議」預設開啟，一個權限包辦多種用途 美聯社 報導 ，這項功能名為「瀏覽臉書時從相簿取得建議」。調查人員發現，功能是預設開啟的，而臉書請求存取相簿時，用的是一個同時涵蓋多種不同用途的權限，用戶很難知道自己同意了什麼。 主管機關說，這違反了已納入義大利法律的歐盟隱私指令。該指令把智慧型手機視為個人私領域的一部分，要存取手機內容必須取得「自由且知情的同意」。義大利約有 2,000 萬名安卓用戶。 罰款約",
+      "sourceId": "rss-snapshot-05c284a68a1ac0c51b07",
+      "matchedRule": "industry-platform-business"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-b61c9a69b2383371749c",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "Ethereum Price Analysis: Can ETH Bounce Back Before $1.5K Comes Into Play?",
+      "source": "CryptoPotato",
+      "date": "2026-11-15",
+      "publishedAt": "2026-11-15T11:40:33.000Z",
+      "url": "https://cryptopotato.com/ethereum-price-analysis-can-eth-bounce-back-before-1-5k-comes-into-play/",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "USDT"
+      ],
+      "excerpt": "Ethereum has rebounded toward $1.82K after a sharp selloff reached the marked liquidity level near $1.71K. Daily momentum is oversold, creating room for a relief rally, but the broader bearish structure remains intact as large futures orders appear during the decline. Ethereum Price Analysis: The Daily Chart The daily chart shows ETH extending its decline […] Ethereum has rebounded toward $1.82K after a sharp selloff reached the marked liquidity level near $1.71K. Daily momentum is oversold, creating room for a relief rally, but the broader bearish structure remains intact as large futures ord",
+      "sourceId": "rss-snapshot-b61c9a69b2383371749c",
+      "matchedRule": "stablecoin-core"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-93a79d9e8346280ee275",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "初代 XBOX 游戏机迎上市 25 周年：奠定微软主机业务根基，未来平台发展方向仍不明朗",
+      "source": "IT之家",
+      "date": "2026-11-15",
+      "publishedAt": "2026-11-15T11:38:04.000Z",
+      "url": "https://www.ithome.com/1/027/435.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "游戏",
+        "XBOX"
+      ],
+      "excerpt": "IT之家 11 月 15 日消息，据 Tom’s Hardware 报道，微软初代 XBOX 于 2001 年 11 月 15 日在北美市场正式发售，如今已迎来上市 25 周年。 这款主机本质上是一台采用定制硬件的 PC，搭载英特尔 Pentium III 处理器和英伟达 GPU，机身采用体积庞大的黑绿色外壳，主要竞争对手包括索尼 PlayStation 2、任天堂 GameCube 和世嘉 Dreamcast。 尽管面对实力强劲的对手，XBOX 凭借出色的硬件配置，以及《光环：战斗进化》（Halo: Combat Evolved）这款独占游戏，成功在主机市场站稳脚跟，最终销量达到 2400 万台，超过任天堂和世嘉的同期产品，仅次于 PlayStation 2。 回顾初代 Xbox 的硬件配置，可以发现微软当时采用了相当激进的策略，该机搭载主频 733 MHz 的英特尔 Pentium III 处理器，以及主频 233 MHz 的英伟达 NV2A GPU，配备 64 MB DDR SDRAM 内存。游戏通过 DVD 光驱读取，主机内部还首次配备 8 GB 硬盘，同时支持 8 MB 可拆卸存储卡，还标配以太网接口。 如今来看，初代 XBOX 为微软此后 25 年的游戏主机业务奠定了基础，其市场表现也证明了这一战略的成功。不过，随着游戏行业即将迈入新一代硬件周期，微软 XBOX 业务未",
+      "sourceId": "rss-snapshot-93a79d9e8346280ee275",
+      "matchedRule": "industry-game-platform"
     },
     {
       "id": "softworld-api-google-news-786a5329fc105d1ba162",
@@ -577,7 +731,8 @@
           "source": "三立新聞網",
           "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE10NDBJcXVVSHUtZE9vX0taT1ltLUFrdk05ZV8yMEJEZWlLdGVkb1NvU1VBNWhfRUNnUV8xRTBjZ0xSRTQ1emhHSdIBTEFVX3lxTE10eUtDaG42OFBMMmtLLUo3cFRTaVpHM2VtejNEM1lkMVllM0ZFazhtMHh1eS1vcUtqcnliX0FQRkZDZUhmQTBScFZNeVk?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://tw.news.yahoo.com/line-%E7%84%A1%E8%81%B2%E8%A8%8A%E6%81%AF-%E6%98%8E%E8%B5%B7%E4%BB%98%E8%B2%BB%E6%89%8D%E8%83%BD%E7%94%A8-2%E5%85%8D%E8%B2%BB%E5%8A%9F%E8%83%BD%E4%B9%9F%E5%B0%87%E6%94%B9%E6%9C%83%E5%93%A1%E5%B0%88%E5%B1%AC-051000009.html"
     },
     {
       "id": "softworld-api-google-news-f947eaa8e9da695d1579",
@@ -600,7 +755,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-f947eaa8e9da695d1579",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.mirrormedia.mg/external/setn_1939265"
     },
     {
       "id": "softworld-api-google-news-951b56577d826e2e1a5c",
@@ -879,7 +1035,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-098110725df5889640d7",
-      "matchedRule": "industry-game-release"
+      "matchedRule": "industry-game-release",
+      "publisherUrl": "https://www.mobile01.com/topicdetail.php?f=675&t=7315933"
     },
     {
       "id": "softworld-api-rss-snapshot-25b86e0d0fe6fed1de46",
@@ -923,7 +1080,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-643c2c975cd2c37b28d3",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://www.chinatimes.com/realtimenews/20261115000854-260405"
     },
     {
       "id": "softworld-api-b3d38d96-f05c-42a0-965a-e5adee490e46",
@@ -1010,7 +1168,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-7e7bbde210e42bda46f4",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.cmoney.tw/notes/note-detail.aspx?nid=1293017"
     },
     {
       "id": "softworld-api-google-news-4e0e1e61d3be343acff1",
@@ -1033,7 +1192,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-4e0e1e61d3be343acff1",
-      "matchedRule": "industry-platform-business"
+      "matchedRule": "industry-platform-business",
+      "publisherUrl": "https://tw.news.yahoo.com/%E9%BB%83%E4%BB%81%E5%8B%B3%E8%BE%AD%E8%81%B7%E9%9C%87%E6%92%BC%E5%B8%82%E5%A0%B4-2026-yahoo%E8%B2%A1%E7%B6%93%E9%AB%98%E5%B3%B0%E6%9C%83%E8%A7%A3%E6%9E%90ai%E6%8A%95%E8%B3%87%E8%88%87%E7%94%A2%E6%A5%AD%E6%96%B0%E5%B1%80-220717442.html"
     },
     {
       "id": "softworld-api-google-news-bee659af735241abeaa1",
@@ -1718,7 +1878,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-8af7bc5552fca006b922",
-      "matchedRule": "competitor-brand"
+      "matchedRule": "competitor-brand",
+      "publisherUrl": "https://www.chinatimes.com/realtimenews/20261114000013-260410"
     },
     {
       "id": "softworld-api-google-news-0d4eca7b5c95f539be46",
@@ -1902,7 +2063,8 @@
           "source": "PChome新聞",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOSnJoUEI5ODJCV1FoZDZEMnhjSWgzVEJJV3FGb29uT3FkMGdodHVhZ3lmeGpHNXlUTFZoa3RnSmdiVG1PYlgyeFIxLV9vaU0zckVjQjBtcDR2dzVldVg2Rjc4LVg3RmtsdzBtdnZBU0Z1TGRmMml0cE8tTXNTSklLS2tlU1pmMDhXaUdJcQ?oc=5"
         }
-      ]
+      ],
+      "publisherUrl": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/262264"
     },
     {
       "id": "softworld-api-google-news-b31e288d8d0951051aa0",
@@ -1923,7 +2085,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-b31e288d8d0951051aa0",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.taisounds.com/news/content/96/309368"
     },
     {
       "id": "softworld-api-google-news-0e6add722e081b5a568a",
@@ -2132,7 +2295,8 @@
           "source": "中央社 產經證券",
           "url": "https://www.cna.com.tw/news/afe/202611140047.aspx"
         }
-      ]
+      ],
+      "publisherUrl": "https://money.udn.com/money/story/5613/9878305"
     },
     {
       "id": "softworld-api-google-news-2e993c96e4ed0f4db629",
@@ -2320,7 +2484,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-28bc34f91f20a585b1e2",
-      "matchedRule": "industry-game-cloud"
+      "matchedRule": "industry-game-cloud",
+      "publisherUrl": "https://news.pchome.com.tw/science/sunmedia/20261114/index-79461946209210329005.html"
     },
     {
       "id": "softworld-api-google-news-3acdf703ce2d59be77e9",
@@ -2382,7 +2547,8 @@
           "source": "卡優新聞網熱門新聞",
           "url": "https://www.cardu.com.tw/news/detail.php?66602"
         }
-      ]
+      ],
+      "publisherUrl": "https://tw.news.yahoo.com/%E5%90%83%E7%81%AB%E9%8D%8B%E4%BF%A1%E7%94%A8%E5%8D%A1%E7%B6%81%E7%98%8Bpay-%E6%BB%99%E8%B1%90%E4%B8%AD%E4%BF%A1%E5%9B%9E%E9%A5%8B%E4%B8%8D%E6%89%8B%E8%BB%9F-003311204.html"
     },
     {
       "id": "softworld-api-google-news-69703ba6ccc302d46d7a",
