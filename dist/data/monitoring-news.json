@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.3.0",
-  "generatedAt": "2026-11-21T22:51:18.244837Z",
-  "syncedAt": "2026-11-21T23:11:20.148Z",
+  "generatedAt": "2026-11-22T01:17:53.843Z",
+  "syncedAt": "2026-11-22T03:07:10.250Z",
   "freshness": {
     "expectedSyncHours": 1,
     "syncWarningHours": 3,
@@ -10,16 +10,16 @@
   "watchlistVersion": "2026-10-02-complete-api-v4",
   "source": {
     "label": "智冠產業監測（完整 API）",
-    "totalItems": 4698,
-    "matchedItems": 4388,
+    "totalItems": 4700,
+    "matchedItems": 4390,
     "sources": [
       {
         "id": "softworld-api",
         "label": "智冠產業監測（完整 API）",
         "url": "https://softworld-monitoring-api.media-monitoring-worker.workers.dev/api/articles",
-        "totalItems": 4698,
-        "matchedItems": 4537,
-        "generatedAt": "2026-11-21T22:51:18.244837Z",
+        "totalItems": 4700,
+        "matchedItems": 4539,
+        "generatedAt": "2026-11-22T01:17:53.843Z",
         "range": {
           "from": "2026-09-22",
           "to": "2026-11-22"
@@ -28,6 +28,51 @@
     ]
   },
   "items": [
+    {
+      "id": "softworld-api-d3ba0ac6-8d6f-4197-8495-e2665a417892",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "腾讯《怪物猎人：旅人》PC 版本首次亮相，游戏移动端预计年内上线",
+      "source": "IT之家",
+      "date": "2026-11-22",
+      "publishedAt": "2026-11-22T00:23:27.000Z",
+      "url": "https://www.ithome.com/1/030/526.htm",
+      "topic": "競品與產業",
+      "reportGroup": "industry-games",
+      "priority": "中",
+      "tags": [
+        "遊戲產業",
+        "競品觀測",
+        "游戏",
+        "腾讯游戏"
+      ],
+      "excerpt": "IT之家 11 月 22 日消息，腾讯《怪物猎人：旅人》官方微博昨日发布视频， 首次公开了本作的 PC 版本 。 这支视频展示的是《怪物猎人：旅人》开发中画面，呈现了主角冒险家狩猎融光种火龙的实机片段与村庄场景。游戏官方表示， PC 版本正在紧锣密鼓开发中，更多进展将陆续公布 。 IT之家注：《怪物猎人：旅人》是由卡普空正版授权、腾讯天美工作室群开发的《怪物猎人》系列新作， 将于 2026 年内登陆 iOS 与 Android 平台 。 本作保留了系列经典的 14 种武器类型，并加入独特的“特殊技”系统。在多人玩法方面，游戏支持最多 4 名玩家共斗，同时首次引入最多 16 名玩家参与的“突袭模式”，挑战超巨大怪物。 相关阅读： 《 腾讯游戏〈怪物猎人：旅人〉8 月 7 日开启“启明测试”，限骁龙 845 及以上安卓机型 》 《 腾讯〈怪物猎人：旅人〉4 月 29 日开启「启程测试」，仅限骁龙 845 及以上安卓机型 》 《 腾讯 × 卡普空合作手游〈怪物猎人：旅人〉实机首曝，首次封闭测试定档 11 月 》 《 腾讯〈怪物猎人：旅人〉原创古龙“光稜龙”首度公开：卡普空授权，游戏预计年内上线 》",
+      "sourceId": "d3ba0ac6-8d6f-4197-8495-e2665a417892",
+      "matchedRule": "competitor-global-game"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-5592fccbf0af7d08139d",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "房市緩著陸1》全國新案房價最高點已過 連5季呈現年跌",
+      "source": "自由電子報 財經",
+      "date": "2026-11-22",
+      "publishedAt": "2026-11-21T23:30:00.000Z",
+      "url": "https://ec.ltn.com.tw/article/breakingnews/5645838",
+      "topic": "競品與產業",
+      "reportGroup": "industry-other",
+      "priority": "中",
+      "tags": [
+        "平台商業",
+        "新商機",
+        "行銷科技",
+        "新建案",
+        "房地產"
+      ],
+      "excerpt": "全國平均房價最高點已過，根據最新發布的內政部住宅價格指數、第一季全國住宅價格指數年跌3.84%，且已連續三季呈現年跌趨勢，而以市調全國新建案市況為主的國泰房地產指數、第三...…",
+      "sourceId": "rss-snapshot-5592fccbf0af7d08139d",
+      "matchedRule": "industry-new-business"
+    },
     {
       "id": "softworld-api-google-news-b04567632d47fdd1c0f8",
       "origin": "monitoring",
@@ -997,7 +1042,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-b2c8b433b1db6502e3e0",
-      "matchedRule": "industry-ai-commerce"
+      "matchedRule": "industry-ai-commerce",
+      "publisherUrl": "https://www.ctee.com.tw/news/20261121700591-430201"
     },
     {
       "id": "softworld-api-google-news-01066cc5416c82c9aefc",
@@ -1040,7 +1086,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-b5f87e1ef36fe64da769",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://today.line.me/tw/v3/article/BEmxNOw"
     },
     {
       "id": "softworld-api-google-news-34f8ebbd307663905e8c",
@@ -1173,7 +1220,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-4a1b04d370a08166ca9c",
-      "matchedRule": "taiwan-payment-google-news"
+      "matchedRule": "taiwan-payment-google-news",
+      "publisherUrl": "https://www.cmoney.tw/forum/article/189477030"
     },
     {
       "id": "softworld-api-rss-snapshot-fe2e68dad2bceec6560b",
@@ -1260,7 +1308,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-61a4050f08193b3d7af8",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://www.mirrormedia.mg/story/20261121edi004"
     },
     {
       "id": "softworld-api-google-news-d935ddfb7f6557a0f564",
@@ -1281,7 +1330,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-d935ddfb7f6557a0f564",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://today.line.me/tw/v3/article/EXwx1nk"
     },
     {
       "id": "softworld-api-rss-snapshot-ac9ff3de0b02aea7d17f",
@@ -1325,7 +1375,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-96d20df11940f6b1ebc7",
-      "matchedRule": "industry-ai-commerce"
+      "matchedRule": "industry-ai-commerce",
+      "publisherUrl": "https://news.cnyes.com/news/id/6669700"
     },
     {
       "id": "softworld-api-google-news-4ab08df4a3badfb4c7e8",
@@ -1346,7 +1397,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-4ab08df4a3badfb4c7e8",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://today.line.me/tw/v3/article/kEpg6wL"
     },
     {
       "id": "softworld-api-google-news-dfcce63b580266b1ad0f",
@@ -1367,7 +1419,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-dfcce63b580266b1ad0f",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://news.pchome.com.tw/living/m00361/20261121/index-79522535080094361009.html"
     },
     {
       "id": "softworld-api-rss-snapshot-a6ae60f4bec2f2cc1ced",
@@ -1413,7 +1466,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-771e6d94d6022cae04d2",
-      "matchedRule": "mobile-top-grossing-games,mobile-game-watchlist,industry-platform-business"
+      "matchedRule": "mobile-top-grossing-games,mobile-game-watchlist,industry-platform-business",
+      "publisherUrl": "https://www.techbang.com/posts/134975-google-play-2026-taiwan-best-apps-games-winners"
     },
     {
       "id": "softworld-api-google-news-019a35e5613d697fbe1b",
@@ -1434,7 +1488,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-019a35e5613d697fbe1b",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://tw.news.yahoo.com/%E3%80%8A%E7%9A%AE%E5%85%8B%E6%95%8F%E3%80%8B%E6%89%8B%E9%81%8A%E3%80%8C%E4%B8%AD%E5%9C%8B%E5%8F%B0%E7%81%A3%E3%80%8D%E7%88%AD%E8%AD%B0%E5%BE%8C%E5%AE%98%E6%96%B9%E7%B5%82%E6%96%BC%E7%99%BC%E8%81%B2%EF%BC%81%E5%BC%B7%E8%AA%BF%E5%80%8B%E8%B3%87%E5%AD%98%E7%BE%8E%E5%9C%8B%E5%8D%BB%E6%9C%AA%E9%81%93%E6%AD%89-%E7%8E%A9%E5%AE%B6%E4%B8%8D%E8%B2%B7%E5%96%AE-002636764.html"
     },
     {
       "id": "softworld-api-google-news-fa095b03b51923cccb52",
@@ -1455,7 +1510,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-fa095b03b51923cccb52",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://game.ettoday.net/article/3275850.htm"
     },
     {
       "id": "softworld-api-google-news-3c1a543578c6f0f707e8",
@@ -1476,7 +1532,8 @@
       ],
       "excerpt": "Google News RSS 聚合僅提供標題與發布時間；請開啟原文閱讀完整內容。",
       "sourceId": "google-news-3c1a543578c6f0f707e8",
-      "matchedRule": "mobile-top-grossing-games"
+      "matchedRule": "mobile-top-grossing-games",
+      "publisherUrl": "https://news.pchome.com.tw/game/gamer/20261121/index-79521911074149203104.html"
     },
     {
       "id": "softworld-api-0763b37f-8e00-49a3-b560-a8a324f716c0",
@@ -32373,27 +32430,6 @@
       "matchedRule": "international-fintech"
     },
     {
-      "id": "softworld-api-rss-snapshot-1aceec8bc9e03a9154a9",
-      "origin": "monitoring",
-      "sourceOrigin": "softworld-api",
-      "title": "金融監督管理委員會證券期貨局每日新聞（115年11月6日）",
-      "source": "金管會 新聞稿",
-      "date": "2026-11-06",
-      "publishedAt": "2026-11-06T00:00:00.000Z",
-      "url": "https://www.fsc.gov.tw/ch/home.jsp?id=96&parentpath=0,2&mcustomize=news_view.jsp&dataserno=202611060001&toolsflag=Y&dtable=News",
-      "topic": "金融支付",
-      "reportGroup": "industry-stablecoin",
-      "priority": "高",
-      "tags": [
-        "穩定幣",
-        "鏈上結算",
-        "虛擬資產服務商"
-      ],
-      "excerpt": "壹、公開發行公司等動態 一、預計115年11月9日生效。 二、停止公開發行案件：無。 貳、證券投資信託基金案件 一、115年11月6日生效/核准：無。 二、自行補正案/停止申報生效案/解除申報生效案：無。 參、 預告訂定「虛擬資產服務商設置辦法」、「虛擬資產服務商負責人與業務人員管理規則」、「虛擬資產服務商管理辦法」、「虛擬資產服務商建立內部控制及稽核制度處理準則」、「虛擬資產服務商作業委託他人處理辦法」、「虛擬資產帳號及其疑似不法或顯屬異常交易管理辦法」、「虛擬資產服務商財務報告編製及申報辦法」及「虛擬資產服務商業同業公會管理規則」。(金管證券字第1150385338號 )--預告期間：2026.11.6~2026.12.16 聯絡單位：證券期貨局證券商管理組 裴科長 聯絡電話：(02)2774-7342 肆、中國信託綜合證券股份有限公司違反證券管理法令處分案 一、處分時間：115年11月6日。 二、受處分之對象：中國信託綜合證券股份有限公司（下稱中國信託證券）。 三、處分之法令依據：證券交易法第178條之1第1項第4款、證券商管理規則第2條第2項及第37條第13款規定。 四、違反事實理由：本會檢查局於115年5月26日至115年6月11日對中國信託證券進行一般業務檢查，發現該公司辦理受託買賣有價證券業務有受理非本人且未具客戶委任書之代理人買賣有價證券、辦理受託買進信用評等未達B",
-      "sourceId": "rss-snapshot-1aceec8bc9e03a9154a9",
-      "matchedRule": "fsc-stablecoin-vasp"
-    },
-    {
       "id": "softworld-api-rss-snapshot-b1abf7e3f4383dd13ee0",
       "origin": "monitoring",
       "sourceOrigin": "softworld-api",
@@ -32452,6 +32488,27 @@
       ],
       "excerpt": "金融監督管理委員會 公告 發文日期：中華民國115年11月6日 發文字號：金管銀法字第11502732141號 主旨：預告訂定「穩定幣發行許可及管理辦法」。 依據：行政程序法第一百五十四條第一項。 公告事項： 一、訂定機關：金融監督管理委員會。 二、訂定依據：虛擬資產服務法第三十四條第三項、第四項、第三十六條第四項、第三十七條第四項、第三十九條及第四十一條第二項。 三、旨揭法規草案總說明及逐條說明如附件，本案另載於本會「主管法規查詢系統」網站之「 草案預告 」網頁（網址：https://law.fsc.gov.tw/DraftForum.aspx）。 四、為配合虛擬資產服務法施行之期程，爰將本案預告期間縮短為40日。對於本公告內容有任何意見或建議者，請於本公告刊登公報翌日起40日內於前揭「草案預告」網頁陳述意見或洽詢： (一)承辦單位：金融監督管理委員會銀行局 (二)地址：新北市板橋區縣民大道2段7號19樓 (三)聯絡人：楊科長、邱稽查 (四)電話：(02)8968-9625、8968-9630 (五)傳真：(02)8969-1352 (六)電子郵件： 聯絡信箱",
       "sourceId": "rss-snapshot-e3513c9037d683e76e24",
+      "matchedRule": "fsc-stablecoin-vasp"
+    },
+    {
+      "id": "softworld-api-rss-snapshot-1aceec8bc9e03a9154a9",
+      "origin": "monitoring",
+      "sourceOrigin": "softworld-api",
+      "title": "金融監督管理委員會證券期貨局每日新聞（115年11月6日）",
+      "source": "金管會 新聞稿",
+      "date": "2026-11-06",
+      "publishedAt": "2026-11-06T00:00:00.000Z",
+      "url": "https://www.fsc.gov.tw/ch/home.jsp?id=96&parentpath=0,2&mcustomize=news_view.jsp&dataserno=202611060001&toolsflag=Y&dtable=News",
+      "topic": "金融支付",
+      "reportGroup": "industry-stablecoin",
+      "priority": "高",
+      "tags": [
+        "穩定幣",
+        "鏈上結算",
+        "虛擬資產服務商"
+      ],
+      "excerpt": "壹、公開發行公司等動態 一、預計115年11月9日生效。 二、停止公開發行案件：無。 貳、證券投資信託基金案件 一、115年11月6日生效/核准：無。 二、自行補正案/停止申報生效案/解除申報生效案：無。 參、 預告訂定「虛擬資產服務商設置辦法」、「虛擬資產服務商負責人與業務人員管理規則」、「虛擬資產服務商管理辦法」、「虛擬資產服務商建立內部控制及稽核制度處理準則」、「虛擬資產服務商作業委託他人處理辦法」、「虛擬資產帳號及其疑似不法或顯屬異常交易管理辦法」、「虛擬資產服務商財務報告編製及申報辦法」及「虛擬資產服務商業同業公會管理規則」。(金管證券字第1150385338號 )--預告期間：2026.11.6~2026.12.16 聯絡單位：證券期貨局證券商管理組 裴科長 聯絡電話：(02)2774-7342 肆、中國信託綜合證券股份有限公司違反證券管理法令處分案 一、處分時間：115年11月6日。 二、受處分之對象：中國信託綜合證券股份有限公司（下稱中國信託證券）。 三、處分之法令依據：證券交易法第178條之1第1項第4款、證券商管理規則第2條第2項及第37條第13款規定。 四、違反事實理由：本會檢查局於115年5月26日至115年6月11日對中國信託證券進行一般業務檢查，發現該公司辦理受託買賣有價證券業務有受理非本人且未具客戶委任書之代理人買賣有價證券、辦理受託買進信用評等未達B",
+      "sourceId": "rss-snapshot-1aceec8bc9e03a9154a9",
       "matchedRule": "fsc-stablecoin-vasp"
     },
     {
